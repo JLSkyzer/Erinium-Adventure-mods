@@ -38,6 +38,11 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
+import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModTabs;
+import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModItems;
+import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModFeatures;
+import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModBlocks;
+
 @Mod("erinium_adventure")
 public class EriniumAdventureMod {
 	public static final Logger LOGGER = LogManager.getLogger(EriniumAdventureMod.class);
@@ -46,6 +51,13 @@ public class EriniumAdventureMod {
 	public EriniumAdventureMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+		EriniumAdventureModBlocks.REGISTRY.register(bus);
+
+		EriniumAdventureModItems.REGISTRY.register(bus);
+
+		EriniumAdventureModTabs.REGISTRY.register(bus);
+		EriniumAdventureModFeatures.REGISTRY.register(bus);
 
 	}
 

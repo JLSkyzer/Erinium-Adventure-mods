@@ -1,0 +1,118 @@
+{
+  "mod_elements": [
+    {
+      "name": "Nitriate",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateItem.java"
+        ]
+      }
+    },
+    {
+      "name": "NitriateOre",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_ore",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/world/features/ores/NitriateOreFeature.java",
+          "src/main/resources/assets/erinium_adventure/blockstates/nitriate_ore.json",
+          "src/main/resources/data/erinium_adventure/worldgen/configured_feature/nitriate_ore.json",
+          "src/main/resources/data/erinium_adventure/forge/biome_modifier/nitriate_ore_biome_modifier.json",
+          "src/main/resources/data/erinium_adventure/worldgen/placed_feature/nitriate_ore.json",
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_ore.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/block/NitriateOreBlock.java",
+          "src/main/resources/assets/erinium_adventure/models/block/nitriate_ore.json"
+        ]
+      }
+    },
+    {
+      "name": "NitriateBlock",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/block/NitriateBlockBlock.java",
+          "src/main/resources/assets/erinium_adventure/blockstates/nitriate_block.json",
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_block.json",
+          "src/main/resources/assets/erinium_adventure/models/block/nitriate_block.json"
+        ]
+      }
+    },
+    {
+      "name": "NitriateOreBlockRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_ore_block_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_ore_block_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "NitriateBlockOreRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_block_ore_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_block_ore_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "NitriateOreSmelting",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_ore_smelting",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_ore_smelting.json"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
+      "block.erinium_adventure.nitriate_block": "Block of Nitriate",
+      "item.erinium_adventure.nitriate": "Nitriate"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "erinium_adventure",
+    "modName": "Erinium Adventure",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "fr.eriniumgroup.eriniumadventure.base",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300336712
+}

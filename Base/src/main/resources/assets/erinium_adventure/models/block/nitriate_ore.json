@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium_adventure:block/nitriate_ore",
+    "up": "erinium_adventure:block/nitriate_ore",
+    "north": "erinium_adventure:block/nitriate_ore",
+    "east": "erinium_adventure:block/nitriate_ore",
+    "south": "erinium_adventure:block/nitriate_ore",
+    "west": "erinium_adventure:block/nitriate_ore",
+    "particle": "erinium_adventure:block/nitriate_ore"
+  },
+  "render_type": "solid"
+}

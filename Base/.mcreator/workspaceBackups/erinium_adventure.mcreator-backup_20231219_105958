@@ -195,75 +195,6 @@
         ]
       },
       "path": "~/Nitriate"
-    },
-    {
-      "name": "NitriateArmor",
-      "type": "armor",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nitriate_armor",
-      "metadata": {
-        "files": [
-          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_leggings.json",
-          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_boots.json",
-          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateArmorItem.java",
-          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_chestplate.json",
-          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_helmet.json"
-        ]
-      },
-      "path": "~/Nitriate"
-    },
-    {
-      "name": "NitriateArmorHelmetRecipe",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nitriate_armor_helmet_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/erinium_adventure/recipes/nitriate_armor_helmet_recipe.json"
-        ]
-      },
-      "path": "~/Nitriate"
-    },
-    {
-      "name": "NitriateArmorChestplateRecipe",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nitriate_armor_chestplate_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/erinium_adventure/recipes/nitriate_armor_chestplate_recipe.json"
-        ]
-      },
-      "path": "~/Nitriate"
-    },
-    {
-      "name": "NitriateArmorLeggingsRecipe",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nitriate_armor_leggings_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/erinium_adventure/recipes/nitriate_armor_leggings_recipe.json"
-        ]
-      },
-      "path": "~/Nitriate"
-    },
-    {
-      "name": "NitriateArmorBootsRecipe",
-      "type": "recipe",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "nitriate_armor_boots_recipe",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/erinium_adventure/recipes/nitriate_armor_boots_recipe.json"
-        ]
-      },
-      "path": "~/Nitriate"
     }
   ],
   "variable_elements": [],
@@ -271,18 +202,14 @@
   "language_map": {
     "en_us": {
       "item.erinium_adventure.nitriate_pickaxe": "Nitriate Pickaxe",
-      "item.erinium_adventure.nitriate_armor_helmet": "Nitriate Helmet",
       "item.erinium_adventure.logo_erinium": "Logo Erinium",
+      "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
       "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
+      "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
       "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
       "item.erinium_adventure.nitriate_hoe": "Nitriate Hoe",
       "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
-      "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
-      "item.erinium_adventure.nitriate_armor_chestplate": "Nitriate Chestplate",
-      "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
-      "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
-      "item.erinium_adventure.nitriate_sword": "Nitriate Sword",
-      "item.erinium_adventure.nitriate_armor_leggings": "Nitriate Leggings"
+      "item.erinium_adventure.nitriate_sword": "Nitriate Sword"
     }
   },
   "foldersRoot": {

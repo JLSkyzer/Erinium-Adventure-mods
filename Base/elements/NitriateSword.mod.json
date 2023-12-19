@@ -1,0 +1,31 @@
+{
+  "_fv": 47,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "texture": "nitriate_sword",
+    "customModelName": "Normal",
+    "name": "Nitriate Sword",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "COMBAT"
+    },
+    "harvestLevel": 1,
+    "efficiency": 3.0,
+    "attackSpeed": 1.0,
+    "enchantability": 4,
+    "damageVsEntity": 1.0,
+    "usageCount": 46,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:NitriateGem"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_fv": 47,
+  "_type": "tab",
+  "definition": {
+    "name": "Erinium Adventure",
+    "icon": {
+      "value": "CUSTOM:LogoErinium"
+    },
+    "showSearch": true
+  }
+}

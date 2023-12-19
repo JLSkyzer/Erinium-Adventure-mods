@@ -1,1 +1,6 @@
-{}
+{
+  "item.erinium_adventure.logo_erinium": "Logo Erinium",
+  "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
+  "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
+  "block.erinium_adventure.nitriate_ore": "Nitriate Ore"
+}
