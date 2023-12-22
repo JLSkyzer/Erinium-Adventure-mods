@@ -29,7 +29,7 @@ public class OnStartupProcedure {
 	private static void execute(@Nullable Event event) {
 		File file = new File("");
 		com.google.gson.JsonObject jsonObject = new com.google.gson.JsonObject();
-		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Famer/"), File.separator + "mod:example_id");
+		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/"), File.separator + "example_id");
 		if (!file.exists()) {
 			try {
 				file.getParentFile().mkdirs();
