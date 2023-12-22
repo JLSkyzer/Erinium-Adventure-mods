@@ -1,19 +1,5 @@
 {
-  "mod_elements": [
-    {
-      "name": "OnStartup",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_startup",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OnStartupProcedure.java"
-        ],
-        "dependencies": []
-      }
-    }
-  ],
+  "mod_elements": [],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
