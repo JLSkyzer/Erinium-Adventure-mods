@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium_automation:block/farmer_bottom",
+    "up": "erinium_automation:block/farmer_top",
+    "north": "erinium_automation:block/farmer_side",
+    "east": "erinium_automation:block/farmer_side",
+    "south": "erinium_automation:block/farmer_side",
+    "west": "erinium_automation:block/farmer_side",
+    "particle": "erinium_automation:block/farmer_bottom"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "mekanism:metallurgic_infusing",
+  "chemicalInput": {
+    "amount": 640,
+    "tag": "mekanism:diamond"
+  },
+  "itemInput": {
+    "ingredient": {
+      "item": "minecraft:farmland"
+    }
+  },
+  "output": {
+    "item": "erinium_automation:enriched_farmland"
+  }
+}

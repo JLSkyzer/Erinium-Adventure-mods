@@ -29,7 +29,7 @@ public class OnStartupProcedure {
 	private static void execute(@Nullable Event event) {
 		File file = new File("");
 		com.google.gson.JsonObject jsonObject = new com.google.gson.JsonObject();
-		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/"), File.separator + "example_id");
+		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/mymodID/"), File.separator + "example_id.json");
 		if (!file.exists()) {
 			try {
 				file.getParentFile().mkdirs();
@@ -37,13 +37,39 @@ public class OnStartupProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
-			jsonObject.addProperty("result", "minecraft:diamond");
+			jsonObject.addProperty("result", "modID:myItemID");
 			jsonObject.addProperty("result_min", 1);
 			jsonObject.addProperty("result_max", 3);
-			jsonObject.addProperty("seed", "minecraft:seed");
+			jsonObject.addProperty("seed", "modID:SeedID");
 			jsonObject.addProperty("seed_min", 1);
 			jsonObject.addProperty("seed_max", 3);
-			jsonObject.addProperty("replaced_block", "minecraft:diamond_block");
+			jsonObject.addProperty("replaced_block", "modID:mySecondItemID");
+			{
+				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				try {
+					FileWriter fileWriter = new FileWriter(file);
+					fileWriter.write(mainGSONBuilderVariable.toJson(jsonObject));
+					fileWriter.close();
+				} catch (IOException exception) {
+					exception.printStackTrace();
+				}
+			}
+		}
+		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/eriunium_automation/"), File.separator + "example_id.json");
+		if (!file.exists()) {
+			try {
+				file.getParentFile().mkdirs();
+				file.createNewFile();
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+			jsonObject.addProperty("result", "modID:myItemID");
+			jsonObject.addProperty("result_min", 1);
+			jsonObject.addProperty("result_max", 3);
+			jsonObject.addProperty("seed", "modID:SeedID");
+			jsonObject.addProperty("seed_min", 1);
+			jsonObject.addProperty("seed_max", 3);
+			jsonObject.addProperty("replaced_block", "modID:mySecondItemID");
 			{
 				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 				try {

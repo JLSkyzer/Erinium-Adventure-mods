@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " 1 ",
+    "345",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "3": {
+      "item": "minecraft:iron_block"
+    },
+    "4": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "5": {
+      "item": "minecraft:iron_block"
+    },
+    "6": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "7": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "8": {
+      "item": "erinium_automation:dark_iron_block"
+    }
+  },
+  "result": {
+    "item": "erinium_automation:astral_foot",
+    "count": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "1": {
+      "item": "erinium_automation:amenine_gem"
+    },
+    "2": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "3": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "4": {
+      "item": "erinium_automation:battery"
+    },
+    "5": {
+      "item": "minecraft:stone_button"
+    },
+    "6": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "8": {
+      "item": "erinium_automation:dark_iron_block"
+    }
+  },
+  "result": {
+    "item": "erinium_automation:laser_drill",
+    "count": 1
+  }
+}

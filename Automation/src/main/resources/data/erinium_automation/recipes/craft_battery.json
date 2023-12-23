@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "0 2",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:iron_ingot"
+    },
+    "2": {
+      "item": "minecraft:iron_ingot"
+    },
+    "3": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "4": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "5": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "6": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "7": {
+      "item": "mekanism:ultimate_energy_cube"
+    },
+    "8": {
+      "item": "erinium_automation:dark_iron_block"
+    }
+  },
+  "result": {
+    "item": "erinium_automation:battery",
+    "count": 1
+  }
+}

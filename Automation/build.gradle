@@ -23,6 +23,11 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
+            property 'mixin.env.remapRefMap', 'true'
+            property 'forge.logging.markers', 'SCAN'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
+			property 'forge.logging.console.level', 'debug'
             mods {
                 examplemod {
                     source sourceSets.main
@@ -45,8 +50,24 @@ minecraft {
     }
 }
 
+repositories {
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.1-47.1.0'
+    minecraft 'net.minecraftforge:forge:1.20.1-47.1.1'
+
+    compileOnly fg.deobf("curse.maven:mcef-636236:4876491")
+    runtimeOnly fg.deobf("curse.maven:mcef-636236:4876491")
+    implementation fg.deobf("curse.maven:mcef-636236:4876491")
+    
+    implementation fg.deobf("curse.maven:mekanism-268560:4866575")
+    implementation fg.deobf("curse.maven:jei-238222:4712868")
 }
 
 tasks.withType(JavaCompile).configureEach {

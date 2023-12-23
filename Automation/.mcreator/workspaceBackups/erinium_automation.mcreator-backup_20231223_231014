@@ -1,0 +1,670 @@
+{
+  "mod_elements": [
+    {
+      "name": "OnStartup",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_startup",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OnStartupProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "WikiPage",
+      "type": "code",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "wiki_page",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/WikiPage.java"
+        ]
+      }
+    },
+    {
+      "name": "OpenWiki",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "open_wiki",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OpenWikiProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Wiki",
+      "type": "command",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wiki",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/command/WikiCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "FarmerBlock",
+      "type": "block",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmer_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/FarmerBlockBlock.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/entity/FarmerBlockBlockEntity.java",
+          "src/main/resources/assets/erinium_automation/models/item/farmer_block.json",
+          "src/main/resources/assets/erinium_automation/blockstates/farmer_block.json",
+          "src/main/resources/assets/erinium_automation/models/block/farmer_block.json"
+        ]
+      },
+      "path": "~/Farm"
+    },
+    {
+      "name": "GetEnergy",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_energy",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/GetEnergyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Farm"
+    },
+    {
+      "name": "FarmerGui",
+      "type": "gui",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmer_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/inventory/FarmerGuiMenu.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/FarmerGuiScreen.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/network/FarmerGuiButtonMessage.java"
+        ]
+      },
+      "path": "~/Farm"
+    },
+    {
+      "name": "EriniumAutomation",
+      "type": "tab",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_automation",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "FarmerHelpBtn",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmer_help_btn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/FarmerHelpBtnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Farm"
+    },
+    {
+      "name": "FarmerBlockUpdateTick",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmer_block_update_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/FarmerBlockUpdateTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Farm"
+    },
+    {
+      "name": "AstralFoot",
+      "type": "item",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_foot",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/models/item/astral_foot.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/item/AstralFootItem.java"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "LaserDrill",
+      "type": "item",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laser_drill",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/models/item/laser_drill.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/item/LaserDrillItem.java"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "LaserModule",
+      "type": "item",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "laser_module",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/models/item/laser_module.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/item/LaserModuleItem.java"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "AstralMinerTick",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_miner_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/AstralMinerTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "Battery",
+      "type": "item",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battery",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/models/item/battery.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/item/BatteryItem.java"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "DarkIronBlock",
+      "type": "block",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark_iron_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/models/block/dark_iron_block.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/DarkIronBlockBlock.java",
+          "src/main/resources/assets/erinium_automation/blockstates/dark_iron_block.json",
+          "src/main/resources/assets/erinium_automation/models/item/dark_iron_block.json"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "AmenineOre",
+      "type": "block",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amenine_ore",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/features/ores/AmenineOreFeature.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/AmenineOreBlock.java",
+          "src/main/resources/assets/erinium_automation/models/block/amenine_ore.json",
+          "src/main/resources/data/erinium_automation/forge/biome_modifier/amenine_ore_biome_modifier.json",
+          "src/main/resources/data/erinium_automation/worldgen/placed_feature/amenine_ore.json",
+          "src/main/resources/assets/erinium_automation/blockstates/amenine_ore.json",
+          "src/main/resources/data/erinium_automation/worldgen/configured_feature/amenine_ore.json",
+          "src/main/resources/assets/erinium_automation/models/item/amenine_ore.json"
+        ]
+      },
+      "path": "~/Ore"
+    },
+    {
+      "name": "AmenineGem",
+      "type": "item",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amenine_gem",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/item/AmenineGemItem.java",
+          "src/main/resources/assets/erinium_automation/models/item/amenine_gem.json"
+        ]
+      },
+      "path": "~/Gem"
+    },
+    {
+      "name": "AmenineOreBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amenine_ore_block_destroyed_by_player",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/AmenineOreBlockDestroyedByPlayerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Ore"
+    },
+    {
+      "name": "CraftBattery",
+      "type": "recipe",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "craft_battery",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_automation/recipes/craft_battery.json"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "CraftLaserDrill",
+      "type": "recipe",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_laser_drill",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_automation/recipes/craft_laser_drill.json"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "CraftLaserModule",
+      "type": "recipe",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_laser_module",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_automation/recipes/craft_laser_module.json"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "CraftAstralFoot",
+      "type": "recipe",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_astral_foot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_automation/recipes/craft_astral_foot.json"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "CraftAstralMiner",
+      "type": "recipe",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "craft_astral_miner",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_automation/recipes/craft_astral_miner.json"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "AstralMinerGui",
+      "type": "gui",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_miner_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/AstralMinerGuiScreen.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/inventory/AstralMinerGuiMenu.java"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "AstralGetEnergy",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_get_energy",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/AstralGetEnergyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "AstralGetPercent",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_get_percent",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/AstralGetPercentProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "AstralMiner",
+      "type": "block",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "astral_miner",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/blockstates/astral_miner.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/entity/AstralMinerBlockEntity.java",
+          "src/main/resources/assets/erinium_automation/models/block/astral_miner.json",
+          "src/main/resources/assets/erinium_automation/models/item/astral_miner.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/AstralMinerBlock.java"
+        ]
+      },
+      "path": "~/AstralMiner"
+    },
+    {
+      "name": "PlayerBreakBlock",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_break_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/PlayerBreakBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnrichedFarmland",
+      "type": "block",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enriched_farmland",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/blockstates/enriched_farmland.json",
+          "src/main/resources/assets/erinium_automation/models/item/enriched_farmland.json",
+          "src/main/resources/assets/erinium_automation/models/block/enriched_farmland.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/EnrichedFarmlandBlock.java"
+        ]
+      },
+      "path": "~/Farm"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "test",
+      "type": "string",
+      "scope": "map",
+      "value": "oe oe oe"
+    }
+  ],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "gui.erinium_automation.farmer_gui.label_farmer": "Farmer",
+      "gui.erinium_automation.farmer_gui.button_help": "Help",
+      "gui.eriunium_automation.farmer_gui.label_farmer": "Farmer",
+      "block.eriunium_automation.farmer_block": "Farmer Block",
+      "item.eriunium_automation.laser_module": "Laser Module",
+      "gui.erinium_automation.astral_miner_gui.label_astral_miner": "Astral Miner",
+      "gui.erinium_automation.farmer_gui.label_items": "Items",
+      "block.erinium_automation.farmer_block": "Farmer Block",
+      "gui.eriunium_automation.farmer_gui.label_seeds": "Seeds",
+      "item.erinium_automation.laser_drill": "Laser Drill",
+      "item_group.erinium_automation.erinium_automation": "Erinium Automation",
+      "item.erinium_automation.battery": "Battery",
+      "item.eriunium_automation.astral_foot": "Astral Foot",
+      "block.erinium_automation.amenine_ore": "§6Amenine Ore",
+      "block.erinium_automation.dark_iron_block": "Dark Iron Block",
+      "gui.erinium_automation.farmer_gui.label_seeds": "Seeds",
+      "item.erinium_automation.amenine_gem": "§6Amenine Gem",
+      "block.erinium_automation.enriched_farmland": "Enriched Farmland",
+      "gui.eriunium_automation.farmer_gui.label_proc_get_energy": "",
+      "gui.erinium_automation.farmer_gui.label_proc_get_energy": "",
+      "item.erinium_automation.astral_foot": "Astral Foot",
+      "gui.eriunium_automation.farmer_gui.label_items": "Items",
+      "gui.eriunium_automation.farmer_gui.button_help": "Help",
+      "block.erinium_automation.astral_miner": "Astral Miner",
+      "item.eriunium_automation.laser_drill": "Laser Drill",
+      "item_group.eriunium_automation.erinium_automation": "Erinium Automation",
+      "item.erinium_automation.laser_module": "Laser Module"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Farm",
+        "children": []
+      },
+      {
+        "name": "AstralMiner",
+        "children": []
+      },
+      {
+        "name": "Ore",
+        "children": []
+      },
+      {
+        "name": "Gem",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "erinium_automation",
+    "modName": "eriunium_automation",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [
+      "mekanism"
+    ],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "crafttweaker"
+    ],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "fr.eriniumgroup.eriniumadventure.automation",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300336712
+}

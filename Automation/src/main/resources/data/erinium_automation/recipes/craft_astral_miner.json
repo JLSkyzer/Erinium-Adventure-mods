@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "1": {
+      "item": "mekanism:personal_chest"
+    },
+    "2": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "3": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "4": {
+      "item": "erinium_automation:battery"
+    },
+    "5": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "6": {
+      "item": "erinium_automation:astral_foot"
+    },
+    "7": {
+      "item": "erinium_automation:laser_module"
+    },
+    "8": {
+      "item": "erinium_automation:astral_foot"
+    }
+  },
+  "result": {
+    "item": "erinium_automation:astral_miner",
+    "count": 1
+  }
+}

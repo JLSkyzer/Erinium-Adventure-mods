@@ -3,14 +3,14 @@ loaderVersion="[47,)"
 license="Academic Free License v3.0"
 
 [[mods]]
-modId="eriunium_automation"
+modId="erinium_automation"
 version="1.0.0"
 displayName="eriunium_automation"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
 authors="killi, MCreator"
 
-[[dependencies.eriunium_automation]]
+[[dependencies.erinium_automation]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.20.1]"
@@ -18,5 +18,17 @@ authors="killi, MCreator"
     side="BOTH"
 
 
+[[dependencies.erinium_automation]]
+    modId="mekanism"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
+[[dependencies.erinium_automation]]
+    modId="crafttweaker"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 

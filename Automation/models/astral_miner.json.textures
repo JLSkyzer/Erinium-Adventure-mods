@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "light red": "light_red",
+        "dark green": "dark_green",
+        "dark metal": "dark_metal",
+        "dark_gray": "dark_gray",
+        "light gray": "light_gray"
+      },
+      "name": "default"
+    }
+  }
+}

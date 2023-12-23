@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "1": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "2": {
+      "item": "erinium_automation:dark_iron_block"
+    },
+    "3": {
+      "item": "minecraft:iron_bars"
+    },
+    "4": {
+      "item": "erinium_automation:laser_drill"
+    },
+    "5": {
+      "item": "minecraft:iron_bars"
+    },
+    "6": {
+      "item": "minecraft:iron_bars"
+    },
+    "8": {
+      "item": "minecraft:iron_bars"
+    }
+  },
+  "result": {
+    "item": "erinium_automation:laser_module",
+    "count": 1
+  }
+}

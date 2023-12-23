@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium_automation:block/dark_iron_block",
+    "up": "erinium_automation:block/dark_iron_block",
+    "north": "erinium_automation:block/dark_iron_block",
+    "east": "erinium_automation:block/dark_iron_block",
+    "south": "erinium_automation:block/dark_iron_block",
+    "west": "erinium_automation:block/dark_iron_block",
+    "particle": "erinium_automation:block/dark_iron_block"
+  },
+  "render_type": "solid"
+}

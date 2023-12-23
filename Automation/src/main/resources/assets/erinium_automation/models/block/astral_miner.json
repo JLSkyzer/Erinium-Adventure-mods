@@ -1,0 +1,13 @@
+{
+  "parent": "erinium_automation:custom/astral_miner",
+  "textures": {
+    "all": "erinium_automation:block/dark_metal",
+    "particle": "erinium_automation:block/dark_metal",
+    "light red": "erinium_automation:block/light_red",
+    "dark green": "erinium_automation:block/dark_green",
+    "dark metal": "erinium_automation:block/dark_metal",
+    "dark_gray": "erinium_automation:block/dark_gray",
+    "light gray": "erinium_automation:block/light_gray"
+  },
+  "render_type": "solid"
+}

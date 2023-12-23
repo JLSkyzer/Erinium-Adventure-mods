@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium_automation:block/amenine_ore",
+    "up": "erinium_automation:block/amenine_ore",
+    "north": "erinium_automation:block/amenine_ore",
+    "east": "erinium_automation:block/amenine_ore",
+    "south": "erinium_automation:block/amenine_ore",
+    "west": "erinium_automation:block/amenine_ore",
+    "particle": "erinium_automation:block/amenine_ore"
+  },
+  "render_type": "solid"
+}

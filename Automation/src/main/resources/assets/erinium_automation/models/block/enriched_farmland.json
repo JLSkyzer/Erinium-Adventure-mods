@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium_automation:block/dirt_texture",
+    "up": "erinium_automation:block/farmland_enriched",
+    "north": "erinium_automation:block/dirt_texture",
+    "east": "erinium_automation:block/dirt_texture",
+    "south": "erinium_automation:block/dirt_texture",
+    "west": "erinium_automation:block/dirt_texture",
+    "particle": "erinium_automation:block/dirt_texture"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,48 @@
+{
+  "_fv": 47,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DarkIronBlock"
+      },
+      {
+        "value": "Blocks.CHEST"
+      },
+      {
+        "value": "CUSTOM:DarkIronBlock"
+      },
+      {
+        "value": "CUSTOM:DarkIronBlock"
+      },
+      {
+        "value": "CUSTOM:Battery"
+      },
+      {
+        "value": "CUSTOM:DarkIronBlock"
+      },
+      {
+        "value": "CUSTOM:AstralFoot"
+      },
+      {
+        "value": "CUSTOM:LaserModule"
+      },
+      {
+        "value": "CUSTOM:AstralFoot"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AstralMiner"
+    },
+    "name": "craft_astral_miner",
+    "namespace": "mod"
+  }
+}
