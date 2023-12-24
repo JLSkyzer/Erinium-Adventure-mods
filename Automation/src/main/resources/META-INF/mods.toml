@@ -1,14 +1,16 @@
 modLoader="javafml"
 loaderVersion="[47,)"
-license="Academic Free License v3.0"
+license="MIT License"
 
 [[mods]]
 modId="erinium_automation"
 version="1.0.0"
 displayName="eriunium_automation"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
-authors="killi, MCreator"
+credits="Created thanks to MCreator"
+displayURL="https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation"
+logoFile="logo.png"
+authors="JLSkyzer"
+description="Mod created by JLSkyzer"
 
 [[dependencies.erinium_automation]]
     modId="minecraft"

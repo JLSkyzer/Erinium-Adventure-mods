@@ -587,7 +587,7 @@
       "type": "recipe",
       "sortid": 32,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "craft_farmer_block",
       "metadata": {
         "files": [
@@ -595,6 +595,19 @@
         ]
       },
       "path": "~/Farm"
+    },
+    {
+      "name": "ForgeFarmland",
+      "type": "tag",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "forge_farmland",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/forge/tags/blocks/farmland.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -662,11 +675,13 @@
     "modid": "erinium_automation",
     "modName": "eriunium_automation",
     "version": "1.0.0",
-    "author": "killi, MCreator",
-    "websiteURL": "https://mcreator.net",
-    "license": "Academic Free License v3.0",
+    "description": "Mod created by JLSkyzer",
+    "author": "JLSkyzer",
+    "websiteURL": "https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation",
+    "license": "MIT License",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
+    "modPicture": "erinium_automation",
     "requiredMods": [
       "mekanism"
     ],
@@ -676,7 +691,7 @@
       "crafttweaker"
     ],
     "currentGenerator": "forge-1.20.1",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "credits": "Created thanks to MCreator",
     "modElementsPackage": "fr.eriniumgroup.eriniumadventure.automation",
     "lockBaseModFiles": false
   },

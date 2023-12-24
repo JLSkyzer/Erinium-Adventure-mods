@@ -581,6 +581,20 @@
         ]
       },
       "path": "~/Farm"
+    },
+    {
+      "name": "CraftFarmerBlock",
+      "type": "recipe",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "craft_farmer_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_automation/recipes/craft_farmer_block.json"
+        ]
+      },
+      "path": "~/Farm"
     }
   ],
   "variable_elements": [

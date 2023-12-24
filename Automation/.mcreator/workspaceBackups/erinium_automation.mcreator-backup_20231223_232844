@@ -529,6 +529,72 @@
         ]
       },
       "path": "~/AstralMiner"
+    },
+    {
+      "name": "PlayerBreakBlock",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_break_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/PlayerBreakBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EnrichedFarmland",
+      "type": "block",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enriched_farmland",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/blockstates/enriched_farmland.json",
+          "src/main/resources/assets/erinium_automation/models/item/enriched_farmland.json",
+          "src/main/resources/assets/erinium_automation/models/block/enriched_farmland.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/EnrichedFarmlandBlock.java"
+        ]
+      },
+      "path": "~/Farm"
+    },
+    {
+      "name": "CraftFarmerBlock",
+      "type": "recipe",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "craft_farmer_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_automation/recipes/craft_farmer_block.json"
+        ]
+      },
+      "path": "~/Farm"
     }
   ],
   "variable_elements": [
@@ -559,6 +625,7 @@
       "block.erinium_automation.dark_iron_block": "Dark Iron Block",
       "gui.erinium_automation.farmer_gui.label_seeds": "Seeds",
       "item.erinium_automation.amenine_gem": "§6Amenine Gem",
+      "block.erinium_automation.enriched_farmland": "Enriched Farmland",
       "gui.eriunium_automation.farmer_gui.label_proc_get_energy": "",
       "gui.erinium_automation.farmer_gui.label_proc_get_energy": "",
       "item.erinium_automation.astral_foot": "Astral Foot",
