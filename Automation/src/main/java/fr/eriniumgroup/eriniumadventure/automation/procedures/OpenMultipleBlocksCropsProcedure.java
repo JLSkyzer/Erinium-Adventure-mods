@@ -15,7 +15,7 @@ import net.minecraft.core.BlockPos;
 
 import io.netty.buffer.Unpooled;
 
-import fr.eriniumgroup.eriniumadventure.automation.world.inventory.OneBlockCropGuiMenu;
+import fr.eriniumgroup.eriniumadventure.automation.world.inventory.MultipleBlocksCropsGuyMenu;
 
 public class OpenMultipleBlocksCropsProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -27,12 +27,12 @@ public class OpenMultipleBlocksCropsProcedure {
 				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
-						return Component.literal("OneBlockCropGui");
+						return Component.literal("MultipleBlocksCropsGuy");
 					}
 
 					@Override
 					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new OneBlockCropGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+						return new MultipleBlocksCropsGuyMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 					}
 				}, _bpos);
 			}

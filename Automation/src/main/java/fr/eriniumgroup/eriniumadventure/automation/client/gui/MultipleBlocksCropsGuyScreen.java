@@ -23,7 +23,6 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
-	EditBox id;
 	EditBox result_min;
 	EditBox result_max;
 	EditBox seed_min;
@@ -47,7 +46,6 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
-		id.render(guiGraphics, mouseX, mouseY, partialTicks);
 		result_min.render(guiGraphics, mouseX, mouseY, partialTicks);
 		result_max.render(guiGraphics, mouseX, mouseY, partialTicks);
 		seed_min.render(guiGraphics, mouseX, mouseY, partialTicks);
@@ -70,8 +68,6 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 			this.minecraft.player.closeContainer();
 			return true;
 		}
-		if (id.isFocused())
-			return id.keyPressed(key, b, c);
 		if (result_min.isFocused())
 			return result_min.keyPressed(key, b, c);
 		if (result_max.isFocused())
@@ -86,7 +82,6 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 	@Override
 	public void containerTick() {
 		super.containerTick();
-		id.tick();
 		result_min.tick();
 		result_max.tick();
 		seed_min.tick();
@@ -95,10 +90,11 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.label_one_block_crop_configurator"), 15, 7, -16777216, false);
-		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.label_crop_block"), 60, 25, -16777216, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.label_one_block_crop_configurator"), 6, 7, -16777216, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.label_crop_block"), 6, 25, -16777216, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.label_result_item"), 6, 61, -16777216, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.label_seeds_item"), 114, 61, -16777216, false);
+		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.label_replaced_crop"), 96, 25, -16777216, false);
 	}
 
 	@Override
@@ -109,32 +105,6 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 	@Override
 	public void init() {
 		super.init();
-		id = new EditBox(this.font, this.leftPos + 24, this.topPos + 34, 126, 20, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.id")) {
-			{
-				setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.id").getString());
-			}
-
-			@Override
-			public void insertText(String text) {
-				super.insertText(text);
-				if (getValue().isEmpty())
-					setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.id").getString());
-				else
-					setSuggestion(null);
-			}
-
-			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
-				if (getValue().isEmpty())
-					setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.id").getString());
-				else
-					setSuggestion(null);
-			}
-		};
-		id.setMaxLength(32767);
-		guistate.put("text:id", id);
-		this.addWidget(this.id);
 		result_min = new EditBox(this.font, this.leftPos + 6, this.topPos + 88, 54, 20, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_min")) {
 			{
 				setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_min").getString());

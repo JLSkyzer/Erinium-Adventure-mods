@@ -42,7 +42,7 @@ public class MultipleBlocksCropsGuyMenu extends AbstractContainerMenu implements
 		super(EriniumAutomationModMenus.MULTIPLE_BLOCKS_CROPS_GUY.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(2);
+		this.internal = new ItemStackHandler(4);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -83,6 +83,12 @@ public class MultipleBlocksCropsGuyMenu extends AbstractContainerMenu implements
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 133, 71) {
 			private final int slot = 1;
 		}));
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 25, 35) {
+			private final int slot = 2;
+		}));
+		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 133, 35) {
+			private final int slot = 3;
+		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 54 + 84 + si * 18));
@@ -110,16 +116,16 @@ public class MultipleBlocksCropsGuyMenu extends AbstractContainerMenu implements
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 2) {
-				if (!this.moveItemStackTo(itemstack1, 2, this.slots.size(), true))
+			if (index < 4) {
+				if (!this.moveItemStackTo(itemstack1, 4, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 2, false)) {
-				if (index < 2 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 2 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 4, false)) {
+				if (index < 4 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 4 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 2, 2 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 4, 4 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;

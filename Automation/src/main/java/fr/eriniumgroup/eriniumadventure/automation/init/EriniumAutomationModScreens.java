@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import fr.eriniumgroup.eriniumadventure.automation.client.gui.OneBlockCropGuiScreen;
+import fr.eriniumgroup.eriniumadventure.automation.client.gui.MultipleBlocksCropsGuyScreen;
 import fr.eriniumgroup.eriniumadventure.automation.client.gui.FarmerJsonBuilderGuiMainScreen;
 import fr.eriniumgroup.eriniumadventure.automation.client.gui.FarmerGuiScreen;
 import fr.eriniumgroup.eriniumadventure.automation.client.gui.AstralMinerGuiScreen;
@@ -25,6 +26,7 @@ public class EriniumAutomationModScreens {
 			MenuScreens.register(EriniumAutomationModMenus.ASTRAL_MINER_GUI.get(), AstralMinerGuiScreen::new);
 			MenuScreens.register(EriniumAutomationModMenus.FARMER_JSON_BUILDER_GUI_MAIN.get(), FarmerJsonBuilderGuiMainScreen::new);
 			MenuScreens.register(EriniumAutomationModMenus.ONE_BLOCK_CROP_GUI.get(), OneBlockCropGuiScreen::new);
+			MenuScreens.register(EriniumAutomationModMenus.MULTIPLE_BLOCKS_CROPS_GUY.get(), MultipleBlocksCropsGuyScreen::new);
 		});
 	}
 }
