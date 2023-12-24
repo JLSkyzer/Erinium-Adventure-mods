@@ -1,9 +1,0 @@
-{
-  "result": "modID:myItemID",
-  "result_min": 1,
-  "result_max": 3,
-  "seed": "modID:SeedID",
-  "seed_min": 1,
-  "seed_max": 3,
-  "replaced_block": "modID:mySecondItemID"
-}

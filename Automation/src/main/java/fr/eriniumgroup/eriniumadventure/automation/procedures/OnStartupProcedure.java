@@ -55,7 +55,7 @@ public class OnStartupProcedure {
 				}
 			}
 		}
-		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/eriunium_automation/"), File.separator + "example_id.json");
+		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/erinium_automation/"), File.separator + "example_id.json");
 		if (!file.exists()) {
 			try {
 				file.getParentFile().mkdirs();

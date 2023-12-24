@@ -608,6 +608,174 @@
           "src/main/resources/data/forge/tags/blocks/farmland.json"
         ]
       }
+    },
+    {
+      "name": "Farmerjsonbuilder",
+      "type": "command",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmerjsonbuilder",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/command/FarmerjsonbuilderCommand.java"
+        ]
+      },
+      "path": "~/Farm/JSonBuilder"
+    },
+    {
+      "name": "FarmerJsonBuilderGuiMain",
+      "type": "gui",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "farmer_json_builder_gui_main",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/inventory/FarmerJsonBuilderGuiMainMenu.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/FarmerJsonBuilderGuiMainScreen.java"
+        ]
+      },
+      "path": "~/Farm/JSonBuilder"
+    },
+    {
+      "name": "OneBlockCropGui",
+      "type": "gui",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "one_block_crop_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/inventory/OneBlockCropGuiMenu.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/OneBlockCropGuiScreen.java"
+        ]
+      },
+      "path": "~/Farm/JSonBuilder/OneBlockCrop"
+    },
+    {
+      "name": "GetBlockid",
+      "type": "command",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_blockid",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/command/GetBlockidCommand.java"
+        ]
+      },
+      "path": "~/Command"
+    },
+    {
+      "name": "GetBlockIDCommand",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_block_id_command",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/GetBlockIDCommandProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Command"
+    },
+    {
+      "name": "GetItemID",
+      "type": "command",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_item_id",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/command/GetItemIDCommand.java"
+        ]
+      },
+      "path": "~/Command"
+    },
+    {
+      "name": "GetItemIDCommand",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_item_id_command",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/GetItemIDCommandProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Command"
+    },
+    {
+      "name": "OneBlockCropGuiValidate",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "one_block_crop_gui_validate",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OneBlockCropGuiValidateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Farm/JSonBuilder/OneBlockCrop"
     }
   ],
   "variable_elements": [
@@ -622,29 +790,42 @@
   "language_map": {
     "en_us": {
       "gui.erinium_automation.farmer_gui.label_farmer": "Farmer",
+      "gui.erinium_automation.one_block_crop_gui.id": "Put The ID of the crop",
+      "gui.erinium_automation.farmer_json_builder_gui_main.button_one_block_crop": "One block crop",
       "gui.erinium_automation.farmer_gui.button_help": "Help",
+      "gui.erinium_automation.one_block_crop_gui.label_one_block_crop_configurator": "One Block Crop configurator",
       "gui.eriunium_automation.farmer_gui.label_farmer": "Farmer",
+      "gui.erinium_automation.one_block_crop_gui.label_seeds_item": "Seeds Item",
       "block.eriunium_automation.farmer_block": "Farmer Block",
       "item.eriunium_automation.laser_module": "Laser Module",
       "gui.erinium_automation.astral_miner_gui.label_astral_miner": "Astral Miner",
       "gui.erinium_automation.farmer_gui.label_items": "Items",
+      "gui.erinium_automation.one_block_crop_gui.label_result_item": "Result Item",
       "block.erinium_automation.farmer_block": "Farmer Block",
-      "gui.eriunium_automation.farmer_gui.label_seeds": "Seeds",
       "item.erinium_automation.laser_drill": "Laser Drill",
+      "gui.eriunium_automation.farmer_gui.label_seeds": "Seeds",
       "item_group.erinium_automation.erinium_automation": "Erinium Automation",
+      "gui.erinium_automation.one_block_crop_gui.result_max": "Max (nbr)",
+      "gui.erinium_automation.farmer_json_builder_gui_main.button_multiple_blocks_crop": "Multiple blocks crop",
       "item.erinium_automation.battery": "Battery",
       "item.eriunium_automation.astral_foot": "Astral Foot",
       "block.erinium_automation.amenine_ore": "§6Amenine Ore",
       "block.erinium_automation.dark_iron_block": "Dark Iron Block",
+      "gui.erinium_automation.one_block_crop_gui.seed_min": "Min (nbr)",
+      "gui.erinium_automation.one_block_crop_gui.result_min": "min (nbr)",
       "gui.erinium_automation.farmer_gui.label_seeds": "Seeds",
       "item.erinium_automation.amenine_gem": "§6Amenine Gem",
+      "gui.erinium_automation.farmer_json_builder_gui_main.label_choose_your_block": "Choose your block",
       "block.erinium_automation.enriched_farmland": "Enriched Farmland",
       "gui.eriunium_automation.farmer_gui.label_proc_get_energy": "",
       "gui.erinium_automation.farmer_gui.label_proc_get_energy": "",
       "item.erinium_automation.astral_foot": "Astral Foot",
+      "gui.erinium_automation.one_block_crop_gui.seed_max": "Max (nrb)",
+      "gui.erinium_automation.one_block_crop_gui.button_validate": "Validate",
       "gui.eriunium_automation.farmer_gui.label_items": "Items",
       "gui.eriunium_automation.farmer_gui.button_help": "Help",
       "block.erinium_automation.astral_miner": "Astral Miner",
+      "gui.erinium_automation.one_block_crop_gui.label_crop_block": "Crop block",
       "item.eriunium_automation.laser_drill": "Laser Drill",
       "item_group.eriunium_automation.erinium_automation": "Erinium Automation",
       "item.erinium_automation.laser_module": "Laser Module"
@@ -655,7 +836,17 @@
     "children": [
       {
         "name": "Farm",
-        "children": []
+        "children": [
+          {
+            "name": "JSonBuilder",
+            "children": [
+              {
+                "name": "OneBlockCrop",
+                "children": []
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "AstralMiner",
@@ -668,6 +859,10 @@
       {
         "name": "Gem",
         "children": []
+      },
+      {
+        "name": "Command",
+        "children": []
       }
     ]
   },
@@ -675,11 +870,13 @@
     "modid": "erinium_automation",
     "modName": "eriunium_automation",
     "version": "1.0.0",
-    "author": "killi, MCreator",
-    "websiteURL": "https://mcreator.net",
-    "license": "Academic Free License v3.0",
+    "description": "Mod created by JLSkyzer",
+    "author": "JLSkyzer",
+    "websiteURL": "https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation",
+    "license": "MIT License",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
+    "modPicture": "erinium_automation",
     "requiredMods": [
       "mekanism"
     ],
@@ -689,7 +886,7 @@
       "crafttweaker"
     ],
     "currentGenerator": "forge-1.20.1",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "credits": "Created thanks to MCreator",
     "modElementsPackage": "fr.eriniumgroup.eriniumadventure.automation",
     "lockBaseModFiles": false
   },

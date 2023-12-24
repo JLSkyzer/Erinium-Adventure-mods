@@ -68,6 +68,9 @@ dependencies {
     
     implementation fg.deobf("curse.maven:mekanism-268560:4866575")
     implementation fg.deobf("curse.maven:jei-238222:4712868")
+    
+    implementation fg.deobf("curse.maven:mystical-agriculture-246640:4904207")
+    implementation fg.deobf("curse.maven:cucumber-272335:4906607")
 }
 
 tasks.withType(JavaCompile).configureEach {

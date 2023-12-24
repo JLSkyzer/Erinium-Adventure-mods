@@ -1,0 +1,187 @@
+{
+  "_fv": 47,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 220,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 27,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_one_block_crop_configurator",
+          "text": {
+            "fixedValue": "One Block Crop configurator"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 17
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Put The ID of the crop",
+          "name": "id",
+          "width": 126,
+          "height": 20,
+          "x": 150,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_crop_block",
+          "text": {
+            "fixedValue": "Crop block"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 35
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_result_item",
+          "text": {
+            "fixedValue": "Result Item"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 71
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 150,
+          "y": 80
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "min (nbr)",
+          "name": "result_min",
+          "width": 54,
+          "height": 20,
+          "x": 132,
+          "y": 98
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Max (nbr)",
+          "name": "result_max",
+          "width": 54,
+          "height": 20,
+          "x": 132,
+          "y": 116
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_seeds_item",
+          "text": {
+            "fixedValue": "Seeds Item"
+          },
+          "color": {
+            "value": -16777216,
+            "falpha": 0.0
+          },
+          "x": 240,
+          "y": 71
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "x": 258,
+          "y": 80
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Min (nbr)",
+          "name": "seed_min",
+          "width": 54,
+          "height": 20,
+          "x": 240,
+          "y": 98
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Max (nrb)",
+          "name": "seed_max",
+          "width": 54,
+          "height": 20,
+          "x": 240,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_validate",
+          "text": "Validate",
+          "onClick": {
+            "name": "OneBlockCropGuiValidate"
+          },
+          "width": 54,
+          "height": 20,
+          "x": 186,
+          "y": 116
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

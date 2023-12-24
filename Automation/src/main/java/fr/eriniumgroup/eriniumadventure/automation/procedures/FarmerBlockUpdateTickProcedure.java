@@ -47,10 +47,10 @@ public class FarmerBlockUpdateTickProcedure {
 		if (file.exists()) {
 			finish_loop = false;
 			finish_loop_2 = false;
-			if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(new ResourceLocation("minecraft:crops")))
-					|| (world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(new ResourceLocation("forge:crops")))) {
-				if (((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _getip14
-						? (world.getBlockState(BlockPos.containing(x, y + 1, z))).getValue(_getip14)
+			if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(new ResourceLocation("minecraft:crops"))) || (world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(new ResourceLocation("forge:crops")))
+					|| (world.getBlockState(BlockPos.containing(x, y + 1, z))).is(BlockTags.create(new ResourceLocation("mysticalagriculture:crops")))) {
+				if (((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock().getStateDefinition().getProperty("age") instanceof IntegerProperty _getip16
+						? (world.getBlockState(BlockPos.containing(x, y + 1, z))).getValue(_getip16)
 						: -1) == 7) {
 					{
 						try {

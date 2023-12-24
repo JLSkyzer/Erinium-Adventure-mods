@@ -14,5 +14,7 @@ public class FarmerHelpBtnProcedure {
 			_player.closeContainer();
 		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal(("\u00A7eConfig folder : \u00A7c" + FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/")), false);
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal("\u00A7eUse the command \u00A7a/farmerjsonbuilder \u00A7eto make a json more fast and easy"), false);
 	}
 }
