@@ -144,7 +144,7 @@ public class FarmerBlockBlockEntity extends RandomizableContainerBlockEntity imp
 		return true;
 	}
 
-	private final EnergyStorage energyStorage = new EnergyStorage(250000, 1000, 0, 0) {
+	private final EnergyStorage energyStorage = new EnergyStorage(250000, 15000, 10000, 0) {
 		@Override
 		public int receiveEnergy(int maxReceive, boolean simulate) {
 			int retval = super.receiveEnergy(maxReceive, simulate);

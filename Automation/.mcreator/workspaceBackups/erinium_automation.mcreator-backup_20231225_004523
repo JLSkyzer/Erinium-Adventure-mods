@@ -633,6 +633,7 @@
       "metadata": {
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/inventory/FarmerJsonBuilderGuiMainMenu.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/network/FarmerJsonBuilderGuiMainButtonMessage.java",
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/FarmerJsonBuilderGuiMainScreen.java"
         ]
       },
@@ -648,7 +649,8 @@
       "metadata": {
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/inventory/OneBlockCropGuiMenu.java",
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/OneBlockCropGuiScreen.java"
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/OneBlockCropGuiScreen.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/network/OneBlockCropGuiButtonMessage.java"
         ]
       },
       "path": "~/Farm/JSonBuilder/OneBlockCrop"
@@ -764,9 +766,166 @@
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OneBlockCropGuiValidateProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
       },
       "path": "~/Farm/JSonBuilder/OneBlockCrop"
+    },
+    {
+      "name": "OpenOneBlockCropGui",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_one_block_crop_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OpenOneBlockCropGuiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Farm/JSonBuilder/OneBlockCrop"
+    },
+    {
+      "name": "OpenFarmerJsonBuilder",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_farmer_json_builder",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OpenFarmerJsonBuilderProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Farm/JSonBuilder"
+    },
+    {
+      "name": "MultipleBlocksCropsGuy",
+      "type": "gui",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "multiple_blocks_crops_guy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/inventory/MultipleBlocksCropsGuyMenu.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/MultipleBlocksCropsGuyScreen.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/network/MultipleBlocksCropsGuyButtonMessage.java"
+        ]
+      },
+      "path": "~/Farm/JSonBuilder/MultipleBlocksCrops"
+    },
+    {
+      "name": "MultipleBlocksCropsGuiValidate",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "multiple_blocks_crops_gui_validate",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/MultipleBlocksCropsGuiValidateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          }
+        ]
+      },
+      "path": "~/Farm/JSonBuilder/MultipleBlocksCrops"
+    },
+    {
+      "name": "OpenMultipleBlocksCrops",
+      "type": "procedure",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_multiple_blocks_crops",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OpenMultipleBlocksCropsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Farm/JSonBuilder/MultipleBlocksCrops"
     }
   ],
   "variable_elements": [
@@ -780,44 +939,55 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "gui.eriunium_automation.farmer_gui.label_farmer": "Farmer",
+      "gui.erinium_automation.astral_miner_gui.label_astral_miner": "Astral Miner",
+      "block.erinium_automation.farmer_block": "Farmer Block",
+      "gui.eriunium_automation.farmer_gui.label_seeds": "Seeds",
+      "gui.erinium_automation.multiple_blocks_crops_guy.label_seeds_item": "Seeds Item",
+      "gui.erinium_automation.multiple_blocks_crops_guy.label_result_item": "Result Item",
+      "gui.erinium_automation.multiple_blocks_crops_guy.label_one_block_crop_configurator": "Multiple Blocks Crops configurator",
+      "gui.erinium_automation.multiple_blocks_crops_guy.button_validate": "Validate",
+      "item.erinium_automation.battery": "Battery",
+      "block.erinium_automation.amenine_ore": "§6Amenine Ore",
+      "block.erinium_automation.dark_iron_block": "Dark Iron Block",
+      "gui.erinium_automation.one_block_crop_gui.seed_min": "Min (nbr)",
+      "gui.erinium_automation.farmer_gui.label_seeds": "Seeds",
+      "item.erinium_automation.amenine_gem": "§6Amenine Gem",
+      "gui.erinium_automation.farmer_json_builder_gui_main.label_choose_your_block": "Choose your block",
+      "gui.erinium_automation.multiple_blocks_crops_guy.label_replaced_crop": "Replaced Crop",
+      "block.erinium_automation.enriched_farmland": "Enriched Farmland",
+      "gui.eriunium_automation.farmer_gui.label_proc_get_energy": "",
+      "gui.erinium_automation.farmer_gui.label_proc_get_energy": "",
+      "gui.erinium_automation.one_block_crop_gui.seed_max": "Max (nrb)",
       "gui.erinium_automation.farmer_gui.label_farmer": "Farmer",
       "gui.erinium_automation.one_block_crop_gui.id": "Put The ID of the crop",
       "gui.erinium_automation.farmer_json_builder_gui_main.button_one_block_crop": "One block crop",
       "gui.erinium_automation.farmer_gui.button_help": "Help",
       "gui.erinium_automation.one_block_crop_gui.label_one_block_crop_configurator": "One Block Crop configurator",
-      "gui.eriunium_automation.farmer_gui.label_farmer": "Farmer",
       "gui.erinium_automation.one_block_crop_gui.label_seeds_item": "Seeds Item",
       "block.eriunium_automation.farmer_block": "Farmer Block",
       "item.eriunium_automation.laser_module": "Laser Module",
-      "gui.erinium_automation.astral_miner_gui.label_astral_miner": "Astral Miner",
       "gui.erinium_automation.farmer_gui.label_items": "Items",
       "gui.erinium_automation.one_block_crop_gui.label_result_item": "Result Item",
-      "block.erinium_automation.farmer_block": "Farmer Block",
       "item.erinium_automation.laser_drill": "Laser Drill",
-      "gui.eriunium_automation.farmer_gui.label_seeds": "Seeds",
+      "gui.erinium_automation.multiple_blocks_crops_guy.id": "Put The ID of the crop",
       "item_group.erinium_automation.erinium_automation": "Erinium Automation",
       "gui.erinium_automation.one_block_crop_gui.result_max": "Max (nbr)",
       "gui.erinium_automation.farmer_json_builder_gui_main.button_multiple_blocks_crop": "Multiple blocks crop",
-      "item.erinium_automation.battery": "Battery",
+      "gui.erinium_automation.multiple_blocks_crops_guy.result_min": "min (nbr)",
       "item.eriunium_automation.astral_foot": "Astral Foot",
-      "block.erinium_automation.amenine_ore": "§6Amenine Ore",
-      "block.erinium_automation.dark_iron_block": "Dark Iron Block",
-      "gui.erinium_automation.one_block_crop_gui.seed_min": "Min (nbr)",
       "gui.erinium_automation.one_block_crop_gui.result_min": "min (nbr)",
-      "gui.erinium_automation.farmer_gui.label_seeds": "Seeds",
-      "item.erinium_automation.amenine_gem": "§6Amenine Gem",
-      "gui.erinium_automation.farmer_json_builder_gui_main.label_choose_your_block": "Choose your block",
-      "block.erinium_automation.enriched_farmland": "Enriched Farmland",
-      "gui.eriunium_automation.farmer_gui.label_proc_get_energy": "",
-      "gui.erinium_automation.farmer_gui.label_proc_get_energy": "",
+      "gui.erinium_automation.multiple_blocks_crops_guy.seed_max": "Max (nrb)",
+      "gui.erinium_automation.multiple_blocks_crops_guy.result_max": "Max (nbr)",
       "item.erinium_automation.astral_foot": "Astral Foot",
-      "gui.erinium_automation.one_block_crop_gui.seed_max": "Max (nrb)",
       "gui.erinium_automation.one_block_crop_gui.button_validate": "Validate",
+      "gui.erinium_automation.multiple_blocks_crops_guy.label_crop_block": "Crop block",
       "gui.eriunium_automation.farmer_gui.label_items": "Items",
       "gui.eriunium_automation.farmer_gui.button_help": "Help",
       "block.erinium_automation.astral_miner": "Astral Miner",
       "gui.erinium_automation.one_block_crop_gui.label_crop_block": "Crop block",
       "item.eriunium_automation.laser_drill": "Laser Drill",
+      "gui.erinium_automation.multiple_blocks_crops_guy.seed_min": "Min (nbr)",
       "item_group.eriunium_automation.erinium_automation": "Erinium Automation",
       "item.erinium_automation.laser_module": "Laser Module"
     }
@@ -833,6 +1003,10 @@
             "children": [
               {
                 "name": "OneBlockCrop",
+                "children": []
+              },
+              {
+                "name": "MultipleBlocksCrops",
                 "children": []
               }
             ]

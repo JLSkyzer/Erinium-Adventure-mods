@@ -43,7 +43,7 @@ public class OnStartupProcedure {
 			jsonObject.addProperty("seed", "modID:SeedID");
 			jsonObject.addProperty("seed_min", 1);
 			jsonObject.addProperty("seed_max", 3);
-			jsonObject.addProperty("replaced_block", "modID:mySecondItemID");
+			jsonObject.addProperty("replaced_block", "modID:myStage1CropBlockID");
 			{
 				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 				try {
@@ -69,7 +69,7 @@ public class OnStartupProcedure {
 			jsonObject.addProperty("seed", "modID:SeedID");
 			jsonObject.addProperty("seed_min", 1);
 			jsonObject.addProperty("seed_max", 3);
-			jsonObject.addProperty("replaced_block", "modID:mySecondItemID");
+			jsonObject.addProperty("replaced_block", "modID:myStage1CropBlockID");
 			{
 				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 				try {

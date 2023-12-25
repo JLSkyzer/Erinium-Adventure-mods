@@ -179,6 +179,22 @@
           "x": 249,
           "y": 44
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_energy1",
+          "text": {
+            "fixedValue": "",
+            "name": "GetEnergy"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 53
+        }
       }
     ],
     "gridSettings": {

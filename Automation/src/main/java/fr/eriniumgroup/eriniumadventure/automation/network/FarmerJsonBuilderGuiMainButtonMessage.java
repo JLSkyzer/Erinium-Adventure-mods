@@ -16,6 +16,7 @@ import java.util.HashMap;
 
 import fr.eriniumgroup.eriniumadventure.automation.world.inventory.FarmerJsonBuilderGuiMainMenu;
 import fr.eriniumgroup.eriniumadventure.automation.procedures.OpenOneBlockCropGuiProcedure;
+import fr.eriniumgroup.eriniumadventure.automation.procedures.OpenMultipleBlocksCropsProcedure;
 import fr.eriniumgroup.eriniumadventure.automation.EriniumAutomationMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -65,6 +66,10 @@ public class FarmerJsonBuilderGuiMainButtonMessage {
 		if (buttonID == 0) {
 
 			OpenOneBlockCropGuiProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 1) {
+
+			OpenMultipleBlocksCropsProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

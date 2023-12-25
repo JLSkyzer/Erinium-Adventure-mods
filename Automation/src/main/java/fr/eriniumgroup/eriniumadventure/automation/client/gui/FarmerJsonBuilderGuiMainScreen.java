@@ -90,6 +90,10 @@ public class FarmerJsonBuilderGuiMainScreen extends AbstractContainerScreen<Farm
 		guistate.put("button:button_one_block_crop", button_one_block_crop);
 		this.addRenderableWidget(button_one_block_crop);
 		button_multiple_blocks_crop = Button.builder(Component.translatable("gui.erinium_automation.farmer_json_builder_gui_main.button_multiple_blocks_crop"), e -> {
+			if (true) {
+				EriniumAutomationMod.PACKET_HANDLER.sendToServer(new FarmerJsonBuilderGuiMainButtonMessage(1, x, y, z));
+				FarmerJsonBuilderGuiMainButtonMessage.handleButtonAction(entity, 1, x, y, z);
+			}
 		}).bounds(this.leftPos + 33, this.topPos + 52, 108, 20).build();
 		guistate.put("button:button_multiple_blocks_crop", button_multiple_blocks_crop);
 		this.addRenderableWidget(button_multiple_blocks_crop);

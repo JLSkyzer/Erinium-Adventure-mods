@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 import java.util.HashMap;
 
 import fr.eriniumgroup.eriniumadventure.automation.world.inventory.MultipleBlocksCropsGuyMenu;
-import fr.eriniumgroup.eriniumadventure.automation.procedures.OneBlockCropGuiValidateProcedure;
+import fr.eriniumgroup.eriniumadventure.automation.procedures.MultipleBlocksCropsGuiValidateProcedure;
 import fr.eriniumgroup.eriniumadventure.automation.EriniumAutomationMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -64,7 +64,7 @@ public class MultipleBlocksCropsGuyButtonMessage {
 			return;
 		if (buttonID == 0) {
 
-			OneBlockCropGuiValidateProcedure.execute(entity, guistate);
+			MultipleBlocksCropsGuiValidateProcedure.execute(entity, guistate);
 		}
 	}
 

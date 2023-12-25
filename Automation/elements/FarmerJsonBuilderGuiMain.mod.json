@@ -44,6 +44,9 @@
         "data": {
           "name": "button_multiple_blocks_crop",
           "text": "Multiple blocks crop",
+          "onClick": {
+            "name": "OpenMultipleBlocksCrops"
+          },
           "width": 108,
           "height": 20,
           "x": 159,

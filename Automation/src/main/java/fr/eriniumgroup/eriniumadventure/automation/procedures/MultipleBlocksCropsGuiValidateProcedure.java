@@ -10,7 +10,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.gui.components.EditBox;
 
 import java.util.function.Supplier;
@@ -33,9 +32,12 @@ public class MultipleBlocksCropsGuiValidateProcedure {
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		String blockid = "";
 		String modid = "";
-		if (!(ForgeRegistries.ITEMS.getValue(new ResourceLocation(((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : "")).toLowerCase(java.util.Locale.ENGLISH))) == Blocks.AIR.asItem())) {
-			modid = ((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : "")).split(":")[0];
-			blockid = ((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : "")).split(":")[1];
+		if (!((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())
+				&& !((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(3)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())) {
+			modid = ((ForgeRegistries.ITEMS.getKey((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY).getItem())
+					.toString())).split(":")[0];
+			blockid = ((ForgeRegistries.ITEMS.getKey((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(2)).getItem() : ItemStack.EMPTY).getItem())
+					.toString())).split(":")[1];
 			if (!((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())
 					&& !((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())) {
 				file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/" + modid + "/"), File.separator + (blockid + ".json"));
@@ -86,7 +88,8 @@ public class MultipleBlocksCropsGuiValidateProcedure {
 							return 0;
 						}
 					}.convert(guistate.containsKey("text:seed_max") ? ((EditBox) guistate.get("text:seed_max")).getValue() : ""));
-					JsonObject.addProperty("replaced_block", (guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : ""));
+					JsonObject.addProperty("replaced_block", (ForgeRegistries.ITEMS
+							.getKey((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(3)).getItem() : ItemStack.EMPTY).getItem()).toString()));
 					{
 						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 						try {
@@ -97,8 +100,6 @@ public class MultipleBlocksCropsGuiValidateProcedure {
 							exception.printStackTrace();
 						}
 					}
-					if (guistate.get("text:id") instanceof EditBox _tf)
-						_tf.setValue("File created !");
 					if (guistate.get("text:result_min") instanceof EditBox _tf)
 						_tf.setValue("");
 					if (guistate.get("text:result_max") instanceof EditBox _tf)
@@ -113,6 +114,14 @@ public class MultipleBlocksCropsGuiValidateProcedure {
 					}
 					if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
 						((Slot) _slots.get(1)).set(ItemStack.EMPTY);
+						_player.containerMenu.broadcastChanges();
+					}
+					if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+						((Slot) _slots.get(2)).set(ItemStack.EMPTY);
+						_player.containerMenu.broadcastChanges();
+					}
+					if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
+						((Slot) _slots.get(3)).set(ItemStack.EMPTY);
 						_player.containerMenu.broadcastChanges();
 					}
 				}

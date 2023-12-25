@@ -156,7 +156,7 @@
           "name": "button_validate",
           "text": "Validate",
           "onClick": {
-            "name": "OneBlockCropGuiValidate"
+            "name": "MultipleBlocksCropsGuiValidate"
           },
           "width": 54,
           "height": 20,

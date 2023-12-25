@@ -12,6 +12,7 @@ import net.minecraft.client.gui.GuiGraphics;
 import java.util.HashMap;
 
 import fr.eriniumgroup.eriniumadventure.automation.world.inventory.FarmerGuiMenu;
+import fr.eriniumgroup.eriniumadventure.automation.procedures.GetEnergyProcedure;
 import fr.eriniumgroup.eriniumadventure.automation.network.FarmerGuiButtonMessage;
 import fr.eriniumgroup.eriniumadventure.automation.EriniumAutomationMod;
 
@@ -73,6 +74,9 @@ public class FarmerGuiScreen extends AbstractContainerScreen<FarmerGuiMenu> {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.farmer_gui.label_proc_get_energy"), 6, 16, -12829636, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.farmer_gui.label_seeds"), 6, 34, -10066432, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.farmer_gui.label_items"), 141, 34, -16751002, false);
+		guiGraphics.drawString(this.font,
+
+				GetEnergyProcedure.execute(world, x, y, z), 6, 16, -12829636, false);
 	}
 
 	@Override
