@@ -1,6 +1,16 @@
 {
+  "item.erinium_adventure.nitriate_pickaxe": "Nitriate Pickaxe",
+  "item.erinium_adventure.nitriate_armor_helmet": "Nitriate Helmet",
   "item.erinium_adventure.logo_erinium": "Logo Erinium",
-  "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
   "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
-  "block.erinium_adventure.nitriate_ore": "Nitriate Ore"
+  "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
+  "item.erinium_adventure.nitriate_hoe": "Nitriate Hoe",
+  "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
+  "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
+  "block.erinium_adventure.cave_block": "Cave Block",
+  "item.erinium_adventure.nitriate_armor_chestplate": "Nitriate Chestplate",
+  "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
+  "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
+  "item.erinium_adventure.nitriate_sword": "Nitriate Sword",
+  "item.erinium_adventure.nitriate_armor_leggings": "Nitriate Leggings"
 }

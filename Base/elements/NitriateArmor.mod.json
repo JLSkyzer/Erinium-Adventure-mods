@@ -10,6 +10,9 @@
     "textureLeggings": "nitriate_leggings",
     "enableBoots": true,
     "textureBoots": "nitriate_boots",
+    "onHelmetTick": {
+      "name": "NitriateArmorHelmetTickEvent"
+    },
     "creativeTab": {
       "value": "COMBAT"
     },

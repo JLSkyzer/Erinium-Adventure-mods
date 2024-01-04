@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "erinium_automation:amenine_ore",
     "erinium_automation:astral_miner"
   ]
 }

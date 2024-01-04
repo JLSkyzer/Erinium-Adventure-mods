@@ -926,6 +926,76 @@
         ]
       },
       "path": "~/Farm/JSonBuilder/MultipleBlocksCrops"
+    },
+    {
+      "name": "LeftClick",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "left_click",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/LeftClickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RightClick",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "right_click",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/RightClickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1034,7 +1104,7 @@
   "workspaceSettings": {
     "modid": "erinium_automation",
     "modName": "eriunium_automation",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Mod created by JLSkyzer",
     "author": "JLSkyzer",
     "websiteURL": "https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation",

@@ -12,7 +12,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
+import fr.eriniumgroup.eriniumadventure.base.item.NitriateSwordItem;
+import fr.eriniumgroup.eriniumadventure.base.item.NitriateShovelItem;
+import fr.eriniumgroup.eriniumadventure.base.item.NitriatePickaxeItem;
+import fr.eriniumgroup.eriniumadventure.base.item.NitriateHoeItem;
 import fr.eriniumgroup.eriniumadventure.base.item.NitriateGemItem;
+import fr.eriniumgroup.eriniumadventure.base.item.NitriateAxeItem;
+import fr.eriniumgroup.eriniumadventure.base.item.NitriateArmorItem;
 import fr.eriniumgroup.eriniumadventure.base.item.LogoEriniumItem;
 import fr.eriniumgroup.eriniumadventure.base.EriniumAdventureMod;
 
@@ -21,6 +27,16 @@ public class EriniumAdventureModItems {
 	public static final RegistryObject<Item> LOGO_ERINIUM = REGISTRY.register("logo_erinium", () -> new LogoEriniumItem());
 	public static final RegistryObject<Item> NITRIATE_GEM = REGISTRY.register("nitriate_gem", () -> new NitriateGemItem());
 	public static final RegistryObject<Item> NITRIATE_ORE = block(EriniumAdventureModBlocks.NITRIATE_ORE);
+	public static final RegistryObject<Item> NITRIATE_AXE = REGISTRY.register("nitriate_axe", () -> new NitriateAxeItem());
+	public static final RegistryObject<Item> NITRIATE_PICKAXE = REGISTRY.register("nitriate_pickaxe", () -> new NitriatePickaxeItem());
+	public static final RegistryObject<Item> NITRIATE_SWORD = REGISTRY.register("nitriate_sword", () -> new NitriateSwordItem());
+	public static final RegistryObject<Item> NITRIATE_SHOVEL = REGISTRY.register("nitriate_shovel", () -> new NitriateShovelItem());
+	public static final RegistryObject<Item> NITRIATE_HOE = REGISTRY.register("nitriate_hoe", () -> new NitriateHoeItem());
+	public static final RegistryObject<Item> NITRIATE_ARMOR_HELMET = REGISTRY.register("nitriate_armor_helmet", () -> new NitriateArmorItem.Helmet());
+	public static final RegistryObject<Item> NITRIATE_ARMOR_CHESTPLATE = REGISTRY.register("nitriate_armor_chestplate", () -> new NitriateArmorItem.Chestplate());
+	public static final RegistryObject<Item> NITRIATE_ARMOR_LEGGINGS = REGISTRY.register("nitriate_armor_leggings", () -> new NitriateArmorItem.Leggings());
+	public static final RegistryObject<Item> NITRIATE_ARMOR_BOOTS = REGISTRY.register("nitriate_armor_boots", () -> new NitriateArmorItem.Boots());
+	public static final RegistryObject<Item> CAVE_BLOCK = block(EriniumAdventureModBlocks.CAVE_BLOCK);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

@@ -1,16 +1,19 @@
 
 package fr.eriniumgroup.eriniumadventure.base.item;
 
+import net.minecraft.world.level.Level;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
 
+import fr.eriniumgroup.eriniumadventure.base.procedures.NitriateArmorHelmetTickEventProcedure;
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModItems;
 
 public abstract class NitriateArmorItem extends ArmorItem {
@@ -66,6 +69,11 @@ public abstract class NitriateArmorItem extends ArmorItem {
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
 			return "erinium_adventure:textures/models/armor/nitriate_layer_1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			NitriateArmorHelmetTickEventProcedure.execute(entity);
 		}
 	}
 

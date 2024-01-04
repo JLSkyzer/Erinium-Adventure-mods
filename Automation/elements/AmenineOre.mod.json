@@ -44,7 +44,7 @@
     "creativeTab": {
       "value": "CUSTOM:EriniumAutomation"
     },
-    "destroyTool": "Not specified",
+    "destroyTool": "pickaxe",
     "customDrop": {
       "value": "Blocks.AIR"
     },
@@ -141,12 +141,15 @@
       },
       {
         "value": "Blocks.STONE#5"
+      },
+      {
+        "value": "Blocks.DEEPSLATE"
       }
     ],
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 3,
     "frequencyOnChunk": 7,
-    "minGenerateHeight": -16,
-    "maxGenerateHeight": 64
+    "minGenerateHeight": -32,
+    "maxGenerateHeight": 16
   }
 }

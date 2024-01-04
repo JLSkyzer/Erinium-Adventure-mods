@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "erinium_adventure:block/cave_block"
+    }
+  }
+}
