@@ -27,7 +27,8 @@
           "src/main/resources/assets/erinium_adventure/models/item/logo_erinium.json",
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/LogoEriniumItem.java"
         ]
-      }
+      },
+      "path": "~/Blocks"
     },
     {
       "name": "EriniumAdventureTab",
@@ -215,10 +216,10 @@
       "registry_name": "nitriate_armor",
       "metadata": {
         "files": [
-          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_leggings.json",
           "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_boots.json",
-          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateArmorItem.java",
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_leggings.json",
           "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_chestplate.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateArmorItem.java",
           "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_helmet.json"
         ]
       },
@@ -279,6 +280,57 @@
         ]
       },
       "path": "~/Nitriate"
+    },
+    {
+      "name": "CaveBlock",
+      "type": "block",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cave_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/cave_block.json",
+          "src/main/resources/assets/erinium_adventure/blockstates/cave_block.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/block/CaveBlockBlock.java",
+          "src/main/resources/assets/erinium_adventure/models/block/cave_block.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "CraftCaveBlock",
+      "type": "recipe",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_cave_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/craft_cave_block.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "NitriateArmorHelmetTickEvent",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_armor_helmet_tick_event",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/NitriateArmorHelmetTickEventProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Nitriate"
     }
   ],
   "variable_elements": [],
@@ -293,6 +345,7 @@
       "item.erinium_adventure.nitriate_hoe": "Nitriate Hoe",
       "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
       "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
+      "block.erinium_adventure.cave_block": "Cave Block",
       "item.erinium_adventure.nitriate_armor_chestplate": "Nitriate Chestplate",
       "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
       "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
@@ -305,6 +358,14 @@
     "children": [
       {
         "name": "Nitriate",
+        "children": []
+      },
+      {
+        "name": "Blocks",
+        "children": []
+      },
+      {
+        "name": "Recipes",
         "children": []
       }
     ]

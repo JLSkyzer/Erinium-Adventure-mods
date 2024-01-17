@@ -926,6 +926,20 @@
         ]
       },
       "path": "~/Farm/JSonBuilder/MultipleBlocksCrops"
+    },
+    {
+      "name": "ModLogo",
+      "type": "item",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mod_logo",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_automation/models/item/mod_logo.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/item/ModLogoItem.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -973,6 +987,7 @@
       "gui.erinium_automation.multiple_blocks_crops_guy.id": "Put The ID of the crop",
       "item_group.erinium_automation.erinium_automation": "Erinium Automation",
       "gui.erinium_automation.one_block_crop_gui.result_max": "Max (nbr)",
+      "item.erinium_automation.mod_logo": "Mod Logo",
       "gui.erinium_automation.farmer_json_builder_gui_main.button_multiple_blocks_crop": "Multiple blocks crop",
       "gui.erinium_automation.multiple_blocks_crops_guy.result_min": "min (nbr)",
       "item.eriunium_automation.astral_foot": "Astral Foot",
@@ -1034,7 +1049,7 @@
   "workspaceSettings": {
     "modid": "erinium_automation",
     "modName": "eriunium_automation",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Mod created by JLSkyzer",
     "author": "JLSkyzer",
     "websiteURL": "https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation",

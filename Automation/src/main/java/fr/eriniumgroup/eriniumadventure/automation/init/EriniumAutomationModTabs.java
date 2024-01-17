@@ -17,7 +17,7 @@ import fr.eriniumgroup.eriniumadventure.automation.EriniumAutomationMod;
 public class EriniumAutomationModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, EriniumAutomationMod.MODID);
 	public static final RegistryObject<CreativeModeTab> ERINIUM_AUTOMATION = REGISTRY.register("erinium_automation",
-			() -> CreativeModeTab.builder().title(Component.translatable("item_group.erinium_automation.erinium_automation")).icon(() -> new ItemStack(EriniumAutomationModBlocks.FARMER_BLOCK.get())).displayItems((parameters, tabData) -> {
+			() -> CreativeModeTab.builder().title(Component.translatable("item_group.erinium_automation.erinium_automation")).icon(() -> new ItemStack(EriniumAutomationModItems.MOD_LOGO.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(EriniumAutomationModBlocks.FARMER_BLOCK.get().asItem());
 				tabData.accept(EriniumAutomationModItems.ASTRAL_FOOT.get());
 				tabData.accept(EriniumAutomationModItems.LASER_DRILL.get());
@@ -28,6 +28,7 @@ public class EriniumAutomationModTabs {
 				tabData.accept(EriniumAutomationModItems.AMENINE_GEM.get());
 				tabData.accept(EriniumAutomationModBlocks.ASTRAL_MINER.get().asItem());
 				tabData.accept(EriniumAutomationModBlocks.ENRICHED_FARMLAND.get().asItem());
+				tabData.accept(EriniumAutomationModItems.MOD_LOGO.get());
 			})
 
 					.build());

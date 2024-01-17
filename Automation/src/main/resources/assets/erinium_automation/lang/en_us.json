@@ -33,6 +33,7 @@
   "gui.erinium_automation.multiple_blocks_crops_guy.id": "Put The ID of the crop",
   "item_group.erinium_automation.erinium_automation": "Erinium Automation",
   "gui.erinium_automation.one_block_crop_gui.result_max": "Max (nbr)",
+  "item.erinium_automation.mod_logo": "Mod Logo",
   "gui.erinium_automation.farmer_json_builder_gui_main.button_multiple_blocks_crop": "Multiple blocks crop",
   "gui.erinium_automation.multiple_blocks_crops_guy.result_min": "min (nbr)",
   "item.eriunium_automation.astral_foot": "Astral Foot",

@@ -4,7 +4,7 @@
   "definition": {
     "name": "Erinium Automation",
     "icon": {
-      "value": "CUSTOM:FarmerBlock"
+      "value": "CUSTOM:ModLogo"
     },
     "showSearch": false
   }
