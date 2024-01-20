@@ -1,4 +1,6 @@
 
 [Factions]
 	"Max Members" = 20.0
+	"Item needed to create faction" = "minecraft:diamond"
+	"Number of items needed to create faction" = 100.0
 

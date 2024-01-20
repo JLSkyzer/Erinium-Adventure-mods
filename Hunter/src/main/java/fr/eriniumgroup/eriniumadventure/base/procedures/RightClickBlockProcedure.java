@@ -2,13 +2,18 @@ package fr.eriniumgroup.eriniumadventure.base.procedures;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import org.spongepowered.asm.mixin.Final;
 
 import javax.annotation.Nullable;
+import java.util.Objects;
 
 @Mod.EventBusSubscriber
 public class RightClickBlockProcedure {
@@ -25,29 +30,14 @@ public class RightClickBlockProcedure {
 
 	private static void execute(@Nullable Event event) {
 
-		if (!(new Object() {
-			private String getChunkPlayer() {
-				BlockPos blockpos = new BlockPos(0, 10, 0);
-				ChunkPos chunkpos = new ChunkPos(blockpos);
-				return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
+		new Object(){
+			private String split(String text, String space, int index){
+				String s = text.split(space)[index];
+
+				return s;
 			}
-		}.getChunkPlayer()).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_region)) {
-			{
-				String _setval = new Object() {
-					private String getChunkPlayer() {
-						BlockPos blockpos = Minecraft.getInstance().getCameraEntity().blockPosition();
-						ChunkPos chunkpos = new ChunkPos(blockpos);
-						return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
-					}
-				}.getChunkPlayer();
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.current_region = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal(((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_region)), false);
-		}
+		}.split("test", "s", (int) 10.0);
+
 
 	}
 }

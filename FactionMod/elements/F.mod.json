@@ -1,0 +1,9 @@
+{
+  "_fv": 47,
+  "_type": "command",
+  "definition": {
+    "commandName": "f",
+    "permissionLevel": "No requirement",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"literal\"><field name=\"name\">create</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">word</field><field name=\"name\">id</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">string</field><field name=\"name\">displayname</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">FactionCreate</field></block></statement></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">disband</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">FactionDisband</field></block></statement></block></next></block></next></block></xml>"
+  }
+}

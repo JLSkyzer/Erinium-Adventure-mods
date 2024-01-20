@@ -23,6 +23,42 @@
             "enablecomment": false,
             "onlyComment": false,
             "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": "Items.DIAMOND"
+            },
+            "silkTouchMode": 4,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "What item you need to create an faction",
+            "vardisplay": "Item needed to create faction",
+            "varname": "item_need_create",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 100.0,
+            "textDefault": "",
+            "comment": "How many items you need to create an faction",
+            "vardisplay": "Number of items needed to create faction",
+            "varname": "item_number_create",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
           }
         ]
       }

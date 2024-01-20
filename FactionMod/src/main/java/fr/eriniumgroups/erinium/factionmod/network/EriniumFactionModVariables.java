@@ -72,6 +72,9 @@ public class EriniumFactionModVariables {
 			clone.faction_displayname = original.faction_displayname;
 			clone.faction_rank = original.faction_rank;
 			clone.temp_perm_file = original.temp_perm_file;
+			clone.rank = original.rank;
+			clone.temp_count = original.temp_count;
+			clone.temp_text = original.temp_text;
 			if (!event.isWasDeath()) {
 				clone.temp_perm_path = original.temp_perm_path;
 			}
@@ -116,6 +119,9 @@ public class EriniumFactionModVariables {
 		public String faction_rank = "\"\"";
 		public String temp_perm_path = "\"\"";
 		public String temp_perm_file = "\"\"";
+		public String rank = "\u00A7eMembre";
+		public double temp_count = 0;
+		public String temp_text = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -131,6 +137,9 @@ public class EriniumFactionModVariables {
 			nbt.putString("faction_rank", faction_rank);
 			nbt.putString("temp_perm_path", temp_perm_path);
 			nbt.putString("temp_perm_file", temp_perm_file);
+			nbt.putString("rank", rank);
+			nbt.putDouble("temp_count", temp_count);
+			nbt.putString("temp_text", temp_text);
 			return nbt;
 		}
 
@@ -143,6 +152,9 @@ public class EriniumFactionModVariables {
 			faction_rank = nbt.getString("faction_rank");
 			temp_perm_path = nbt.getString("temp_perm_path");
 			temp_perm_file = nbt.getString("temp_perm_file");
+			rank = nbt.getString("rank");
+			temp_count = nbt.getDouble("temp_count");
+			temp_text = nbt.getString("temp_text");
 		}
 	}
 
@@ -174,6 +186,9 @@ public class EriniumFactionModVariables {
 					variables.faction_rank = message.data.faction_rank;
 					variables.temp_perm_path = message.data.temp_perm_path;
 					variables.temp_perm_file = message.data.temp_perm_file;
+					variables.rank = message.data.rank;
+					variables.temp_count = message.data.temp_count;
+					variables.temp_text = message.data.temp_text;
 				}
 			});
 			context.setPacketHandled(true);
