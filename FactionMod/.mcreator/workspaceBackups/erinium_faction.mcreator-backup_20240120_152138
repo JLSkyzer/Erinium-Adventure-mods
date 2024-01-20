@@ -66,14 +66,11 @@
     {
       "name": "PlayerTick",
       "type": "procedure",
-      "sortid": 3,
+      "sortid": 1,
       "compiles": true,
       "locked_code": false,
       "registry_name": "player_tick",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PlayerTickProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -82,22 +79,6 @@
           {
             "name": "world",
             "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PlayerJoinWorld",
-      "type": "procedure",
-      "sortid": 4,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "player_join_world",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
           }
         ]
       }

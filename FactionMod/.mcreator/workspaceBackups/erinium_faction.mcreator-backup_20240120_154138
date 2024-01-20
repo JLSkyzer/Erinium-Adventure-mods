@@ -85,22 +85,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "PlayerJoinWorld",
-      "type": "procedure",
-      "sortid": 4,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "player_join_world",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
     }
   ],
   "variable_elements": [

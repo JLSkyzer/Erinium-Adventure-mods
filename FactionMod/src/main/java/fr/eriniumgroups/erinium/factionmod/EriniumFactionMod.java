@@ -38,6 +38,8 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
+import fr.eriniumgroups.erinium.factionmod.init.EriniumFactionModSounds;
+
 @Mod("erinium_faction")
 public class EriniumFactionMod {
 	public static final Logger LOGGER = LogManager.getLogger(EriniumFactionMod.class);
@@ -46,6 +48,7 @@ public class EriniumFactionMod {
 	public EriniumFactionMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		EriniumFactionModSounds.REGISTRY.register(bus);
 
 	}
 

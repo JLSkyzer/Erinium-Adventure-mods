@@ -1,5 +1,8 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -21,21 +24,30 @@ public class RightClickBlockProcedure {
 	}
 
 	private static void execute(@Nullable Event event) {
-		String cheminDossier = "test";
 
-		java.io.File dossier = new java.io.File(cheminDossier);
-
-		if (dossier.exists() && dossier.isDirectory()) {
-			java.io.File[] fichiers = dossier.listFiles();
-
-			// Parcours tous les fichiers du dossier
-			for (java.io.File currentFile : fichiers) {
-				// ...
-				currentFile.getName();
-				${statement$boucle}
+		if (!(new Object() {
+			private String getChunkPlayer() {
+				BlockPos blockpos = new BlockPos(0, 10, 0);
+				ChunkPos chunkpos = new ChunkPos(blockpos);
+				return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
 			}
-		} else {
-			System.out.println("Le dossier n'existe pas ou n'est pas un dossier valide.");
+		}.getChunkPlayer()).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_region)) {
+			{
+				String _setval = new Object() {
+					private String getChunkPlayer() {
+						BlockPos blockpos = Minecraft.getInstance().getCameraEntity().blockPosition();
+						ChunkPos chunkpos = new ChunkPos(blockpos);
+						return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
+					}
+				}.getChunkPlayer();
+				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.current_region = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			if (entity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal(((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_region)), false);
 		}
+
 	}
 }

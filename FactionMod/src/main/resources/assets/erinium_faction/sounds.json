@@ -1,0 +1,10 @@
+{
+  "ding": {
+    "sounds": [
+      {
+        "name": "erinium_faction:ding",
+        "stream": false
+      }
+    ]
+  }
+}

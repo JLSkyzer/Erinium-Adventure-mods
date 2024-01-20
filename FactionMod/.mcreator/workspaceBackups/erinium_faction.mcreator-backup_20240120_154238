@@ -94,6 +94,9 @@
       "locked_code": false,
       "registry_name": "player_join_world",
       "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PlayerJoinWorldProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
