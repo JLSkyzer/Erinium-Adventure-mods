@@ -1,0 +1,33 @@
+{
+  "_fv": 47,
+  "_type": "config",
+  "definition": {
+    "pools": [
+      {
+        "category": "Factions",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 20.0,
+            "textDefault": "",
+            "comment": "How many player can a faction have max",
+            "vardisplay": "Max Members",
+            "varname": "max_member",
+            "enablecomment": false,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          }
+        ]
+      }
+    ],
+    "file": "erinium-faction-common",
+    "configType": 0
+  }
+}

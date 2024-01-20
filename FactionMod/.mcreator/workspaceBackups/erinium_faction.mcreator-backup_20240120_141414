@@ -5,7 +5,43 @@
       "name": "faction_name",
       "type": "string",
       "scope": "player_persistent",
+      "value": "wilderness"
+    },
+    {
+      "name": "current_chunk",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "current_region",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "faction_displayname",
+      "type": "string",
+      "scope": "player_persistent",
       "value": "Wilderness"
+    },
+    {
+      "name": "faction_rank",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "temp_perm_path",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "\"\""
+    },
+    {
+      "name": "temp_perm_file",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [],

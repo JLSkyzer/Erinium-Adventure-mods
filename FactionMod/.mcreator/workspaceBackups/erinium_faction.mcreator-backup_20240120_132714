@@ -5,7 +5,7 @@
       "name": "faction_name",
       "type": "string",
       "scope": "player_persistent",
-      "value": "Wilderness"
+      "value": "wilderness"
     },
     {
       "name": "current_chunk",
@@ -18,6 +18,12 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
+    },
+    {
+      "name": "faction_displayname",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "Wilderness"
     }
   ],
   "sound_elements": [],

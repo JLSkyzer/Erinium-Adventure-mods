@@ -1,6 +1,37 @@
 {
   "mod_elements": [],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "faction_name",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "wilderness"
+    },
+    {
+      "name": "current_chunk",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "current_region",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "faction_displayname",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "Wilderness"
+    },
+    {
+      "name": "faction_rank",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    }
+  ],
   "sound_elements": [],
   "language_map": {
     "en_us": {}
