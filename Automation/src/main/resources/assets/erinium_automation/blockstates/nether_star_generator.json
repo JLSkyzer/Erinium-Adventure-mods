@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "erinium_automation:block/nether_star_generator"
+    }
+  }
+}

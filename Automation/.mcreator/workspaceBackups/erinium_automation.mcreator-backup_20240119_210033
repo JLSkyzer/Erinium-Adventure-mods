@@ -940,6 +940,107 @@
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/item/ModLogoItem.java"
         ]
       }
+    },
+    {
+      "name": "NetherStarGen",
+      "type": "gui",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nether_star_gen",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/client/gui/NetherStarGenScreen.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/inventory/NetherStarGenMenu.java"
+        ]
+      },
+      "path": "~/generator/nether star"
+    },
+    {
+      "name": "WitherSkeletonDeath",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wither_skeleton_death",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/WitherSkeletonDeathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/generator/nether star"
+    },
+    {
+      "name": "NetherStarGeneratorUpdateTick",
+      "type": "procedure",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nether_star_generator_update_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/NetherStarGeneratorUpdateTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/generator/nether star"
+    },
+    {
+      "name": "NetherStarGenerator",
+      "type": "block",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nether_star_generator",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/NetherStarGeneratorBlock.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/entity/NetherStarGeneratorBlockEntity.java",
+          "src/main/resources/assets/erinium_automation/models/item/nether_star_generator.json",
+          "src/main/resources/assets/erinium_automation/blockstates/nether_star_generator.json",
+          "src/main/resources/assets/erinium_automation/models/block/nether_star_generator.json"
+        ]
+      },
+      "path": "~/generator/nether star"
     }
   ],
   "variable_elements": [
@@ -963,6 +1064,7 @@
       "gui.erinium_automation.multiple_blocks_crops_guy.button_validate": "Validate",
       "item.erinium_automation.battery": "Battery",
       "block.erinium_automation.amenine_ore": "§6Amenine Ore",
+      "gui.erinium_automation.nether_star_gen.label_nether_star_generator": "Nether Star Generator",
       "block.erinium_automation.dark_iron_block": "Dark Iron Block",
       "gui.erinium_automation.one_block_crop_gui.seed_min": "Min (nbr)",
       "gui.erinium_automation.farmer_gui.label_seeds": "Seeds",
@@ -972,6 +1074,7 @@
       "block.erinium_automation.enriched_farmland": "Enriched Farmland",
       "gui.eriunium_automation.farmer_gui.label_proc_get_energy": "",
       "gui.erinium_automation.farmer_gui.label_proc_get_energy": "",
+      "block.erinium_automation.nether_star_generator": "§eNether Star Generator",
       "gui.erinium_automation.one_block_crop_gui.seed_max": "Max (nrb)",
       "gui.erinium_automation.farmer_gui.label_farmer": "Farmer",
       "gui.erinium_automation.one_block_crop_gui.id": "Put The ID of the crop",
@@ -1043,13 +1146,22 @@
       {
         "name": "Command",
         "children": []
+      },
+      {
+        "name": "generator",
+        "children": [
+          {
+            "name": "nether star",
+            "children": []
+          }
+        ]
       }
     ]
   },
   "workspaceSettings": {
     "modid": "erinium_automation",
     "modName": "eriunium_automation",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Mod created by JLSkyzer",
     "author": "JLSkyzer",
     "websiteURL": "https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation",

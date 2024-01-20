@@ -3,23 +3,14 @@
     {
       "name": "RightClickBlock",
       "type": "procedure",
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "right_click_block",
       "metadata": {
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/RightClickBlockProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       }
     }
   ],

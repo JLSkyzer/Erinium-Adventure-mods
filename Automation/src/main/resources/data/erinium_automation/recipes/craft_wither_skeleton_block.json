@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "1": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "2": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "3": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "4": {
+      "item": "minecraft:iron_block"
+    },
+    "5": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "6": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "7": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "8": {
+      "item": "minecraft:wither_skeleton_skull"
+    }
+  },
+  "result": {
+    "item": "erinium_automation:wither_skeleton_block",
+    "count": 1
+  }
+}

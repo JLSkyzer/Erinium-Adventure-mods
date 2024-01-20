@@ -10,6 +10,8 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.level.block.Block;
 
+import fr.eriniumgroup.eriniumadventure.automation.block.WitherSkeletonBlockBlock;
+import fr.eriniumgroup.eriniumadventure.automation.block.NetherStarGeneratorBlock;
 import fr.eriniumgroup.eriniumadventure.automation.block.FarmerBlockBlock;
 import fr.eriniumgroup.eriniumadventure.automation.block.EnrichedFarmlandBlock;
 import fr.eriniumgroup.eriniumadventure.automation.block.DarkIronBlockBlock;
@@ -24,4 +26,6 @@ public class EriniumAutomationModBlocks {
 	public static final RegistryObject<Block> AMENINE_ORE = REGISTRY.register("amenine_ore", () -> new AmenineOreBlock());
 	public static final RegistryObject<Block> ASTRAL_MINER = REGISTRY.register("astral_miner", () -> new AstralMinerBlock());
 	public static final RegistryObject<Block> ENRICHED_FARMLAND = REGISTRY.register("enriched_farmland", () -> new EnrichedFarmlandBlock());
+	public static final RegistryObject<Block> NETHER_STAR_GENERATOR = REGISTRY.register("nether_star_generator", () -> new NetherStarGeneratorBlock());
+	public static final RegistryObject<Block> WITHER_SKELETON_BLOCK = REGISTRY.register("wither_skeleton_block", () -> new WitherSkeletonBlockBlock());
 }

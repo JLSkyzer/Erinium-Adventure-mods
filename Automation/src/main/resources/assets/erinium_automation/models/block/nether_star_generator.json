@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium_automation:block/nether_star_gen",
+    "up": "erinium_automation:block/nether_star_gen",
+    "north": "erinium_automation:block/nether_star_gen",
+    "east": "erinium_automation:block/nether_star_gen",
+    "south": "erinium_automation:block/nether_star_gen",
+    "west": "erinium_automation:block/nether_star_gen",
+    "particle": "erinium_automation:block/nether_star_gen"
+  },
+  "render_type": "solid"
+}

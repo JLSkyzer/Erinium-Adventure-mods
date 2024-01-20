@@ -29,6 +29,8 @@ public class EriniumAutomationModTabs {
 				tabData.accept(EriniumAutomationModBlocks.ASTRAL_MINER.get().asItem());
 				tabData.accept(EriniumAutomationModBlocks.ENRICHED_FARMLAND.get().asItem());
 				tabData.accept(EriniumAutomationModItems.MOD_LOGO.get());
+				tabData.accept(EriniumAutomationModBlocks.NETHER_STAR_GENERATOR.get().asItem());
+				tabData.accept(EriniumAutomationModBlocks.WITHER_SKELETON_BLOCK.get().asItem());
 			})
 
 					.build());

@@ -33,6 +33,8 @@ public class EriniumAutomationModItems {
 	public static final RegistryObject<Item> ASTRAL_MINER = block(EriniumAutomationModBlocks.ASTRAL_MINER);
 	public static final RegistryObject<Item> ENRICHED_FARMLAND = block(EriniumAutomationModBlocks.ENRICHED_FARMLAND);
 	public static final RegistryObject<Item> MOD_LOGO = REGISTRY.register("mod_logo", () -> new ModLogoItem());
+	public static final RegistryObject<Item> NETHER_STAR_GENERATOR = block(EriniumAutomationModBlocks.NETHER_STAR_GENERATOR);
+	public static final RegistryObject<Item> WITHER_SKELETON_BLOCK = block(EriniumAutomationModBlocks.WITHER_SKELETON_BLOCK);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

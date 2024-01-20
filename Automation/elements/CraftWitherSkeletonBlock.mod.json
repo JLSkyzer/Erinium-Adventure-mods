@@ -1,0 +1,48 @@
+{
+  "_fv": 47,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Blocks.SKULL#1"
+      },
+      {
+        "value": "Blocks.SKULL#1"
+      },
+      {
+        "value": "Blocks.SKULL#1"
+      },
+      {
+        "value": "Blocks.SKULL#1"
+      },
+      {
+        "value": "Blocks.IRON_BLOCK"
+      },
+      {
+        "value": "Blocks.SKULL#1"
+      },
+      {
+        "value": "Blocks.SKULL#1"
+      },
+      {
+        "value": "Blocks.SKULL#1"
+      },
+      {
+        "value": "Blocks.SKULL#1"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:WitherSkeletonBlock"
+    },
+    "name": "craft_wither_skeleton_block",
+    "namespace": "mod"
+  }
+}

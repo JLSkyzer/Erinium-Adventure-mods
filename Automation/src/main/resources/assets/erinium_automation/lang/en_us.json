@@ -1,5 +1,6 @@
 {
   "gui.eriunium_automation.farmer_gui.label_farmer": "Farmer",
+  "block.erinium_automation.wither_skeleton_block": "Wither Skeleton Block",
   "gui.erinium_automation.astral_miner_gui.label_astral_miner": "Astral Miner",
   "block.erinium_automation.farmer_block": "Farmer Block",
   "gui.eriunium_automation.farmer_gui.label_seeds": "Seeds",
@@ -9,6 +10,7 @@
   "gui.erinium_automation.multiple_blocks_crops_guy.button_validate": "Validate",
   "item.erinium_automation.battery": "Battery",
   "block.erinium_automation.amenine_ore": "§6Amenine Ore",
+  "gui.erinium_automation.nether_star_gen.label_nether_star_generator": "Nether Star Generator",
   "block.erinium_automation.dark_iron_block": "Dark Iron Block",
   "gui.erinium_automation.one_block_crop_gui.seed_min": "Min (nbr)",
   "gui.erinium_automation.farmer_gui.label_seeds": "Seeds",
@@ -18,6 +20,7 @@
   "block.erinium_automation.enriched_farmland": "Enriched Farmland",
   "gui.eriunium_automation.farmer_gui.label_proc_get_energy": "",
   "gui.erinium_automation.farmer_gui.label_proc_get_energy": "",
+  "block.erinium_automation.nether_star_generator": "§eNether Star Generator",
   "gui.erinium_automation.one_block_crop_gui.seed_max": "Max (nrb)",
   "gui.erinium_automation.farmer_gui.label_farmer": "Farmer",
   "gui.erinium_automation.one_block_crop_gui.id": "Put The ID of the crop",
