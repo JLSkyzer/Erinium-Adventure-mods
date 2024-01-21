@@ -1,7 +1,7 @@
 {
-  "faction": "wilderness",
-  "faction_rank": "",
+  "faction": "testing",
+  "faction_rank": "Chef",
   "power": 10,
-  "rank": "",
+  "rank": "§eMembre",
   "admin.permission": false
 }

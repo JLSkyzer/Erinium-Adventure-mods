@@ -75,6 +75,8 @@ public class EriniumFactionModVariables {
 			clone.rank = original.rank;
 			clone.temp_count = original.temp_count;
 			clone.temp_text = original.temp_text;
+			clone.Invite_timer = original.Invite_timer;
+			clone.InvitedBy = original.InvitedBy;
 			if (!event.isWasDeath()) {
 				clone.temp_perm_path = original.temp_perm_path;
 			}
@@ -122,6 +124,8 @@ public class EriniumFactionModVariables {
 		public String rank = "\u00A7eMembre";
 		public double temp_count = 0;
 		public String temp_text = "\"\"";
+		public double Invite_timer = 0;
+		public String InvitedBy = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -140,6 +144,8 @@ public class EriniumFactionModVariables {
 			nbt.putString("rank", rank);
 			nbt.putDouble("temp_count", temp_count);
 			nbt.putString("temp_text", temp_text);
+			nbt.putDouble("Invite_timer", Invite_timer);
+			nbt.putString("InvitedBy", InvitedBy);
 			return nbt;
 		}
 
@@ -155,6 +161,8 @@ public class EriniumFactionModVariables {
 			rank = nbt.getString("rank");
 			temp_count = nbt.getDouble("temp_count");
 			temp_text = nbt.getString("temp_text");
+			Invite_timer = nbt.getDouble("Invite_timer");
+			InvitedBy = nbt.getString("InvitedBy");
 		}
 	}
 
@@ -189,6 +197,8 @@ public class EriniumFactionModVariables {
 					variables.rank = message.data.rank;
 					variables.temp_count = message.data.temp_count;
 					variables.temp_text = message.data.temp_text;
+					variables.Invite_timer = message.data.Invite_timer;
+					variables.InvitedBy = message.data.InvitedBy;
 				}
 			});
 			context.setPacketHandled(true);

@@ -78,6 +78,7 @@ public class FactionCreateProcedure {
 							JsonObject.addProperty("max_power", 10);
 							JsonObject.addProperty("faction_desc", "No description");
 							JsonObject.addProperty("member_count", (entity.getUUID().toString() + ", "));
+							JsonObject.addProperty("claims", 10);
 							{
 								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 								try {
@@ -137,6 +138,12 @@ public class FactionCreateProcedure {
 									e.printStackTrace();
 								}
 							}
+							if (entity instanceof Player _player && !_player.level().isClientSide())
+								_player.displayClientMessage(Component.literal(("\u00A7cVous avez cr\u00E9er la faction : \u00A7e"
+										+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + " \u00A7cavec succ\u00E8s !")), false);
+							if (!world.isClientSide() && world.getServer() != null)
+								world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("\u00A7a" + entity.getDisplayName().getString() + " \u00A7ea cr\u00E9er la faction \u00A7b"
+										+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname)), false);
 						} else {
 							if (entity instanceof Player _player && !_player.level().isClientSide())
 								_player.displayClientMessage(Component.literal(("\u00A7cYou need " + (double) ConfigConfiguration.ITEM_NUMBER_CREATE.get() + "x " + ConfigConfiguration.ITEM_NEED_CREATE.get() + " !")), false);

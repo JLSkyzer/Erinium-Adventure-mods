@@ -68,5 +68,14 @@ public class PlayerTickProcedure {
 				});
 			}
 		}
+		if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).Invite_timer > 0) {
+			{
+				double _setval = (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).Invite_timer - 1;
+				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.Invite_timer = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
 	}
 }

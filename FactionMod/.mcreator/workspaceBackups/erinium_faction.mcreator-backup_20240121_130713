@@ -361,6 +361,250 @@
         ]
       },
       "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "FactionInfo",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_info",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionInfoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "Rtt",
+      "type": "procedure",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rtt",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/RttProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "GetFactionPower",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_power",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionPowerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "GetMaxPower",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_max_power",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetMaxPowerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "GetMemberCount",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_member_count",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetMemberCountProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "GetFactionDesc",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_desc",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionDescProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "FactionStringInfo",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_string_info",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionStringInfoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "GetStringFactionName",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_string_faction_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "GetStringFactionDisplayName",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_string_faction_display_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionDisplayNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "StringFactionExist",
+      "type": "procedure",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "string_faction_exist",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/StringFactionExistProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "GetStringFactionDesc",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_string_faction_desc",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionDescProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
     }
   ],
   "variable_elements": [
@@ -423,6 +667,18 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
+    },
+    {
+      "name": "Invite_timer",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "InvitedBy",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [
@@ -437,12 +693,13 @@
   ],
   "language_map": {
     "en_us": {
-      "subtitles.ding": "",
+      "subtitles.ding": "Youre mentionned !",
       "faction.error.displaynamecharcount": "Your displayname can have 20 characters max !",
       "config.erinium_faction.config": "erinium-faction-common",
       "faction.error.factionalreadyexist": "An other faction use this ID",
       "faction.error.idcharcount": "Your ID can have 20 characters max !",
-      "faction.error.alreadyhavefaction": "You are already in a faction !"
+      "faction.error.alreadyhavefaction": "You are already in a faction !",
+      "invite.timer.zero": "Invitation has expired"
     }
   },
   "foldersRoot": {
@@ -460,7 +717,12 @@
             "children": [
               {
                 "name": "Procedures",
-                "children": []
+                "children": [
+                  {
+                    "name": "Faction Info",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "admin",

@@ -39,19 +39,24 @@ public class PlayerSentChatProcedure {
 			event.setCanceled(true);
 		}
 		for (Entity entityiterator : new ArrayList<>(world.players())) {
-			temp_text = "<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname + " \u00A7e"
-					+ entityiterator.getDisplayName().getString() + "\u00A7r> " + text;
+			temp_text = text;
 			temp_text = temp_text.replace("&", "\u00A7");
 			if (temp_text.contains(entityiterator.getDisplayName().getString())) {
 				temp_text = temp_text.replace(entityiterator.getDisplayName().getString(), "\u00A76\u00A7l" + entityiterator.getDisplayName().getString());
 				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(temp_text), false);
+					world.getServer().getPlayerList()
+							.broadcastSystemMessage(Component.literal(("<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname
+									+ " " + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank + " \u00A7e" + entityiterator.getDisplayName().getString()
+									+ "\u00A7r> " + temp_text)), false);
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							("playsound erinium_faction:ding ambient " + entityiterator.getDisplayName().getString()));
 			} else {
 				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(temp_text), false);
+					world.getServer().getPlayerList()
+							.broadcastSystemMessage(Component.literal(("<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname
+									+ " " + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank + " \u00A7e" + entityiterator.getDisplayName().getString()
+									+ "\u00A7r> " + temp_text)), false);
 			}
 		}
 	}
