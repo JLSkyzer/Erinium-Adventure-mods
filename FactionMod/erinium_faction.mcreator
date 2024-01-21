@@ -154,6 +154,7 @@
     {
       "name": "F",
       "type": "command",
+      "sortid": 68,
       "compiles": true,
       "locked_code": false,
       "registry_name": "f",
@@ -979,6 +980,1017 @@
         ]
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "GetPermissionOfTargetEntity",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_permission_of_target_entity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPermissionOfTargetEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Return"
+    },
+    {
+      "name": "RecruitPerm",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recruit_perm",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/RecruitPermProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons"
+    },
+    {
+      "name": "MemberPerm",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "member_perm",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/MemberPermProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons"
+    },
+    {
+      "name": "AncientPerm",
+      "type": "procedure",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_perm",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/AncientPermProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons"
+    },
+    {
+      "name": "OfficierPerm",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "officier_perm",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/OfficierPermProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons"
+    },
+    {
+      "name": "Caninteract",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "caninteract",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CaninteractProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanBreak",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_break",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanBreakProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanPose",
+      "type": "procedure",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_pose",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanPoseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanKick",
+      "type": "procedure",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_kick",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanKickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanInvite",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_invite",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanInviteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanPromote",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_promote",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanPromoteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanDemote",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_demote",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanDemoteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanClaim",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_claim",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanClaimProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanUnclaim",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_unclaim",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanUnclaimProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanSetwarp",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_setwarp",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanSetwarpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanDelwarp",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_delwarp",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanDelwarpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "Cansethome",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cansethome",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CansethomeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanDelhome",
+      "type": "procedure",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_delhome",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanDelhomeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanModify",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_modify",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanModifyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanHome",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_home",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanHomeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "CanWarp",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_warp",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanWarpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "ReturnTempFile",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_temp_file",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnTempFileProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions"
+    },
+    {
+      "name": "EditPermissionGui",
+      "type": "gui",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "edit_permission_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/world/inventory/EditPermissionGuiMenu.java",
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/network/EditPermissionGuiButtonMessage.java",
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/client/gui/EditPermissionGuiScreen.java"
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions"
+    },
+    {
+      "name": "GetAllPermissions",
+      "type": "procedure",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_all_permissions",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetAllPermissionsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/Return"
+    },
+    {
+      "name": "ChangeInteract",
+      "type": "procedure",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_interact",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeInteractProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeBreak",
+      "type": "procedure",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_break",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeBreakProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangePose",
+      "type": "procedure",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_pose",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangePoseProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeKick",
+      "type": "procedure",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_kick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeKickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeInvite",
+      "type": "procedure",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_invite",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeInviteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangePromote",
+      "type": "procedure",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_promote",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangePromoteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeDemote",
+      "type": "procedure",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_demote",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeDemoteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeClaim",
+      "type": "procedure",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_claim",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeClaimProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeUnclaim",
+      "type": "procedure",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_unclaim",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeUnclaimProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeSetwarp",
+      "type": "procedure",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_setwarp",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeSetwarpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeDelwarp",
+      "type": "procedure",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_delwarp",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeDelwarpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeSethome",
+      "type": "procedure",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_sethome",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeSethomeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeDelhome",
+      "type": "procedure",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_delhome",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeDelhomeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeModify",
+      "type": "procedure",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_modify",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeModifyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeHome",
+      "type": "procedure",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_home",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeHomeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "ChangeWarp",
+      "type": "procedure",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "change_warp",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChangeWarpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions/buttons/perm"
+    },
+    {
+      "name": "Validate",
+      "type": "procedure",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "validate",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ValidateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions"
+    },
+    {
+      "name": "CloseGui",
+      "type": "procedure",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "close_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CloseGuiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions"
+    },
+    {
+      "name": "ValidateBtn",
+      "type": "procedure",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "validate_btn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ValidateBtnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions"
+    },
+    {
+      "name": "SeleteRankGui",
+      "type": "gui",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "selete_rank_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/network/SeleteRankGuiButtonMessage.java",
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/client/gui/SeleteRankGuiScreen.java",
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/world/inventory/SeleteRankGuiMenu.java"
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Edit Permissions"
+    },
+    {
+      "name": "FactionPerm",
+      "type": "procedure",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_perm",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionPermProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "PlayerCanInteract",
+      "type": "procedure",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_can_interact",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PlayerCanInteractProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Rank/Return"
     }
   ],
   "variable_elements": [
@@ -1059,6 +2071,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "12000.0"
+    },
+    {
+      "name": "temp_perm_list",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
     }
   ],
   "sound_elements": [
@@ -1073,13 +2091,35 @@
   ],
   "language_map": {
     "en_us": {
+      "gui.erinium_faction.edit_permission_gui.button_empty": "X",
+      "gui.erinium_faction.selete_rank_gui.label_select_the_rank_to_modify": "Select the rank to modify",
+      "gui.erinium_faction.edit_permission_gui.button_x1": "X",
+      "gui.erinium_faction.selete_rank_gui.button_member": "Member",
+      "gui.erinium_faction.edit_permission_gui.button_x3": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x2": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x5": "X",
+      "config.erinium_faction.config": "erinium-faction-common",
+      "gui.erinium_faction.edit_permission_gui.button_x4": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x7": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x6": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x9": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x8": "X",
+      "faction.error.alreadyhavefaction": "You are already in a faction !",
+      "gui.erinium_faction.selete_rank_gui.button_recruit": "Recruit",
       "subtitles.ding": "Youre mentionned !",
       "faction.error.displaynamecharcount": "Your displayname can have 20 characters max !",
-      "config.erinium_faction.config": "erinium-faction-common",
-      "faction.error.factionalreadyexist": "An other faction use this ID",
+      "gui.erinium_faction.edit_permission_gui.button_finish": "Finish",
+      "gui.erinium_faction.edit_permission_gui.button_x10": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x12": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x11": "X",
+      "gui.erinium_faction.selete_rank_gui.button_ancient": "Ancient",
+      "gui.erinium_faction.selete_rank_gui.button_officier": "Officier",
+      "gui.erinium_faction.edit_permission_gui.button_x": "X",
       "faction.error.idcharcount": "Your ID can have 20 characters max !",
-      "faction.error.alreadyhavefaction": "You are already in a faction !",
-      "invite.timer.zero": "Invitation has expired"
+      "invite.timer.zero": "Invitation has expired",
+      "gui.erinium_faction.edit_permission_gui.button_x14": "X",
+      "gui.erinium_faction.edit_permission_gui.button_x13": "X",
+      "faction.error.factionalreadyexist": "An other faction use this ID"
     }
   },
   "foldersRoot": {
@@ -1118,6 +2158,15 @@
                 "children": [
                   {
                     "name": "buttons",
+                    "children": [
+                      {
+                        "name": "perm",
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Return",
                     "children": []
                   }
                 ]

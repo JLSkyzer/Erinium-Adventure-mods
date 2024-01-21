@@ -1,0 +1,541 @@
+{
+  "_fv": 47,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "f_perm_gui.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_temp_file",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnTempFile"
+          },
+          "color": {
+            "value": -6737152,
+            "falpha": 0.0
+          },
+          "x": 2,
+          "y": 2
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_finish",
+          "text": "Finish",
+          "onClick": {
+            "name": "ValidateBtn"
+          },
+          "width": 36,
+          "height": 20,
+          "x": 387,
+          "y": 216
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_caninteract",
+          "text": {
+            "fixedValue": "",
+            "name": "Caninteract"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 4,
+          "y": 19
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeInteract"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 4,
+          "y": 29
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_break",
+          "text": {
+            "fixedValue": "",
+            "name": "CanBreak"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 4,
+          "y": 49
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x1",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeBreak"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 4,
+          "y": 59
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_pose",
+          "text": {
+            "fixedValue": "",
+            "name": "CanPose"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 4,
+          "y": 79
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_empty",
+          "text": "X",
+          "onClick": {
+            "name": "ChangePose"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 4,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_kick",
+          "text": {
+            "fixedValue": "",
+            "name": "CanKick"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 4,
+          "y": 109
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x2",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeKick"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 4,
+          "y": 119
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_invite",
+          "text": {
+            "fixedValue": "",
+            "name": "CanInvite"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 4,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x3",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeInvite"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 4,
+          "y": 149
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_promote",
+          "text": {
+            "fixedValue": "",
+            "name": "CanPromote"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 4,
+          "y": 169
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x4",
+          "text": "X",
+          "onClick": {
+            "name": "ChangePromote"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 4,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_demote",
+          "text": {
+            "fixedValue": "",
+            "name": "CanDemote"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 4,
+          "y": 199
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x5",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeDemote"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 4,
+          "y": 209
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_claim",
+          "text": {
+            "fixedValue": "",
+            "name": "CanClaim"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 84,
+          "y": 19
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x6",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeClaim"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 84,
+          "y": 29
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_unclaim",
+          "text": {
+            "fixedValue": "",
+            "name": "CanUnclaim"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 84,
+          "y": 49
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x7",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeUnclaim"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 84,
+          "y": 59
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_setwarp",
+          "text": {
+            "fixedValue": "",
+            "name": "CanSetwarp"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 84,
+          "y": 79
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x8",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeSetwarp"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 84,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_delwarp",
+          "text": {
+            "fixedValue": "",
+            "name": "CanDelwarp"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 84,
+          "y": 109
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x9",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeDelwarp"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 84,
+          "y": 119
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_cansethome",
+          "text": {
+            "fixedValue": "",
+            "name": "Cansethome"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 84,
+          "y": 139
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x10",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeSethome"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 84,
+          "y": 149
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_delhome",
+          "text": {
+            "fixedValue": "",
+            "name": "CanDelhome"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 84,
+          "y": 169
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x11",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeDelhome"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 84,
+          "y": 179
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_modify",
+          "text": {
+            "fixedValue": "",
+            "name": "CanModify"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 84,
+          "y": 199
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x12",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeModify"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 84,
+          "y": 209
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_home",
+          "text": {
+            "fixedValue": "",
+            "name": "CanHome"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 154,
+          "y": 19
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x13",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeHome"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 154,
+          "y": 29
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_can_warp",
+          "text": {
+            "fixedValue": "",
+            "name": "CanWarp"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 154,
+          "y": 49
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_x14",
+          "text": "X",
+          "onClick": {
+            "name": "ChangeWarp"
+          },
+          "width": 20,
+          "height": 20,
+          "x": 154,
+          "y": 59
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 20,
+      "sy": 20,
+      "ox": 6,
+      "oy": 17,
+      "snapOnGrid": true
+    }
+  }
+}

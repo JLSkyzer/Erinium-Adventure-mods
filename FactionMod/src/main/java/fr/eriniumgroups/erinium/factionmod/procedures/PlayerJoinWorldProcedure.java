@@ -38,6 +38,7 @@ public class PlayerJoinWorldProcedure {
 			return;
 		File file = new File("");
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject UUIDJsonObject = new com.google.gson.JsonObject();
 		file = new File((FMLPaths.GAMEDIR.get().toString() + "/player_informations/"), File.separator + (entity.getUUID().toString() + ".json"));
 		if (!file.exists()) {
 			try {
@@ -144,6 +145,26 @@ public class PlayerJoinWorldProcedure {
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
+			}
+		}
+		file = new File((FMLPaths.GAMEDIR.get().toString() + "/player_informations/nameToUUID/"), File.separator + (entity.getDisplayName().getString() + ".json"));
+		if (!file.exists()) {
+			try {
+				file.getParentFile().mkdirs();
+				file.createNewFile();
+			} catch (IOException exception) {
+				exception.printStackTrace();
+			}
+			JsonObject.addProperty("uuid", entity.getUUID().toString());
+			{
+				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				try {
+					FileWriter fileWriter = new FileWriter(file);
+					fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
+					fileWriter.close();
+				} catch (IOException exception) {
+					exception.printStackTrace();
+				}
 			}
 		}
 	}

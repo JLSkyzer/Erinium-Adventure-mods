@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.AbstractMap;
 
 import fr.eriniumgroups.erinium.factionmod.init.EriniumFactionModSounds;
+import fr.eriniumgroups.erinium.factionmod.init.EriniumFactionModMenus;
 
 @Mod("erinium_faction")
 public class EriniumFactionMod {
@@ -50,6 +51,7 @@ public class EriniumFactionMod {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		EriniumFactionModSounds.REGISTRY.register(bus);
 
+		EriniumFactionModMenus.REGISTRY.register(bus);
 	}
 
 	private static final String PROTOCOL_VERSION = "1";

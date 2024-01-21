@@ -78,6 +78,7 @@ public class EriniumFactionModVariables {
 			clone.Invite_timer = original.Invite_timer;
 			clone.InvitedBy = original.InvitedBy;
 			clone.power_timer = original.power_timer;
+			clone.temp_perm_list = original.temp_perm_list;
 			if (!event.isWasDeath()) {
 				clone.temp_perm_path = original.temp_perm_path;
 			}
@@ -128,6 +129,7 @@ public class EriniumFactionModVariables {
 		public double Invite_timer = 0;
 		public String InvitedBy = "\"\"";
 		public double power_timer = 12000.0;
+		public String temp_perm_list = "\"\"";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -149,6 +151,7 @@ public class EriniumFactionModVariables {
 			nbt.putDouble("Invite_timer", Invite_timer);
 			nbt.putString("InvitedBy", InvitedBy);
 			nbt.putDouble("power_timer", power_timer);
+			nbt.putString("temp_perm_list", temp_perm_list);
 			return nbt;
 		}
 
@@ -167,6 +170,7 @@ public class EriniumFactionModVariables {
 			Invite_timer = nbt.getDouble("Invite_timer");
 			InvitedBy = nbt.getString("InvitedBy");
 			power_timer = nbt.getDouble("power_timer");
+			temp_perm_list = nbt.getString("temp_perm_list");
 		}
 	}
 
@@ -204,6 +208,7 @@ public class EriniumFactionModVariables {
 					variables.Invite_timer = message.data.Invite_timer;
 					variables.InvitedBy = message.data.InvitedBy;
 					variables.power_timer = message.data.power_timer;
+					variables.temp_perm_list = message.data.temp_perm_list;
 				}
 			});
 			context.setPacketHandled(true);

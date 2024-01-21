@@ -1,3 +1,3 @@
 {
-  "permissions_list": ""
+  "permissions_list": "can_home, can_warp, can_unclaim, can_claim, can_setwarp, can_delwarp, can_delhome, can_sethome, can_modify, can_demote, can_promote, can_invite, can_kick, can_pose, can_break, can_interact, "
 }

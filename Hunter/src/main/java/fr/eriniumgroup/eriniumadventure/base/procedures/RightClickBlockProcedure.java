@@ -36,7 +36,5 @@ public class RightClickBlockProcedure {
 		String s;
 
 		s = Minecraft.getInstance().level.getPlayerByUUID(java.util.UUID.fromString("380df991-f603-344c-a090-369bad2a924a")).getName().getString();
-
-		Minecraft.getInstance().level.getPlayerByUUID(java.util.UUID.fromString("380df991-f603-344c-a090-369bad2a924a")).getName();
 	}
 }
