@@ -26,7 +26,7 @@ public class FactionStringInfoProcedure {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(("\u00A7bName : \u00A7e" + GetStringFactionNameProcedure.execute(arguments))), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal(("\u00A7bDisplayname : \u00A7e" + GetStringFactionDisplayNameProcedure.execute(entity))), false);
+				_player.displayClientMessage(Component.literal(("\u00A7bDisplayname : \u00A7e" + GetStringFactionDisplayNameProcedure.execute(arguments))), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(("\u00A7bDescription : \u00A7e" + GetStringFactionDescProcedure.execute(arguments))), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
