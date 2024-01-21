@@ -15,6 +15,7 @@ import net.minecraft.commands.Commands;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionStringInfoProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPlayerInfoProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPermProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionLeaveProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionJoinProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionInviteProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionInfoProcedure;
@@ -63,7 +64,7 @@ public class FCommand {
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
 
-					FactionInfoProcedure.execute(world, entity);
+					FactionInfoProcedure.execute(entity);
 					return 0;
 				}).then(Commands.literal("byname").then(Commands.argument("factionName", StringArgumentType.word()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
@@ -75,7 +76,7 @@ public class FCommand {
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
 
-					FactionStringInfoProcedure.execute(world, arguments, entity);
+					FactionStringInfoProcedure.execute(arguments, entity);
 					return 0;
 				}))).then(Commands.literal("byplayer").then(Commands.argument("player", EntityArgument.player()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
@@ -87,7 +88,7 @@ public class FCommand {
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
 
-					FactionPlayerInfoProcedure.execute(world, arguments, entity);
+					FactionPlayerInfoProcedure.execute(arguments, entity);
 					return 0;
 				})))).then(Commands.literal("perm").executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
@@ -125,6 +126,18 @@ public class FCommand {
 
 					FactionJoinProcedure.execute(arguments, entity);
 					return 0;
-				}))));
+				}))).then(Commands.literal("leave").executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionLeaveProcedure.execute(entity);
+					return 0;
+				})));
 	}
 }

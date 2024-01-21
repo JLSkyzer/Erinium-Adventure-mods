@@ -2,13 +2,6 @@ package fr.eriniumgroups.erinium.factionmod.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import org.apache.http.util.EntityUtils;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.HttpEntity;
-
 import net.minecraftforge.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.LevelAccessor;
@@ -173,32 +166,7 @@ public class FactionDisbandProcedure {
 									exception.printStackTrace();
 								}
 							}
-							player_name = new Object() {
-								public String getElementID() {
-									try {
-										CloseableHttpClient httpclient = HttpClients.createDefault();
-										HttpGet httpget = new HttpGet(("https://mcuuid.net/?q=" + new Object() {
-											private String split(String text, String space, int index) {
-												String s = text.split(space)[index];
-												return s;
-											}
-										}.split(((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_text), ", ",
-												(int) ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_count))));
-										CloseableHttpResponse httpresponse = httpclient.execute(httpget);
-										HttpEntity entityHTTP = httpresponse.getEntity();
-										String responseString = EntityUtils.toString(entityHTTP, "UTF-8");
-										// Utilisation de Jsoup pour analyser la page HTML
-										org.jsoup.nodes.Document document = org.jsoup.Jsoup.parse(responseString);
-										// Extraction de la valeur de l'élément d'entrée avec l'ID "results_id"
-										String resultsIdValue = document.select("#" + "results_username").attr("value");
-										return resultsIdValue;
-									} catch (IOException e) {
-										System.out.println("Error fetching URL");
-										e.printStackTrace();
-										return null;
-									}
-								}
-							}.getElementID();
+							player_name = JsonObject.get("player_name").getAsString();
 							for (Entity entityiterator : new ArrayList<>(world.players())) {
 								if ((entityiterator.getDisplayName().getString()).equals(player_name)) {
 									{

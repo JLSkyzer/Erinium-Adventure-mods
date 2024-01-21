@@ -1,6 +1,5 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
@@ -16,7 +15,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
 public class FactionPlayerInfoProcedure {
-	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
+	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
 			return;
 		File file = new File("");
@@ -60,7 +59,7 @@ public class FactionPlayerInfoProcedure {
 				_player.displayClientMessage(Component.literal(("\u00A7bMember count : \u00A7e" + new java.text.DecimalFormat("###,###").format(GetPlayerFactionCountProcedure.execute(arguments, entity)) + " \u00A7b/ \u00A76"
 						+ new java.text.DecimalFormat("###,###").format((double) ConfigConfiguration.MAX_MEMBER.get()))), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal(("\u00A7bMember : \u00A76[\u00A7e" + GetPlayerFactionMemberListProcedure.execute(world, arguments, entity) + "\u00A76]")), false);
+				_player.displayClientMessage(Component.literal(("\u00A7bMember : \u00A76[\u00A7e" + GetPlayerFactionMemberListProcedure.execute(arguments, entity) + "\u00A76]")), false);
 			for (int index0 = 0; index0 < (int) ("===== Faction Info =====").length(); index0++) {
 				tempEndMessage = tempEndMessage + "=";
 			}

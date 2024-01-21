@@ -4,11 +4,9 @@ import org.checkerframework.checker.units.qual.s;
 
 import net.minecraftforge.fml.loading.FMLPaths;
 
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.client.Minecraft;
 
 import java.io.IOException;
 import java.io.FileReader;
@@ -23,7 +21,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.google.gson.Gson;
 
 public class GetPlayerFactionMemberListProcedure {
-	public static String execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
+	public static String execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
 			return "";
 		File File = new File("");
@@ -75,12 +73,7 @@ public class GetPlayerFactionMemberListProcedure {
 						}
 						bufferedReader.close();
 						SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						player_name = player_name + "\u00A75[" + SecJsonObject.get("faction_rank").getAsString() + "] \u00A7e" + Minecraft.getInstance().level.getPlayerByUUID(java.util.UUID.fromString(new Object() {
-							private String split(String text, String space, int index) {
-								String s = text.split(space)[index];
-								return s;
-							}
-						}.split(uuid_list, ", ", (int) ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_count)))).getName().getString() + ", ";
+						player_name = player_name + "\u00A75[" + SecJsonObject.get("faction_rank").getAsString() + "] \u00A7e" + SecJsonObject.get("player_name").getAsString() + ", ";
 					} catch (IOException e) {
 						e.printStackTrace();
 					}

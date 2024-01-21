@@ -3,5 +3,6 @@
   "faction_rank": "Chef",
   "power": 9.0,
   "rank": "§eMembre",
-  "admin.permission": false
+  "admin.permission": false,
+  "player_name": "Dev"
 }

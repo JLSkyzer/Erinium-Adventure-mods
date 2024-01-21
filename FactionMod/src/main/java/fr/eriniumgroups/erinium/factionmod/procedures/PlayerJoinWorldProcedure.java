@@ -47,6 +47,7 @@ public class PlayerJoinWorldProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
+			JsonObject.addProperty("player_name", (entity.getDisplayName().getString()));
 			JsonObject.addProperty("faction", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name));
 			JsonObject.addProperty("faction_rank", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank));
 			JsonObject.addProperty("power", 10);
@@ -73,6 +74,13 @@ public class PlayerJoinWorldProcedure {
 					}
 					bufferedReader.close();
 					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					if (!JsonObject.has("player_name")) {
+						JsonObject.addProperty("player_name", (entity.getDisplayName().getString()));
+					} else {
+						if (!(JsonObject.get("player_name").getAsString()).equals(entity.getDisplayName().getString())) {
+							JsonObject.addProperty("player_name", (entity.getDisplayName().getString()));
+						}
+					}
 					if (!JsonObject.has("faction")) {
 						JsonObject.addProperty("faction", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name));
 					}
@@ -155,12 +163,12 @@ public class PlayerJoinWorldProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
-			JsonObject.addProperty("uuid", entity.getUUID().toString());
+			UUIDJsonObject.addProperty("uuid", entity.getUUID().toString());
 			{
 				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(file);
-					fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
+					fileWriter.write(mainGSONBuilderVariable.toJson(UUIDJsonObject));
 					fileWriter.close();
 				} catch (IOException exception) {
 					exception.printStackTrace();
