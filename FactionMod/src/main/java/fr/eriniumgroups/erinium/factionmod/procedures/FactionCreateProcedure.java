@@ -78,7 +78,7 @@ public class FactionCreateProcedure {
 							JsonObject.addProperty("max_power", 10);
 							JsonObject.addProperty("faction_desc", "No description");
 							JsonObject.addProperty("member_count", (entity.getUUID().toString() + ", "));
-							JsonObject.addProperty("claims", 10);
+							JsonObject.addProperty("claims", 0);
 							{
 								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
 								try {

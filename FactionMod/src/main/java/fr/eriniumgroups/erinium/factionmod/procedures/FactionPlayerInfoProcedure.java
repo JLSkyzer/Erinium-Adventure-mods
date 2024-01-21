@@ -54,6 +54,9 @@ public class FactionPlayerInfoProcedure {
 				_player.displayClientMessage(Component.literal(("\u00A7bPower : \u00A7e" + new java.text.DecimalFormat("###,###").format(GetPlayerFactionPowerProcedure.execute(arguments)) + " \u00A7b/ \u00A76"
 						+ new java.text.DecimalFormat("###,###").format(GetPlayerFactionMaxPowerProcedure.execute(arguments, entity)))), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
+				_player.displayClientMessage(Component.literal(("\u00A7bClaims : \u00A7e" + new java.text.DecimalFormat("###,###").format(GetPlayerFactionClaimsNumberProcedure.execute(arguments)) + " \u00A7b/ \u00A76"
+						+ new java.text.DecimalFormat("###,###").format(GetPlayerFactionCountProcedure.execute(arguments, entity) * 10))), false);
+			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(("\u00A7bMember count : \u00A7e" + new java.text.DecimalFormat("###,###").format(GetPlayerFactionCountProcedure.execute(arguments, entity)) + " \u00A7b/ \u00A76"
 						+ new java.text.DecimalFormat("###,###").format((double) ConfigConfiguration.MAX_MEMBER.get()))), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())

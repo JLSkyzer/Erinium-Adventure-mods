@@ -21,11 +21,12 @@ public class RttProcedure {
 	public static String execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return "";
-		com.google.gson.JsonObject JSonObject = new com.google.gson.JsonObject();
 		File File = new File("");
 		String player_name = "";
 		String uuid_list = "";
 		double whilecount = 0;
+		com.google.gson.JsonObject JSonObject = new com.google.gson.JsonObject();
+		com.google.gson.JsonObject SecJsonObject = new com.google.gson.JsonObject();
 		File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/"),
 				File.separator + "global_informations.json");
 		{
@@ -45,12 +46,32 @@ public class RttProcedure {
 		}
 		for (int index0 = 0; index0 < 20; index0++) {
 			if ((uuid_list).length() != 0) {
-				player_name = player_name + "" + Minecraft.getInstance().level.getPlayerByUUID(java.util.UUID.fromString(new Object() {
+				File = new File((FMLPaths.GAMEDIR.get().toString() + "/player_informations/"), File.separator + (new Object() {
 					private String split(String text, String space, int index) {
 						String s = text.split(space)[index];
 						return s;
 					}
-				}.split(uuid_list, ", ", (int) ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_count)))).getName().getString() + ", ";
+				}.split(uuid_list, ", ", (int) ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_count)) + ".json"));
+				{
+					try {
+						BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
+						StringBuilder jsonstringbuilder = new StringBuilder();
+						String line;
+						while ((line = bufferedReader.readLine()) != null) {
+							jsonstringbuilder.append(line);
+						}
+						bufferedReader.close();
+						SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						player_name = player_name + "\u00A75[" + SecJsonObject.get("faction_rank").getAsString() + "] \u00A7e" + Minecraft.getInstance().level.getPlayerByUUID(java.util.UUID.fromString(new Object() {
+							private String split(String text, String space, int index) {
+								String s = text.split(space)[index];
+								return s;
+							}
+						}.split(uuid_list, ", ", (int) ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_count)))).getName().getString() + ", ";
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
 				uuid_list = uuid_list.replace(new Object() {
 					private String split(String text, String space, int index) {
 						String s = text.split(space)[index];

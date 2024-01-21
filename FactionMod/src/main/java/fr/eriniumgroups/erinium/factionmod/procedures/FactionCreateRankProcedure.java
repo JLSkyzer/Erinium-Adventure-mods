@@ -28,9 +28,9 @@ public class FactionCreateRankProcedure {
 		String Displayname = "";
 		String ID = "";
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
-		myArray.add("Recrue");
-		myArray.add("Membre");
-		myArray.add("Ain\u00E9");
+		myArray.add("Recruit");
+		myArray.add("Member");
+		myArray.add("Ancient");
 		myArray.add("Officier");
 		count = 0;
 		while (!(count == 4)) {
