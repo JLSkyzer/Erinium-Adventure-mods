@@ -99,21 +99,11 @@ public class FactionLeaveProcedure {
 							});
 						}
 						{
-							String _setval = SecJsonObject.get("Wilderness").getAsString();
+							String _setval = "Wilderness";
 							entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 								capability.faction_displayname = _setval;
 								capability.syncPlayerVariables(entity);
 							});
-						}
-						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
-							try {
-								FileWriter fileWriter = new FileWriter(File);
-								fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
-								fileWriter.close();
-							} catch (IOException exception) {
-								exception.printStackTrace();
-							}
 						}
 					} catch (IOException e) {
 						e.printStackTrace();

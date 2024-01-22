@@ -2375,6 +2375,528 @@
         ]
       },
       "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "ReturnCommandOfflineEntityPath",
+      "type": "procedure",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_command_offline_entity_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnCommandOfflineEntityPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/PlayerInformations/return"
+    },
+    {
+      "name": "OfflineEntityExist",
+      "type": "procedure",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "offline_entity_exist",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/OfflineEntityExistProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerInformations/return"
+    },
+    {
+      "name": "CommandOfflineEntityAreSameFaction",
+      "type": "procedure",
+      "sortid": 113,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_offline_entity_are_same_faction",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CommandOfflineEntityAreSameFactionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "CommandOfflineEntityRankCheckerToExecute",
+      "type": "procedure",
+      "sortid": 114,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_offline_entity_rank_checker_to_execute",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CommandOfflineEntityRankCheckerToExecuteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "CommandEntityRankCheckerToExecute",
+      "type": "procedure",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "command_entity_rank_checker_to_execute",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CommandEntityRankCheckerToExecuteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "FactionKickOffline",
+      "type": "procedure",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_kick_offline",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionKickOfflineProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "FactionKickOnline",
+      "type": "procedure",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_kick_online",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionKickOnlineProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "PromoteOfflineLogicRank",
+      "type": "procedure",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "promote_offline_logic_rank",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PromoteOfflineLogicRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info/Promote"
+    },
+    {
+      "name": "PromoteOnlineLogicRank",
+      "type": "procedure",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "promote_online_logic_rank",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PromoteOnlineLogicRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info/Promote"
+    },
+    {
+      "name": "PromoteOfflineStringRank",
+      "type": "procedure",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "promote_offline_string_rank",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PromoteOfflineStringRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info/Promote"
+    },
+    {
+      "name": "PromoteOnlineStringRank",
+      "type": "procedure",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "promote_online_string_rank",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PromoteOnlineStringRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info/Promote"
+    },
+    {
+      "name": "FactionPromoteOffline",
+      "type": "procedure",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_promote_offline",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionPromoteOfflineProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "FactionPromoteOnline",
+      "type": "procedure",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_promote_online",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionPromoteOnlineProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "DemoteOfflineLogicRank",
+      "type": "procedure",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demote_offline_logic_rank",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DemoteOfflineLogicRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info/Demote"
+    },
+    {
+      "name": "DemoteOnlineLogicRank",
+      "type": "procedure",
+      "sortid": 125,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demote_online_logic_rank",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DemoteOnlineLogicRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info/Demote"
+    },
+    {
+      "name": "DemontOfflineStringRank",
+      "type": "procedure",
+      "sortid": 126,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demont_offline_string_rank",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DemontOfflineStringRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info/Demote"
+    },
+    {
+      "name": "DemoteOnlineStringRank",
+      "type": "procedure",
+      "sortid": 127,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "demote_online_string_rank",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DemoteOnlineStringRankProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info/Demote"
+    },
+    {
+      "name": "FactionDemoteOffline",
+      "type": "procedure",
+      "sortid": 128,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_demote_offline",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionDemoteOfflineProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "FactionDemoteOnline",
+      "type": "procedure",
+      "sortid": 129,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_demote_online",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionDemoteOnlineProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "OfflinePlayerAreInTheServer",
+      "type": "procedure",
+      "sortid": 130,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "offline_player_are_in_the_server",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/OfflinePlayerAreInTheServerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "ReturnCommandOfflineEntityUuid",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_command_offline_entity_uuid",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnCommandOfflineEntityUuidProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/PlayerInformations/return"
     }
   ],
   "variable_elements": [
@@ -2524,7 +3046,16 @@
                 "children": [
                   {
                     "name": "Faction Info",
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Promote",
+                        "children": []
+                      },
+                      {
+                        "name": "Demote",
+                        "children": []
+                      }
+                    ]
                   }
                 ]
               },

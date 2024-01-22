@@ -13,13 +13,19 @@ import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.Commands;
 
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionStringInfoProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionPromoteOnlineProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionPromoteOfflineProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPlayerInfoProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPermProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionLeaveProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionKickOnlineProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionKickOfflineProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionJoinProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionInviteProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionInfoProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionDisbandProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionDemoteOnlineProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionDemoteOfflineProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionCreateProcedure;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
@@ -138,6 +144,78 @@ public class FCommand {
 
 					FactionLeaveProcedure.execute(entity);
 					return 0;
-				})));
+				})).then(Commands.literal("kick").then(Commands.literal("onlineplayer").then(Commands.argument("player", EntityArgument.player()).executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionKickOnlineProcedure.execute(arguments, entity);
+					return 0;
+				}))).then(Commands.literal("offlineplayer").then(Commands.argument("player", StringArgumentType.word()).executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionKickOfflineProcedure.execute(world, arguments, entity);
+					return 0;
+				})))).then(Commands.literal("promote").then(Commands.literal("onlineplayer").then(Commands.argument("player", EntityArgument.player()).executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionPromoteOnlineProcedure.execute(arguments, entity);
+					return 0;
+				}))).then(Commands.literal("offlineplayer").then(Commands.argument("player", StringArgumentType.word()).executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionPromoteOfflineProcedure.execute(world, arguments, entity);
+					return 0;
+				})))).then(Commands.literal("demote").then(Commands.literal("onlineplayer").then(Commands.argument("player", EntityArgument.player()).executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionDemoteOnlineProcedure.execute(arguments, entity);
+					return 0;
+				}))).then(Commands.literal("offlineplayer").then(Commands.argument("player", StringArgumentType.word()).executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionDemoteOfflineProcedure.execute(world, arguments, entity);
+					return 0;
+				})))));
 	}
 }
