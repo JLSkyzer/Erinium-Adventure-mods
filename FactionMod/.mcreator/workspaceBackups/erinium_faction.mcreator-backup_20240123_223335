@@ -2877,6 +2877,197 @@
         ]
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
+    },
+    {
+      "name": "ReturnCommandOfflineEntityUuid",
+      "type": "procedure",
+      "sortid": 131,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_command_offline_entity_uuid",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnCommandOfflineEntityUuidProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/PlayerInformations/return"
+    },
+    {
+      "name": "ReturnOwnedFactiion",
+      "type": "procedure",
+      "sortid": 132,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_owned_factiion",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnOwnedFactiionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Chunk System"
+    },
+    {
+      "name": "GetChunkPath",
+      "type": "procedure",
+      "sortid": 133,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_chunk_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetChunkPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Chunk System"
+    },
+    {
+      "name": "IsWarzone",
+      "type": "procedure",
+      "sortid": 134,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_warzone",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/IsWarzoneProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Chunk System"
+    },
+    {
+      "name": "IsSafezone",
+      "type": "procedure",
+      "sortid": 135,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_safezone",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/IsSafezoneProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Chunk System"
+    },
+    {
+      "name": "CanInteractWithClaims",
+      "type": "procedure",
+      "sortid": 136,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_interact_with_claims",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanInteractWithClaimsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Chunk System"
+    },
+    {
+      "name": "FactionClaimsPath",
+      "type": "procedure",
+      "sortid": 137,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_claims_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionClaimsPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "GetFactionDescAtChunk",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_desc_at_chunk",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionDescAtChunkProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
     }
   ],
   "variable_elements": [
@@ -2963,6 +3154,12 @@
       "type": "string",
       "scope": "player_persistent",
       "value": "\"\""
+    },
+    {
+      "name": "last_owned",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": ""
     }
   ],
   "sound_elements": [
@@ -2978,6 +3175,7 @@
   "language_map": {
     "en_us": {
       "gui.erinium_faction.edit_permission_gui.button_empty": "X",
+      "warzone.desc": "Go to fight !",
       "gui.erinium_faction.selete_rank_gui.label_select_the_rank_to_modify": "Select the rank to modify",
       "gui.erinium_faction.edit_permission_gui.button_x1": "X",
       "gui.erinium_faction.selete_rank_gui.button_member": "Member",
@@ -2992,6 +3190,7 @@
       "gui.erinium_faction.edit_permission_gui.button_x8": "X",
       "faction.error.alreadyhavefaction": "You are already in a faction !",
       "gui.erinium_faction.selete_rank_gui.button_recruit": "Recruit",
+      "wilderness.desc": "Be carefull during your trip !",
       "subtitles.ding": "Youre mentionned !",
       "faction.error.displaynamecharcount": "Your displayname can have 20 characters max !",
       "gui.erinium_faction.edit_permission_gui.button_finish": "Finish",
@@ -3000,6 +3199,7 @@
       "gui.erinium_faction.edit_permission_gui.button_x11": "X",
       "gui.erinium_faction.selete_rank_gui.button_ancient": "Ancient",
       "gui.erinium_faction.selete_rank_gui.button_officier": "Officier",
+      "safezone.desc": "A safe place to chill",
       "gui.erinium_faction.edit_permission_gui.button_x": "X",
       "faction.error.idcharcount": "Your ID can have 20 characters max !",
       "invite.timer.zero": "Invitation has expired",
@@ -3082,6 +3282,10 @@
             "children": []
           }
         ]
+      },
+      {
+        "name": "Chunk System",
+        "children": []
       }
     ]
   },
