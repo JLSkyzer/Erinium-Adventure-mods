@@ -80,6 +80,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -3048,6 +3060,222 @@
         ]
       },
       "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "GetFactionDescAtChunk",
+      "type": "procedure",
+      "sortid": 138,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_desc_at_chunk",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionDescAtChunkProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "GetFactionDisplaynameAtChunk",
+      "type": "procedure",
+      "sortid": 139,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_displayname_at_chunk",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionDisplaynameAtChunkProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "RightClickBlock",
+      "type": "procedure",
+      "sortid": 140,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "right_click_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/RightClickBlockProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "FClaim",
+      "type": "procedure",
+      "sortid": 141,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "f_claim",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FClaimProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "GetFactionPowerAtChunk",
+      "type": "procedure",
+      "sortid": 142,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_power_at_chunk",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionPowerAtChunkProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "GetFactionClaimsAtChunk",
+      "type": "procedure",
+      "sortid": 143,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_claims_at_chunk",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionClaimsAtChunkProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "FUnclaim",
+      "type": "procedure",
+      "sortid": 144,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "f_unclaim",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FUnclaimProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "GetPlayerListAtFactionChunk",
+      "type": "procedure",
+      "sortid": 145,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_player_list_at_faction_chunk",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPlayerListAtFactionChunkProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "IsMyFactionTerritory",
+      "type": "procedure",
+      "sortid": 146,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_my_faction_territory",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/IsMyFactionTerritoryProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Chunk System"
+    },
+    {
+      "name": "FactionMap",
+      "type": "procedure",
+      "sortid": 147,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_map",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionMapProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
     }
   ],
   "variable_elements": [
@@ -3154,9 +3382,14 @@
   ],
   "language_map": {
     "en_us": {
+      "faction.message.claim.entered": "You entered at ",
       "gui.erinium_faction.edit_permission_gui.button_empty": "X",
       "warzone.desc": "Go to fight !",
+      "faction.message.nofaction": "You d\u0027ont have faction !",
+      "faction.message.power.enough": "You don\u0027t have enough of power !",
+      "faction.message.chunk.lost": "You have lost a chunk at ",
       "gui.erinium_faction.selete_rank_gui.label_select_the_rank_to_modify": "Select the rank to modify",
+      "message.faction.unclaim.cant": "You can\u0027t unclaim this chunk !",
       "gui.erinium_faction.edit_permission_gui.button_x1": "X",
       "gui.erinium_faction.selete_rank_gui.button_member": "Member",
       "gui.erinium_faction.edit_permission_gui.button_x3": "X",
@@ -3169,6 +3402,7 @@
       "gui.erinium_faction.edit_permission_gui.button_x9": "X",
       "gui.erinium_faction.edit_permission_gui.button_x8": "X",
       "faction.error.alreadyhavefaction": "You are already in a faction !",
+      "faction.message.claim.succeful": "You have claim this chunk !",
       "gui.erinium_faction.selete_rank_gui.button_recruit": "Recruit",
       "wilderness.desc": "Be carefull during your trip !",
       "subtitles.ding": "Youre mentionned !",
@@ -3182,7 +3416,9 @@
       "safezone.desc": "A safe place to chill",
       "gui.erinium_faction.edit_permission_gui.button_x": "X",
       "faction.error.idcharcount": "Your ID can have 20 characters max !",
+      "message.faction.claim.cant": "You can\u0027t claim this area",
       "invite.timer.zero": "Invitation has expired",
+      "faction.message.unclaim.succeful": "You have unclaim this chunk !",
       "gui.erinium_faction.edit_permission_gui.button_x14": "X",
       "gui.erinium_faction.edit_permission_gui.button_x13": "X",
       "faction.error.factionalreadyexist": "An other faction use this ID"

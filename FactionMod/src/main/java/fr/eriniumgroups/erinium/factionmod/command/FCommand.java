@@ -17,6 +17,7 @@ import fr.eriniumgroups.erinium.factionmod.procedures.FactionPromoteOnlineProced
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPromoteOfflineProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPlayerInfoProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPermProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionMapProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionLeaveProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionKickOnlineProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionKickOfflineProcedure;
@@ -27,6 +28,8 @@ import fr.eriniumgroups.erinium.factionmod.procedures.FactionDisbandProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionDemoteOnlineProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionDemoteOfflineProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionCreateProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FUnclaimProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FClaimProcedure;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 
@@ -216,6 +219,42 @@ public class FCommand {
 
 					FactionDemoteOfflineProcedure.execute(world, arguments, entity);
 					return 0;
-				})))));
+				})))).then(Commands.literal("claim").executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FClaimProcedure.execute(world, entity);
+					return 0;
+				})).then(Commands.literal("unclaim").executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FUnclaimProcedure.execute(world, entity);
+					return 0;
+				})).then(Commands.literal("map").executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionMapProcedure.execute(world, entity);
+					return 0;
+				})));
 	}
 }
