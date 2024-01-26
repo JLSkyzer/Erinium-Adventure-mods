@@ -82,6 +82,12 @@ public class EriniumFactionModVariables {
 			clone.last_owned = original.last_owned;
 			if (!event.isWasDeath()) {
 				clone.temp_perm_path = original.temp_perm_path;
+				clone.FMapToggle = original.FMapToggle;
+				clone.temp_x = original.temp_x;
+				clone.temp_y = original.temp_y;
+				clone.temp_z = original.temp_z;
+				clone.teleport_cooldown = original.teleport_cooldown;
+				clone.teleported = original.teleported;
 			}
 		}
 	}
@@ -132,6 +138,12 @@ public class EriniumFactionModVariables {
 		public double power_timer = 12000.0;
 		public String temp_perm_list = "\"\"";
 		public String last_owned = "";
+		public boolean FMapToggle = false;
+		public double temp_x = 0;
+		public double temp_y = 0;
+		public double temp_z = 0;
+		public double teleport_cooldown = 0;
+		public boolean teleported = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -155,6 +167,12 @@ public class EriniumFactionModVariables {
 			nbt.putDouble("power_timer", power_timer);
 			nbt.putString("temp_perm_list", temp_perm_list);
 			nbt.putString("last_owned", last_owned);
+			nbt.putBoolean("FMapToggle", FMapToggle);
+			nbt.putDouble("temp_x", temp_x);
+			nbt.putDouble("temp_y", temp_y);
+			nbt.putDouble("temp_z", temp_z);
+			nbt.putDouble("teleport_cooldown", teleport_cooldown);
+			nbt.putBoolean("teleported", teleported);
 			return nbt;
 		}
 
@@ -175,6 +193,12 @@ public class EriniumFactionModVariables {
 			power_timer = nbt.getDouble("power_timer");
 			temp_perm_list = nbt.getString("temp_perm_list");
 			last_owned = nbt.getString("last_owned");
+			FMapToggle = nbt.getBoolean("FMapToggle");
+			temp_x = nbt.getDouble("temp_x");
+			temp_y = nbt.getDouble("temp_y");
+			temp_z = nbt.getDouble("temp_z");
+			teleport_cooldown = nbt.getDouble("teleport_cooldown");
+			teleported = nbt.getBoolean("teleported");
 		}
 	}
 
@@ -214,6 +238,12 @@ public class EriniumFactionModVariables {
 					variables.power_timer = message.data.power_timer;
 					variables.temp_perm_list = message.data.temp_perm_list;
 					variables.last_owned = message.data.last_owned;
+					variables.FMapToggle = message.data.FMapToggle;
+					variables.temp_x = message.data.temp_x;
+					variables.temp_y = message.data.temp_y;
+					variables.temp_z = message.data.temp_z;
+					variables.teleport_cooldown = message.data.teleport_cooldown;
+					variables.teleported = message.data.teleported;
 				}
 			});
 			context.setPacketHandled(true);

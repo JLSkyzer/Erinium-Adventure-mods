@@ -24,52 +24,54 @@ public class FactionDemoteOfflineProcedure {
 			return;
 		File File = new File("");
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
-		if (TargetEntityIsChefProcedure.execute(entity) || PlayerCanDemoteProcedure.execute(entity)) {
-			if (OfflineEntityExistProcedure.execute(arguments, entity)) {
-				if (CommandOfflineEntityAreSameFactionProcedure.execute(arguments, entity)) {
-					if (DemoteOfflineLogicRankProcedure.execute(arguments, entity)) {
-						if (!OfflinePlayerAreInTheServerProcedure.execute(world, arguments)) {
-							File = ReturnCommandOfflineEntityPathProcedure.execute(arguments);
-							{
-								try {
-									BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
-									StringBuilder jsonstringbuilder = new StringBuilder();
-									String line;
-									while ((line = bufferedReader.readLine()) != null) {
-										jsonstringbuilder.append(line);
-									}
-									bufferedReader.close();
-									JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-									JsonObject.addProperty("faction_rank", DemontOfflineStringRankProcedure.execute(arguments, entity));
-									{
-										Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
-										try {
-											FileWriter fileWriter = new FileWriter(File);
-											fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
-											fileWriter.close();
-										} catch (IOException exception) {
-											exception.printStackTrace();
+		if (TargetEntityHaveFactionProcedure.execute(entity)) {
+			if (TargetEntityIsChefProcedure.execute(entity) || PlayerCanDemoteProcedure.execute(entity)) {
+				if (OfflineEntityExistProcedure.execute(arguments, entity)) {
+					if (CommandOfflineEntityAreSameFactionProcedure.execute(arguments, entity)) {
+						if (DemoteOfflineLogicRankProcedure.execute(arguments, entity)) {
+							if (!OfflinePlayerAreInTheServerProcedure.execute(world, arguments)) {
+								File = ReturnCommandOfflineEntityPathProcedure.execute(arguments);
+								{
+									try {
+										BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
+										StringBuilder jsonstringbuilder = new StringBuilder();
+										String line;
+										while ((line = bufferedReader.readLine()) != null) {
+											jsonstringbuilder.append(line);
 										}
+										bufferedReader.close();
+										JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+										JsonObject.addProperty("faction_rank", DemontOfflineStringRankProcedure.execute(arguments, entity));
+										{
+											Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+											try {
+												FileWriter fileWriter = new FileWriter(File);
+												fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
+												fileWriter.close();
+											} catch (IOException exception) {
+												exception.printStackTrace();
+											}
+										}
+										if (entity instanceof Player _player && !_player.level().isClientSide())
+											_player.displayClientMessage(Component.literal(("\u00A7aDemoted \u00A7e" + JsonObject.get("player_name").getAsString() + " \u00A7ato rank : \u00A75" + JsonObject.get("faction_rank").getAsString())), false);
+									} catch (IOException e) {
+										e.printStackTrace();
 									}
-									if (entity instanceof Player _player && !_player.level().isClientSide())
-										_player.displayClientMessage(Component.literal(("\u00A7aDemoted \u00A7e" + JsonObject.get("player_name").getAsString() + " \u00A7ato rank : \u00A75" + JsonObject.get("faction_rank").getAsString())), false);
-								} catch (IOException e) {
-									e.printStackTrace();
 								}
+							} else {
+								if (entity instanceof Player _player && !_player.level().isClientSide())
+									_player.displayClientMessage(Component.literal("\u00A7cPlayer are on server"), false);
 							}
-						} else {
-							if (entity instanceof Player _player && !_player.level().isClientSide())
-								_player.displayClientMessage(Component.literal("\u00A7cPlayer are on server"), false);
 						}
+					} else {
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal("\u00A7cPlayer are not in your faction"), false);
 					}
-				} else {
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("\u00A7cPlayer are not in your faction"), false);
 				}
+			} else {
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7cYou can't demote"), false);
 			}
-		} else {
-			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("\u00A7cYou can't demote"), false);
 		}
 	}
 }

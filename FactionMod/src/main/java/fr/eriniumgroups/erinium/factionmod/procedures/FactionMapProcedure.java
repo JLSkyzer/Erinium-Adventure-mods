@@ -33,14 +33,16 @@ public class FactionMapProcedure {
 		String legend_text = "";
 		String already_do_myposition = "";
 		if (entity instanceof Player _player && !_player.level().isClientSide())
-			_player.displayClientMessage(Component.literal("\u00A7b\u00A7l------ Faction Map -----"), false);
+			_player.displayClientMessage(Component.literal("\u00A75===== Faction Map ====="), false);
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal("\u00A73-----------"), false);
 		legend_text = legend_text + "\u00A78# : \u00A7e" + "wilderness" + " \u00A76| ";
 		legend_text = legend_text + "\u00A7a# : \u00A7e" + "Safezone" + " \u00A76| ";
 		legend_text = legend_text + "\u00A74# : \u00A7e" + "Warzone" + " \u00A76| ";
 		temp_number = 0;
 		sz = -56;
 		for (int index0 = 0; index0 < 7; index0++) {
-			temp_message = "";
+			temp_message = "\u00A73|";
 			sx = -88;
 			for (int index1 = 0; index1 < 11; index1++) {
 				if ((new Object() {
@@ -147,12 +149,15 @@ public class FactionMapProcedure {
 				}
 				sx = sx + 16;
 			}
+			temp_message = temp_message + "\u00A73|";
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(temp_message), false);
 			sz = sz + 16;
 		}
 		if (entity instanceof Player _player && !_player.level().isClientSide())
-			_player.displayClientMessage(Component.literal("\u00A7b\u00A7l-----------"), false);
+			_player.displayClientMessage(Component.literal("\u00A73-----------"), false);
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal("\u00A7b\u00A7l=========="), false);
 		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal(legend_text), false);
 	}

@@ -27,49 +27,39 @@ public class FactionPromoteOnlineProcedure {
 			return;
 		File File = new File("");
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
-		if (TargetEntityIsChefProcedure.execute(entity) || PlayerCanPromoteProcedure.execute(entity)) {
-			if (CommandEntityAreSameFactionProcedure.execute(arguments, entity)) {
-				if (PromoteOnlineLogicRankProcedure.execute(arguments, entity)) {
-					File = ReturnCommandEntityPathProcedure.execute(arguments);
-					{
-						try {
-							BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
-							StringBuilder jsonstringbuilder = new StringBuilder();
-							String line;
-							while ((line = bufferedReader.readLine()) != null) {
-								jsonstringbuilder.append(line);
-							}
-							bufferedReader.close();
-							JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-							JsonObject.addProperty("faction_rank", PromoteOnlineStringRankProcedure.execute(arguments, entity));
-							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
-								try {
-									FileWriter fileWriter = new FileWriter(File);
-									fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
-									fileWriter.close();
-								} catch (IOException exception) {
-									exception.printStackTrace();
+		if (TargetEntityHaveFactionProcedure.execute(entity)) {
+			if (TargetEntityIsChefProcedure.execute(entity) || PlayerCanPromoteProcedure.execute(entity)) {
+				if (CommandEntityAreSameFactionProcedure.execute(arguments, entity)) {
+					if (PromoteOnlineLogicRankProcedure.execute(arguments, entity)) {
+						File = ReturnCommandEntityPathProcedure.execute(arguments);
+						{
+							try {
+								BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
+								StringBuilder jsonstringbuilder = new StringBuilder();
+								String line;
+								while ((line = bufferedReader.readLine()) != null) {
+									jsonstringbuilder.append(line);
 								}
+								bufferedReader.close();
+								JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								JsonObject.addProperty("faction_rank", PromoteOnlineStringRankProcedure.execute(arguments, entity));
+								{
+									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									try {
+										FileWriter fileWriter = new FileWriter(File);
+										fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
+										fileWriter.close();
+									} catch (IOException exception) {
+										exception.printStackTrace();
+									}
+								}
+							} catch (IOException e) {
+								e.printStackTrace();
 							}
-						} catch (IOException e) {
-							e.printStackTrace();
 						}
-					}
-					{
-						String _setval = PromoteOnlineStringRankProcedure.execute(arguments, entity);
-						(new Object() {
-							public Entity getEntity() {
-								try {
-									return EntityArgument.getEntity(arguments, "player");
-								} catch (CommandSyntaxException e) {
-									e.printStackTrace();
-									return null;
-								}
-							}
-						}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.faction_rank = _setval;
-							capability.syncPlayerVariables((new Object() {
+						{
+							String _setval = PromoteOnlineStringRankProcedure.execute(arguments, entity);
+							(new Object() {
 								public Entity getEntity() {
 									try {
 										return EntityArgument.getEntity(arguments, "player");
@@ -78,20 +68,21 @@ public class FactionPromoteOnlineProcedure {
 										return null;
 									}
 								}
-							}.getEntity()));
-						});
-					}
-					if ((new Object() {
-						public Entity getEntity() {
-							try {
-								return EntityArgument.getEntity(arguments, "player");
-							} catch (CommandSyntaxException e) {
-								e.printStackTrace();
-								return null;
-							}
+							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.faction_rank = _setval;
+								capability.syncPlayerVariables((new Object() {
+									public Entity getEntity() {
+										try {
+											return EntityArgument.getEntity(arguments, "player");
+										} catch (CommandSyntaxException e) {
+											e.printStackTrace();
+											return null;
+										}
+									}
+								}.getEntity()));
+							});
 						}
-					}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("\u00A7aYou have been promoted to \u00A75" + ((new Object() {
+						if ((new Object() {
 							public Entity getEntity() {
 								try {
 									return EntityArgument.getEntity(arguments, "player");
@@ -100,26 +91,37 @@ public class FactionPromoteOnlineProcedure {
 									return null;
 								}
 							}
-						}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank)), false);
+						}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("\u00A7aYou have been promoted to \u00A75" + ((new Object() {
+								public Entity getEntity() {
+									try {
+										return EntityArgument.getEntity(arguments, "player");
+									} catch (CommandSyntaxException e) {
+										e.printStackTrace();
+										return null;
+									}
+								}
+							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank)), false);
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("\u00A7aPromoted \u00A7e" + JsonObject.get("player_name").getAsString() + " \u00A7ato rank : \u00A75" + ((new Object() {
+								public Entity getEntity() {
+									try {
+										return EntityArgument.getEntity(arguments, "player");
+									} catch (CommandSyntaxException e) {
+										e.printStackTrace();
+										return null;
+									}
+								}
+							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank)), false);
+					}
+				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("\u00A7aPromoted \u00A7e" + JsonObject.get("player_name").getAsString() + " \u00A7ato rank : \u00A75" + ((new Object() {
-							public Entity getEntity() {
-								try {
-									return EntityArgument.getEntity(arguments, "player");
-								} catch (CommandSyntaxException e) {
-									e.printStackTrace();
-									return null;
-								}
-							}
-						}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank)), false);
+						_player.displayClientMessage(Component.literal("\u00A7cPlayer are not in your faction"), false);
 				}
 			} else {
 				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7cPlayer are not in your faction"), false);
+					_player.displayClientMessage(Component.literal("\u00A7cYou can't promote"), false);
 			}
-		} else {
-			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("\u00A7cYou can't promote"), false);
 		}
 	}
 }
