@@ -3276,6 +3276,26 @@
         ]
       },
       "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "FactionPower",
+      "type": "procedure",
+      "sortid": 148,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_power",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionPowerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
     }
   ],
   "variable_elements": [
@@ -3386,6 +3406,7 @@
       "gui.erinium_faction.edit_permission_gui.button_empty": "X",
       "warzone.desc": "Go to fight !",
       "faction.message.nofaction": "You d\u0027ont have faction !",
+      "faction.message.faction.getpower": "Power of your faction : ",
       "faction.message.power.enough": "You don\u0027t have enough of power !",
       "faction.message.chunk.lost": "You have lost a chunk at ",
       "gui.erinium_faction.selete_rank_gui.label_select_the_rank_to_modify": "Select the rank to modify",
@@ -3400,6 +3421,7 @@
       "gui.erinium_faction.edit_permission_gui.button_x7": "X",
       "gui.erinium_faction.edit_permission_gui.button_x6": "X",
       "gui.erinium_faction.edit_permission_gui.button_x9": "X",
+      "faction.message.player.getpower": "You power : ",
       "gui.erinium_faction.edit_permission_gui.button_x8": "X",
       "faction.error.alreadyhavefaction": "You are already in a faction !",
       "faction.message.claim.succeful": "You have claim this chunk !",

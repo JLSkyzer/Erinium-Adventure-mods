@@ -15,6 +15,7 @@ import net.minecraft.commands.Commands;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionStringInfoProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPromoteOnlineProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPromoteOfflineProcedure;
+import fr.eriniumgroups.erinium.factionmod.procedures.FactionPowerProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPlayerInfoProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionPermProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.FactionMapProcedure;
@@ -254,6 +255,18 @@ public class FCommand {
 					Direction direction = entity.getDirection();
 
 					FactionMapProcedure.execute(world, entity);
+					return 0;
+				})).then(Commands.literal("power").executes(arguments -> {
+					ServerLevel world = arguments.getSource().getLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null)
+						entity = FakePlayerFactory.getMinecraft(world);
+					Direction direction = entity.getDirection();
+
+					FactionPowerProcedure.execute(entity);
 					return 0;
 				})));
 	}
