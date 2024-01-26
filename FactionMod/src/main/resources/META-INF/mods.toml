@@ -6,9 +6,10 @@ license="Academic Free License v3.0"
 modId="erinium_faction"
 version="1.0.0"
 displayName="Erinium Faction Mod"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
-authors="killi, MCreator"
+credits="No credit"
+displayURL="https://github.com/JLSkyzer"
+authors="JLSkyzer, MCreator"
+description="A mod for faction system"
 
 [[dependencies.erinium_faction]]
     modId="minecraft"

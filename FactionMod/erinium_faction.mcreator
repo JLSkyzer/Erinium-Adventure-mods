@@ -3672,8 +3672,9 @@
     "modid": "erinium_faction",
     "modName": "Erinium Faction Mod",
     "version": "1.0.0",
-    "author": "killi, MCreator",
-    "websiteURL": "https://mcreator.net",
+    "description": "A mod for faction system",
+    "author": "JLSkyzer, MCreator",
+    "websiteURL": "https://github.com/JLSkyzer",
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
@@ -3684,7 +3685,7 @@
       "jsonforhttprequest"
     ],
     "currentGenerator": "forge-1.20.1",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "credits": "No credit",
     "modElementsPackage": "fr.eriniumgroups.erinium.factionmod",
     "lockBaseModFiles": false
   },
