@@ -15,9 +15,14 @@ import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.level.saveddata.SavedData;
+import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.nbt.Tag;
@@ -33,6 +38,7 @@ import fr.eriniumgroups.erinium.factionmod.EriniumFactionMod;
 public class EriniumFactionModVariables {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
+		EriniumFactionMod.addNetworkMessage(SavedDataSyncMessage.class, SavedDataSyncMessage::buffer, SavedDataSyncMessage::new, SavedDataSyncMessage::handler);
 		EriniumFactionMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handler);
 	}
 
@@ -80,6 +86,10 @@ public class EriniumFactionModVariables {
 			clone.power_timer = original.power_timer;
 			clone.temp_perm_list = original.temp_perm_list;
 			clone.last_owned = original.last_owned;
+			clone.blacklist_item_page = original.blacklist_item_page;
+			clone.BL_Item_page_initialised = original.BL_Item_page_initialised;
+			clone.bypass_claim = original.bypass_claim;
+			clone.CurrentlyDead = original.CurrentlyDead;
 			if (!event.isWasDeath()) {
 				clone.temp_perm_path = original.temp_perm_path;
 				clone.FMapToggle = original.FMapToggle;
@@ -89,6 +99,135 @@ public class EriniumFactionModVariables {
 				clone.teleport_cooldown = original.teleport_cooldown;
 				clone.teleported = original.teleported;
 			}
+		}
+
+		@SubscribeEvent
+		public static void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+			if (!event.getEntity().level().isClientSide()) {
+				SavedData mapdata = MapVariables.get(event.getEntity().level());
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
+				if (mapdata != null)
+					EriniumFactionMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(0, mapdata));
+				if (worlddata != null)
+					EriniumFactionMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+
+		@SubscribeEvent
+		public static void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
+			if (!event.getEntity().level().isClientSide()) {
+				SavedData worlddata = WorldVariables.get(event.getEntity().level());
+				if (worlddata != null)
+					EriniumFactionMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) event.getEntity()), new SavedDataSyncMessage(1, worlddata));
+			}
+		}
+	}
+
+	public static class WorldVariables extends SavedData {
+		public static final String DATA_NAME = "erinium_faction_worldvars";
+
+		public static WorldVariables load(CompoundTag tag) {
+			WorldVariables data = new WorldVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			return nbt;
+		}
+
+		public void syncData(LevelAccessor world) {
+			this.setDirty();
+			if (world instanceof Level level && !level.isClientSide())
+				EriniumFactionMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(level::dimension), new SavedDataSyncMessage(1, this));
+		}
+
+		static WorldVariables clientSide = new WorldVariables();
+
+		public static WorldVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevel level) {
+				return level.getDataStorage().computeIfAbsent(e -> WorldVariables.load(e), WorldVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class MapVariables extends SavedData {
+		public static final String DATA_NAME = "erinium_faction_mapvars";
+		public boolean custom_chat = false;
+
+		public static MapVariables load(CompoundTag tag) {
+			MapVariables data = new MapVariables();
+			data.read(tag);
+			return data;
+		}
+
+		public void read(CompoundTag nbt) {
+			custom_chat = nbt.getBoolean("custom_chat");
+		}
+
+		@Override
+		public CompoundTag save(CompoundTag nbt) {
+			nbt.putBoolean("custom_chat", custom_chat);
+			return nbt;
+		}
+
+		public void syncData(LevelAccessor world) {
+			this.setDirty();
+			if (world instanceof Level && !world.isClientSide())
+				EriniumFactionMod.PACKET_HANDLER.send(PacketDistributor.ALL.noArg(), new SavedDataSyncMessage(0, this));
+		}
+
+		static MapVariables clientSide = new MapVariables();
+
+		public static MapVariables get(LevelAccessor world) {
+			if (world instanceof ServerLevelAccessor serverLevelAcc) {
+				return serverLevelAcc.getLevel().getServer().getLevel(Level.OVERWORLD).getDataStorage().computeIfAbsent(e -> MapVariables.load(e), MapVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class SavedDataSyncMessage {
+		public int type;
+		public SavedData data;
+
+		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
+			this.type = buffer.readInt();
+			this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
+			if (this.data instanceof MapVariables _mapvars)
+				_mapvars.read(buffer.readNbt());
+			else if (this.data instanceof WorldVariables _worldvars)
+				_worldvars.read(buffer.readNbt());
+		}
+
+		public SavedDataSyncMessage(int type, SavedData data) {
+			this.type = type;
+			this.data = data;
+		}
+
+		public static void buffer(SavedDataSyncMessage message, FriendlyByteBuf buffer) {
+			buffer.writeInt(message.type);
+			buffer.writeNbt(message.data.save(new CompoundTag()));
+		}
+
+		public static void handler(SavedDataSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+			NetworkEvent.Context context = contextSupplier.get();
+			context.enqueueWork(() -> {
+				if (!context.getDirection().getReceptionSide().isServer()) {
+					if (message.type == 0)
+						MapVariables.clientSide = (MapVariables) message.data;
+					else
+						WorldVariables.clientSide = (WorldVariables) message.data;
+				}
+			});
+			context.setPacketHandled(true);
 		}
 	}
 
@@ -144,6 +283,10 @@ public class EriniumFactionModVariables {
 		public double temp_z = 0;
 		public double teleport_cooldown = 0;
 		public boolean teleported = false;
+		public double blacklist_item_page = 0;
+		public boolean BL_Item_page_initialised = false;
+		public boolean bypass_claim = false;
+		public boolean CurrentlyDead = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -173,6 +316,10 @@ public class EriniumFactionModVariables {
 			nbt.putDouble("temp_z", temp_z);
 			nbt.putDouble("teleport_cooldown", teleport_cooldown);
 			nbt.putBoolean("teleported", teleported);
+			nbt.putDouble("blacklist_item_page", blacklist_item_page);
+			nbt.putBoolean("BL_Item_page_initialised", BL_Item_page_initialised);
+			nbt.putBoolean("bypass_claim", bypass_claim);
+			nbt.putBoolean("CurrentlyDead", CurrentlyDead);
 			return nbt;
 		}
 
@@ -199,6 +346,10 @@ public class EriniumFactionModVariables {
 			temp_z = nbt.getDouble("temp_z");
 			teleport_cooldown = nbt.getDouble("teleport_cooldown");
 			teleported = nbt.getBoolean("teleported");
+			blacklist_item_page = nbt.getDouble("blacklist_item_page");
+			BL_Item_page_initialised = nbt.getBoolean("BL_Item_page_initialised");
+			bypass_claim = nbt.getBoolean("bypass_claim");
+			CurrentlyDead = nbt.getBoolean("CurrentlyDead");
 		}
 	}
 
@@ -244,6 +395,10 @@ public class EriniumFactionModVariables {
 					variables.temp_z = message.data.temp_z;
 					variables.teleport_cooldown = message.data.teleport_cooldown;
 					variables.teleported = message.data.teleported;
+					variables.blacklist_item_page = message.data.blacklist_item_page;
+					variables.BL_Item_page_initialised = message.data.BL_Item_page_initialised;
+					variables.bypass_claim = message.data.bypass_claim;
+					variables.CurrentlyDead = message.data.CurrentlyDead;
 				}
 			});
 			context.setPacketHandled(true);

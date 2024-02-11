@@ -26,6 +26,7 @@ public class EriniumAdventureModTabs {
 				tabData.accept(EriniumAdventureModItems.NITRIATE_GEM.get());
 				tabData.accept(EriniumAdventureModBlocks.NITRIATE_ORE.get().asItem());
 				tabData.accept(EriniumAdventureModBlocks.CAVE_BLOCK.get().asItem());
+				tabData.accept(EriniumAdventureModBlocks.LIGHT_DARK_BRICK.get().asItem());
 			}).withSearchBar().build());
 
 	@SubscribeEvent

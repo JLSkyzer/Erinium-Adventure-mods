@@ -10,6 +10,7 @@ import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -52,76 +53,78 @@ public class PlayerTickProcedure {
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject SecJsonObject = new com.google.gson.JsonObject();
 		boolean upFactionPower = false;
-		if (!(new Object() {
-			private String getChunk(int chunkX, int chunkZ) {
-				ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
-				return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
-			}
-		}.getChunk((int) (entity.getX()), (int) (entity.getZ()))).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_chunk)) {
-			{
-				String _setval = new Object() {
-					private String getChunk(int chunkX, int chunkZ) {
-						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
-						return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
-					}
-				}.getChunk((int) (entity.getX()), (int) (entity.getZ()));
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.current_chunk = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (!((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals(ReturnOwnedFactiionProcedure.execute(world, entity))) {
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
+			if (!(new Object() {
+				private String getChunk(int chunkX, int chunkZ) {
+					ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
+					return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
+				}
+			}.getChunk((int) (entity.getX()), (int) (entity.getZ()))).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_chunk)) {
 				{
-					String _setval = ReturnOwnedFactiionProcedure.execute(world, entity);
+					String _setval = new Object() {
+						private String getChunk(int chunkX, int chunkZ) {
+							ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
+							return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
+						}
+					}.getChunk((int) (entity.getX()), (int) (entity.getZ()));
 					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.last_owned = _setval;
+						capability.current_chunk = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							("title " + entity.getDisplayName().getString() + " times 10 40 10"));
-				if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("Safezone")) {
+				if (!((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals(ReturnOwnedFactiionProcedure.execute(world, entity))) {
+					{
+						String _setval = ReturnOwnedFactiionProcedure.execute(world, entity);
+						entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.last_owned = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-								("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("safezone.desc").getString() + "\""));
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-								("title " + entity.getDisplayName().getString() + " title \"" + "\u00A72Safezone" + "\""));
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + "\u00A72Safezone")), false);
-				} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("Warzone")) {
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-								("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("warzone.desc").getString() + "\""));
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-								("title " + entity.getDisplayName().getString() + " title \"" + "\u00A74Warzone" + "\""));
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + "\u00A74Warzone")), false);
-				} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("wilderness")) {
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-								("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("wilderness.desc").getString() + "\""));
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-								("title " + entity.getDisplayName().getString() + " title \"" + "\u00A7aWilderness" + "\""));
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + "\u00A7aWilderness")), false);
-				} else {
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-								("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + GetFactionDescAtChunkProcedure.execute(entity) + "\""));
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-								("title " + entity.getDisplayName().getString() + " title \"" + "\u00A7b" + GetFactionDisplaynameAtChunkProcedure.execute(entity) + "\""));
-					if (entity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a"
-								+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned)), false);
+								("title " + entity.getDisplayName().getString() + " times 10 40 10"));
+					if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("Safezone")) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("safezone.desc").getString() + "\""));
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("title " + entity.getDisplayName().getString() + " title \"" + "\u00A72Safezone" + "\""));
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + "\u00A72Safezone")), false);
+					} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("Warzone")) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("warzone.desc").getString() + "\""));
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("title " + entity.getDisplayName().getString() + " title \"" + "\u00A74Warzone" + "\""));
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + "\u00A74Warzone")), false);
+					} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("wilderness")) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("wilderness.desc").getString() + "\""));
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("title " + entity.getDisplayName().getString() + " title \"" + "\u00A7aWilderness" + "\""));
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + "\u00A7aWilderness")), false);
+					} else {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + GetFactionDescAtChunkProcedure.execute(entity) + "\""));
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									("title " + entity.getDisplayName().getString() + " title \"" + "\u00A7b" + GetFactionDisplaynameAtChunkProcedure.execute(entity) + "\""));
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a"
+									+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned)), false);
+					}
 				}
-			}
-			if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).FMapToggle) {
-				FactionMapProcedure.execute(world, entity);
+				if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).FMapToggle) {
+					FactionMapProcedure.execute(world, entity);
+				}
 			}
 		}
 		if (!(new Object() {

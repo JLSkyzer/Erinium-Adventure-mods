@@ -13,6 +13,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 
 import fr.eriniumgroups.erinium.factionmod.client.gui.SeleteRankGuiScreen;
 import fr.eriniumgroups.erinium.factionmod.client.gui.EditPermissionGuiScreen;
+import fr.eriniumgroups.erinium.factionmod.client.gui.BlacklistItemGuiScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class EriniumFactionModScreens {
@@ -21,6 +22,7 @@ public class EriniumFactionModScreens {
 		event.enqueueWork(() -> {
 			MenuScreens.register(EriniumFactionModMenus.SELETE_RANK_GUI.get(), SeleteRankGuiScreen::new);
 			MenuScreens.register(EriniumFactionModMenus.EDIT_PERMISSION_GUI.get(), EditPermissionGuiScreen::new);
+			MenuScreens.register(EriniumFactionModMenus.BLACKLIST_ITEM_GUI.get(), BlacklistItemGuiScreen::new);
 		});
 	}
 }

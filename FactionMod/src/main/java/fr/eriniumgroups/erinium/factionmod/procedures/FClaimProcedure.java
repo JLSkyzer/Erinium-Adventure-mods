@@ -20,15 +20,16 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.Gson;
 
 public class FClaimProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		File File = new File("");
+		String uuid_list = "";
+		String player_name = "";
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject SecJsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject ThirdJsonObject = new com.google.gson.JsonObject();
-		String uuid_list = "";
-		String player_name = "";
+		com.google.gson.JsonObject FourthJsonObject = new com.google.gson.JsonObject();
 		if (TargetEntityHaveFactionProcedure.execute(entity)) {
 			if (PlayerCanClaimProcedure.execute(entity) || TargetEntityIsChefProcedure.execute(entity)) {
 				if ((ReturnOwnedFactiionProcedure.execute(world, entity)).equals("wilderness")) {
@@ -160,6 +161,41 @@ public class FClaimProcedure {
 								e.printStackTrace();
 							}
 						}
+						File = ChunkFactionPathProcedure.execute(world, entity);
+						{
+							try {
+								BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
+								StringBuilder jsonstringbuilder = new StringBuilder();
+								String line;
+								while ((line = bufferedReader.readLine()) != null) {
+									jsonstringbuilder.append(line);
+								}
+								bufferedReader.close();
+								FourthJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								FourthJsonObject.addProperty("claims", (FourthJsonObject.get("claims").getAsDouble() - 1));
+								{
+									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									try {
+										FileWriter fileWriter = new FileWriter(File);
+										fileWriter.write(mainGSONBuilderVariable.toJson(FourthJsonObject));
+										fileWriter.close();
+									} catch (IOException exception) {
+										exception.printStackTrace();
+									}
+								}
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+						DeleteClaimAtEnemyFactionProcedure.execute(world, entity);
+						player_name = GetPlayerListAtFactionChunkProcedure.execute(entity);
+						for (Entity entityiterator : new ArrayList<>(world.players())) {
+							if (player_name.contains(entityiterator.getDisplayName().getString())) {
+								player_name = player_name.replace(entityiterator.getDisplayName().getString() + ", ", "");
+								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+									_player.displayClientMessage(Component.literal(("\u00A74" + "faction.message.chunk.lost" + "\u00A7e" + "X" + entity.getX() + " " + "Y" + entity.getY() + " " + "Z" + entity.getZ())), false);
+							}
+						}
 						File = GetChunkPathProcedure.execute(world, entity);
 						{
 							try {
@@ -184,14 +220,6 @@ public class FClaimProcedure {
 								}
 							} catch (IOException e) {
 								e.printStackTrace();
-							}
-						}
-						player_name = GetPlayerListAtFactionChunkProcedure.execute(entity);
-						for (Entity entityiterator : new ArrayList<>(world.players())) {
-							if (player_name.contains(entityiterator.getDisplayName().getString())) {
-								player_name = player_name.replace(entityiterator.getDisplayName().getString() + ", ", "");
-								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal(("\u00A74" + "faction.message.chunk.lost" + "\u00A7e" + "X" + entity.getX() + " " + "Y" + entity.getY() + " " + "Z" + entity.getZ())), false);
 							}
 						}
 						if (entity instanceof Player _player && !_player.level().isClientSide())

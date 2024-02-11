@@ -37,6 +37,7 @@ public class EriniumAdventureModItems {
 	public static final RegistryObject<Item> NITRIATE_ARMOR_LEGGINGS = REGISTRY.register("nitriate_armor_leggings", () -> new NitriateArmorItem.Leggings());
 	public static final RegistryObject<Item> NITRIATE_ARMOR_BOOTS = REGISTRY.register("nitriate_armor_boots", () -> new NitriateArmorItem.Boots());
 	public static final RegistryObject<Item> CAVE_BLOCK = block(EriniumAdventureModBlocks.CAVE_BLOCK);
+	public static final RegistryObject<Item> LIGHT_DARK_BRICK = block(EriniumAdventureModBlocks.LIGHT_DARK_BRICK);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

@@ -109,6 +109,13 @@ public class PlayerDeathProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			{
+				boolean _setval = true;
+				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.CurrentlyDead = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
 	}
 }

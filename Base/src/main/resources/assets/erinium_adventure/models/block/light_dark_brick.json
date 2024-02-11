@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "erinium_adventure:block/light_dark_brick",
+    "up": "erinium_adventure:block/light_dark_brick",
+    "north": "erinium_adventure:block/light_dark_brick",
+    "east": "erinium_adventure:block/light_dark_brick",
+    "south": "erinium_adventure:block/light_dark_brick",
+    "west": "erinium_adventure:block/light_dark_brick",
+    "particle": "erinium_adventure:block/light_dark_brick"
+  },
+  "render_type": "solid"
+}

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "erinium_adventure:nitriate_ore"
+    "erinium_adventure:nitriate_ore",
+    "erinium_adventure:light_dark_brick"
   ]
 }

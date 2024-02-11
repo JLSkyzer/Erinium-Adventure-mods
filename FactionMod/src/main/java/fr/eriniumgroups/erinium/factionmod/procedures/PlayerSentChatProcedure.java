@@ -36,25 +36,27 @@ public class PlayerSentChatProcedure {
 		if (entity == null || text == null)
 			return;
 		String temp_text = "";
-		if (event != null && event.isCancelable()) {
-			event.setCanceled(true);
-		}
-		temp_text = text;
-		for (Entity entityiterator : new ArrayList<>(world.players())) {
-			if (temp_text.contains(entityiterator.getDisplayName().getString())) {
-				temp_text = temp_text.replace(entityiterator.getDisplayName().getString(), "\u00A76\u00A7l" + entityiterator.getDisplayName().getString());
-				if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal(("<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname + " "
-							+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank + " \u00A7e" + entity.getDisplayName().getString() + "\u00A7r> "
-							+ (text.replace("&", "\u00A7")).replace(entityiterator.getDisplayName().getString(), "\u00A76\u00A7l" + entityiterator.getDisplayName().getString()))), false);
-				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-							("playsound erinium_faction:ding ambient " + entityiterator.getDisplayName().getString()));
-			} else {
-				if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal(("<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname + " "
-							+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank + " \u00A7e" + entity.getDisplayName().getString() + "\u00A7r> "
-							+ text.replace("&", "\u00A7"))), false);
+		if (EriniumFactionModVariables.MapVariables.get(world).custom_chat) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			temp_text = text;
+			for (Entity entityiterator : new ArrayList<>(world.players())) {
+				if (temp_text.contains(entityiterator.getDisplayName().getString())) {
+					temp_text = temp_text.replace(entityiterator.getDisplayName().getString(), "\u00A76\u00A7l" + entityiterator.getDisplayName().getString());
+					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal(("<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname
+								+ " " + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank + " \u00A7e" + entity.getDisplayName().getString()
+								+ "\u00A7r> " + (text.replace("&", "\u00A7")).replace(entityiterator.getDisplayName().getString(), "\u00A76\u00A7l" + entityiterator.getDisplayName().getString()))), false);
+					if (world instanceof ServerLevel _level)
+						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+								("playsound erinium_faction:ding ambient " + entityiterator.getDisplayName().getString()));
+				} else {
+					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal(("<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname
+								+ " " + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank + " \u00A7e" + entity.getDisplayName().getString()
+								+ "\u00A7r> " + text.replace("&", "\u00A7"))), false);
+				}
 			}
 		}
 	}

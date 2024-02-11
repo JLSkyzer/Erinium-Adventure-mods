@@ -234,7 +234,7 @@ public class FCommand {
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
 
-					FClaimProcedure.execute(world, entity);
+					FClaimProcedure.execute(world, x, y, z, entity);
 					return 0;
 				})).then(Commands.literal("unclaim").executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();

@@ -16,6 +16,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import org.spongepowered.asm.mixin.Final;
 
 import javax.annotation.Nullable;
+import java.awt.*;
 import java.util.Objects;
 import java.util.UUID;
 
