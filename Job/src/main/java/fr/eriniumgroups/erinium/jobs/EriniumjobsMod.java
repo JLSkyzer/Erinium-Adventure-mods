@@ -38,6 +38,8 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
+import fr.eriniumgroups.erinium.jobs.init.EriniumjobsModMenus;
+
 @Mod("eriniumjobs")
 public class EriniumjobsMod {
 	public static final Logger LOGGER = LogManager.getLogger(EriniumjobsMod.class);
@@ -47,6 +49,7 @@ public class EriniumjobsMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		EriniumjobsModMenus.REGISTRY.register(bus);
 	}
 
 	private static final String PROTOCOL_VERSION = "1";

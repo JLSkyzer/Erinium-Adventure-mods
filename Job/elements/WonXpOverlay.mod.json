@@ -1,0 +1,71 @@
+{
+  "_fv": 47,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "won_xp_overlay_screen.png",
+          "use1Xscale": false,
+          "x": 267,
+          "y": 17
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "barre_3_seconds.png",
+          "use1Xscale": false,
+          "x": 267,
+          "y": 57
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_message_1",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnMessage1"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 269,
+          "y": 22
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_message_2",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnMessage2"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 269,
+          "y": 42
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "WonXpOverlayCondition"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

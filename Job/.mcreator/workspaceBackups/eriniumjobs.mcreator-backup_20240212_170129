@@ -42,12 +42,7 @@
         "files": [
           "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/PlayerTickProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       }
     },
     {

@@ -1,0 +1,51 @@
+{
+  "_fv": 47,
+  "_type": "config",
+  "definition": {
+    "pools": [
+      {
+        "category": "Multiplier",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.095,
+            "textDefault": "",
+            "comment": "Xp multiplier see here : https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=zVMCg7",
+            "vardisplay": "XP Multiplier",
+            "varname": "xp_multiplier",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.982,
+            "textDefault": "",
+            "comment": "Won XP multiplier see here : https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=zVMCg7",
+            "vardisplay": "Won XP Multiplier",
+            "varname": "wonxp_multiplier",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          }
+        ]
+      }
+    ],
+    "file": "erinium-ranking",
+    "configType": 0
+  }
+}

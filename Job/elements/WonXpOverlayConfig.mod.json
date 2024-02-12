@@ -1,0 +1,87 @@
+{
+  "_fv": 47,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_down",
+          "image": "down.png",
+          "hoveredImage": "down_hover.png",
+          "onClick": {
+            "name": "TempProc"
+          },
+          "x": 205,
+          "y": 224
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_reset",
+          "image": "reset.png",
+          "hoveredImage": "reset_hover.png",
+          "onClick": {
+            "name": "TempProc"
+          },
+          "x": 205,
+          "y": 208
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_left",
+          "image": "left.png",
+          "hoveredImage": "left_hover.png",
+          "onClick": {
+            "name": "TempProc"
+          },
+          "x": 189,
+          "y": 208
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_right",
+          "image": "right.png",
+          "hoveredImage": "right_hover.png",
+          "onClick": {
+            "name": "TempProc"
+          },
+          "x": 221,
+          "y": 208
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_up",
+          "image": "up.png",
+          "hoveredImage": "up_hover.png",
+          "onClick": {
+            "name": "TempProc"
+          },
+          "x": 205,
+          "y": 192
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 16,
+      "sy": 16,
+      "ox": 25,
+      "oy": 31,
+      "snapOnGrid": true
+    }
+  }
+}

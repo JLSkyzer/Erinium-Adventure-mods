@@ -1,1 +1,8 @@
-{}
+{
+  "key.categories.eriniumjobs": "§b§lErinium Jobs",
+  "config.eriniumjobs.common_config": "erinium-ranking",
+  "gui.eriniumjobs.config_page_1.label_overlay_config": "Overlay Config",
+  "gui.eriniumjobs.wonxpconfig.button_test": "Test",
+  "gui.eriniumjobs.config_page_1.button_won_xp": "Won XP",
+  "key.eriniumjobs.open_overlay_settings_page": "Open Overlay Settings Page"
+}
