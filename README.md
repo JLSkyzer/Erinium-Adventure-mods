@@ -22,10 +22,10 @@ Here the json parameter :
 - max level is the max level to earn xp (after you dont earn)
 - type is the type here an example :
 
-	- BREAK (When you break block)
-	- EAT (When you eat / drink)
-	- SMELTED (An item smelted ⚠️RESULT ITEM*)
-	- CRAFTED (An item crafted ⚠️RESULT ITEM*)
+		- BREAK (When you break block)
+		- EAT (When you eat / drink)
+		- SMELTED (An item smelted ⚠️RESULT ITEM*)
+		- CRAFTED (An item crafted ⚠️RESULT ITEM*)
 
 \* For example, for diamond, on BREAK you set diamond_ore and on SMELTED you set diamond
 - xp is the amount of XP is given (more you will levelup, you will earn less xp) see my [excel](https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=Ko20vF "excel") to understand
