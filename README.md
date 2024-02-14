@@ -29,7 +29,7 @@ Here the json parameter :
 
 \* For example, for diamond, on BREAK you set diamond_ore and on SMELTED you set diamond
 - xp is the amount of XP is given (more you will levelup, you will earn less xp) see my [excel](https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=Ko20vF "excel") to understand
-- 
+  
 💡XP multiplier and Won XP Multiplier are fully customisable here : GAMEFOLDER/config/erinium-ranking.toml
 
 💡You can set multiple type like that : "BREAK, EAT, CRAFTED" but generaly you don't need to set multiple type but why not
