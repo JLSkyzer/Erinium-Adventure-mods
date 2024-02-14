@@ -20,6 +20,7 @@ Here json parameter :
 min level is the minium level to start to earn xp
 max level is the max level to earn xp (after you dont earn)
 type is the type here an example :
+
 	- BREAK (When you break block)
 	- EAT (When you eat / drink)
 	- SMELTED (An item smelted)
