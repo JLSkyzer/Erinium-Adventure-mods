@@ -61,12 +61,7 @@
         "files": [
           "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/TempProcProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       }
     },
     {

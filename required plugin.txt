@@ -1,0 +1,18 @@
+Jobs :
+	- JLSkyzer's plugin
+	- Configuration File
+Faction :
+	- JLSkyzer's plugin
+	- File manager
+	- Configuration File
+	- String index
+Rank : 
+	- File Manager
+	- String index
+Base : 
+	-
+Automation :
+	- File Manager
+	- String Index
+Hunter :
+	- 

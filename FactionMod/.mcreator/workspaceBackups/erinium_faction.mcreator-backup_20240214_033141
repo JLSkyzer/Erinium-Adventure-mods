@@ -2946,9 +2946,6 @@
       "registry_name": "get_chunk_path",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetChunkPathProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4145,6 +4142,31 @@
           }
         ]
       }
+    },
+    {
+      "name": "IsWilderness",
+      "type": "procedure",
+      "sortid": 189,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_wilderness",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/IsWildernessProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Chunk System"
     }
   ],
   "variable_elements": [
@@ -4334,8 +4356,8 @@
       "faction.message.sethome.succeful": "Your faction home has been set !",
       "gui.erinium_faction.blacklist_item_gui.label_blacklist_item": "Blacklist Item",
       "faction.error.displaynamecharcount": "Your displayname can have 20 characters max !",
-      "faction.message.home.noexist": "Your faction home not exist !",
       "gui.erinium_faction.edit_permission_gui.button_finish": "Finish",
+      "faction.message.home.noexist": "Your faction home not exist !",
       "gui.erinium_faction.selete_rank_gui.button_ancient": "Ancient",
       "gui.erinium_faction.selete_rank_gui.button_officier": "Officier",
       "safezone.desc": "A safe place to chill",
