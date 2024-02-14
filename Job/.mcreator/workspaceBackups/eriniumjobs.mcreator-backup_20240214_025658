@@ -58,12 +58,10 @@
       "locked_code": false,
       "registry_name": "temp_proc",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/TempProcProcedure.java"
+        ],
+        "dependencies": []
       }
     },
     {

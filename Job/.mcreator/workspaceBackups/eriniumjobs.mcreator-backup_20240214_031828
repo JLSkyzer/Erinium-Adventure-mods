@@ -61,12 +61,7 @@
         "files": [
           "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/TempProcProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       }
     },
     {
@@ -517,6 +512,52 @@
         ]
       },
       "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "ItemIsSmelted",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "item_is_smelted",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/ItemIsSmeltedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ItemIsCrafted",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "item_is_crafted",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/ItemIsCraftedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
