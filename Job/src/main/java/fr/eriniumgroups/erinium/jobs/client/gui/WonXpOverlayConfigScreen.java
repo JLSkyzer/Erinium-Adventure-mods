@@ -1,6 +1,5 @@
 package fr.eriniumgroups.erinium.jobs.client.gui;
 
-import net.minecraft.client.gui.components.Button;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -28,7 +27,6 @@ public class WonXpOverlayConfigScreen extends AbstractContainerScreen<WonXpOverl
 	ImageButton imagebutton_left;
 	ImageButton imagebutton_right;
 	ImageButton imagebutton_up;
-	Button button_test;
 
 	public WonXpOverlayConfigScreen(WonXpOverlayConfigMenu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -121,15 +119,5 @@ public class WonXpOverlayConfigScreen extends AbstractContainerScreen<WonXpOverl
 		});
 		guistate.put("button:imagebutton_up", imagebutton_up);
 		this.addRenderableWidget(imagebutton_up);
-
-		button_test = Button.builder(Component.translatable("gui.eriniumjobs.wonxpconfig.button_test"), e -> {
-			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new WonXpOverlayConfigButtonMessage(5, x, y, z));
-				WonXpOverlayConfigButtonMessage.handleButtonAction(entity, 5, x, y, z);
-			}
-		}).bounds(this.leftPos + 79 + 16, this.topPos + 155, 46, 20).build();
-		guistate.put("button:button_test", button_test);
-		this.addRenderableWidget(button_test);
-
 	}
 }

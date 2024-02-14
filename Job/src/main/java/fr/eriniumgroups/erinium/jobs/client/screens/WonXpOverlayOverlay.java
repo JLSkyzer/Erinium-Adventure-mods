@@ -30,8 +30,6 @@ import fr.eriniumgroups.erinium.jobs.network.EriniumjobsModVariables;
 public class WonXpOverlayOverlay {
 	@SubscribeEvent(priority = EventPriority.HIGHEST)
 	public static void eventHandler(RenderGuiEvent.Pre event) {
-		int w = event.getWindow().getGuiScaledWidth();
-		int h = event.getWindow().getGuiScaledHeight();
 		int posX = 0;
 		int posY = 0;
 		Level world = null;
@@ -56,27 +54,17 @@ public class WonXpOverlayOverlay {
 				//(entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_x + 1
 				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					//capability.won_xp_x = _setval;
-					int overlayx = (int) ((Minecraft.getInstance().getWindow().getGuiScaledWidth() * capability.won_xp_x) / 100);
-					int overlayy = (int) ((Minecraft.getInstance().getWindow().getGuiScaledHeight() * capability.won_xp_y) / 100);
 					int fontheight = Minecraft.getInstance().font.lineHeight;
 
-					if((capability.won_xp_x) >= 51){
-						overlayx = overlayx - 120;
-					}
-					if((capability.won_xp_y) >= 51){
-						overlayy = overlayy - 44;
-					}
+					event.getGuiGraphics().blit(new ResourceLocation("eriniumjobs:textures/screens/won_xp_overlay_screen.png"), (int) (posX + capability.won_xp_x), (int) (posY + capability.won_xp_y), 0, 0, 120, 40, 120, 40);
 
-					event.getGuiGraphics().blit(new ResourceLocation("eriniumjobs:textures/screens/won_xp_overlay_screen.png"), posX + overlayx, posY + overlayy, 0, 0, 120, 40, 120, 40);
+					event.getGuiGraphics().blit(new ResourceLocation("eriniumjobs:textures/screens/barre_3_seconds.png"), (int) (posX + capability.won_xp_x), (int) (posY + capability.won_xp_y + 40), 0, 0, (int) (2 * capability.won_xp_timer), 4, 120, 4);
 
-					event.getGuiGraphics().blit(new ResourceLocation("eriniumjobs:textures/screens/barre_3_seconds.png"), posX + overlayx, posY + overlayy + 40, 0, 0, (int) (2 * capability.won_xp_timer), 4, 120, 4);
+					event.getGuiGraphics().drawCenteredString(Minecraft.getInstance().font,
+							ReturnMessage1Procedure.execute(entity), (int) (posX + capability.won_xp_x + 2 + 58), (int) (posY + capability.won_xp_y + 5), -1);
 
-					event.getGuiGraphics().drawString(Minecraft.getInstance().font,
-
-							ReturnMessage1Procedure.execute(entity), posX + overlayx + 2, posY + overlayy + 5, -1, false);
-					event.getGuiGraphics().drawString(Minecraft.getInstance().font,
-
-							ReturnMessage2Procedure.execute(entity), posX + overlayx + 2, posY + overlayy + 34 - fontheight, -1, false);
+					event.getGuiGraphics().drawCenteredString(Minecraft.getInstance().font,
+							ReturnMessage2Procedure.execute(entity), (int) (posX + capability.won_xp_x + 2 + 58), (int) (posY + capability.won_xp_y + 34 - fontheight), -1);
 
 					capability.syncPlayerVariables(entity);
 				});

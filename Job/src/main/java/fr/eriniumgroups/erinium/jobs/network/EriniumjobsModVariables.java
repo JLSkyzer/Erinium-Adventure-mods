@@ -80,6 +80,11 @@ public class EriniumjobsModVariables {
 			clone.won_xp_x = original.won_xp_x;
 			clone.won_xp_y = original.won_xp_y;
 			clone.won_xp_config = original.won_xp_config;
+			clone.won_xp_percent_x = original.won_xp_percent_x;
+			clone.won_xp_percent_y = original.won_xp_percent_y;
+			clone.FirstJoined = original.FirstJoined;
+			clone.windows_width = original.windows_width;
+			clone.windows_height = original.windows_height;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -130,6 +135,11 @@ public class EriniumjobsModVariables {
 		public double won_xp_x = 70.0;
 		public double won_xp_y = 15.0;
 		public boolean won_xp_config = false;
+		public double won_xp_percent_x = 0;
+		public double won_xp_percent_y = 0;
+		public boolean FirstJoined = false;
+		public double windows_width = 0;
+		public double windows_height = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -152,6 +162,11 @@ public class EriniumjobsModVariables {
 			nbt.putDouble("won_xp_x", won_xp_x);
 			nbt.putDouble("won_xp_y", won_xp_y);
 			nbt.putBoolean("won_xp_config", won_xp_config);
+			nbt.putDouble("won_xp_percent_x", won_xp_percent_x);
+			nbt.putDouble("won_xp_percent_y", won_xp_percent_y);
+			nbt.putBoolean("FirstJoined", FirstJoined);
+			nbt.putDouble("windows_width", windows_width);
+			nbt.putDouble("windows_height", windows_height);
 			return nbt;
 		}
 
@@ -171,6 +186,11 @@ public class EriniumjobsModVariables {
 			won_xp_x = nbt.getDouble("won_xp_x");
 			won_xp_y = nbt.getDouble("won_xp_y");
 			won_xp_config = nbt.getBoolean("won_xp_config");
+			won_xp_percent_x = nbt.getDouble("won_xp_percent_x");
+			won_xp_percent_y = nbt.getDouble("won_xp_percent_y");
+			FirstJoined = nbt.getBoolean("FirstJoined");
+			windows_width = nbt.getDouble("windows_width");
+			windows_height = nbt.getDouble("windows_height");
 		}
 	}
 
@@ -209,6 +229,11 @@ public class EriniumjobsModVariables {
 					variables.won_xp_x = message.data.won_xp_x;
 					variables.won_xp_y = message.data.won_xp_y;
 					variables.won_xp_config = message.data.won_xp_config;
+					variables.won_xp_percent_x = message.data.won_xp_percent_x;
+					variables.won_xp_percent_y = message.data.won_xp_percent_y;
+					variables.FirstJoined = message.data.FirstJoined;
+					variables.windows_width = message.data.windows_width;
+					variables.windows_height = message.data.windows_height;
 				}
 			});
 			context.setPacketHandled(true);

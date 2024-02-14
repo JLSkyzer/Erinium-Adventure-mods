@@ -40,5 +40,28 @@ public class PlayerJoinTheWorldProcedure {
 				capability.syncPlayerVariables(entity);
 			});
 		}
+		if (!(entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).FirstJoined) {
+			{
+				double _setval = 75;
+				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.won_xp_percent_x = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				double _setval = 15;
+				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.won_xp_percent_y = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			{
+				boolean _setval = true;
+				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.FirstJoined = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
 	}
 }

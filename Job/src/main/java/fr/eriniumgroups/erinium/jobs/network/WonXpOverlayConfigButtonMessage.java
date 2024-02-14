@@ -1,8 +1,6 @@
 
 package fr.eriniumgroups.erinium.jobs.network;
 
-import fr.eriniumgroups.erinium.jobs.procedures.TestProcedure;
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,7 +15,11 @@ import java.util.function.Supplier;
 import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.jobs.world.inventory.WonXpOverlayConfigMenu;
-import fr.eriniumgroups.erinium.jobs.procedures.TempProcProcedure;
+import fr.eriniumgroups.erinium.jobs.procedures.UpProcedure;
+import fr.eriniumgroups.erinium.jobs.procedures.RightProcedure;
+import fr.eriniumgroups.erinium.jobs.procedures.ResetProcedure;
+import fr.eriniumgroups.erinium.jobs.procedures.LeftProcedure;
+import fr.eriniumgroups.erinium.jobs.procedures.DownProcedure;
 import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -64,47 +66,26 @@ public class WonXpOverlayConfigButtonMessage {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.hasChunkAt(new BlockPos(x, y, z)))
 			return;
-		entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability ->{
-			int w = (int) ((Minecraft.getInstance().getWindow().getGuiScaledWidth() * capability.won_xp_x) / 100);
-			int h = (int) ((Minecraft.getInstance().getWindow().getGuiScaledHeight() * capability.won_xp_y) / 100);
-			// Down
-			if (buttonID == 0) {
-				if ((capability.won_xp_y + 1) <= 100){
-					capability.won_xp_y = capability.won_xp_y + 1;
-				}
-			}
-			// Reset
-			if (buttonID == 1) {
+		if (buttonID == 0) {
 
-				capability.won_xp_y = 15;
-				capability.won_xp_x = 70;
-			}
-			// Left
-			if (buttonID == 2) {
-				if ((capability.won_xp_x - 1) >= 0){
-					capability.won_xp_x = capability.won_xp_x - 1;
-				}
-			}
-			// Right
-			if (buttonID == 3) {
-				if ((capability.won_xp_x + 1) <= 100){
-					capability.won_xp_x = capability.won_xp_x + 1;
-				}
-			}
-			// Up
-			if (buttonID == 4) {
-				if ((capability.won_xp_y - 1) >= 0){
-					capability.won_xp_y = capability.won_xp_y - 1;
-				}
-			}
+			DownProcedure.execute(entity);
+		}
+		if (buttonID == 1) {
 
-			// Test
-			if (buttonID == 5) {
-				TestProcedure.execute(entity);
-			}
+			ResetProcedure.execute(entity);
+		}
+		if (buttonID == 2) {
 
-			capability.syncPlayerVariables(entity);
-		});
+			LeftProcedure.execute(entity);
+		}
+		if (buttonID == 3) {
+
+			RightProcedure.execute(entity);
+		}
+		if (buttonID == 4) {
+
+			UpProcedure.execute(entity);
+		}
 	}
 
 	@SubscribeEvent

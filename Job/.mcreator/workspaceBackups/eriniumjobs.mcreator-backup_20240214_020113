@@ -61,7 +61,12 @@
         "files": [
           "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/TempProcProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       }
     },
     {
@@ -267,6 +272,7 @@
     {
       "name": "OverlaySettings",
       "type": "command",
+      "sortid": 17,
       "compiles": true,
       "locked_code": false,
       "registry_name": "overlay_settings",
@@ -315,6 +321,193 @@
       "metadata": {
         "files": [
           "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/TestProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "ModIsLoaded",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mod_is_loaded",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/ModIsLoadedProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Temp",
+      "type": "command",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "temp",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/command/TempCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "UpdateOverlayPosition",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "update_overlay_position",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/UpdateOverlayPositionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/WonXp"
+    },
+    {
+      "name": "Up",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "up",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/UpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "Down",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "down",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/DownProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "Left",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "left",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/LeftProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "Right",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "right",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/RightProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "Reset",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reset",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/ResetProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "WonXpOverlayConfigOpen",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "won_xp_overlay_config_open",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/WonXpOverlayConfigOpenProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "WonXpOverlayConfigClose",
+      "type": "procedure",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "won_xp_overlay_config_close",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/WonXpOverlayConfigCloseProcedure.java"
         ],
         "dependencies": [
           {
@@ -410,6 +603,36 @@
       "type": "logic",
       "scope": "player_persistent",
       "value": "false"
+    },
+    {
+      "name": "won_xp_percent_x",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "won_xp_percent_y",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "FirstJoined",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "windows_width",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "windows_height",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],

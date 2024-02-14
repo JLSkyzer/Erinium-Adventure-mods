@@ -56,5 +56,25 @@ public class PlayerTickProcedure {
 				}
 			}
 		}
+		if ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).windows_width != net.minecraft.client.Minecraft.getInstance().getWindow().getWidth()) {
+			{
+				double _setval = net.minecraft.client.Minecraft.getInstance().getWindow().getWidth();
+				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.windows_width = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			UpdateOverlayPositionProcedure.execute(entity);
+		}
+		if ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).windows_height != net.minecraft.client.Minecraft.getInstance().getWindow().getHeight()) {
+			{
+				double _setval = net.minecraft.client.Minecraft.getInstance().getWindow().getHeight();
+				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.windows_width = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			UpdateOverlayPositionProcedure.execute(entity);
+		}
 	}
 }

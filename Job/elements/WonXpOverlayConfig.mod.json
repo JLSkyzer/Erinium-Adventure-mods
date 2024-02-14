@@ -17,7 +17,7 @@
           "image": "down.png",
           "hoveredImage": "down_hover.png",
           "onClick": {
-            "name": "TempProc"
+            "name": "Down"
           },
           "x": 205,
           "y": 224
@@ -30,7 +30,7 @@
           "image": "reset.png",
           "hoveredImage": "reset_hover.png",
           "onClick": {
-            "name": "TempProc"
+            "name": "Reset"
           },
           "x": 205,
           "y": 208
@@ -43,7 +43,7 @@
           "image": "left.png",
           "hoveredImage": "left_hover.png",
           "onClick": {
-            "name": "TempProc"
+            "name": "Left"
           },
           "x": 189,
           "y": 208
@@ -56,7 +56,7 @@
           "image": "right.png",
           "hoveredImage": "right_hover.png",
           "onClick": {
-            "name": "TempProc"
+            "name": "Right"
           },
           "x": 221,
           "y": 208
@@ -69,13 +69,19 @@
           "image": "up.png",
           "hoveredImage": "up_hover.png",
           "onClick": {
-            "name": "TempProc"
+            "name": "Up"
           },
           "x": 205,
           "y": 192
         }
       }
     ],
+    "onOpen": {
+      "name": "WonXpOverlayConfigOpen"
+    },
+    "onClosed": {
+      "name": "WonXpOverlayConfigClose"
+    },
     "gridSettings": {
       "sx": 16,
       "sy": 16,

@@ -1,13 +1,6 @@
 
 package fr.eriniumgroups.erinium.jobs.world.inventory;
 
-import fr.eriniumgroups.erinium.jobs.client.gui.WonXpOverlayConfigScreen;
-import fr.eriniumgroups.erinium.jobs.network.EriniumjobsModVariables;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.Screen;
-import net.minecraftforge.client.event.ScreenEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
 
@@ -23,11 +16,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import java.awt.event.MouseEvent;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
+import fr.eriniumgroups.erinium.jobs.procedures.WonXpOverlayConfigOpenProcedure;
+import fr.eriniumgroups.erinium.jobs.procedures.WonXpOverlayConfigCloseProcedure;
 import fr.eriniumgroups.erinium.jobs.init.EriniumjobsModMenus;
 
 public class WonXpOverlayConfigMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
@@ -56,13 +50,7 @@ public class WonXpOverlayConfigMenu extends AbstractContainerMenu implements Sup
 			this.z = pos.getZ();
 			access = ContainerLevelAccess.create(world, pos);
 		}
-		entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability ->{
-			capability.won_xp_config = true;
-			capability.won_xp_message = "Message 1";
-			capability.won_xp_message_2 = "Message 2";
-
-			capability.syncPlayerVariables(entity);
-		});
+		WonXpOverlayConfigOpenProcedure.execute(entity);
 	}
 
 	@Override
@@ -78,24 +66,15 @@ public class WonXpOverlayConfigMenu extends AbstractContainerMenu implements Sup
 		return true;
 	}
 
-
-	// On close
-	@Override
-	public void removed(Player playerIn) {
-		super.removed(playerIn);
-		entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability ->{
-			capability.won_xp_config = false;
-			capability.won_xp_message = "";
-			capability.won_xp_message_2 = "";
-
-			capability.syncPlayerVariables(entity);
-		});
-	}
-
-
 	@Override
 	public ItemStack quickMoveStack(Player playerIn, int index) {
 		return ItemStack.EMPTY;
+	}
+
+	@Override
+	public void removed(Player playerIn) {
+		super.removed(playerIn);
+		WonXpOverlayConfigCloseProcedure.execute(entity);
 	}
 
 	public Map<Integer, Slot> get() {
