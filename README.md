@@ -17,7 +17,7 @@ How the file is constructed :
 
 ### Earn XP
 To add a block or item to earn money go to these location : 
-GAMEFOLDER/config/EriniumJobs/GainXp/MODID/ID.json
+GAMEFOLDER/config/EriniumJobs/EarnXp/MODID/ID.json
 
 The file must be a json file like iron_ingot.json
 Here the json parameter : 
@@ -49,7 +49,7 @@ Here the json parameter :
 💡You can set multiple type like that : "BREAK, EAT, CRAFTED" but generaly you don't need to set multiple type but why not
 
 Here an example for diamond_ore and diamond
-location : GAMEFOLDER/config/EriniumJobs/GainXp/minecraft/diamond_ore.json
+location : GAMEFOLDER/config/EriniumJobs/EarnXp/minecraft/diamond_ore.json
 ```json
 {
 	"job_id": "miner",
@@ -59,7 +59,7 @@ location : GAMEFOLDER/config/EriniumJobs/GainXp/minecraft/diamond_ore.json
 	"xp": "125"
 }
 ```
-location : GAMEFOLDER/config/EriniumJobs/GainXp/minecraft/diamond.json
+location : GAMEFOLDER/config/EriniumJobs/EarnXp/minecraft/diamond.json
 ```json
 {
 	"job_id": "miner",
@@ -72,7 +72,7 @@ location : GAMEFOLDER/config/EriniumJobs/GainXp/minecraft/diamond.json
 
 ### Require Level
 To add a requirement to an item or block go to these location : 
-GAMEFOLDER/config/EriniumJobs/required/MODID/ID
+GAMEFOLDER/config/EriniumJobs/Required/MODID/ID
 
 Here the json parameter : 
 ```json
