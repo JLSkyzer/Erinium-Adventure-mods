@@ -27,6 +27,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -58,10 +62,13 @@
       "locked_code": false,
       "registry_name": "temp_proc",
       "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/TempProcProcedure.java"
+        ],
         "dependencies": [
           {
-            "name": "itemstack",
-            "type": "itemstack"
+            "name": "entity",
+            "type": "entity"
           }
         ]
       }
@@ -514,6 +521,391 @@
         ]
       },
       "path": "~/Overlay/Config/WonXP"
+    },
+    {
+      "name": "Job",
+      "type": "command",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "job",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/command/JobCommand.java"
+        ]
+      },
+      "path": "~/Jobs"
+    },
+    {
+      "name": "JobList",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "job_list",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/JobListProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs"
+    },
+    {
+      "name": "EarnXpGui",
+      "type": "gui",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/world/inventory/EarnXpGuiMenu.java",
+          "src/main/java/fr/eriniumgroups/erinium/jobs/network/EarnXpGuiButtonMessage.java",
+          "src/main/java/fr/eriniumgroups/erinium/jobs/client/gui/EarnXpGuiScreen.java"
+        ]
+      },
+      "path": "~/Jobs/EarnXp"
+    },
+    {
+      "name": "GetPage",
+      "type": "procedure",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_page",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/GetPageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs"
+    },
+    {
+      "name": "UnlockedGui",
+      "type": "gui",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlocked_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/client/gui/UnlockedGuiScreen.java",
+          "src/main/java/fr/eriniumgroups/erinium/jobs/world/inventory/UnlockedGuiMenu.java",
+          "src/main/java/fr/eriniumgroups/erinium/jobs/network/UnlockedGuiButtonMessage.java"
+        ]
+      },
+      "path": "~/Jobs/Unlocked"
+    },
+    {
+      "name": "OpenEarnXpGui",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_earn_xp_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/OpenEarnXpGuiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/EarnXp"
+    },
+    {
+      "name": "EarnXpTick",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/EarnXpTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/EarnXp"
+    },
+    {
+      "name": "EarnXpPrevious",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_previous",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/EarnXpPreviousProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/EarnXp"
+    },
+    {
+      "name": "EarnXpNext",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_next",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/EarnXpNextProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/EarnXp"
+    },
+    {
+      "name": "OpenUnlockedGui",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_unlocked_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/OpenUnlockedGuiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/Unlocked"
+    },
+    {
+      "name": "UnlockedTick",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlocked_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/UnlockedTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/Unlocked"
+    },
+    {
+      "name": "UnlockedPrevious",
+      "type": "procedure",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlocked_previous",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/UnlockedPreviousProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Unlocked"
+    },
+    {
+      "name": "UnlockedNext",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "unlocked_next",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/UnlockedNextProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Unlocked"
+    },
+    {
+      "name": "GetBlockPath",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_block_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/GetBlockPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure"
+    },
+    {
+      "name": "GetMainHandItem",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_main_hand_item",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/GetMainHandItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure"
+    },
+    {
+      "name": "GetOffHandItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_off_hand_item",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/GetOffHandItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure"
     }
   ],
   "variable_elements": [
@@ -630,16 +1022,42 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "temp_job_id",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "temp_parametter",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "\"\""
+    },
+    {
+      "name": "won_xp_multiplier_base",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
       "key.categories.eriniumjobs": "§b§lErinium Jobs",
-      "config.eriniumjobs.common_config": "erinium-ranking",
+      "jobs.file.loaded.message": "Jobs files loaded !",
+      "gui.eriniumjobs.earn_xp_gui.button_empty": "\u003c-",
       "gui.eriniumjobs.config_page_1.label_overlay_config": "Overlay Config",
+      "gui.eriniumjobs.unlocked_gui.label_earn_xp": "Unlocked",
+      "gui.eriniumjobs.unlocked_gui.button_empty": "\u003c-",
+      "gui.eriniumjobs.unlocked_gui.button_empty1": "-\u003e",
+      "gui.eriniumjobs.earn_xp_gui.label_earn_xp": "Earn Xp",
+      "gui.eriniumjobs.earn_xp_gui.button_empty1": "-\u003e",
+      "config.eriniumjobs.common_config": "erinium-ranking",
       "gui.eriniumjobs.wonxpconfig.button_test": "Test",
       "gui.eriniumjobs.config_page_1.button_won_xp": "Won XP",
+      "jobs.file.loading.message": "Loading jobs files...",
       "key.eriniumjobs.open_overlay_settings_page": "Open Overlay Settings Page"
     }
   },
@@ -669,6 +1087,23 @@
                 "children": []
               }
             ]
+          }
+        ]
+      },
+      {
+        "name": "Jobs",
+        "children": [
+          {
+            "name": "EarnXp",
+            "children": []
+          },
+          {
+            "name": "Unlocked",
+            "children": []
+          },
+          {
+            "name": "Procedure",
+            "children": []
           }
         ]
       }

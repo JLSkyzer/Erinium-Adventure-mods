@@ -85,6 +85,9 @@ public class EriniumjobsModVariables {
 			clone.FirstJoined = original.FirstJoined;
 			clone.windows_width = original.windows_width;
 			clone.windows_height = original.windows_height;
+			clone.temp_job_id = original.temp_job_id;
+			clone.temp_parametter = original.temp_parametter;
+			clone.won_xp_multiplier_base = original.won_xp_multiplier_base;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -140,6 +143,9 @@ public class EriniumjobsModVariables {
 		public boolean FirstJoined = false;
 		public double windows_width = 0;
 		public double windows_height = 0;
+		public String temp_job_id = "\"\"";
+		public String temp_parametter = "\"\"";
+		public double won_xp_multiplier_base = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -167,6 +173,9 @@ public class EriniumjobsModVariables {
 			nbt.putBoolean("FirstJoined", FirstJoined);
 			nbt.putDouble("windows_width", windows_width);
 			nbt.putDouble("windows_height", windows_height);
+			nbt.putString("temp_job_id", temp_job_id);
+			nbt.putString("temp_parametter", temp_parametter);
+			nbt.putDouble("won_xp_multiplier_base", won_xp_multiplier_base);
 			return nbt;
 		}
 
@@ -191,6 +200,9 @@ public class EriniumjobsModVariables {
 			FirstJoined = nbt.getBoolean("FirstJoined");
 			windows_width = nbt.getDouble("windows_width");
 			windows_height = nbt.getDouble("windows_height");
+			temp_job_id = nbt.getString("temp_job_id");
+			temp_parametter = nbt.getString("temp_parametter");
+			won_xp_multiplier_base = nbt.getDouble("won_xp_multiplier_base");
 		}
 	}
 
@@ -234,6 +246,9 @@ public class EriniumjobsModVariables {
 					variables.FirstJoined = message.data.FirstJoined;
 					variables.windows_width = message.data.windows_width;
 					variables.windows_height = message.data.windows_height;
+					variables.temp_job_id = message.data.temp_job_id;
+					variables.temp_parametter = message.data.temp_parametter;
+					variables.won_xp_multiplier_base = message.data.won_xp_multiplier_base;
 				}
 			});
 			context.setPacketHandled(true);

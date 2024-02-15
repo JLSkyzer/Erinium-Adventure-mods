@@ -12,7 +12,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import fr.eriniumgroups.erinium.jobs.client.gui.WonXpOverlayConfigScreen;
+import fr.eriniumgroups.erinium.jobs.client.gui.UnlockedGuiScreen;
 import fr.eriniumgroups.erinium.jobs.client.gui.QFQScreen;
+import fr.eriniumgroups.erinium.jobs.client.gui.EarnXpGuiScreen;
 import fr.eriniumgroups.erinium.jobs.client.gui.ConfigPage1Screen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -23,6 +25,8 @@ public class EriniumjobsModScreens {
 			MenuScreens.register(EriniumjobsModMenus.WON_XP_OVERLAY_CONFIG.get(), WonXpOverlayConfigScreen::new);
 			MenuScreens.register(EriniumjobsModMenus.CONFIG_PAGE_1.get(), ConfigPage1Screen::new);
 			MenuScreens.register(EriniumjobsModMenus.QFQ.get(), QFQScreen::new);
+			MenuScreens.register(EriniumjobsModMenus.EARN_XP_GUI.get(), EarnXpGuiScreen::new);
+			MenuScreens.register(EriniumjobsModMenus.UNLOCKED_GUI.get(), UnlockedGuiScreen::new);
 		});
 	}
 }

@@ -1,8 +1,16 @@
 {
   "key.categories.eriniumjobs": "§b§lErinium Jobs",
-  "config.eriniumjobs.common_config": "erinium-ranking",
+  "jobs.file.loaded.message": "Jobs files loaded !",
+  "gui.eriniumjobs.earn_xp_gui.button_empty": "\u003c-",
   "gui.eriniumjobs.config_page_1.label_overlay_config": "Overlay Config",
+  "gui.eriniumjobs.unlocked_gui.label_earn_xp": "Unlocked",
+  "gui.eriniumjobs.unlocked_gui.button_empty": "\u003c-",
+  "gui.eriniumjobs.unlocked_gui.button_empty1": "-\u003e",
+  "gui.eriniumjobs.earn_xp_gui.label_earn_xp": "Earn Xp",
+  "gui.eriniumjobs.earn_xp_gui.button_empty1": "-\u003e",
+  "config.eriniumjobs.common_config": "erinium-ranking",
   "gui.eriniumjobs.wonxpconfig.button_test": "Test",
   "gui.eriniumjobs.config_page_1.button_won_xp": "Won XP",
+  "jobs.file.loading.message": "Loading jobs files...",
   "key.eriniumjobs.open_overlay_settings_page": "Open Overlay Settings Page"
 }

@@ -1,0 +1,7 @@
+{
+	"job_id": "miner",
+	"min-level": 0,
+	"max-level": 50,
+	"type": "BREAK",
+	"xp": 128
+}
