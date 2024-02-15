@@ -6,7 +6,7 @@
 This mod is enterly configurable ! You can add block and item to earn XP and set a level requirement between 0 and 100 for blocks and item !
 ### Earn XP
 To add a block or item to earn money go to these location : 
-GAMEFOLDER/config/EriniumJobs/GainXp/MODID/ID
+GAMEFOLDER/config/EriniumJobs/GainXp/job_id/MODID/ID.json
 
 The file must be a json file like iron_ingot.json
 Here the json parameter : 
