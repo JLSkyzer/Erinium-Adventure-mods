@@ -4,20 +4,33 @@
 ---
 ## Erinium Jobs
 This mod is enterly configurable ! You can add block and item to earn XP and set a level requirement between 0 and 100 for blocks and item !
+### Custom Jobs
+By default, you have 4 jobs, miner, farmer, hunter and alchimist.
+You can add custom jobs by adding json file at location : GAMEFOLDER/config/EriniumJobs/jobs/job_id.json
+⚠️ You cant delete the fourth default jobs !
+How the file is constructed : 
+```json
+{
+	"displayname": "DISPLAYNAME"
+}
+```
+
 ### Earn XP
 To add a block or item to earn money go to these location : 
-GAMEFOLDER/config/EriniumJobs/GainXp/MODID/ID
+GAMEFOLDER/config/EriniumJobs/EarnXp/MODID/ID.json
 
 The file must be a json file like iron_ingot.json
 Here the json parameter : 
 ```json
 {
+	"job_id": "JOB_ID",
 	"min-level": "LEVEL",
 	"max-level": "LEVEL",
 	"type": "TYPE",
 	"xp": "XP"
 }
 ```
+- job_id is the job you earn (one job only !)
 - min level is the minium level to start to earn xp
 - max level is the max level to earn xp (after you dont earn)
 - type is the type here an example :
@@ -26,6 +39,7 @@ Here the json parameter :
 		- EAT (When you eat / drink)
 		- SMELTED (An item smelted ⚠️RESULT ITEM*)
 		- CRAFTED (An item crafted ⚠️RESULT ITEM*)
+  		- KILL (Kill an entities)
 
 \* For example, for diamond, on BREAK you set diamond_ore and on SMELTED you set diamond
 - xp is the amount of XP is given (more you will levelup, you will earn less xp) see my [excel](https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=Ko20vF "excel") to understand
@@ -35,18 +49,20 @@ Here the json parameter :
 💡You can set multiple type like that : "BREAK, EAT, CRAFTED" but generaly you don't need to set multiple type but why not
 
 Here an example for diamond_ore and diamond
-location : GAMEFOLDER/config/EriniumJobs/GainXp/minecraft/diamond_ore.json
+location : GAMEFOLDER/config/EriniumJobs/EarnXp/minecraft/diamond_ore.json
 ```json
 {
+	"job_id": "miner",
 	"min-level": "0",
 	"max-level": "45",
 	"type": "BREAK",
 	"xp": "125"
 }
 ```
-location : GAMEFOLDER/config/EriniumJobs/GainXp/minecraft/diamond.json
+location : GAMEFOLDER/config/EriniumJobs/EarnXp/minecraft/diamond.json
 ```json
 {
+	"job_id": "miner",
 	"min-level": "0",
 	"max-level": "65",
 	"type": "SMELTED",
@@ -56,12 +72,14 @@ location : GAMEFOLDER/config/EriniumJobs/GainXp/minecraft/diamond.json
 
 ### Require Level
 To add a requirement to an item or block go to these location : 
-GAMEFOLDER/config/EriniumJobs/required/MODID/ID
+GAMEFOLDER/config/EriniumJobs/Required/MODID/ID
 
 Here the json parameter : 
 ```json
 {
+	"job_id": "JOB_ID",
 	"level": "LEVEL"
 }
 ```
+JOB_ID is the job id (only one !)
 LEVEL is the required level between 0 and 100 (set 101 to completly disable an item or block !)
