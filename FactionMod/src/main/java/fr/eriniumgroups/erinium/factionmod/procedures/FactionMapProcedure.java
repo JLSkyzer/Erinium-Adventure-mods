@@ -55,7 +55,7 @@ public class FactionMapProcedure {
 						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 						return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 					}
-				}.getRegion((int) (entity.getX() + sx), (int) (entity.getX() + sx))).equals(new Object() {
+				}.getRegion((int) (entity.getX() + sx), (int) (entity.getZ() + sz))).equals(new Object() {
 					private String getChunk(int chunkX, int chunkZ) {
 						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 						return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
@@ -65,13 +65,13 @@ public class FactionMapProcedure {
 						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 						return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 					}
-				}.getRegion((int) (entity.getX()), (int) (entity.getX())))) {
+				}.getRegion((int) (entity.getX()), (int) (entity.getZ())))) {
 					file = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_claims/" + new Object() {
 						private String getRegion(int chunkX, int chunkZ) {
 							ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 							return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 						}
-					}.getRegion((int) (entity.getX()), (int) (entity.getX())) + "/"), File.separator + (new Object() {
+					}.getRegion((int) (entity.getX()), (int) (entity.getZ())) + "/"), File.separator + (new Object() {
 						private String getChunk(int chunkX, int chunkZ) {
 							ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 							return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
@@ -83,7 +83,7 @@ public class FactionMapProcedure {
 							ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 							return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 						}
-					}.getRegion((int) (entity.getX() + sx), (int) (entity.getX() + sx)) + "/"), File.separator + (new Object() {
+					}.getRegion((int) (entity.getX() + sx), (int) (entity.getZ() + sz)) + "/"), File.separator + (new Object() {
 						private String getChunk(int chunkX, int chunkZ) {
 							ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 							return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
@@ -119,7 +119,7 @@ public class FactionMapProcedure {
 						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 						return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 					}
-				}.getRegion((int) (entity.getX() + sx), (int) (entity.getX() + sx))).equals(new Object() {
+				}.getRegion((int) (entity.getX() + sx), (int) (entity.getZ() + sz))).equals(new Object() {
 					private String getChunk(int chunkX, int chunkZ) {
 						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 						return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
@@ -129,7 +129,7 @@ public class FactionMapProcedure {
 						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 						return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 					}
-				}.getRegion((int) (entity.getX()), (int) (entity.getX())))) {
+				}.getRegion((int) (entity.getX()), (int) (entity.getZ())))) {
 					temp_message = temp_message + "\u00A7f+";
 					legend_text = legend_text + "\u00A7aYou : \u00A7e" + returnOwned + " \u00A76| ";
 				} else if ((returnOwned).equals("wilderness")) {

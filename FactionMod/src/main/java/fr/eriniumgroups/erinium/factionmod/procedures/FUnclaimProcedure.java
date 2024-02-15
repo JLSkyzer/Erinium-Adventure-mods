@@ -38,7 +38,7 @@ public class FUnclaimProcedure {
 									ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 									return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 								}
-							}.getRegion((int) (entity.getX()), (int) (entity.getX())) + "/" + new Object() {
+							}.getRegion((int) (entity.getX()), (int) (entity.getZ())) + "/" + new Object() {
 								private String getChunk(int chunkX, int chunkZ) {
 									ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 									return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
@@ -51,7 +51,7 @@ public class FUnclaimProcedure {
 										ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 										return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 									}
-								}.getRegion((int) (entity.getX()), (int) (entity.getX())) + "/" + new Object() {
+								}.getRegion((int) (entity.getX()), (int) (entity.getZ())) + "/" + new Object() {
 									private String getChunk(int chunkX, int chunkZ) {
 										ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 										return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());

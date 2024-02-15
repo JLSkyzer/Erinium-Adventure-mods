@@ -24,7 +24,7 @@ public class WarzoneClaimProcedure {
 		com.google.gson.JsonObject SecJsonObject = new com.google.gson.JsonObject();
 		String player_name = "";
 		if (TargetEntityIsAdminProcedure.execute(entity)) {
-			if (CanInteractWithClaimsProcedure.execute(world, entity) && !IsWarzoneProcedure.execute(world, entity)) {
+			if (IsWildernessProcedure.execute(world, entity)) {
 				File = GetChunkPathProcedure.execute(world, entity);
 				{
 					try {
@@ -55,7 +55,7 @@ public class WarzoneClaimProcedure {
 					_player.displayClientMessage(Component.literal(("\u00A7a" + Component.translatable("faction.message.claim.succeful").getString())), false);
 			} else {
 				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A74Already Warzone or bypass claim not enabled !"), false);
+					_player.displayClientMessage(Component.literal("\u00A74Already Warzone or can't claim here !"), false);
 			}
 		}
 	}

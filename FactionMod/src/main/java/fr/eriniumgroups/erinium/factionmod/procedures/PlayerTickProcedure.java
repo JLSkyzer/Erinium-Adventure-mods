@@ -132,14 +132,14 @@ public class PlayerTickProcedure {
 				ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 				return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 			}
-		}.getRegion((int) (entity.getX()), (int) (entity.getX()))).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_region)) {
+		}.getRegion((int) (entity.getX()), (int) (entity.getZ()))).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_region)) {
 			{
 				String _setval = new Object() {
 					private String getRegion(int chunkX, int chunkZ) {
 						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 						return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 					}
-				}.getRegion((int) (entity.getX()), (int) (entity.getX()));
+				}.getRegion((int) (entity.getX()), (int) (entity.getZ()));
 				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.current_region = _setval;
 					capability.syncPlayerVariables(entity);

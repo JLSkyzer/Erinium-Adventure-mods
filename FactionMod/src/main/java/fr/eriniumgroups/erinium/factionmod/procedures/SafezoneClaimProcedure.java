@@ -24,7 +24,7 @@ public class SafezoneClaimProcedure {
 		com.google.gson.JsonObject SecJsonObject = new com.google.gson.JsonObject();
 		String player_name = "";
 		if (TargetEntityIsAdminProcedure.execute(entity)) {
-			if (CanInteractWithClaimsProcedure.execute(world, entity) && !IsSafezoneProcedure.execute(world, entity)) {
+			if (IsWildernessProcedure.execute(world, entity)) {
 				File = GetChunkPathProcedure.execute(world, entity);
 				{
 					try {
