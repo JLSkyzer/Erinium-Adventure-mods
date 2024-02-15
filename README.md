@@ -26,6 +26,7 @@ Here the json parameter :
 		- EAT (When you eat / drink)
 		- SMELTED (An item smelted ⚠️RESULT ITEM*)
 		- CRAFTED (An item crafted ⚠️RESULT ITEM*)
+  		- KILL (Kill an entities)
 
 \* For example, for diamond, on BREAK you set diamond_ore and on SMELTED you set diamond
 - xp is the amount of XP is given (more you will levelup, you will earn less xp) see my [excel](https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=Ko20vF "excel") to understand
