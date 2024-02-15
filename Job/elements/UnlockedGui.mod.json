@@ -19,7 +19,7 @@
           },
           "id": 0,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 132,
@@ -35,7 +35,7 @@
           },
           "id": 1,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 150,
@@ -51,7 +51,7 @@
           },
           "id": 2,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 168,
@@ -67,7 +67,7 @@
           },
           "id": 3,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 186,
@@ -83,7 +83,7 @@
           },
           "id": 4,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 204,
@@ -99,7 +99,7 @@
           },
           "id": 5,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 222,
@@ -115,7 +115,7 @@
           },
           "id": 6,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 240,
@@ -131,7 +131,7 @@
           },
           "id": 7,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 258,
@@ -147,7 +147,7 @@
           },
           "id": 8,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 276,
@@ -163,7 +163,7 @@
           },
           "id": 9,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 132,
@@ -179,7 +179,7 @@
           },
           "id": 10,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 150,
@@ -195,7 +195,7 @@
           },
           "id": 11,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 168,
@@ -211,7 +211,7 @@
           },
           "id": 12,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 186,
@@ -227,7 +227,7 @@
           },
           "id": 13,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 204,
@@ -243,7 +243,7 @@
           },
           "id": 14,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 222,
@@ -259,7 +259,7 @@
           },
           "id": 15,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 240,
@@ -275,7 +275,7 @@
           },
           "id": 16,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 258,
@@ -291,7 +291,7 @@
           },
           "id": 17,
           "disablePickup": {
-            "fixedValue": false
+            "fixedValue": true
           },
           "dropItemsWhenNotBound": false,
           "x": 276,

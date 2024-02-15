@@ -86,12 +86,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 0;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 25, 24) {
 			private final int slot = 1;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -102,12 +112,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 2;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 61, 24) {
 			private final int slot = 3;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -118,12 +138,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 4;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 97, 24) {
 			private final int slot = 5;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -134,12 +164,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 6;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 133, 24) {
 			private final int slot = 7;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -150,12 +190,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 8;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 7, 42) {
 			private final int slot = 9;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -166,12 +216,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 10;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 43, 42) {
 			private final int slot = 11;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -182,12 +242,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 12;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(13, this.addSlot(new SlotItemHandler(internal, 13, 79, 42) {
 			private final int slot = 13;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -198,12 +268,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 14;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(15, this.addSlot(new SlotItemHandler(internal, 15, 115, 42) {
 			private final int slot = 15;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {
@@ -214,12 +294,22 @@ public class UnlockedGuiMenu extends AbstractContainerMenu implements Supplier<M
 			private final int slot = 16;
 
 			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
 		}));
 		this.customSlots.put(17, this.addSlot(new SlotItemHandler(internal, 17, 151, 42) {
 			private final int slot = 17;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
 
 			@Override
 			public boolean mayPlace(ItemStack stack) {

@@ -1,0 +1,7 @@
+{
+	"job_id": "hunter",
+	"min-level": 0,
+	"max-level": 50,
+	"type": "KILL",
+	"xp": 325
+}

@@ -832,6 +832,288 @@
         ]
       },
       "path": "~/Jobs/Unlocked"
+    },
+    {
+      "name": "GetBlockPath",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_block_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/GetBlockPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/required"
+    },
+    {
+      "name": "GetMainHandItem",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_main_hand_item",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/GetMainHandItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/required"
+    },
+    {
+      "name": "GetOffHandItem",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_off_hand_item",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/GetOffHandItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/required"
+    },
+    {
+      "name": "EarnXpGetBlockPath",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_get_block_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/EarnXpGetBlockPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/EarnXp"
+    },
+    {
+      "name": "EarnXpGetItemStackPath",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_get_item_stack_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/EarnXpGetItemStackPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/EarnXp"
+    },
+    {
+      "name": "BreakBlock",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "break_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/BreakBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/EarnXp"
+    },
+    {
+      "name": "CraftItem",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_item",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/CraftItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/EarnXp"
+    },
+    {
+      "name": "SmeltItem",
+      "type": "procedure",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "smelt_item",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/SmeltItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/EarnXp"
+    },
+    {
+      "name": "EarnXpGetEntityPath",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_get_entity_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/EarnXpGetEntityPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/EarnXp"
+    },
+    {
+      "name": "EatItem",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "eat_item",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/EatItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/EarnXp"
+    },
+    {
+      "name": "KillEntity",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/KillEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure/EarnXp"
     }
   ],
   "variable_elements": [
@@ -984,7 +1266,9 @@
       "gui.eriniumjobs.wonxpconfig.button_test": "Test",
       "gui.eriniumjobs.config_page_1.button_won_xp": "Won XP",
       "jobs.file.loading.message": "Loading jobs files...",
-      "key.eriniumjobs.open_overlay_settings_page": "Open Overlay Settings Page"
+      "key.eriniumjobs.open_overlay_settings_page": "Open Overlay Settings Page",
+      "jobs.message.reachlevel.message2": " §eYour current level is : §6",
+      "jobs.message.reachlevel.message1": "§eYou reach an another level in the job : §b"
     }
   },
   "foldersRoot": {
@@ -1029,7 +1313,16 @@
           },
           {
             "name": "Procedure",
-            "children": []
+            "children": [
+              {
+                "name": "required",
+                "children": []
+              },
+              {
+                "name": "EarnXp",
+                "children": []
+              }
+            ]
           }
         ]
       }

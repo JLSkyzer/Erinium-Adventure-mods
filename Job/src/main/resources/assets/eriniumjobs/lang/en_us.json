@@ -7,10 +7,14 @@
   "gui.eriniumjobs.unlocked_gui.button_empty": "\u003c-",
   "gui.eriniumjobs.unlocked_gui.button_empty1": "-\u003e",
   "gui.eriniumjobs.earn_xp_gui.label_earn_xp": "Earn Xp",
+  "jobs.message.required.message2": " §cat the job §a",
+  "jobs.message.required.message1": "§cYou need to be level §6",
   "gui.eriniumjobs.earn_xp_gui.button_empty1": "-\u003e",
   "config.eriniumjobs.common_config": "erinium-ranking",
   "gui.eriniumjobs.wonxpconfig.button_test": "Test",
   "gui.eriniumjobs.config_page_1.button_won_xp": "Won XP",
   "jobs.file.loading.message": "Loading jobs files...",
-  "key.eriniumjobs.open_overlay_settings_page": "Open Overlay Settings Page"
+  "key.eriniumjobs.open_overlay_settings_page": "Open Overlay Settings Page",
+  "jobs.message.reachlevel.message2": " §eYour current level is : §6",
+  "jobs.message.reachlevel.message1": "§eYou reach an another level in the job : §b"
 }

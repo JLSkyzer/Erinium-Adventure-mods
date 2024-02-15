@@ -1,0 +1,7 @@
+{
+	"job_id": "farmer",
+	"min-level": 0,
+	"max-level": 50,
+	"type": "CRAFTED",
+	"xp": 25
+}

@@ -1,7 +1,7 @@
 {
-  "level": 0,
-  "xp": 0,
-  "cap_xp": 500,
-  "old_cap_xp": 0,
-  "xp_multiplier": 1
+  "level": 2.0,
+  "xp": 145.29999999999995,
+  "cap_xp": 599.5124999999999,
+  "old_cap_xp": 547.5,
+  "xp_multiplier": 0.964324
 }
