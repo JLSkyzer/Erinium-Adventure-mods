@@ -7,6 +7,7 @@ This mod is enterly configurable ! You can add block and item to earn XP and set
 ### Custom Jobs
 By default, you have 4 jobs, miner, farmer, hunter and alchimist.
 You can add custom jobs by adding json file at location : GAMEFOLDER/config/EriniumJobs/jobs/job_id.json
+
 ⚠️ You cant delete the fourth default jobs !
 How the file is constructed : 
 ```json
