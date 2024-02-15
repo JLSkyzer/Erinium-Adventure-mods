@@ -4,6 +4,16 @@
 ---
 ## Erinium Jobs
 This mod is enterly configurable ! You can add block and item to earn XP and set a level requirement between 0 and 100 for blocks and item !
+### Custom Jobs
+By default, you have 4 jobs, miner, farmer, hunter and alchimist.
+You can add custom jobs by adding json file at location : GAMEFOLDER/config/EriniumJobs/jobs/job_id.json
+How the file is constructed : 
+```json
+{
+	"displayname": "DISPLAYNAME"
+}
+```
+
 ### Earn XP
 To add a block or item to earn money go to these location : 
 GAMEFOLDER/config/EriniumJobs/GainXp/job_id/MODID/ID.json
