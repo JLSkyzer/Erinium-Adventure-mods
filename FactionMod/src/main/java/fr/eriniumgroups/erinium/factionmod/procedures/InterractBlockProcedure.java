@@ -33,7 +33,7 @@ public class InterractBlockProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Player || entity instanceof ServerPlayer) {
-			if (!CanInteractWithClaimsProcedure.execute(world, entity)) {
+			if (!CanInteractWithClaimsProcedure.execute(world, entity) && (!IsWarzoneProcedure.execute(world, entity) || !IsSafezoneProcedure.execute(world, entity))) {
 				if (!(world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("erinium_faction:can_use_block_on_claim")))) {
 					if (event != null && event.isCancelable()) {
 						event.setCanceled(true);

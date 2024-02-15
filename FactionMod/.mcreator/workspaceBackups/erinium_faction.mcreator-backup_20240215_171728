@@ -2946,6 +2946,9 @@
       "registry_name": "get_chunk_path",
       "metadata": {
         "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetChunkPathProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4189,9 +4192,6 @@
       "locked_code": false,
       "registry_name": "temp_proc",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/TempProcProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",

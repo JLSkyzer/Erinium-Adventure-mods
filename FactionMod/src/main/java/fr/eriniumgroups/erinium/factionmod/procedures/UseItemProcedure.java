@@ -39,7 +39,6 @@ public class UseItemProcedure {
 					if (event != null && event.isCancelable()) {
 						event.setCanceled(true);
 					}
-				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7cItem is blacklist"), false);
 				}
