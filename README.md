@@ -25,10 +25,10 @@ Here the json parameter :
 ```json
 {
 	"job_id": "JOB_ID",
-	"min-level": "LEVEL",
-	"max-level": "LEVEL",
+	"min-level": LEVEL,
+	"max-level": LEVEL,
 	"type": "TYPE",
-	"xp": "XP"
+	"xp": XP
 }
 ```
 - job_id is the job you earn (one job only !)
@@ -54,20 +54,20 @@ location : GAMEFOLDER/config/EriniumJobs/EarnXp/minecraft/diamond_ore.json
 ```json
 {
 	"job_id": "miner",
-	"min-level": "0",
-	"max-level": "45",
+	"min-level": 0,
+	"max-level": 45,
 	"type": "BREAK",
-	"xp": "125"
+	"xp": 125
 }
 ```
 location : GAMEFOLDER/config/EriniumJobs/EarnXp/minecraft/diamond.json
 ```json
 {
 	"job_id": "miner",
-	"min-level": "0",
-	"max-level": "65",
+	"min-level": 0,
+	"max-level": 65,
 	"type": "SMELTED",
-	"xp": "160"
+	"xp": 160
 }
 ```
 
@@ -79,7 +79,7 @@ Here the json parameter :
 ```json
 {
 	"job_id": "JOB_ID",
-	"level": "LEVEL"
+	"level": LEVEL
 }
 ```
 JOB_ID is the job id (only one !)
