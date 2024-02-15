@@ -56,7 +56,7 @@ location : GAMEFOLDER/config/EriniumJobs/GainXp/minecraft/diamond.json
 
 ### Require Level
 To add a requirement to an item or block go to these location : 
-GAMEFOLDER/config/EriniumJobs/required/MODID/ID
+GAMEFOLDER/config/EriniumJobs/required/job_id/MODID/ID
 
 Here the json parameter : 
 ```json
