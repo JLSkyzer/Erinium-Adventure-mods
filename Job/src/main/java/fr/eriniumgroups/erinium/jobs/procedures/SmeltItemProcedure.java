@@ -30,14 +30,14 @@ import com.google.gson.Gson;
 public class SmeltItemProcedure {
 	@SubscribeEvent
 	public static void onItemSmelted(PlayerEvent.ItemSmeltedEvent event) {
-		execute(event, event.getEntity(), event.getSmelting());
+		execute(event, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity(), event.getSmelting());
 	}
 
-	public static void execute(Entity entity, ItemStack itemstack) {
-		execute(null, entity, itemstack);
+	public static void execute(double x, double y, double z, Entity entity, ItemStack itemstack) {
+		execute(null, x, y, z, entity, itemstack);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack) {
+	private static void execute(@Nullable Event event, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
 		File File = new File("");
@@ -143,6 +143,7 @@ public class SmeltItemProcedure {
 											if (entity instanceof Player _player && !_player.level().isClientSide())
 												_player.displayClientMessage(Component.literal((Component.translatable("jobs.message.reachlevel.message1").getString() + "" + jobDisplayName
 														+ Component.translatable("jobs.message.reachlevel.message2").getString() + new java.text.DecimalFormat("##").format(SecJsonObject.get("level").getAsDouble()))), false);
+											ReachLevelProcedure.execute(entity);
 										}
 									}
 									{

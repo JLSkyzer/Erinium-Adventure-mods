@@ -30,15 +30,15 @@ public class KillEntityProcedure {
 	@SubscribeEvent
 	public static void onEntityDeath(LivingDeathEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity(), event.getSource().getEntity());
+			execute(event, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void execute(Entity entity, Entity sourceentity) {
-		execute(null, entity, sourceentity);
+	public static void execute(double x, double y, double z, Entity entity, Entity sourceentity) {
+		execute(null, x, y, z, entity, sourceentity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
+	private static void execute(@Nullable Event event, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
 		File File = new File("");
@@ -144,6 +144,7 @@ public class KillEntityProcedure {
 											if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 												_player.displayClientMessage(Component.literal((Component.translatable("jobs.message.reachlevel.message1").getString() + "" + jobDisplayName
 														+ Component.translatable("jobs.message.reachlevel.message2").getString() + new java.text.DecimalFormat("##").format(SecJsonObject.get("level").getAsDouble()))), false);
+											ReachLevelSourceEntityProcedure.execute(sourceentity);
 										}
 									}
 									{

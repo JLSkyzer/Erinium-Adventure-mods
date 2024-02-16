@@ -1017,6 +1017,18 @@
           {
             "name": "itemstack",
             "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           }
         ]
       },
@@ -1041,6 +1053,18 @@
           {
             "name": "itemstack",
             "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           }
         ]
       },
@@ -1086,6 +1110,18 @@
           {
             "name": "itemstack",
             "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           }
         ]
       },
@@ -1110,6 +1146,18 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           }
         ]
       },
@@ -1206,6 +1254,167 @@
         ]
       },
       "path": "~/Jobs/Procedure/required"
+    },
+    {
+      "name": "EntityIsAdmin",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entity_is_admin",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/EntityIsAdminProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs"
+    },
+    {
+      "name": "CreateJob",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "create_job",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/CreateJobProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Admin"
+    },
+    {
+      "name": "EarnXpMakerTooltipValue",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_maker_tooltip_value",
+      "metadata": {
+        "return_type": "string",
+        "dependencies": []
+      },
+      "path": "~/Jobs/Admin"
+    },
+    {
+      "name": "EarnXpMaker",
+      "type": "gui",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "earn_xp_maker",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/client/gui/EarnXpMakerScreen.java",
+          "src/main/java/fr/eriniumgroups/erinium/jobs/world/inventory/EarnXpMakerMenu.java"
+        ]
+      },
+      "path": "~/Jobs/Admin"
+    },
+    {
+      "name": "OpenEarnXpMaker",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_earn_xp_maker",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/OpenEarnXpMakerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Jobs/Admin"
+    },
+    {
+      "name": "EarnXpComponent",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "earn_xp_component",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/EarnXpComponent.java"
+        ]
+      }
+    },
+    {
+      "name": "ReachLevel",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reach_level",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/ReachLevelProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure"
+    },
+    {
+      "name": "ReachLevelSourceEntity",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reach_level_source_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/jobs/procedures/ReachLevelSourceEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Jobs/Procedure"
     }
   ],
   "variable_elements": [
@@ -1346,21 +1555,31 @@
   "language_map": {
     "en_us": {
       "key.categories.eriniumjobs": "§b§lErinium Jobs",
-      "jobs.file.loaded.message": "Jobs files loaded !",
+      "gui.eriniumjobs.earn_xp_maker.label_earnxp_creator": "EarnXp creator",
       "gui.eriniumjobs.earn_xp_gui.button_empty": "\u003c-",
       "gui.eriniumjobs.config_page_1.label_overlay_config": "Overlay Config",
-      "gui.eriniumjobs.unlocked_gui.label_earn_xp": "Unlocked",
-      "gui.eriniumjobs.unlocked_gui.button_empty": "\u003c-",
+      "gui.eriniumjobs.earn_xp_maker.label_job_id": "Job ID",
+      "gui.eriniumjobs.earn_xp_maker.max_level": "",
       "gui.eriniumjobs.unlocked_gui.button_empty1": "-\u003e",
-      "gui.eriniumjobs.earn_xp_gui.label_earn_xp": "Earn Xp",
-      "jobs.message.required.message2": " §cat the job §a",
-      "jobs.message.required.message1": "§cYou need to be level §6",
-      "gui.eriniumjobs.earn_xp_gui.button_empty1": "-\u003e",
       "config.eriniumjobs.common_config": "erinium-ranking",
       "gui.eriniumjobs.wonxpconfig.button_test": "Test",
-      "gui.eriniumjobs.config_page_1.button_won_xp": "Won XP",
+      "gui.eriniumjobs.earn_xp_maker.job_id": "",
+      "jobs.levelup.gift.message": "§eTake your gift for reach a new level on an of your job !",
       "jobs.file.loading.message": "Loading jobs files...",
+      "gui.eriniumjobs.earn_xp_maker.label_type": "Type",
       "key.eriniumjobs.open_overlay_settings_page": "Open Overlay Settings Page",
+      "jobs.file.loaded.message": "Jobs files loaded !",
+      "gui.eriniumjobs.earn_xp_maker.min_level": "",
+      "gui.eriniumjobs.unlocked_gui.label_earn_xp": "Unlocked",
+      "gui.eriniumjobs.unlocked_gui.button_empty": "\u003c-",
+      "gui.eriniumjobs.earn_xp_gui.label_earn_xp": "Earn Xp",
+      "jobs.message.required.message2": " §cat the job §a",
+      "gui.eriniumjobs.earn_xp_maker.type": "",
+      "jobs.message.required.message1": "§cYou need to be level §6",
+      "gui.eriniumjobs.earn_xp_maker.label_max_level": "Max Level",
+      "gui.eriniumjobs.earn_xp_gui.button_empty1": "-\u003e",
+      "gui.eriniumjobs.earn_xp_maker.label_min_level": "Min Level",
+      "gui.eriniumjobs.config_page_1.button_won_xp": "Won XP",
       "jobs.message.reachlevel.message2": " §eYour current level is : §6",
       "jobs.message.reachlevel.message1": "§eYou reach an another level in the job : §b"
     }
@@ -1417,6 +1636,10 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Admin",
+            "children": []
           }
         ]
       }

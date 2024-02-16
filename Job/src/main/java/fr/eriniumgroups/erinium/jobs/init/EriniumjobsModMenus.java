@@ -14,6 +14,7 @@ import net.minecraft.world.inventory.MenuType;
 import fr.eriniumgroups.erinium.jobs.world.inventory.WonXpOverlayConfigMenu;
 import fr.eriniumgroups.erinium.jobs.world.inventory.UnlockedGuiMenu;
 import fr.eriniumgroups.erinium.jobs.world.inventory.QFQMenu;
+import fr.eriniumgroups.erinium.jobs.world.inventory.EarnXpMakerMenu;
 import fr.eriniumgroups.erinium.jobs.world.inventory.EarnXpGuiMenu;
 import fr.eriniumgroups.erinium.jobs.world.inventory.ConfigPage1Menu;
 import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
@@ -25,4 +26,5 @@ public class EriniumjobsModMenus {
 	public static final RegistryObject<MenuType<QFQMenu>> QFQ = REGISTRY.register("qfq", () -> IForgeMenuType.create(QFQMenu::new));
 	public static final RegistryObject<MenuType<EarnXpGuiMenu>> EARN_XP_GUI = REGISTRY.register("earn_xp_gui", () -> IForgeMenuType.create(EarnXpGuiMenu::new));
 	public static final RegistryObject<MenuType<UnlockedGuiMenu>> UNLOCKED_GUI = REGISTRY.register("unlocked_gui", () -> IForgeMenuType.create(UnlockedGuiMenu::new));
+	public static final RegistryObject<MenuType<EarnXpMakerMenu>> EARN_XP_MAKER = REGISTRY.register("earn_xp_maker", () -> IForgeMenuType.create(EarnXpMakerMenu::new));
 }

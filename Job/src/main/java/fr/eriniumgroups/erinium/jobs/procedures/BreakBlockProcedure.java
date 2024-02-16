@@ -143,6 +143,7 @@ public class BreakBlockProcedure {
 											if (entity instanceof Player _player && !_player.level().isClientSide())
 												_player.displayClientMessage(Component.literal((Component.translatable("jobs.message.reachlevel.message1").getString() + "" + jobDisplayName
 														+ Component.translatable("jobs.message.reachlevel.message2").getString() + new java.text.DecimalFormat("##").format(SecJsonObject.get("level").getAsDouble()))), false);
+											ReachLevelProcedure.execute(entity);
 										}
 									}
 									{
