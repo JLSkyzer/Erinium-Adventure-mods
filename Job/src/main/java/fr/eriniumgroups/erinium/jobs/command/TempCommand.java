@@ -13,7 +13,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.commands.Commands;
 
-import fr.eriniumgroups.erinium.jobs.procedures.ReachLevelProcedure;
+import fr.eriniumgroups.erinium.jobs.procedures.TempProcProcedure;
 
 @Mod.EventBusSubscriber
 public class TempCommand {
@@ -29,7 +29,7 @@ public class TempCommand {
 				entity = FakePlayerFactory.getMinecraft(world);
 			Direction direction = entity.getDirection();
 
-			ReachLevelProcedure.execute(entity);
+			TempProcProcedure.execute(world, entity);
 			return 0;
 		}));
 	}

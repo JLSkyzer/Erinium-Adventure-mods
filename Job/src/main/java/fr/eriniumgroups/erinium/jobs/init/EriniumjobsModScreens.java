@@ -13,6 +13,8 @@ import net.minecraft.client.gui.screens.MenuScreens;
 
 import fr.eriniumgroups.erinium.jobs.client.gui.WonXpOverlayConfigScreen;
 import fr.eriniumgroups.erinium.jobs.client.gui.UnlockedGuiScreen;
+import fr.eriniumgroups.erinium.jobs.client.gui.RequiredMakerScreen;
+import fr.eriniumgroups.erinium.jobs.client.gui.RankInfoScreen;
 import fr.eriniumgroups.erinium.jobs.client.gui.QFQScreen;
 import fr.eriniumgroups.erinium.jobs.client.gui.EarnXpMakerScreen;
 import fr.eriniumgroups.erinium.jobs.client.gui.EarnXpGuiScreen;
@@ -29,6 +31,8 @@ public class EriniumjobsModScreens {
 			MenuScreens.register(EriniumjobsModMenus.EARN_XP_GUI.get(), EarnXpGuiScreen::new);
 			MenuScreens.register(EriniumjobsModMenus.UNLOCKED_GUI.get(), UnlockedGuiScreen::new);
 			MenuScreens.register(EriniumjobsModMenus.EARN_XP_MAKER.get(), EarnXpMakerScreen::new);
+			MenuScreens.register(EriniumjobsModMenus.REQUIRED_MAKER.get(), RequiredMakerScreen::new);
+			MenuScreens.register(EriniumjobsModMenus.RANK_INFO.get(), RankInfoScreen::new);
 		});
 	}
 }

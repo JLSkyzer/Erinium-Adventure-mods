@@ -1,0 +1,65 @@
+{
+  "_fv": 47,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 427,
+    "height": 240,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_job_id",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnJobId"
+          },
+          "color": {
+            "value": -16777063,
+            "falpha": 0.0
+          },
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "rank_background.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "rank_bar_empty.png",
+          "use1Xscale": false,
+          "x": 54,
+          "y": 63
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "rank_bar_fill.png",
+          "use1Xscale": false,
+          "x": 55,
+          "y": 64
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 17,
+      "oy": 17,
+      "snapOnGrid": false
+    }
+  }
+}

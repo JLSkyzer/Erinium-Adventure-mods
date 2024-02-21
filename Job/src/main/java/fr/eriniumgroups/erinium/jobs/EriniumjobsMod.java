@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.AbstractMap;
 
 import fr.eriniumgroups.erinium.jobs.init.EriniumjobsModMenus;
+import fr.eriniumgroups.erinium.jobs.init.EriniumjobsModItems;
 
 @Mod("eriniumjobs")
 public class EriniumjobsMod {
@@ -48,6 +49,8 @@ public class EriniumjobsMod {
 	public EriniumjobsMod() {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+		EriniumjobsModItems.REGISTRY.register(bus);
 
 		EriniumjobsModMenus.REGISTRY.register(bus);
 	}

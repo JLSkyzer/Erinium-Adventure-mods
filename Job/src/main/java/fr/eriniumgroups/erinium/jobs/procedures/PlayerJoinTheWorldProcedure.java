@@ -193,5 +193,7 @@ public class PlayerJoinTheWorldProcedure {
 		}
 		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal(("\u00A7a" + Component.translatable("jobs.file.loaded.message").getString())), false);
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal((Component.translatable("player.join.message.help").getString())), false);
 	}
 }

@@ -13,6 +13,8 @@ import net.minecraft.world.inventory.MenuType;
 
 import fr.eriniumgroups.erinium.jobs.world.inventory.WonXpOverlayConfigMenu;
 import fr.eriniumgroups.erinium.jobs.world.inventory.UnlockedGuiMenu;
+import fr.eriniumgroups.erinium.jobs.world.inventory.RequiredMakerMenu;
+import fr.eriniumgroups.erinium.jobs.world.inventory.RankInfoMenu;
 import fr.eriniumgroups.erinium.jobs.world.inventory.QFQMenu;
 import fr.eriniumgroups.erinium.jobs.world.inventory.EarnXpMakerMenu;
 import fr.eriniumgroups.erinium.jobs.world.inventory.EarnXpGuiMenu;
@@ -27,4 +29,6 @@ public class EriniumjobsModMenus {
 	public static final RegistryObject<MenuType<EarnXpGuiMenu>> EARN_XP_GUI = REGISTRY.register("earn_xp_gui", () -> IForgeMenuType.create(EarnXpGuiMenu::new));
 	public static final RegistryObject<MenuType<UnlockedGuiMenu>> UNLOCKED_GUI = REGISTRY.register("unlocked_gui", () -> IForgeMenuType.create(UnlockedGuiMenu::new));
 	public static final RegistryObject<MenuType<EarnXpMakerMenu>> EARN_XP_MAKER = REGISTRY.register("earn_xp_maker", () -> IForgeMenuType.create(EarnXpMakerMenu::new));
+	public static final RegistryObject<MenuType<RequiredMakerMenu>> REQUIRED_MAKER = REGISTRY.register("required_maker", () -> IForgeMenuType.create(RequiredMakerMenu::new));
+	public static final RegistryObject<MenuType<RankInfoMenu>> RANK_INFO = REGISTRY.register("rank_info", () -> IForgeMenuType.create(RankInfoMenu::new));
 }

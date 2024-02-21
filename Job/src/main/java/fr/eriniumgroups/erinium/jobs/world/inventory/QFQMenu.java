@@ -53,7 +53,7 @@ public class QFQMenu extends AbstractContainerMenu implements Supplier<Map<Integ
 			this.z = pos.getZ();
 			access = ContainerLevelAccess.create(world, pos);
 		}
-		TempProcProcedure.execute(entity);
+		TempProcProcedure.execute(world, entity);
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class QFQMenu extends AbstractContainerMenu implements Supplier<Map<Integ
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			TempProcProcedure.execute(entity);
+			TempProcProcedure.execute(world, entity);
 		}
 	}
 }

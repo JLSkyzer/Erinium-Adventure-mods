@@ -1,8 +1,12 @@
 
 package fr.eriniumgroups.erinium.jobs.world.inventory;
 
+import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -22,8 +26,10 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
+import fr.eriniumgroups.erinium.jobs.procedures.EarnXpMakerWhileThisGUIIsOpenTickProcedure;
 import fr.eriniumgroups.erinium.jobs.init.EriniumjobsModMenus;
 
+@Mod.EventBusSubscriber
 public class EarnXpMakerMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
 	public final Level world;
@@ -41,7 +47,7 @@ public class EarnXpMakerMenu extends AbstractContainerMenu implements Supplier<M
 		super(EriniumjobsModMenus.EARN_XP_MAKER.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(0);
+		this.internal = new ItemStackHandler(2);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -76,6 +82,22 @@ public class EarnXpMakerMenu extends AbstractContainerMenu implements Supplier<M
 					});
 			}
 		}
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 79, 110) {
+			private final int slot = 0;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
+			public boolean mayPlace(ItemStack stack) {
+				return false;
+			}
+		}));
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 25, 38) {
+			private final int slot = 1;
+		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 62 + 84 + si * 18));
@@ -103,16 +125,16 @@ public class EarnXpMakerMenu extends AbstractContainerMenu implements Supplier<M
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 0) {
-				if (!this.moveItemStackTo(itemstack1, 0, this.slots.size(), true))
+			if (index < 2) {
+				if (!this.moveItemStackTo(itemstack1, 2, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 0, false)) {
-				if (index < 0 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 0 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 2, false)) {
+				if (index < 2 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 2 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 0, 0 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 2, 2 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;
@@ -210,10 +232,18 @@ public class EarnXpMakerMenu extends AbstractContainerMenu implements Supplier<M
 		if (!bound && playerIn instanceof ServerPlayer serverPlayer) {
 			if (!serverPlayer.isAlive() || serverPlayer.hasDisconnected()) {
 				for (int j = 0; j < internal.getSlots(); ++j) {
+					if (j == 0)
+						continue;
+					if (j == 1)
+						continue;
 					playerIn.drop(internal.extractItem(j, internal.getStackInSlot(j).getCount(), false), false);
 				}
 			} else {
 				for (int i = 0; i < internal.getSlots(); ++i) {
+					if (i == 0)
+						continue;
+					if (i == 1)
+						continue;
 					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
 				}
 			}
@@ -222,5 +252,17 @@ public class EarnXpMakerMenu extends AbstractContainerMenu implements Supplier<M
 
 	public Map<Integer, Slot> get() {
 		return customSlots;
+	}
+
+	@SubscribeEvent
+	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+		Player entity = event.player;
+		if (event.phase == TickEvent.Phase.END && entity.containerMenu instanceof EarnXpMakerMenu) {
+			Level world = entity.level();
+			double x = entity.getX();
+			double y = entity.getY();
+			double z = entity.getZ();
+			EarnXpMakerWhileThisGUIIsOpenTickProcedure.execute(entity);
+		}
 	}
 }

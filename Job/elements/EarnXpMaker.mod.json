@@ -36,7 +36,7 @@
             "value": -16777012,
             "falpha": 0.0
           },
-          "x": 132,
+          "x": 222,
           "y": 35
         }
       },
@@ -47,7 +47,7 @@
           "name": "job_id",
           "width": 72,
           "height": 20,
-          "x": 132,
+          "x": 222,
           "y": 44
         }
       },
@@ -130,29 +130,98 @@
         }
       },
       {
-        "type": "image",
+        "type": "outputslot",
         "data": {
-          "image": "info.png",
-          "use1Xscale": false,
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
           "x": 204,
           "y": 116
         }
       },
       {
-        "type": "tooltip",
+        "type": "label",
         "data": {
-          "name": "tooltip_proc_earn_xp_maker_tooltip_value",
+          "name": "label_item_block",
           "text": {
-            "fixedValue": "Hey yo",
-            "name": "EarnXpMakerTooltipValue"
+            "fixedValue": "Item / block"
           },
-          "width": 18,
-          "height": 18,
-          "x": 204,
+          "color": {
+            "value": -16776961,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 35
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "color": {
+            "value": -16711936,
+            "falpha": 0.0
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 150,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_xp",
+          "text": {
+            "fixedValue": "Xp"
+          },
+          "color": {
+            "value": -16776961,
+            "falpha": 0.0
+          },
+          "x": 222,
+          "y": 107
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "xp",
+          "width": 72,
+          "height": 20,
+          "x": 222,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_validate",
+          "text": "VALIDATE",
+          "onClick": {
+            "name": "ValidateButton"
+          },
+          "width": 63,
+          "height": 20,
+          "x": 303,
           "y": 116
         }
       }
     ],
+    "onTick": {
+      "name": "EarnXpMakerWhileThisGUIIsOpenTick"
+    },
     "gridSettings": {
       "sx": 18,
       "sy": 18,
