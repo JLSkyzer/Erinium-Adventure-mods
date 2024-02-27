@@ -1,0 +1,76 @@
+{
+  "mod_elements": [
+    {
+      "name": "ReturnLogsFile",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_logs_file",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ReturnLogsFileProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ReturnDateString",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_date_string",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ReturnDateStringProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ReturnDateForFile",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_date_for_file",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ReturnDateForFileProcedure.java"
+        ],
+        "dependencies": []
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "erinium_logs",
+    "modName": "Erinium Logs",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "fr.eriniumgroups.erinium.logs",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300336712
+}
