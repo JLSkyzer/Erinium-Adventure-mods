@@ -57,6 +57,86 @@
         ]
       },
       "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogInfo",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_info",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogInfoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogWarn",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_warn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogWarnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogError",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_error",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogErrorProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogSuccess",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_success",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogSuccessProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
     }
   ],
   "variable_elements": [],

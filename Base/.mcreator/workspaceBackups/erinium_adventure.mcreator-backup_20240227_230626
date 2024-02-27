@@ -399,6 +399,69 @@
           }
         ]
       }
+    },
+    {
+      "name": "LightDarkBrick",
+      "type": "block",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_dark_brick",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/block/light_dark_brick.json",
+          "src/main/resources/assets/erinium_adventure/blockstates/light_dark_brick.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/block/LightDarkBrickBlock.java",
+          "src/main/resources/assets/erinium_adventure/models/item/light_dark_brick.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "CraftDarkLightBrick",
+      "type": "recipe",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_dark_light_brick",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/craft_dark_light_brick.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "Test",
+      "type": "command",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/command/TestCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "TestCmd",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestCmdProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -425,7 +488,8 @@
       "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
       "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
       "item.erinium_adventure.nitriate_sword": "Nitriate Sword",
-      "item.erinium_adventure.nitriate_armor_leggings": "Nitriate Leggings"
+      "item.erinium_adventure.nitriate_armor_leggings": "Nitriate Leggings",
+      "block.erinium_adventure.light_dark_brick": "Light Dark Brick"
     }
   },
   "foldersRoot": {

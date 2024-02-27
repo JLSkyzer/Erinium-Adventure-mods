@@ -1,0 +1,206 @@
+{
+  "mod_elements": [
+    {
+      "name": "ReturnLogsFile",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_logs_file",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ReturnLogsFileProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ReturnDateString",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_date_string",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ReturnDateStringProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ReturnDateForFile",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_date_for_file",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ReturnDateForFileProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "Erilog",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/command/ErilogCommand.java"
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogInfo",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_info",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogInfoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogWarn",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_warn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogWarnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogError",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_error",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogErrorProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogSuccess",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_success",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogSuccessProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "TempProc",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "temp_proc",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/TempProcProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Erilog",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "erinium_logs",
+    "modName": "Erinium Logs",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "fr.eriniumgroups.erinium.logs",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300336712
+}
