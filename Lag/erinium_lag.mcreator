@@ -1,0 +1,56 @@
+{
+  "mod_elements": [
+    {
+      "name": "WorldTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "world_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/lag/procedures/WorldTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "timer",
+      "type": "number",
+      "scope": "map",
+      "value": "18000.0"
+    }
+  ],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "erinium_lag",
+    "modName": "Erinium Lag",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "fr.eriniumgroups.erinium.lag",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300336712
+}
