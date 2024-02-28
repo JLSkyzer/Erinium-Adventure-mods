@@ -430,6 +430,38 @@
         ]
       },
       "path": "~/Recipes"
+    },
+    {
+      "name": "Test",
+      "type": "command",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/command/TestCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "TestCmd",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": false,
+      "locked_code": true,
+      "registry_name": "test_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestCmdProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

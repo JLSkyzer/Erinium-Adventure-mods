@@ -448,7 +448,7 @@
       "name": "TestCmd",
       "type": "procedure",
       "sortid": 30,
-      "compiles": false,
+      "compiles": true,
       "locked_code": true,
       "registry_name": "test_cmd",
       "metadata": {

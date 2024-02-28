@@ -448,8 +448,8 @@
       "name": "TestCmd",
       "type": "procedure",
       "sortid": 30,
-      "compiles": true,
-      "locked_code": false,
+      "compiles": false,
+      "locked_code": true,
       "registry_name": "test_cmd",
       "metadata": {
         "files": [
@@ -457,8 +457,8 @@
         ],
         "dependencies": [
           {
-            "name": "world",
-            "type": "world"
+            "name": "entity",
+            "type": "entity"
           }
         ]
       }

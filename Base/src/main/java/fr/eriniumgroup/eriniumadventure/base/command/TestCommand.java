@@ -29,7 +29,7 @@ public class TestCommand {
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
 
-					TestCmdProcedure.execute(world);
+					TestCmdProcedure.execute(entity);
 					return 0;
 				}));
 	}

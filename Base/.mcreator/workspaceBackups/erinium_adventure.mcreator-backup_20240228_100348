@@ -443,6 +443,25 @@
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/command/TestCommand.java"
         ]
       }
+    },
+    {
+      "name": "TestCmd",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": false,
+      "locked_code": true,
+      "registry_name": "test_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestCmdProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

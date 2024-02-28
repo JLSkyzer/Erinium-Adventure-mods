@@ -430,6 +430,38 @@
         ]
       },
       "path": "~/Recipes"
+    },
+    {
+      "name": "Test",
+      "type": "command",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/command/TestCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "TestCmd",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestCmdProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -446,9 +478,9 @@
       "item.erinium_adventure.nitriate_pickaxe": "Nitriate Pickaxe",
       "item.erinium_adventure.nitriate_armor_helmet": "Nitriate Helmet",
       "item.erinium_adventure.logo_erinium": "Logo Erinium",
-      "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
-      "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
       "item.erinium_adventure.nitriate_hoe": "Nitriate Hoe",
+      "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
+      "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
       "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
       "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
       "block.erinium_adventure.cave_block": "Cave Block",
