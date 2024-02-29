@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChatHistory">
+    <chats>
+      <list>
+        <chat>
+          <accountId value="VXNlcjozMDM3ODY=" />
+          <internalId value="5a1a592c-aa2c-441d-8c8b-1c5ea055100e" />
+        </chat>
+        <chat>
+          <accountId value="VXNlcjozMDM3ODY=" />
+          <internalId value="fbe24790-09f3-4019-8bc4-80f409725808" />
+          <messages>
+            <list>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="Can you make i insert NBT by string on _setstack ?" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value=" Here is one way to insert NBT by string on _setstack in Java:&#10;&#10;```java&#10;// Import NBT classes&#10;import net.minecraft.nbt.CompoundTag;&#10;import net.minecraft.nbt.JsonToNBT;&#10;&#10;// NBT string &#10;String nbtString = &quot;{display:{Name:'{\&quot;text\&quot;:\&quot;My Item\&quot;}'}}&quot;;&#10;&#10;// Parse NBT &#10;CompoundTag nbt = JsonToNBT.parseTag(nbtString);&#10;&#10;// Set NBT on stack&#10;_setstack.setTag(nbt);&#10;```&#10;&#10;The key steps are:&#10;&#10;1. Import NBT classes from net.minecraft.nbt&#10;2. Create a String containing the NBT data in JSON format&#10;3. Use JsonToNBT to parse the String into a CompoundTag &#10;4. Call setTag() on the ItemStack to apply the NBT&#10;&#10;Let me know if you need any clarification or have additional questions!" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="JsonToNBT does not exist see my code you are implemented to Intellik" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value=" You're right, my previous code example won't work since JsonToNBT doesn't exist in the version of Minecraft Forge you are using. &#10;&#10;Here is an updated way to insert NBT by string on an ItemStack using the NBT classes available in Forge:&#10;&#10;```java&#10;// Import NBT classes&#10;import net.minecraft.nbt.CompoundTag; &#10;import net.minecraft.nbt.StringTag;&#10;&#10;// NBT string&#10;String nbtString = &quot;{display:{Name:'{\&quot;text\&quot;:\&quot;My Item\&quot;}'}}&quot;;&#10;&#10;// Parse NBT&#10;CompoundTag nbt = new CompoundTag();&#10;nbt.putString(&quot;display&quot;, StringTag.valueOf(nbtString));&#10;&#10;// Set NBT on stack &#10;_setstack.setTag(nbt);&#10;```&#10;&#10;The key differences are:&#10;&#10;- Use CompoundTag and StringTag instead of JsonToNBT&#10;- Manually create a CompoundTag&#10;- Add the NBT string as a StringTag value&#10;&#10;Let me know if this updated approach works or if you have any other questions!" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="here what i want to insert :&#10;{Damage:0,Enchantments:{id:\&amp;quot;minecraft:sharpness\&amp;quot;,lvl:3s},{id:\&amp;quot;minecraft:unbreaking\&amp;quot;,lvl:3s},display:{Lore:'{\&amp;quot;italic\&amp;quot;:false,\&amp;quot;text\&amp;quot;:\&amp;quot;Lore text\&amp;quot;}','{\&amp;quot;italic\&amp;quot;:false,\&amp;quot;text\&amp;quot;:\&amp;quot;Lore text 2\&amp;quot;}'}}" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value=" Here is how you can insert that specific NBT data as a string on an ItemStack:&#10;&#10;```java&#10;// NBT string&#10;String nbtString = &quot;{Damage:0,Enchantments:[{id:\&quot;minecraft:sharpness\&quot;,lvl:3s},{id:\&quot;minecraft:unbreaking\&quot;,lvl:3s}],display:{Lore:['{\&quot;italic\&quot;:false,\&quot;text\&quot;:\&quot;Lore text\&quot;}','{\&quot;italic\&quot;:false,\&quot;text\&quot;:\&quot;Lore text 2\&quot;}']}}&quot;;&#10;&#10;// Create NBT tag&#10;CompoundTag nbt = new CompoundTag();&#10;&#10;// Add NBT string &#10;nbt.putString(&quot;tag&quot;, StringTag.valueOf(nbtString)); &#10;&#10;// Set NBT on stack&#10;_setstack.setTag(nbt);&#10;```&#10;&#10;The key points:&#10;&#10;- I put the full NBT data into a string, escaping quotes and using single quotes for the JSON lore strings&#10;- Create a new CompoundTag &#10;- Add the NBT string under a &quot;tag&quot; key using StringTag.valueOf()&#10;- Apply the CompoundTag to the ItemStack&#10;&#10;This will insert that complex NBT structure into the ItemStack as a string. Let me know if you have any other questions!" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="that not work" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="not work" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="this code : &#10;String nbtString = &amp;quot;{Damage:0,Enchantments:{id:\&amp;quot;minecraft:sharpness\&amp;quot;,lvl:3s},{id:\&amp;quot;minecraft:unbreaking\&amp;quot;,lvl:3s},display:{Lore:'{\&amp;quot;italic\&amp;quot;:false,\&amp;quot;text\&amp;quot;:\&amp;quot;Lore text\&amp;quot;}','{\&amp;quot;italic\&amp;quot;:false,\&amp;quot;text\&amp;quot;:\&amp;quot;Lore text 2\&amp;quot;}'}}&amp;quot;;&#10;&#10;&#9;&#9;&#9;// Créer un nouveau CompoundTag&#10;&#9;&#9;&#9;CompoundTag compoundTag = new CompoundTag();&#10;&#9;&#9;&#9;compoundTag.putString(&amp;quot;&amp;quot;, nbtString);&#10;&#9;&#9;&#9;_setstack = Items.DIAMOND_SHOVEL.getDefaultInstance();&#10;&#9;&#9;&#9;_setstack.setTag(compoundTag);&#10;&#10;&#10;&#9;&#9;&#9;ItemHandlerHelper.giveItemToPlayer(_player, _setstack);&#10;&#10;Not work help me" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value=" The issue is that you are putting the entire NBT string under a blank key &quot;&quot;, when it needs to be under a proper key like &quot;tag&quot;.&#10;&#10;Try this:&#10;&#10;```java&#10;String nbtString = &quot;{Damage:0,Enchantments:[{id:\&quot;minecraft:sharpness\&quot;,lvl:3s},{id:\&quot;minecraft:unbreaking\&quot;,lvl:3s}],display:{Lore:['{\&quot;italic\&quot;:false,\&quot;text\&quot;:\&quot;Lore text\&quot;}','{\&quot;italic\&quot;:false,\&quot;text\&quot;:\&quot;Lore text 2\&quot;}']}}&quot;;&#10;&#10;// Create NBT tag&#10;CompoundTag compoundTag = new CompoundTag();&#10;&#10;// Add NBT string under &quot;tag&quot; key  &#10;compoundTag.putString(&quot;tag&quot;, nbtString);  &#10;&#10;_setstack = Items.DIAMOND_SHOVEL.getDefaultInstance();&#10;_setstack.setTag(compoundTag);&#10;&#10;ItemHandlerHelper.giveItemToPlayer(_player, _setstack);&#10;```&#10;&#10;The key points:&#10;&#10;- Put the NBT string under a proper key &quot;tag&quot; in the CompoundTag&#10;- Apply that CompoundTag to the ItemStack&#10;&#10;This should properly insert the NBT data. Let me know if you still have any issues!" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="already try with &quot;tag&quot; and not work too" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="@...\base\procedures\TestCmdProcedure.java &#10;&#10;I already try with &amp;quot;tag&amp;quot; but that not work" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value=" Okay, thanks for clarifying that you tried using &quot;tag&quot; as the key and it still didn't work. &#10;&#10;A few things to try:&#10;&#10;- Make sure the NBT string is valid JSON. You can validate it using an online JSON validator.&#10;&#10;- Try simplifying the NBT to just set a display name first:&#10;&#10;```&#10;String nbtString = &quot;{display:{Name:'{\&quot;text\&quot;:\&quot;My Item\&quot;}'}}&quot;&#10;```&#10;&#10;- Print out the ItemStack after setting the NBT to see if it changed at all.&#10;&#10;- Use a debugger or logging to check that the NBT is set on the ItemStack before giving it to the player.&#10;&#10;- Double check that the mod version, Forge version, and any mappings are up to date.&#10;&#10;My suspicion is there may be something small wrong with the formatting of the JSON NBT string that is causing it to not get applied properly. Simplifying the NBT and validating the JSON format would be good first steps.&#10;&#10;Let me know if you make any progress or need any other suggestions! Happy to help troubleshoot further." />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="yes its what the game output from another item" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="yes its what the game output from another item" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+                <text value="&lt;html&gt;&lt;b&gt;You've used up your chat and commands for the month:&lt;/b&gt; You've used all chat messages and commands for the month. Upgrade to Cody Pro for unlimited autocompletes, chats, and commands. &lt;a href=&quot;https://sourcegraph.com/cody/subscription&quot;&gt;Upgrade&lt;/a&gt; or &lt;a href=&quot;https://sourcegraph.com/cody/subscription&quot;&gt;learn more&lt;/a&gt;.&lt;br&gt;&lt;br&gt;(Already upgraded to Pro? Restart your IDE for changes to take effect)&lt;/html&gt;" />
+              </message>
+              <message>
+                <speaker value="HUMAN" />
+                <text value="yes its what the game output from another item" />
+              </message>
+              <message>
+                <speaker value="ASSISTANT" />
+              </message>
+            </list>
+          </messages>
+          <updatedAt value="2024-02-28T17:54:24.0654835" />
+        </chat>
+      </list>
+    </chats>
+  </component>
+</project>
