@@ -1,0 +1,33 @@
+{
+  "_fv": 47,
+  "_type": "config",
+  "definition": {
+    "pools": [
+      {
+        "category": "Basic",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 500.0,
+            "textDefault": "",
+            "comment": "Start money when first join",
+            "vardisplay": "Start money",
+            "varname": "start_money",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          }
+        ]
+      }
+    ],
+    "file": "ericonomy-common",
+    "configType": 0
+  }
+}

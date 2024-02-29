@@ -1,0 +1,8 @@
+{
+  "erinocomy.message.nomoney": "§cNot enough money !",
+  "ericonomy.pay.message.receive2": "$ §2from : §b",
+  "ericonomy.pay.message.receive1": "§2You receive : §a",
+  "config.ericonomy.server_config": "ericonomy-common",
+  "ericonomy.pay.message.send2": "$ §8to : §b",
+  "ericonomy.pay.message.send1": "§8You send : §a"
+}

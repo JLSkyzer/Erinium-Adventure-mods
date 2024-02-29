@@ -1,0 +1,193 @@
+{
+  "mod_elements": [
+    {
+      "name": "Temp",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "temp",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/TempProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ServerConfig",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "server_config",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/configuration/ServerConfigConfiguration.java"
+        ]
+      }
+    },
+    {
+      "name": "JoinTheWorld",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "join_the_world",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/JoinTheWorldProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GetEntityMoney",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_entity_money",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/GetEntityMoneyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Return"
+    },
+    {
+      "name": "GetTargetEntityMoney",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_target_entity_money",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/GetTargetEntityMoneyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Return"
+    },
+    {
+      "name": "GetCommandEntityPath",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_command_entity_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/GetCommandEntityPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Return"
+    },
+    {
+      "name": "EntityIsAdmin",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "entity_is_admin",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/EntityIsAdminProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Return"
+    },
+    {
+      "name": "Pay",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pay",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/command/PayCommand.java"
+        ]
+      },
+      "path": "~/command/pay"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "config.ericonomy.server_config": "ericonomy-common"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Return",
+        "children": []
+      },
+      {
+        "name": "command",
+        "children": [
+          {
+            "name": "pay",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "ericonomy",
+    "modName": "Ericonomy",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "fr.eriniumgroups.erinium.ericonomy",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300336712
+}
