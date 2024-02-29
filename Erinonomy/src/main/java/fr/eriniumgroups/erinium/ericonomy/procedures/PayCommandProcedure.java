@@ -34,6 +34,7 @@ public class PayCommandProcedure {
 		com.google.gson.JsonObject TargetEntityJsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject CommandEntityJsonObject = new com.google.gson.JsonObject();
 		double return_money = 0;
+		boolean return_logic = false;
 		file = GetTargetEntityMoneyProcedure.execute(entity);
 		{
 			try {
@@ -86,12 +87,62 @@ public class PayCommandProcedure {
 							exception.printStackTrace();
 						}
 					}
+					return_logic = true;
 				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A7eEriconomy \u00A7f>> " + Component.translatable("erinocomy.message.nomoney").getString())), false);
+					return_logic = false;
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
+			}
+		}
+		if (return_logic) {
+			file = GetCommandEntityPathProcedure.execute(arguments);
+			{
+				try {
+					BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+					StringBuilder jsonstringbuilder = new StringBuilder();
+					String line;
+					while ((line = bufferedReader.readLine()) != null) {
+						jsonstringbuilder.append(line);
+					}
+					bufferedReader.close();
+					CommandEntityJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					CommandEntityJsonObject.addProperty("money", (CommandEntityJsonObject.get("money").getAsDouble() + DoubleArgumentType.getDouble(arguments, "amount")));
+					if (entity instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal(("\u00A7eEriconomy \u00A7f>> " + Component.translatable("ericonomy.pay.message.receive1").getString()
+								+ new java.text.DecimalFormat("#,###.##").format(DoubleArgumentType.getDouble(arguments, "amount")) + Component.translatable("ericonomy.pay.message.receive2").getString() + entity.getDisplayName().getString())),
+								false);
+					if (ModList.get().isLoaded("erinium_logs")) {
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(0, 0, 0), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+									"erilog " + "Ericonomy" + " " + "info" + " " + ((new Object() {
+										public Entity getEntity() {
+											try {
+												return EntityArgument.getEntity(arguments, "player");
+											} catch (CommandSyntaxException e) {
+												e.printStackTrace();
+												return null;
+											}
+										}
+									}.getEntity()).getDisplayName().getString() + " receive " + new java.text.DecimalFormat("#,###.##").format(DoubleArgumentType.getDouble(arguments, "amount")) + " from " + entity.getDisplayName().getString()));
+					} else {
+						System.out.println("Erilog is not installed ! install here : https://github.com/JLSkyzer/Erinium-Adventure-mods/releases/tag/Erilog");
+					}
+					{
+						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						try {
+							FileWriter fileWriter = new FileWriter(file);
+							fileWriter.write(mainGSONBuilderVariable.toJson(CommandEntityJsonObject));
+							fileWriter.close();
+						} catch (IOException exception) {
+							exception.printStackTrace();
+						}
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}

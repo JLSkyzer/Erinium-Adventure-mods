@@ -136,6 +136,7 @@
     {
       "name": "Pay",
       "type": "command",
+      "sortid": 9,
       "compiles": true,
       "locked_code": false,
       "registry_name": "pay",
@@ -165,10 +166,56 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/command/pay"
+    },
+    {
+      "name": "Money",
+      "type": "command",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "money",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/command/MoneyCommand.java"
+        ]
+      },
+      "path": "~/command/money"
+    },
+    {
+      "name": "MoneyGive",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "money_give",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/MoneyGiveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/command/money"
     }
   ],
   "variable_elements": [],
@@ -196,6 +243,10 @@
           {
             "name": "pay",
             "children": []
+          },
+          {
+            "name": "money",
+            "children": []
           }
         ]
       }
@@ -218,5 +269,5 @@
     "modElementsPackage": "fr.eriniumgroups.erinium.ericonomy",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202300452316
 }
