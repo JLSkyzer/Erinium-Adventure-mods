@@ -1,0 +1,81 @@
+{
+  "mod_elements": [
+    {
+      "name": "Test",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/world/command/TestCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "TestCm",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_cm",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/world/procedures/TestCmProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TestCmd2",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_cmd_2",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/world/procedures/TestCmd2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "eriniumworld",
+    "modName": "EriniumWorld",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.20.1",
+    "modElementsPackage": "fr.eriniumgroups.erinium.world",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300452316
+}

@@ -2,24 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "012",
-    " 4 ",
-    " 7 "
+    "aaa",
+    " b ",
+    " b "
   ],
   "key": {
-    "0": {
+    "a": {
       "item": "erinium_adventure:nitriate_gem"
     },
-    "1": {
-      "item": "erinium_adventure:nitriate_gem"
-    },
-    "2": {
-      "item": "erinium_adventure:nitriate_gem"
-    },
-    "4": {
-      "item": "minecraft:stick"
-    },
-    "7": {
+    "b": {
       "item": "minecraft:stick"
     }
   },

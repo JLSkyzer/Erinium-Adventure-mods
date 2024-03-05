@@ -2,37 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "aaa",
+    "aba",
+    "aaa"
   ],
   "key": {
-    "0": {
+    "a": {
       "item": "minecraft:glass"
     },
-    "1": {
-      "item": "minecraft:glass"
-    },
-    "2": {
-      "item": "minecraft:glass"
-    },
-    "3": {
-      "item": "minecraft:glass"
-    },
-    "4": {
+    "b": {
       "item": "minecraft:diamond_block"
-    },
-    "5": {
-      "item": "minecraft:glass"
-    },
-    "6": {
-      "item": "minecraft:glass"
-    },
-    "7": {
-      "item": "minecraft:glass"
-    },
-    "8": {
-      "item": "minecraft:glass"
     }
   },
   "result": {

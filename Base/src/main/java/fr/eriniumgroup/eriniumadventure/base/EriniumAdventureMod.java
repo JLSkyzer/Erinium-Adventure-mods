@@ -40,7 +40,6 @@ import java.util.AbstractMap;
 
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModTabs;
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModItems;
-import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModFeatures;
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModBlocks;
 
 @Mod("erinium_adventure")
@@ -57,7 +56,6 @@ public class EriniumAdventureMod {
 		EriniumAdventureModItems.REGISTRY.register(bus);
 
 		EriniumAdventureModTabs.REGISTRY.register(bus);
-		EriniumAdventureModFeatures.REGISTRY.register(bus);
 
 	}
 

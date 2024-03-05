@@ -1,13 +1,17 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "tool",
   "definition": {
     "toolType": "Sword",
     "renderType": 0,
+    "blockingRenderType": 0,
     "texture": "nitriate_sword",
     "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
     "name": "Nitriate Sword",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "creativeTab": {
       "value": "COMBAT"
     },
@@ -18,7 +22,6 @@
     "damageVsEntity": 1.0,
     "usageCount": 46,
     "blocksAffected": [],
-    "hasGlow": false,
     "repairItems": [
       {
         "value": "CUSTOM:NitriateGem"

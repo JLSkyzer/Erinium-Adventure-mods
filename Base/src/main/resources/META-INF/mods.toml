@@ -6,8 +6,8 @@ license="Academic Free License v3.0"
 modId="erinium_adventure"
 version="1.0.0"
 displayName="Erinium Adventure"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
 authors="killi, MCreator"
 
 [[dependencies.erinium_adventure]]

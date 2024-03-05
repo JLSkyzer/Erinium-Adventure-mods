@@ -2,23 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "012",
-    "3 5"
+    "aaa",
+    "a a"
   ],
   "key": {
-    "0": {
-      "item": "erinium_adventure:nitriate_gem"
-    },
-    "1": {
-      "item": "erinium_adventure:nitriate_gem"
-    },
-    "2": {
-      "item": "erinium_adventure:nitriate_gem"
-    },
-    "3": {
-      "item": "erinium_adventure:nitriate_gem"
-    },
-    "5": {
+    "a": {
       "item": "erinium_adventure:nitriate_gem"
     }
   },

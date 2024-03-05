@@ -2,37 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "aba",
+    "aca",
+    "aaa"
   ],
   "key": {
-    "0": {
+    "a": {
       "item": "minecraft:coal_block"
     },
-    "1": {
+    "b": {
       "item": "minecraft:glowstone"
     },
-    "2": {
-      "item": "minecraft:coal_block"
-    },
-    "3": {
-      "item": "minecraft:coal_block"
-    },
-    "4": {
+    "c": {
       "item": "minecraft:bricks"
-    },
-    "5": {
-      "item": "minecraft:coal_block"
-    },
-    "6": {
-      "item": "minecraft:coal_block"
-    },
-    "7": {
-      "item": "minecraft:coal_block"
-    },
-    "8": {
-      "item": "minecraft:coal_block"
     }
   },
   "result": {
