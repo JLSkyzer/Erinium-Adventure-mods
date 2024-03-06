@@ -4,7 +4,7 @@
   "definition": {
     "commandName": "test",
     "type": "CLIENTSIDE",
-    "permissionLevel": "No requirement",
+    "permissionLevel": "4",
     "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"string\" x=\"447\" y=\"8\"><field name=\"type\">word</field><field name=\"name\">arg</field><next><block type=\"old_command\"><field name=\"procedure\">TestCmd</field></block></next></block><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"call_procedure\"><field name=\"procedure\">TestCmd</field></block></next></block></xml>"
   }
 }

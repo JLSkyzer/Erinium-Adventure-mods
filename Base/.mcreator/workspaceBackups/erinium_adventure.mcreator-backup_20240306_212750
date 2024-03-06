@@ -461,44 +461,6 @@
           }
         ]
       }
-    },
-    {
-      "name": "OnJump",
-      "type": "procedure",
-      "sortid": 31,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_jump",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/OnJumpProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "OnFall",
-      "type": "procedure",
-      "sortid": 32,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "on_fall",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/OnFallProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
     }
   ],
   "variable_elements": [

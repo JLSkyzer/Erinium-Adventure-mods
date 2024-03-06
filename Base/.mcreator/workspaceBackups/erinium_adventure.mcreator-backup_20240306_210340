@@ -448,7 +448,7 @@
       "type": "procedure",
       "sortid": 30,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "test_cmd",
       "metadata": {
         "files": [
@@ -477,9 +477,9 @@
       "item.erinium_adventure.nitriate_pickaxe": "Nitriate Pickaxe",
       "item.erinium_adventure.nitriate_armor_helmet": "Nitriate Helmet",
       "item.erinium_adventure.logo_erinium": "Logo Erinium",
-      "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
-      "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
       "item.erinium_adventure.nitriate_hoe": "Nitriate Hoe",
+      "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
+      "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
       "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
       "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
       "block.erinium_adventure.cave_block": "Cave Block",
