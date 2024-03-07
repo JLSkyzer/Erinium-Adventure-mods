@@ -38,6 +38,8 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
+import fr.eriniumgroups.erinium.auctionhouse.init.EriniumAhModMenus;
+
 @Mod("erinium_ah")
 public class EriniumAhMod {
 	public static final Logger LOGGER = LogManager.getLogger(EriniumAhMod.class);
@@ -47,6 +49,7 @@ public class EriniumAhMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		EriniumAhModMenus.REGISTRY.register(bus);
 	}
 
 	private static final String PROTOCOL_VERSION = "1";

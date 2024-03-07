@@ -1,0 +1,161 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 180,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 125,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 5,
+          "y": 28
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 1,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 5,
+          "y": 59
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 2,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 5,
+          "y": 90
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 3,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 5,
+          "y": 121
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 4,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 5,
+          "y": 152
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 5,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 5,
+          "y": 183
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "id": 6,
+          "disablePickup": {
+            "fixedValue": true
+          },
+          "dropItemsWhenNotBound": false,
+          "x": 5,
+          "y": 214
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "search",
+          "width": 110,
+          "height": 20,
+          "x": 148,
+          "y": 0
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_search_btn",
+          "image": "search_btn.png",
+          "hoveredImage": "search_btn.png",
+          "onClick": {
+            "name": "SearchBtn"
+          },
+          "x": 258,
+          "y": 0
+        }
+      }
+    ],
+    "onTick": {
+      "name": "AhMainMenuWhileThisGUIIsOpenTick"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 17,
+      "oy": 17,
+      "snapOnGrid": false
+    }
+  }
+}
