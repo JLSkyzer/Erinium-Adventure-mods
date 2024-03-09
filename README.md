@@ -102,3 +102,17 @@ To have admin access, go here MINECRAFTFOLDER/Ericonomy/accounts/YOURUUID.json a
 
 To change default balance value go here:
 MINECRAFTFOLDER/config/ericonomy-common.toml
+
+## Erinium Auction House
+One of my biggest mod, this mod add an action house to sell item to other players !
+
+<span style='color: red;'>This mod require Ericonomy</span>
+
+### Here some screen
+![](https://media.discordapp.net/attachments/719811588076470312/1216060561872388136/image.png?ex=65ff03a7&is=65ec8ea7&hm=ade48c9e99b60700ad6b18887aeb54740884dc00d80bfcf463e7c4d23e68c642&=&format=webp&quality=lossless&width=810&height=430)
+![](https://media.discordapp.net/attachments/719811588076470312/1216065337141886986/image.png?ex=65ff0819&is=65ec9319&hm=58c628dbc603849d24297ffd825ee4742b222717042040723fbb21f1cb0fa290&=&format=webp&quality=lossless&width=810&height=430)
+
+Here the list of command:
+- /ah | To open the Auction house
+- /ah sell | to sell items
+- /ah theme | To change the theme of the Auction House
