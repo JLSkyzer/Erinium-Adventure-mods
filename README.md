@@ -84,3 +84,21 @@ Here the json parameter :
 ```
 JOB_ID is the job id (only one !)
 LEVEL is the required level between 0 and 100 (set 101 to completly disable an item or block !)
+
+## Ericonomy
+
+Ericonomy is basic economy mod
+You can pay, give, set, take, reset like an other economy mod !
+Here basic command :
+- /pay (player) (amount) | To pay a player
+- /money | To get your balance
+For admin
+To have admin access, go here MINECRAFTFOLDER/Ericonomy/accounts/YOURUUID.json and set "ericonomy.admin" to true. Here command :
+- /money (player) | To get player balance
+- /money reset (player) | To reset player balance
+- /money take (player) (amount) | To take money from player
+- /money set (player) (amount) | Set amount to player balance
+- /money give (player) (amount) | Give money to player
+
+To change default balance value go here:
+MINECRAFTFOLDER/config/ericonomy-common.toml
