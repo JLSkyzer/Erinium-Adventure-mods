@@ -116,3 +116,14 @@ One of my biggest mod, this mod add an action house to sell item to other player
 - /ah | To open the Auction house
 - /ah sell | to sell items
 - /ah theme | To change the theme of the Auction House
+
+### FAQ
+Q. how to delete an item i set in the Auction House ? 
+A. Just click on buy button you will able to delete the item (you will not pay)
+
+## Erilog
+
+This is a basic log mod
+how to use ?
+/erilog (type) (info, warn, error, success) (message)
+the file will be here MINECRAFTFOLDER/EriniumLogs/(TYPE)/LASTFILE.erilog
