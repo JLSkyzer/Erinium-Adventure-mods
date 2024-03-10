@@ -84,6 +84,7 @@ public class EriniumAdventureModVariables {
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			clone.fire_reduction = original.fire_reduction;
 			if (!event.isWasDeath()) {
+				clone.needToChoose = original.needToChoose;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -258,6 +259,7 @@ public class EriniumAdventureModVariables {
 
 	public static class PlayerVariables {
 		public double fire_reduction = 0;
+		public boolean needToChoose = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -267,12 +269,14 @@ public class EriniumAdventureModVariables {
 		public Tag writeNBT() {
 			CompoundTag nbt = new CompoundTag();
 			nbt.putDouble("fire_reduction", fire_reduction);
+			nbt.putBoolean("needToChoose", needToChoose);
 			return nbt;
 		}
 
 		public void readNBT(Tag Tag) {
 			CompoundTag nbt = (CompoundTag) Tag;
 			fire_reduction = nbt.getDouble("fire_reduction");
+			needToChoose = nbt.getBoolean("needToChoose");
 		}
 	}
 
@@ -307,6 +311,7 @@ public class EriniumAdventureModVariables {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.level().getEntity(message.target).getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.fire_reduction = message.data.fire_reduction;
+					variables.needToChoose = message.data.needToChoose;
 				}
 			});
 			context.setPacketHandled(true);

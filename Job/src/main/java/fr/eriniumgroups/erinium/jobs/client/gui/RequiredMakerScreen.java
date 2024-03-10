@@ -94,11 +94,11 @@ public class RequiredMakerScreen extends AbstractContainerScreen<RequiredMakerMe
 	@Override
 	public void init() {
 		super.init();
-		job_id = new EditBox(this.font, this.leftPos + 96, this.topPos + 37, 72, 20, Component.translatable("gui.eriniumjobs.required_maker.job_id"));
+		job_id = new EditBox(this.font, this.leftPos + 97, this.topPos + 38, 70, 18, Component.translatable("gui.eriniumjobs.required_maker.job_id"));
 		job_id.setMaxLength(32767);
 		guistate.put("text:job_id", job_id);
 		this.addWidget(this.job_id);
-		level = new EditBox(this.font, this.leftPos + 6, this.topPos + 73, 72, 20, Component.translatable("gui.eriniumjobs.required_maker.level"));
+		level = new EditBox(this.font, this.leftPos + 7, this.topPos + 74, 70, 18, Component.translatable("gui.eriniumjobs.required_maker.level"));
 		level.setMaxLength(32767);
 		guistate.put("text:level", level);
 		this.addWidget(this.level);

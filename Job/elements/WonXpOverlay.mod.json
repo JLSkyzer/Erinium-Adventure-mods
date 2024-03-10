@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "overlay",
   "definition": {
     "priority": "HIGHEST",
@@ -9,6 +9,7 @@
         "data": {
           "image": "won_xp_overlay_screen.png",
           "use1Xscale": false,
+          "anchorPoint": "CENTER",
           "x": 267,
           "y": 17
         }
@@ -18,6 +19,7 @@
         "data": {
           "image": "barre_3_seconds.png",
           "use1Xscale": false,
+          "anchorPoint": "CENTER",
           "x": 267,
           "y": 57
         }
@@ -34,6 +36,7 @@
             "value": -1,
             "falpha": 0.0
           },
+          "anchorPoint": "CENTER",
           "x": 269,
           "y": 22
         }
@@ -50,6 +53,7 @@
             "value": -1,
             "falpha": 0.0
           },
+          "anchorPoint": "CENTER",
           "x": 269,
           "y": 42
         }

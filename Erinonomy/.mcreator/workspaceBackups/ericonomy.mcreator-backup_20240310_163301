@@ -374,6 +374,38 @@
         ]
       },
       "path": "~/command/money"
+    },
+    {
+      "name": "Ericonomy",
+      "type": "command",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ericonomy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/command/EriconomyCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "GetCommandList",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_command_list",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/GetCommandListProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -413,7 +445,7 @@
   "workspaceSettings": {
     "modid": "ericonomy",
     "modName": "Ericonomy",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "killi, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
@@ -424,6 +456,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "fr.eriniumgroups.erinium.ericonomy",
     "lockBaseModFiles": false
   },

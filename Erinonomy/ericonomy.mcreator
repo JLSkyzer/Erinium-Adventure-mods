@@ -445,7 +445,7 @@
   "workspaceSettings": {
     "modid": "ericonomy",
     "modName": "Ericonomy",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "killi, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
@@ -456,6 +456,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "fr.eriniumgroups.erinium.ericonomy",
     "lockBaseModFiles": false
   },

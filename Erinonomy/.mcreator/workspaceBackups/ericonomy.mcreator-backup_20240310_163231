@@ -374,6 +374,38 @@
         ]
       },
       "path": "~/command/money"
+    },
+    {
+      "name": "Ericonomy",
+      "type": "command",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ericonomy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/command/EriconomyCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "GetCommandList",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_command_list",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/GetCommandListProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],

@@ -112,23 +112,23 @@ public class EarnXpMakerScreen extends AbstractContainerScreen<EarnXpMakerMenu> 
 	@Override
 	public void init() {
 		super.init();
-		job_id = new EditBox(this.font, this.leftPos + 96, this.topPos + 37, 72, 20, Component.translatable("gui.eriniumjobs.earn_xp_maker.job_id"));
+		job_id = new EditBox(this.font, this.leftPos + 97, this.topPos + 38, 70, 18, Component.translatable("gui.eriniumjobs.earn_xp_maker.job_id"));
 		job_id.setMaxLength(32767);
 		guistate.put("text:job_id", job_id);
 		this.addWidget(this.job_id);
-		min_level = new EditBox(this.font, this.leftPos + 6, this.topPos + 73, 72, 20, Component.translatable("gui.eriniumjobs.earn_xp_maker.min_level"));
+		min_level = new EditBox(this.font, this.leftPos + 7, this.topPos + 74, 70, 18, Component.translatable("gui.eriniumjobs.earn_xp_maker.min_level"));
 		min_level.setMaxLength(32767);
 		guistate.put("text:min_level", min_level);
 		this.addWidget(this.min_level);
-		max_level = new EditBox(this.font, this.leftPos + 96, this.topPos + 73, 72, 20, Component.translatable("gui.eriniumjobs.earn_xp_maker.max_level"));
+		max_level = new EditBox(this.font, this.leftPos + 97, this.topPos + 74, 70, 18, Component.translatable("gui.eriniumjobs.earn_xp_maker.max_level"));
 		max_level.setMaxLength(32767);
 		guistate.put("text:max_level", max_level);
 		this.addWidget(this.max_level);
-		type = new EditBox(this.font, this.leftPos + 6, this.topPos + 109, 72, 20, Component.translatable("gui.eriniumjobs.earn_xp_maker.type"));
+		type = new EditBox(this.font, this.leftPos + 7, this.topPos + 110, 70, 18, Component.translatable("gui.eriniumjobs.earn_xp_maker.type"));
 		type.setMaxLength(32767);
 		guistate.put("text:type", type);
 		this.addWidget(this.type);
-		xp = new EditBox(this.font, this.leftPos + 96, this.topPos + 109, 72, 20, Component.translatable("gui.eriniumjobs.earn_xp_maker.xp"));
+		xp = new EditBox(this.font, this.leftPos + 97, this.topPos + 110, 70, 18, Component.translatable("gui.eriniumjobs.earn_xp_maker.xp"));
 		xp.setMaxLength(32767);
 		guistate.put("text:xp", xp);
 		this.addWidget(this.xp);

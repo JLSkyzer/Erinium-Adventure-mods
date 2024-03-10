@@ -591,6 +591,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -611,10 +627,124 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
       "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "ReturnLiftOffSpeed",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_lift_off_speed",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnLiftOffSpeedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "ReturnLiftOffSpeedBooster",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_lift_off_speed_booster",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnLiftOffSpeedBoosterProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "LiftOffProgressionOverlay",
+      "type": "overlay",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lift_off_progression_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/screens/LiftOffProgressionOverlayOverlay.java"
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket/Overlay"
+    },
+    {
+      "name": "LiftOffProgressionOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lift_off_progression_overlay_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/LiftOffProgressionOverlayDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket/Overlay"
+    },
+    {
+      "name": "ReturnOverlayPosition",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_overlay_position",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnOverlayPositionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket/Overlay"
     }
   ],
   "variable_elements": [
@@ -629,6 +759,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "needToChoose",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
     }
   ],
   "sound_elements": [],
@@ -680,7 +816,12 @@
         "children": [
           {
             "name": "Rocket",
-            "children": []
+            "children": [
+              {
+                "name": "Overlay",
+                "children": []
+              }
+            ]
           }
         ]
       }

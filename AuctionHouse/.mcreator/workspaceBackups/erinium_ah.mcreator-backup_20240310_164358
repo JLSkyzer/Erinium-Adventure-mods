@@ -695,6 +695,7 @@
     {
       "name": "AH",
       "type": "command",
+      "sortid": 67,
       "compiles": true,
       "locked_code": false,
       "registry_name": "ah",
@@ -1549,6 +1550,38 @@
         ]
       },
       "path": "~/Menu/Command"
+    },
+    {
+      "name": "EriniumAH",
+      "type": "command",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_ah",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/command/EriniumAHCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "GetCommandList",
+      "type": "procedure",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_command_list",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/GetCommandListProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

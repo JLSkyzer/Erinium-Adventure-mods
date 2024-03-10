@@ -1,0 +1,41 @@
+{
+  "_fv": 57,
+  "_type": "overlay",
+  "definition": {
+    "priority": "HIGHEST",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "space_background.png",
+          "use1Xscale": true,
+          "anchorPoint": "CENTER_RIGHT",
+          "x": 402,
+          "y": 53
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "space_background_ship.png",
+          "use1Xscale": true,
+          "anchorPoint": "CENTER_RIGHT",
+          "x": 402,
+          "y": 53
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "LiftOffProgressionOverlayDisplayOverlayIngame"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

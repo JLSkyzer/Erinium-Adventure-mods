@@ -43,6 +43,8 @@ import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModEntities;
 public class RocketBoosterEntity extends PathfinderMob {
 	public static final EntityDataAccessor<Boolean> DATA_Lifting = SynchedEntityData.defineId(RocketBoosterEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_speed = SynchedEntityData.defineId(RocketBoosterEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_countdown = SynchedEntityData.defineId(RocketBoosterEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_descend = SynchedEntityData.defineId(RocketBoosterEntity.class, EntityDataSerializers.BOOLEAN);
 
 	public RocketBoosterEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(EriniumAdventureModEntities.ROCKET_BOOSTER.get(), world);
@@ -67,6 +69,8 @@ public class RocketBoosterEntity extends PathfinderMob {
 		super.defineSynchedData();
 		this.entityData.define(DATA_Lifting, false);
 		this.entityData.define(DATA_speed, 1);
+		this.entityData.define(DATA_countdown, 0);
+		this.entityData.define(DATA_descend, false);
 	}
 
 	@Override
@@ -140,6 +144,8 @@ public class RocketBoosterEntity extends PathfinderMob {
 		super.addAdditionalSaveData(compound);
 		compound.putBoolean("DataLifting", this.entityData.get(DATA_Lifting));
 		compound.putInt("Dataspeed", this.entityData.get(DATA_speed));
+		compound.putInt("Datacountdown", this.entityData.get(DATA_countdown));
+		compound.putBoolean("Datadescend", this.entityData.get(DATA_descend));
 	}
 
 	@Override
@@ -149,12 +155,16 @@ public class RocketBoosterEntity extends PathfinderMob {
 			this.entityData.set(DATA_Lifting, compound.getBoolean("DataLifting"));
 		if (compound.contains("Dataspeed"))
 			this.entityData.set(DATA_speed, compound.getInt("Dataspeed"));
+		if (compound.contains("Datacountdown"))
+			this.entityData.set(DATA_countdown, compound.getInt("Datacountdown"));
+		if (compound.contains("Datadescend"))
+			this.entityData.set(DATA_descend, compound.getBoolean("Datadescend"));
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		RocketBoosterOnEntityTickUpdateProcedure.execute(this);
+		RocketBoosterOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

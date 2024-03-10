@@ -126,6 +126,18 @@
         "name": "speed",
         "type": "integer",
         "value": 1
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "countdown",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "descend",
+        "type": "logic",
+        "value": false
       }
     ],
     "onMobTickUpdate": {

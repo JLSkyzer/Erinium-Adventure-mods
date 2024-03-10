@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -209,6 +209,7 @@
         "data": {
           "name": "button_validate",
           "text": "VALIDATE",
+          "isUndecorated": false,
           "onClick": {
             "name": "ValidateButton"
           },

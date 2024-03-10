@@ -137,37 +137,6 @@
         ]
       },
       "path": "~/Erilog"
-    },
-    {
-      "name": "TempProc",
-      "type": "procedure",
-      "sortid": 9,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "temp_proc",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/TempProcProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     }
   ],
   "variable_elements": [],
@@ -202,5 +171,5 @@
     "modElementsPackage": "fr.eriniumgroups.erinium.logs",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202300452316
 }
