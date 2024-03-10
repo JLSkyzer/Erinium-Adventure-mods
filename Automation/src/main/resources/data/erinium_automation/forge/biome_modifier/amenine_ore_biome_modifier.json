@@ -1,8 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": {
-    "type": "forge:any"
-  },
+  "biomes": "#is_overworld",
   "features": "erinium_automation:amenine_ore",
   "step": "underground_ores"
 }

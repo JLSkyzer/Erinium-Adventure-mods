@@ -1,8 +1,9 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "command",
   "definition": {
     "commandName": "blacklistitem",
+    "type": "STANDARD",
     "permissionLevel": "No requirement",
     "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"literal\"><field name=\"name\">add</field><statement name=\"args\"><block type=\"item\"><field name=\"name\">item</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">BlackListItemAdd</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">remove</field><statement name=\"args\"><block type=\"item\"><field name=\"name\">item</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">BlackListItemRemove</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">list</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">OpenBlacklistItemGui</field></block></statement></block></next></block></next></block></next></block></xml>"
   }

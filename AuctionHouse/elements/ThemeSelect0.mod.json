@@ -1,0 +1,143 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "auctionthemeselect_base.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_dark_btn",
+          "image": "dark_btn.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "Dark"
+          },
+          "x": 2,
+          "y": 52
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_white_btn",
+          "image": "white_btn.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "White"
+          },
+          "x": 145,
+          "y": 52
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_red_btn",
+          "image": "red_btn.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "Red"
+          },
+          "x": 288,
+          "y": 52
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_blueroyal_purple_bnt",
+          "image": "blueroyal_purple_bnt.png",
+          "hoveredImage": "",
+          "onClick": {
+            "name": "Blueroyalpurple"
+          },
+          "x": 2,
+          "y": 170
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_dark",
+          "text": {
+            "fixedValue": "Dark"
+          },
+          "color": {
+            "value": -3407872,
+            "falpha": 0.0
+          },
+          "x": 1,
+          "y": 41
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_white",
+          "text": {
+            "fixedValue": "White"
+          },
+          "color": {
+            "value": -3407872,
+            "falpha": 0.0
+          },
+          "x": 144,
+          "y": 41
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_red",
+          "text": {
+            "fixedValue": "Red"
+          },
+          "color": {
+            "value": -3407872,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 41
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_blue_royal_purple",
+          "text": {
+            "fixedValue": "Blue royal purple"
+          },
+          "color": {
+            "value": -3407872,
+            "falpha": 0.0
+          },
+          "x": 1,
+          "y": 159
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 17,
+      "oy": 17,
+      "snapOnGrid": false
+    }
+  }
+}

@@ -1,0 +1,138 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 2024-03-09 15:47:21
+Description: Ticking player
+
+java.lang.NullPointerException: Cannot invoke "com.google.gson.JsonObject.get(String)" because "JsonObject" is null
+	at fr.eriniumgroups.erinium.auctionhouse.procedures.AhMainMenuWhileThisGUIIsOpenTickProcedure.execute(AhMainMenuWhileThisGUIIsOpenTickProcedure.java:211) ~[%23200!/:?] {re:classloading}
+	at fr.eriniumgroups.erinium.auctionhouse.world.inventory.AhMainMenuMenu.onPlayerTick(AhMainMenuMenu.java:360) ~[%23200!/:?] {re:classloading}
+	at fr.eriniumgroups.erinium.auctionhouse.world.inventory.__AhMainMenuMenu_onPlayerTick_PlayerTickEvent.invoke(.dynamic) ~[%23200!/:?] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23115!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23115!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23115!/:?] {}
+	at net.minecraftforge.event.ForgeEventFactory.onPlayerPostTick(ForgeEventFactory.java:920) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23194%23201!/:?] {re:classloading}
+	at net.minecraft.world.entity.player.Player.tick(Player.java:285) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerPlayer.doTick(ServerPlayer.java:467) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.tick(ServerGamePacketListenerImpl.java:262) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.Connection.tick(Connection.java:263) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading}
+	at net.minecraft.server.network.ServerConnectionListener.tick(ServerConnectionListener.java:142) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:907) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:814) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:89) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:661) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:251) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at fr.eriniumgroups.erinium.auctionhouse.procedures.AhMainMenuWhileThisGUIIsOpenTickProcedure.execute(AhMainMenuWhileThisGUIIsOpenTickProcedure.java:211) ~[%23200!/:?] {re:classloading}
+	at fr.eriniumgroups.erinium.auctionhouse.world.inventory.AhMainMenuMenu.onPlayerTick(AhMainMenuMenu.java:360) ~[%23200!/:?] {re:classloading}
+	at fr.eriniumgroups.erinium.auctionhouse.world.inventory.__AhMainMenuMenu_onPlayerTick_PlayerTickEvent.invoke(.dynamic) ~[%23200!/:?] {re:classloading,pl:eventbus:B}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23115!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23115!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23115!/:?] {}
+	at net.minecraftforge.event.ForgeEventFactory.onPlayerPostTick(ForgeEventFactory.java:920) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23194%23201!/:?] {re:classloading}
+	at net.minecraft.world.entity.player.Player.tick(Player.java:285) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+-- Player being ticked --
+Details:
+	Entity Type: minecraft:player (net.minecraft.server.level.ServerPlayer)
+	Entity ID: 13
+	Entity Name: Dev
+	Entity's Exact location: 7.41, -60.00, 14.84
+	Entity's Block location: World: (7,-60,14), Section: (at 7,4,14 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.server.level.ServerPlayer.doTick(ServerPlayer.java:467) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.tick(ServerGamePacketListenerImpl.java:262) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.network.Connection.tick(Connection.java:263) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading}
+	at net.minecraft.server.network.ServerConnectionListener.tick(ServerConnectionListener.java:142) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:907) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:814) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:89) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:661) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:251) ~[forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.jar%23195!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:840) ~[?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.1
+	Minecraft Version ID: 1.20.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 17.0.9, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1888197632 bytes (1800 MiB) / 2797600768 bytes (2668 MiB) up to 8568963072 bytes (8172 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 3600 6-Core Processor              
+	Identifier: AuthenticAMD Family 23 Model 113 Stepping 0
+	Microarchitecture: Zen 2
+	Frequency (GHz): 3.59
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: NVIDIA GeForce GTX 1660
+	Graphics card #0 vendor: NVIDIA (0x10de)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x2184
+	Graphics card #0 versionInfo: DriverVersion=31.0.15.5161
+	Memory slot #0 capacity (MB): 8192.00
+	Memory slot #0 clockSpeed (GHz): 2.13
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 8192.00
+	Memory slot #1 clockSpeed (GHz): 2.13
+	Memory slot #1 type: DDR4
+	Memory slot #2 capacity (MB): 8192.00
+	Memory slot #2 clockSpeed (GHz): 2.13
+	Memory slot #2 type: DDR4
+	Memory slot #3 capacity (MB): 8192.00
+	Memory slot #3 clockSpeed (GHz): 2.13
+	Memory slot #3 type: DDR4
+	Virtual memory max (MB): 34725.16
+	Virtual memory used (MB): 26438.23
+	Swap memory total (MB): 2048.00
+	Swap memory used (MB): 142.70
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/13, l='ServerLevel[Test]', x=7.41, y=-60.00, z=14.84]]
+	Data Packs: vanilla, mod:forge, mod:erinium_ah, mod:ericonomy, mod:erinium_logs
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Launched Version: MOD_DEV
+	ModLauncher: 10.0.9+10.0.9+main.dcd20f30
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.0.5.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.0.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.0.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.0.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.0.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.0.4.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.1-47.2.0.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.0.9.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.0.9.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@null
+		javafml@null
+	Mod List: 
+		forge-1.20.1-47.2.0_mapped_official_1.20.1-recomp.|Minecraft                     |minecraft                     |1.20.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		                                                  |Forge                         |forge                         |47.2.0              |DONE      |Manifest: NOSIGNATURE
+		ericonomy-1.20.1-Dev.jar                          |Ericonomy                     |ericonomy                     |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		Erilog.1.20.1-1.0-Dev.jar                         |Erinium Logs                  |erinium_logs                  |1.0.0               |DONE      |Manifest: NOSIGNATURE
+		main                                              |Erinium AH                    |erinium_ah                    |1.0.0               |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 7f64d96e-5155-4b29-a71a-6f76bc93bacb
+	FML: 47.2
+	Forge: net.minecraftforge:47.2.0

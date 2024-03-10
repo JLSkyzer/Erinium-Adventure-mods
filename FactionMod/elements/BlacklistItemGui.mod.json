@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 1,
@@ -318,6 +318,7 @@
         "data": {
           "name": "button_prev",
           "text": "PREV",
+          "isUndecorated": false,
           "onClick": {
             "name": "PreviousPage"
           },
@@ -332,6 +333,7 @@
         "data": {
           "name": "button_next",
           "text": "NEXT",
+          "isUndecorated": false,
           "onClick": {
             "name": "NextPage"
           },

@@ -57,21 +57,19 @@ public class RecruitPermProcedure {
 			});
 		}
 		GetAllPermissionsProcedure.execute(entity);
-		{
-			if (entity instanceof ServerPlayer _ent) {
-				BlockPos _bpos = BlockPos.containing(x, y, z);
-				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
-					@Override
-					public Component getDisplayName() {
-						return Component.literal("EditPermissionGui");
-					}
+		if (entity instanceof ServerPlayer _ent) {
+			BlockPos _bpos = BlockPos.containing(x, y, z);
+			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
+				@Override
+				public Component getDisplayName() {
+					return Component.literal("EditPermissionGui");
+				}
 
-					@Override
-					public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-						return new EditPermissionGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
-					}
-				}, _bpos);
-			}
+				@Override
+				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
+					return new EditPermissionGuiMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+				}
+			}, _bpos);
 		}
 	}
 }

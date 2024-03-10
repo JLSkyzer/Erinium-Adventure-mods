@@ -1,7 +1,7 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "procedure",
   "definition": {
-    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable type=\"JsonObject\" id=\"JsonObject\">JsonObject</variable></variables><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">player_right_click_block</field></block></xml>"
+    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><variables><variable id=\"JsonObject\" type=\"JsonObject\">JsonObject</variable></variables><block deletable=\"false\" type=\"event_trigger\" x=\"40\" y=\"40\"><field name=\"trigger\">player_right_click_block</field></block></xml>"
   }
 }

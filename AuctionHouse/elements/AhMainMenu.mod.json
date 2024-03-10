@@ -3,13 +3,22 @@
   "_type": "gui",
   "definition": {
     "type": 1,
-    "width": 176,
-    "height": 180,
+    "width": 427,
+    "height": 240,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 125,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "preset_gui_trans.png",
+          "use1Xscale": false,
+          "x": 0,
+          "y": 0
+        }
+      },
       {
         "type": "outputslot",
         "data": {
@@ -144,6 +153,602 @@
           },
           "x": 258,
           "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_0_item_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line0ItemName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 25,
+          "y": 32
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_1_item_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line1ItemName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 25,
+          "y": 63
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_2_item_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line2ItemName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 25,
+          "y": 94
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_3_item_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line3ItemName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 25,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_4_item_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line4ItemName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 25,
+          "y": 156
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_5_item_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line5ItemName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 25,
+          "y": 187
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_6_player_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line6PlayerName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 25,
+          "y": 218
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_0_player_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line0PlayerName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 32
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_1_player_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line1PlayerName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 63
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_2_player_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line2PlayerName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 94
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_3_player_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line3PlayerName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_4_player_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line4PlayerName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 156
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_5_player_name",
+          "text": {
+            "fixedValue": "",
+            "name": "Line5PlayerName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 187
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_6_player_name1",
+          "text": {
+            "fixedValue": "",
+            "name": "Line6PlayerName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 218
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_0_quantity",
+          "text": {
+            "fixedValue": "",
+            "name": "Line0Quantity"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 27
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_0_price",
+          "text": {
+            "fixedValue": "",
+            "name": "Line0Price"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 37
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_1_quantity",
+          "text": {
+            "fixedValue": "",
+            "name": "Line1Quantity"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 58
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_1_price",
+          "text": {
+            "fixedValue": "",
+            "name": "Line1Price"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 68
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_2_quantity",
+          "text": {
+            "fixedValue": "",
+            "name": "Line2Quantity"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_2_price",
+          "text": {
+            "fixedValue": "",
+            "name": "Line2Price"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 99
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_3_quantity",
+          "text": {
+            "fixedValue": "",
+            "name": "Line3Quantity"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 120
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_3_price",
+          "text": {
+            "fixedValue": "",
+            "name": "Line3Price"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 130
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_4_quantity",
+          "text": {
+            "fixedValue": "",
+            "name": "Line4Quantity"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 151
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_4_price",
+          "text": {
+            "fixedValue": "",
+            "name": "Line4Price"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 161
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_5_quantity",
+          "text": {
+            "fixedValue": "",
+            "name": "Line5Quantity"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 182
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_5_price",
+          "text": {
+            "fixedValue": "",
+            "name": "Line5Price"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 192
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_6_quantity",
+          "text": {
+            "fixedValue": "",
+            "name": "Line6Quantity"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 213
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_line_6_price",
+          "text": {
+            "fixedValue": "",
+            "name": "Line6Price"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 287,
+          "y": 223
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_buy",
+          "image": "buy.png",
+          "hoveredImage": "buy.png",
+          "onClick": {
+            "name": "Line0Buy"
+          },
+          "x": 348,
+          "y": 27
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_buy1",
+          "image": "buy.png",
+          "hoveredImage": "buy.png",
+          "onClick": {
+            "name": "Line1Buy"
+          },
+          "x": 348,
+          "y": 58
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_buy2",
+          "image": "buy.png",
+          "hoveredImage": "buy.png",
+          "onClick": {
+            "name": "Line2Buy"
+          },
+          "x": 348,
+          "y": 89
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_buy3",
+          "image": "buy.png",
+          "hoveredImage": "buy.png",
+          "onClick": {
+            "name": "Line3Buy"
+          },
+          "x": 348,
+          "y": 120
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_buy4",
+          "image": "buy.png",
+          "hoveredImage": "buy.png",
+          "onClick": {
+            "name": "Line4Buy"
+          },
+          "x": 348,
+          "y": 151
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_buy5",
+          "image": "buy.png",
+          "hoveredImage": "buy.png",
+          "onClick": {
+            "name": "Line5Buy"
+          },
+          "x": 348,
+          "y": 182
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_buy6",
+          "image": "buy.png",
+          "hoveredImage": "buy.png",
+          "onClick": {
+            "name": "Line6ItemName"
+          },
+          "x": 348,
+          "y": 213
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_up",
+          "image": "up.png",
+          "hoveredImage": "up.png",
+          "onClick": {
+            "name": "Up"
+          },
+          "x": 406,
+          "y": 21
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_down",
+          "image": "down.png",
+          "hoveredImage": "down.png",
+          "onClick": {
+            "name": "Down"
+          },
+          "x": 406,
+          "y": 219
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_get_money_main_page",
+          "text": {
+            "fixedValue": "",
+            "name": "GetMoneyMainPage"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 343,
+          "y": 0
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_market",
+          "text": {
+            "fixedValue": "Market"
+          },
+          "color": {
+            "value": -16750951,
+            "falpha": 0.0
+          },
+          "x": 1,
+          "y": 1
         }
       }
     ],

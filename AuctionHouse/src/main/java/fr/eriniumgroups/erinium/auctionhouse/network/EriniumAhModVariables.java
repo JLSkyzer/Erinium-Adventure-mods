@@ -15,6 +15,7 @@ import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
@@ -77,9 +78,13 @@ public class EriniumAhModVariables {
 			PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 			clone.theme_text_color = original.theme_text_color;
+			clone.theme = original.theme;
 			if (!event.isWasDeath()) {
 				clone.ah_initialised = original.ah_initialised;
 				clone.ah_page = original.ah_page;
+				clone.ah_temp_item = original.ah_temp_item;
+				clone.selltempquantity = original.selltempquantity;
+				clone.sell_loaded = original.sell_loaded;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -123,6 +128,10 @@ public class EriniumAhModVariables {
 		public boolean ah_initialised = false;
 		public double ah_page = 0;
 		public String theme_text_color = "\u00A7f";
+		public ItemStack ah_temp_item = ItemStack.EMPTY;
+		public String theme = "dark";
+		public double selltempquantity = 0;
+		public boolean sell_loaded = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -134,6 +143,10 @@ public class EriniumAhModVariables {
 			nbt.putBoolean("ah_initialised", ah_initialised);
 			nbt.putDouble("ah_page", ah_page);
 			nbt.putString("theme_text_color", theme_text_color);
+			nbt.put("ah_temp_item", ah_temp_item.save(new CompoundTag()));
+			nbt.putString("theme", theme);
+			nbt.putDouble("selltempquantity", selltempquantity);
+			nbt.putBoolean("sell_loaded", sell_loaded);
 			return nbt;
 		}
 
@@ -142,6 +155,10 @@ public class EriniumAhModVariables {
 			ah_initialised = nbt.getBoolean("ah_initialised");
 			ah_page = nbt.getDouble("ah_page");
 			theme_text_color = nbt.getString("theme_text_color");
+			ah_temp_item = ItemStack.of(nbt.getCompound("ah_temp_item"));
+			theme = nbt.getString("theme");
+			selltempquantity = nbt.getDouble("selltempquantity");
+			sell_loaded = nbt.getBoolean("sell_loaded");
 		}
 	}
 
@@ -178,6 +195,10 @@ public class EriniumAhModVariables {
 					variables.ah_initialised = message.data.ah_initialised;
 					variables.ah_page = message.data.ah_page;
 					variables.theme_text_color = message.data.theme_text_color;
+					variables.ah_temp_item = message.data.ah_temp_item;
+					variables.theme = message.data.theme;
+					variables.selltempquantity = message.data.selltempquantity;
+					variables.sell_loaded = message.data.sell_loaded;
 				}
 			});
 			context.setPacketHandled(true);

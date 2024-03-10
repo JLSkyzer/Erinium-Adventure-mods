@@ -40,6 +40,11 @@ public class EriniumAdventureModTabs {
 			tabData.accept(EriniumAdventureModItems.NITRIATE_ARMOR_BOOTS.get());
 		}
 
+		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+			tabData.accept(EriniumAdventureModItems.ROCKET_BOOSTER_SPAWN_EGG.get());
+			tabData.accept(EriniumAdventureModItems.ROCKET_HEAD_SPAWN_EGG.get());
+		}
+
 		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 			tabData.accept(EriniumAdventureModItems.NITRIATE_AXE.get());
 			tabData.accept(EriniumAdventureModItems.NITRIATE_PICKAXE.get());

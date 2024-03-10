@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "amenine_ore",
@@ -34,9 +34,11 @@
       }
     ],
     "name": "§6Amenine Ore",
-    "specialInfo": [
-      "§25% chance to drop Amenine gem"
-    ],
+    "specialInformation": {
+      "fixedValue": [
+        "§25% chance to drop Amenine gem"
+      ]
+    },
     "hardness": 3.0,
     "resistance": 3.0,
     "hasGravity": false,
@@ -125,10 +127,12 @@
     "onDestroyedByExplosion": {
       "name": "AmenineOreBlockDestroyedByPlayer"
     },
-    "spawnWorldTypes": [
-      "Surface"
+    "generateFeature": true,
+    "restrictionBiomes": [
+      {
+        "value": "#is_overworld"
+      }
     ],
-    "restrictionBiomes": [],
     "blocksToReplace": [
       {
         "value": "Blocks.STONE#0"

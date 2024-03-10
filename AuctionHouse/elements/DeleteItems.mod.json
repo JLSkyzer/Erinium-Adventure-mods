@@ -1,0 +1,52 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_are_you_sure_you_want_to_delete",
+          "text": {
+            "fixedValue": "Are you sure you want to delete this item ?"
+          },
+          "color": {
+            "value": -3407872,
+            "falpha": 0.0
+          },
+          "x": 105,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_yes",
+          "text": "Yes",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "YesBtn"
+          },
+          "width": 40,
+          "height": 20,
+          "x": 195,
+          "y": 125
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

@@ -51,6 +51,7 @@ public class JoinTheWorldProcedure {
 		temp_item.enchant(Enchantments.UNBREAKING, 10);
 		temp_item.getOrCreateTag().putString("player", (entity.getDisplayName().getString()));
 		temp_item.getOrCreateTag().putString("uuid", entity.getUUID().toString());
+		temp_item.getOrCreateTag().putString("name", (temp_item.getDisplayName().getString()));
 		temp_item.getOrCreateTag().putDouble("quantity", 1);
 		temp_item.getOrCreateTag().putDouble("price", 1250);
 		try {
@@ -73,6 +74,7 @@ public class JoinTheWorldProcedure {
 		}
 		JsonObject.addProperty("enchants", temp_item.getEnchantmentTags().toString());
 		JsonObject.addProperty("damage", (temp_item.getDamageValue()));
+		JsonObject.addProperty("name", (temp_item.getOrCreateTag().getString("name")));
 		JsonObject.addProperty("player", (temp_item.getOrCreateTag().getString("player")));
 		JsonObject.addProperty("uuid", (temp_item.getOrCreateTag().getString("uuid")));
 		JsonObject.addProperty("quantity", (temp_item.getOrCreateTag().getDouble("quantity")));

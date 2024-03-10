@@ -84,7 +84,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
 
-		guiGraphics.blit(new ResourceLocation("erinium_faction:textures/screens/f_perm_gui.png"), this.leftPos + -125, this.topPos + -37, 0, 0, 428, 240, 428, 240);
+		guiGraphics.blit(new ResourceLocation("erinium_faction:textures/screens/f_perm_gui.png"), this.leftPos + -126, this.topPos + -37, 0, 0, 428, 240, 428, 240);
 
 		RenderSystem.disableBlend();
 	}
@@ -107,49 +107,49 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font,
 
-				ReturnTempFileProcedure.execute(entity), -123, -35, -6737152, false);
+				ReturnTempFileProcedure.execute(entity), -124, -35, -6737152, false);
 		guiGraphics.drawString(this.font,
 
-				CaninteractProcedure.execute(entity), -121, -18, -1, false);
+				CaninteractProcedure.execute(entity), -122, -18, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanBreakProcedure.execute(entity), -121, 12, -1, false);
+				CanBreakProcedure.execute(entity), -122, 12, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanPoseProcedure.execute(entity), -121, 42, -1, false);
+				CanPoseProcedure.execute(entity), -122, 42, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanKickProcedure.execute(entity), -121, 72, -1, false);
+				CanKickProcedure.execute(entity), -122, 72, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanInviteProcedure.execute(entity), -121, 102, -1, false);
+				CanInviteProcedure.execute(entity), -122, 102, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanPromoteProcedure.execute(entity), -121, 132, -1, false);
+				CanPromoteProcedure.execute(entity), -122, 132, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanDemoteProcedure.execute(entity), -121, 162, -1, false);
+				CanDemoteProcedure.execute(entity), -122, 162, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanClaimProcedure.execute(entity), -41, -18, -1, false);
+				CanClaimProcedure.execute(entity), -42, -18, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanUnclaimProcedure.execute(entity), -41, 12, -1, false);
+				CanUnclaimProcedure.execute(entity), -42, 12, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanSetwarpProcedure.execute(entity), -41, 42, -1, false);
+				CanSetwarpProcedure.execute(entity), -42, 42, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanDelwarpProcedure.execute(entity), -41, 72, -1, false);
+				CanDelwarpProcedure.execute(entity), -42, 72, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CansethomeProcedure.execute(entity), -41, 102, -1, false);
+				CansethomeProcedure.execute(entity), -42, 102, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanDelhomeProcedure.execute(entity), -41, 132, -1, false);
+				CanDelhomeProcedure.execute(entity), -42, 132, -1, false);
 		guiGraphics.drawString(this.font,
 
-				CanModifyProcedure.execute(entity), -41, 162, -1, false);
+				CanModifyProcedure.execute(entity), -42, 162, -1, false);
 		guiGraphics.drawString(this.font,
 
 				CanHomeProcedure.execute(entity), 28, -18, -1, false);
@@ -179,7 +179,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(1, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		}).bounds(this.leftPos + -121, this.topPos + -8, 20, 20).build();
+		}).bounds(this.leftPos + -122, this.topPos + -8, 20, 20).build();
 		guistate.put("button:button_x", button_x);
 		this.addRenderableWidget(button_x);
 		button_x1 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x1"), e -> {
@@ -187,7 +187,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(2, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		}).bounds(this.leftPos + -121, this.topPos + 22, 20, 20).build();
+		}).bounds(this.leftPos + -122, this.topPos + 22, 20, 20).build();
 		guistate.put("button:button_x1", button_x1);
 		this.addRenderableWidget(button_x1);
 		button_empty = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_empty"), e -> {
@@ -195,7 +195,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(3, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		}).bounds(this.leftPos + -121, this.topPos + 52, 20, 20).build();
+		}).bounds(this.leftPos + -122, this.topPos + 52, 20, 20).build();
 		guistate.put("button:button_empty", button_empty);
 		this.addRenderableWidget(button_empty);
 		button_x2 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x2"), e -> {
@@ -203,7 +203,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(4, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
-		}).bounds(this.leftPos + -121, this.topPos + 82, 20, 20).build();
+		}).bounds(this.leftPos + -122, this.topPos + 82, 20, 20).build();
 		guistate.put("button:button_x2", button_x2);
 		this.addRenderableWidget(button_x2);
 		button_x3 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x3"), e -> {
@@ -211,7 +211,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(5, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
-		}).bounds(this.leftPos + -121, this.topPos + 112, 20, 20).build();
+		}).bounds(this.leftPos + -122, this.topPos + 112, 20, 20).build();
 		guistate.put("button:button_x3", button_x3);
 		this.addRenderableWidget(button_x3);
 		button_x4 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x4"), e -> {
@@ -219,7 +219,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(6, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
-		}).bounds(this.leftPos + -121, this.topPos + 142, 20, 20).build();
+		}).bounds(this.leftPos + -122, this.topPos + 142, 20, 20).build();
 		guistate.put("button:button_x4", button_x4);
 		this.addRenderableWidget(button_x4);
 		button_x5 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x5"), e -> {
@@ -227,7 +227,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(7, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
-		}).bounds(this.leftPos + -121, this.topPos + 172, 20, 20).build();
+		}).bounds(this.leftPos + -122, this.topPos + 172, 20, 20).build();
 		guistate.put("button:button_x5", button_x5);
 		this.addRenderableWidget(button_x5);
 		button_x6 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x6"), e -> {
@@ -235,7 +235,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(8, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 8, x, y, z);
 			}
-		}).bounds(this.leftPos + -41, this.topPos + -8, 20, 20).build();
+		}).bounds(this.leftPos + -42, this.topPos + -8, 20, 20).build();
 		guistate.put("button:button_x6", button_x6);
 		this.addRenderableWidget(button_x6);
 		button_x7 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x7"), e -> {
@@ -243,7 +243,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(9, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 9, x, y, z);
 			}
-		}).bounds(this.leftPos + -41, this.topPos + 22, 20, 20).build();
+		}).bounds(this.leftPos + -42, this.topPos + 22, 20, 20).build();
 		guistate.put("button:button_x7", button_x7);
 		this.addRenderableWidget(button_x7);
 		button_x8 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x8"), e -> {
@@ -251,7 +251,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(10, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 10, x, y, z);
 			}
-		}).bounds(this.leftPos + -41, this.topPos + 52, 20, 20).build();
+		}).bounds(this.leftPos + -42, this.topPos + 52, 20, 20).build();
 		guistate.put("button:button_x8", button_x8);
 		this.addRenderableWidget(button_x8);
 		button_x9 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x9"), e -> {
@@ -259,7 +259,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(11, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 11, x, y, z);
 			}
-		}).bounds(this.leftPos + -41, this.topPos + 82, 20, 20).build();
+		}).bounds(this.leftPos + -42, this.topPos + 82, 20, 20).build();
 		guistate.put("button:button_x9", button_x9);
 		this.addRenderableWidget(button_x9);
 		button_x10 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x10"), e -> {
@@ -267,7 +267,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(12, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 12, x, y, z);
 			}
-		}).bounds(this.leftPos + -41, this.topPos + 112, 20, 20).build();
+		}).bounds(this.leftPos + -42, this.topPos + 112, 20, 20).build();
 		guistate.put("button:button_x10", button_x10);
 		this.addRenderableWidget(button_x10);
 		button_x11 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x11"), e -> {
@@ -275,7 +275,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(13, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 13, x, y, z);
 			}
-		}).bounds(this.leftPos + -41, this.topPos + 142, 20, 20).build();
+		}).bounds(this.leftPos + -42, this.topPos + 142, 20, 20).build();
 		guistate.put("button:button_x11", button_x11);
 		this.addRenderableWidget(button_x11);
 		button_x12 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x12"), e -> {
@@ -283,7 +283,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(14, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 14, x, y, z);
 			}
-		}).bounds(this.leftPos + -41, this.topPos + 172, 20, 20).build();
+		}).bounds(this.leftPos + -42, this.topPos + 172, 20, 20).build();
 		guistate.put("button:button_x12", button_x12);
 		this.addRenderableWidget(button_x12);
 		button_x13 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x13"), e -> {

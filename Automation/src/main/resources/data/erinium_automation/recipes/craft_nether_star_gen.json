@@ -2,37 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "aba",
+    "cdc",
+    "cec"
   ],
   "key": {
-    "0": {
+    "a": {
       "item": "minecraft:diamond_block"
     },
-    "1": {
+    "b": {
       "item": "minecraft:hopper"
     },
-    "2": {
-      "item": "minecraft:diamond_block"
-    },
-    "3": {
+    "c": {
       "item": "erinium_automation:dark_iron_block"
     },
-    "4": {
+    "d": {
       "item": "erinium_automation:wither_skeleton_block"
     },
-    "5": {
-      "item": "erinium_automation:dark_iron_block"
-    },
-    "6": {
-      "item": "erinium_automation:dark_iron_block"
-    },
-    "7": {
+    "e": {
       "item": "minecraft:chest"
-    },
-    "8": {
-      "item": "erinium_automation:dark_iron_block"
     }
   },
   "result": {

@@ -1,6 +1,7 @@
 
 package fr.eriniumgroups.erinium.auctionhouse.network;
 
+import fr.eriniumgroups.erinium.auctionhouse.procedures.*;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -15,7 +16,6 @@ import java.util.function.Supplier;
 import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.auctionhouse.world.inventory.AhMainMenuMenu;
-import fr.eriniumgroups.erinium.auctionhouse.procedures.SearchBtnProcedure;
 import fr.eriniumgroups.erinium.auctionhouse.EriniumAhMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -65,6 +65,42 @@ public class AhMainMenuButtonMessage {
 		if (buttonID == 0) {
 
 			SearchBtnProcedure.execute(entity);
+		}
+		if (buttonID == 1) {
+
+			Line0BuyProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 2) {
+
+			Line1BuyProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 3) {
+
+			Line2BuyProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 4) {
+
+			Line3BuyProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 5) {
+
+			Line4BuyProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 6) {
+
+			Line5BuyProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 7) {
+
+			Line6BuyProcedure.execute(world, x, y, z, entity);
+		}
+		if (buttonID == 8) {
+
+			UpProcedure.execute(entity);
+		}
+		if (buttonID == 9) {
+
+			DownProcedure.execute(entity);
 		}
 	}
 

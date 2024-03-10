@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -30,6 +30,7 @@
         "data": {
           "name": "button_recruit",
           "text": "Recruit",
+          "isUndecorated": false,
           "onClick": {
             "name": "RecruitPerm"
           },
@@ -44,6 +45,7 @@
         "data": {
           "name": "button_member",
           "text": "Member",
+          "isUndecorated": false,
           "onClick": {
             "name": "MemberPerm"
           },
@@ -58,6 +60,7 @@
         "data": {
           "name": "button_ancient",
           "text": "Ancient",
+          "isUndecorated": false,
           "onClick": {
             "name": "AncientPerm"
           },
@@ -72,6 +75,7 @@
         "data": {
           "name": "button_officier",
           "text": "Officier",
+          "isUndecorated": false,
           "onClick": {
             "name": "OfficierPerm"
           },

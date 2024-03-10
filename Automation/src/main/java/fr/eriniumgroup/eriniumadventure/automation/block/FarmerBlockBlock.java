@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
@@ -42,6 +43,11 @@ import fr.eriniumgroup.eriniumadventure.automation.block.entity.FarmerBlockBlock
 public class FarmerBlockBlock extends Block implements EntityBlock {
 	public FarmerBlockBlock() {
 		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(3f));
+	}
+
+	@Override
+	public void appendHoverText(ItemStack itemstack, BlockGetter world, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, world, list, flag);
 	}
 
 	@Override

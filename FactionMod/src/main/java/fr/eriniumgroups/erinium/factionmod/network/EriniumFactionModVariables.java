@@ -31,6 +31,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.client.Minecraft;
 
 import java.util.function.Supplier;
+import java.util.ArrayList;
 
 import fr.eriniumgroups.erinium.factionmod.EriniumFactionMod;
 
@@ -51,20 +52,29 @@ public class EriniumFactionModVariables {
 	public static class EventBusVariableHandlers {
 		@SubscribeEvent
 		public static void onPlayerLoggedInSyncPlayerVariables(PlayerEvent.PlayerLoggedInEvent event) {
-			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+			if (!event.getEntity().level().isClientSide()) {
+				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
+					((PlayerVariables) entityiterator.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(entityiterator);
+				}
+			}
 		}
 
 		@SubscribeEvent
 		public static void onPlayerRespawnedSyncPlayerVariables(PlayerEvent.PlayerRespawnEvent event) {
-			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+			if (!event.getEntity().level().isClientSide()) {
+				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
+					((PlayerVariables) entityiterator.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(entityiterator);
+				}
+			}
 		}
 
 		@SubscribeEvent
 		public static void onPlayerChangedDimensionSyncPlayerVariables(PlayerEvent.PlayerChangedDimensionEvent event) {
-			if (!event.getEntity().level().isClientSide())
-				((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(event.getEntity());
+			if (!event.getEntity().level().isClientSide()) {
+				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
+					((PlayerVariables) entityiterator.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(entityiterator);
+				}
+			}
 		}
 
 		@SubscribeEvent
@@ -98,6 +108,11 @@ public class EriniumFactionModVariables {
 				clone.temp_z = original.temp_z;
 				clone.teleport_cooldown = original.teleport_cooldown;
 				clone.teleported = original.teleported;
+			}
+			if (!event.getEntity().level().isClientSide()) {
+				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
+					((PlayerVariables) entityiterator.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables())).syncPlayerVariables(entityiterator);
+				}
 			}
 		}
 
@@ -195,16 +210,19 @@ public class EriniumFactionModVariables {
 	}
 
 	public static class SavedDataSyncMessage {
-		public int type;
-		public SavedData data;
+		private final int type;
+		private SavedData data;
 
 		public SavedDataSyncMessage(FriendlyByteBuf buffer) {
 			this.type = buffer.readInt();
-			this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
-			if (this.data instanceof MapVariables _mapvars)
-				_mapvars.read(buffer.readNbt());
-			else if (this.data instanceof WorldVariables _worldvars)
-				_worldvars.read(buffer.readNbt());
+			CompoundTag nbt = buffer.readNbt();
+			if (nbt != null) {
+				this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
+				if (this.data instanceof MapVariables mapVariables)
+					mapVariables.read(nbt);
+				else if (this.data instanceof WorldVariables worldVariables)
+					worldVariables.read(nbt);
+			}
 		}
 
 		public SavedDataSyncMessage(int type, SavedData data) {
@@ -214,13 +232,14 @@ public class EriniumFactionModVariables {
 
 		public static void buffer(SavedDataSyncMessage message, FriendlyByteBuf buffer) {
 			buffer.writeInt(message.type);
-			buffer.writeNbt(message.data.save(new CompoundTag()));
+			if (message.data != null)
+				buffer.writeNbt(message.data.save(new CompoundTag()));
 		}
 
 		public static void handler(SavedDataSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
 			NetworkEvent.Context context = contextSupplier.get();
 			context.enqueueWork(() -> {
-				if (!context.getDirection().getReceptionSide().isServer()) {
+				if (!context.getDirection().getReceptionSide().isServer() && message.data != null) {
 					if (message.type == 0)
 						MapVariables.clientSide = (MapVariables) message.data;
 					else
@@ -290,7 +309,7 @@ public class EriniumFactionModVariables {
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
-				EriniumFactionMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> serverPlayer), new PlayerVariablesSyncMessage(this));
+				EriniumFactionMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(entity.level()::dimension), new PlayerVariablesSyncMessage(this, entity.getId()));
 		}
 
 		public Tag writeNBT() {
@@ -353,27 +372,36 @@ public class EriniumFactionModVariables {
 		}
 	}
 
+	@SubscribeEvent
+	public static void registerMessage(FMLCommonSetupEvent event) {
+		EriniumFactionMod.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new, PlayerVariablesSyncMessage::handler);
+	}
+
 	public static class PlayerVariablesSyncMessage {
-		public PlayerVariables data;
+		private final int target;
+		private final PlayerVariables data;
 
 		public PlayerVariablesSyncMessage(FriendlyByteBuf buffer) {
 			this.data = new PlayerVariables();
 			this.data.readNBT(buffer.readNbt());
+			this.target = buffer.readInt();
 		}
 
-		public PlayerVariablesSyncMessage(PlayerVariables data) {
+		public PlayerVariablesSyncMessage(PlayerVariables data, int entityid) {
 			this.data = data;
+			this.target = entityid;
 		}
 
 		public static void buffer(PlayerVariablesSyncMessage message, FriendlyByteBuf buffer) {
 			buffer.writeNbt((CompoundTag) message.data.writeNBT());
+			buffer.writeInt(message.target);
 		}
 
 		public static void handler(PlayerVariablesSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
 			NetworkEvent.Context context = contextSupplier.get();
 			context.enqueueWork(() -> {
 				if (!context.getDirection().getReceptionSide().isServer()) {
-					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.level().getEntity(message.target).getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
 					variables.faction_name = message.data.faction_name;
 					variables.current_chunk = message.data.current_chunk;
 					variables.current_region = message.data.current_region;

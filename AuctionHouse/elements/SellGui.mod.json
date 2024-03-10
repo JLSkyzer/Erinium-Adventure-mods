@@ -1,0 +1,138 @@
+{
+  "_fv": 57,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 233,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 36,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sell_item",
+          "text": {
+            "fixedValue": "Sell Item"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 8
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "disablePlacement": {
+            "fixedValue": false
+          },
+          "id": 0,
+          "disablePickup": {
+            "fixedValue": false
+          },
+          "dropItemsWhenNotBound": true,
+          "onSlotChanged": {
+            "name": "SlotChange"
+          },
+          "x": 204,
+          "y": 26
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_price_unity",
+          "text": {
+            "fixedValue": "Price (unity)"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "price",
+          "width": 72,
+          "height": 20,
+          "x": 132,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_quantity",
+          "text": {
+            "fixedValue": "Quantity",
+            "name": "ReturnSellQuantity"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_sell",
+          "text": "Sell",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "SellItem"
+          },
+          "width": 46,
+          "height": 20,
+          "x": 186,
+          "y": 134
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "",
+          "name": "quantity",
+          "width": 72,
+          "height": 20,
+          "x": 132,
+          "y": 89
+        }
+      },
+      {
+        "type": "checkbox",
+        "data": {
+          "name": "announce",
+          "text": "Announce (1000$)",
+          "x": 132,
+          "y": 116
+        }
+      }
+    ],
+    "onTick": {
+      "name": "SellGuiTick"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

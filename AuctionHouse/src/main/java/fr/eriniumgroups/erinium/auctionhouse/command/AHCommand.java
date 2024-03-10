@@ -12,6 +12,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.commands.Commands;
 
+import fr.eriniumgroups.erinium.auctionhouse.procedures.OpenThemeSelectProcedure;
+import fr.eriniumgroups.erinium.auctionhouse.procedures.OpenSellGuiProcedure;
 import fr.eriniumgroups.erinium.auctionhouse.procedures.OpenAHProcedure;
 
 @Mod.EventBusSubscriber
@@ -20,7 +22,35 @@ public class AHCommand {
 	public static void registerCommand(RegisterCommandsEvent event) {
 		event.getDispatcher().register(Commands.literal("ah")
 
-				.executes(arguments -> {
+				.then(Commands.literal("sell").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					OpenSellGuiProcedure.execute(world, x, y, z, entity);
+					return 0;
+				})).then(Commands.literal("theme").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					OpenThemeSelectProcedure.execute(world, x, y, z, entity);
+					return 0;
+				})).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

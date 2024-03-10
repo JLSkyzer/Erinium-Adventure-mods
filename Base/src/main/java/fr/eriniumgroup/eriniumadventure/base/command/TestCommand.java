@@ -5,9 +5,8 @@ import org.checkerframework.checker.units.qual.s;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.common.util.FakePlayerFactory;
-import net.minecraftforge.client.event.RegisterClientCommandsEvent;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
@@ -17,10 +16,10 @@ import net.minecraft.commands.Commands;
 
 import fr.eriniumgroup.eriniumadventure.base.procedures.TestCmdProcedure;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT)
+@Mod.EventBusSubscriber
 public class TestCommand {
 	@SubscribeEvent
-	public static void registerCommand(RegisterClientCommandsEvent event) {
+	public static void registerCommand(RegisterCommandsEvent event) {
 		event.getDispatcher().register(Commands.literal("test").requires(s -> s.hasPermission(4)).executes(arguments -> {
 			Level world = arguments.getSource().getUnsidedLevel();
 			double x = arguments.getSource().getPosition().x();
@@ -33,7 +32,7 @@ public class TestCommand {
 			if (entity != null)
 				direction = entity.getDirection();
 
-			TestCmdProcedure.execute(entity);
+			TestCmdProcedure.execute(world, x, y, z);
 			return 0;
 		}));
 	}

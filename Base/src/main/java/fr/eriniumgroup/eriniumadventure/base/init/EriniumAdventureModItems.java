@@ -7,6 +7,7 @@ package fr.eriniumgroup.eriniumadventure.base.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
@@ -38,6 +39,8 @@ public class EriniumAdventureModItems {
 	public static final RegistryObject<Item> NITRIATE_ARMOR_BOOTS = REGISTRY.register("nitriate_armor_boots", () -> new NitriateArmorItem.Boots());
 	public static final RegistryObject<Item> CAVE_BLOCK = block(EriniumAdventureModBlocks.CAVE_BLOCK);
 	public static final RegistryObject<Item> LIGHT_DARK_BRICK = block(EriniumAdventureModBlocks.LIGHT_DARK_BRICK);
+	public static final RegistryObject<Item> ROCKET_BOOSTER_SPAWN_EGG = REGISTRY.register("rocket_booster_spawn_egg", () -> new ForgeSpawnEggItem(EriniumAdventureModEntities.ROCKET_BOOSTER, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> ROCKET_HEAD_SPAWN_EGG = REGISTRY.register("rocket_head_spawn_egg", () -> new ForgeSpawnEggItem(EriniumAdventureModEntities.ROCKET_HEAD, -1, -1, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

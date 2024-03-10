@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "gui",
   "definition": {
     "type": 0,
@@ -30,6 +30,7 @@
         "data": {
           "name": "button_one_block_crop",
           "text": "One block crop",
+          "isUndecorated": false,
           "onClick": {
             "name": "OpenOneBlockCropGui"
           },
@@ -44,6 +45,7 @@
         "data": {
           "name": "button_multiple_blocks_crop",
           "text": "Multiple blocks crop",
+          "isUndecorated": false,
           "onClick": {
             "name": "OpenMultipleBlocksCrops"
           },

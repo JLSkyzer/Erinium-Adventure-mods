@@ -41,7 +41,6 @@ import java.util.AbstractMap;
 import fr.eriniumgroup.eriniumadventure.automation.init.EriniumAutomationModTabs;
 import fr.eriniumgroup.eriniumadventure.automation.init.EriniumAutomationModMenus;
 import fr.eriniumgroup.eriniumadventure.automation.init.EriniumAutomationModItems;
-import fr.eriniumgroup.eriniumadventure.automation.init.EriniumAutomationModFeatures;
 import fr.eriniumgroup.eriniumadventure.automation.init.EriniumAutomationModBlocks;
 import fr.eriniumgroup.eriniumadventure.automation.init.EriniumAutomationModBlockEntities;
 
@@ -59,7 +58,6 @@ public class EriniumAutomationMod {
 		EriniumAutomationModItems.REGISTRY.register(bus);
 
 		EriniumAutomationModTabs.REGISTRY.register(bus);
-		EriniumAutomationModFeatures.REGISTRY.register(bus);
 
 		EriniumAutomationModMenus.REGISTRY.register(bus);
 	}

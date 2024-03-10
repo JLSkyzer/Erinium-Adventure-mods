@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "farmer_bottom",
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Farmer Block",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 3.0,
     "resistance": 3.0,
     "hasGravity": false,
@@ -127,7 +129,7 @@
     "onTickUpdate": {
       "name": "FarmerBlockUpdateTick"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [],
     "generationShape": "UNIFORM",

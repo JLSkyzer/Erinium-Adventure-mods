@@ -10,6 +10,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.client.gui.components.EditBox;
 
@@ -43,7 +44,6 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 			Count = (entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_page * 7;
 			slot_count = 0;
 			whilecount = 0;
-			lore_count = 0;
 			String cheminDossier = (FMLPaths.GAMEDIR.get().toString() + "/EriniumAH/");
 			java.io.File dossier = new java.io.File(cheminDossier);
 			if (dossier.exists() && dossier.isDirectory()) {
@@ -53,7 +53,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 					// ...
 					if (slot_count < 7) {
 						if (Count > 0) {
-							if (whilecount <= Count) {
+							if (whilecount < Count) {
 								whilecount = whilecount + 1;
 							} else {
 								if ((guistate.containsKey("text:search") ? ((EditBox) guistate.get("text:search")).getValue() : "").equals("")) {
@@ -70,6 +70,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 											JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 											java.util.List<net.minecraft.network.chat.Component> componentList = new java.util.ArrayList<>();
 											tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
+											lore_count = 0;
 											if (!(tempItem.getItem() == Blocks.AIR.asItem())) {
 												while (JsonObject.has(("lore" + new java.text.DecimalFormat("##").format(lore_count)))) {
 													componentList.add(net.minecraft.network.chat.Component.literal(JsonObject.get(("lore" + new java.text.DecimalFormat("##").format(lore_count))).getAsString()));
@@ -105,6 +106,8 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 													net.minecraft.world.item.enchantment.EnchantmentHelper.setEnchantments(net.minecraft.world.item.enchantment.EnchantmentHelper.deserializeEnchantments(listTag), tempItem);
 												}
 												tempItem.setDamageValue((int) JsonObject.get("damage").getAsDouble());
+												tempItem.setHoverName(Component.literal(JsonObject.get("name").getAsString()));
+												tempItem.getOrCreateTag().putString("name", JsonObject.get("name").getAsString());
 												tempItem.getOrCreateTag().putString("player", JsonObject.get("player").getAsString());
 												tempItem.getOrCreateTag().putString("uuid", JsonObject.get("uuid").getAsString());
 												tempItem.getOrCreateTag().putString("id", currentFile.getName());
@@ -137,6 +140,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 											java.util.List<net.minecraft.network.chat.Component> componentList = new java.util.ArrayList<>();
 											tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
 											if (!(tempItem.getItem() == Blocks.AIR.asItem()) && (tempItem.getDisplayName().getString()).contains(guistate.containsKey("text:search") ? ((EditBox) guistate.get("text:search")).getValue() : "")) {
+												lore_count = 0;
 												while (JsonObject.has(("lore" + new java.text.DecimalFormat("##").format(lore_count)))) {
 													componentList.add(net.minecraft.network.chat.Component.literal(JsonObject.get(("lore" + new java.text.DecimalFormat("##").format(lore_count))).getAsString()));
 													lore_count = lore_count + 1;
@@ -171,6 +175,8 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 													net.minecraft.world.item.enchantment.EnchantmentHelper.setEnchantments(net.minecraft.world.item.enchantment.EnchantmentHelper.deserializeEnchantments(listTag), tempItem);
 												}
 												tempItem.setDamageValue((int) JsonObject.get("damage").getAsDouble());
+												tempItem.setHoverName(Component.literal(JsonObject.get("name").getAsString()));
+												tempItem.getOrCreateTag().putString("name", JsonObject.get("name").getAsString());
 												tempItem.getOrCreateTag().putString("player", JsonObject.get("player").getAsString());
 												tempItem.getOrCreateTag().putString("uuid", JsonObject.get("uuid").getAsString());
 												tempItem.getOrCreateTag().putString("id", currentFile.getName());
@@ -206,6 +212,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 										java.util.List<net.minecraft.network.chat.Component> componentList = new java.util.ArrayList<>();
 										tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
 										if (!(tempItem.getItem() == Blocks.AIR.asItem())) {
+											lore_count = 0;
 											while (JsonObject.has(("lore" + new java.text.DecimalFormat("##").format(lore_count)))) {
 												componentList.add(net.minecraft.network.chat.Component.literal(JsonObject.get(("lore" + new java.text.DecimalFormat("##").format(lore_count))).getAsString()));
 												lore_count = lore_count + 1;
@@ -240,6 +247,8 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 												net.minecraft.world.item.enchantment.EnchantmentHelper.setEnchantments(net.minecraft.world.item.enchantment.EnchantmentHelper.deserializeEnchantments(listTag), tempItem);
 											}
 											tempItem.setDamageValue((int) JsonObject.get("damage").getAsDouble());
+											tempItem.setHoverName(Component.literal(JsonObject.get("name").getAsString()));
+											tempItem.getOrCreateTag().putString("name", JsonObject.get("name").getAsString());
 											tempItem.getOrCreateTag().putString("player", JsonObject.get("player").getAsString());
 											tempItem.getOrCreateTag().putString("uuid", JsonObject.get("uuid").getAsString());
 											tempItem.getOrCreateTag().putString("id", currentFile.getName());
@@ -272,6 +281,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 										java.util.List<net.minecraft.network.chat.Component> componentList = new java.util.ArrayList<>();
 										tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
 										if (!(tempItem.getItem() == Blocks.AIR.asItem()) && (tempItem.getDisplayName().getString()).contains(guistate.containsKey("text:search") ? ((EditBox) guistate.get("text:search")).getValue() : "")) {
+											lore_count = 0;
 											while (JsonObject.has(("lore" + new java.text.DecimalFormat("##").format(lore_count)))) {
 												componentList.add(net.minecraft.network.chat.Component.literal(JsonObject.get(("lore" + new java.text.DecimalFormat("##").format(lore_count))).getAsString()));
 												lore_count = lore_count + 1;
@@ -306,6 +316,8 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 												net.minecraft.world.item.enchantment.EnchantmentHelper.setEnchantments(net.minecraft.world.item.enchantment.EnchantmentHelper.deserializeEnchantments(listTag), tempItem);
 											}
 											tempItem.setDamageValue((int) JsonObject.get("damage").getAsDouble());
+											tempItem.setHoverName(Component.literal(JsonObject.get("name").getAsString()));
+											tempItem.getOrCreateTag().putString("name", JsonObject.get("name").getAsString());
 											tempItem.getOrCreateTag().putString("player", JsonObject.get("player").getAsString());
 											tempItem.getOrCreateTag().putString("uuid", JsonObject.get("uuid").getAsString());
 											tempItem.getOrCreateTag().putString("id", currentFile.getName());

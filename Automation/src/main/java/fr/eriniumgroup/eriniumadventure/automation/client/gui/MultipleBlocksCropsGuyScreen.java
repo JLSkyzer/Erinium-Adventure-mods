@@ -105,11 +105,7 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 	@Override
 	public void init() {
 		super.init();
-		result_min = new EditBox(this.font, this.leftPos + 6, this.topPos + 88, 54, 20, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_min")) {
-			{
-				setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_min").getString());
-			}
-
+		result_min = new EditBox(this.font, this.leftPos + 7, this.topPos + 89, 52, 18, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_min")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -128,14 +124,11 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 					setSuggestion(null);
 			}
 		};
+		result_min.setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_min").getString());
 		result_min.setMaxLength(32767);
 		guistate.put("text:result_min", result_min);
 		this.addWidget(this.result_min);
-		result_max = new EditBox(this.font, this.leftPos + 6, this.topPos + 106, 54, 20, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_max")) {
-			{
-				setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_max").getString());
-			}
-
+		result_max = new EditBox(this.font, this.leftPos + 7, this.topPos + 107, 52, 18, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_max")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -154,14 +147,11 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 					setSuggestion(null);
 			}
 		};
+		result_max.setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.result_max").getString());
 		result_max.setMaxLength(32767);
 		guistate.put("text:result_max", result_max);
 		this.addWidget(this.result_max);
-		seed_min = new EditBox(this.font, this.leftPos + 114, this.topPos + 88, 54, 20, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.seed_min")) {
-			{
-				setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.seed_min").getString());
-			}
-
+		seed_min = new EditBox(this.font, this.leftPos + 115, this.topPos + 89, 52, 18, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.seed_min")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -180,14 +170,11 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 					setSuggestion(null);
 			}
 		};
+		seed_min.setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.seed_min").getString());
 		seed_min.setMaxLength(32767);
 		guistate.put("text:seed_min", seed_min);
 		this.addWidget(this.seed_min);
-		seed_max = new EditBox(this.font, this.leftPos + 114, this.topPos + 106, 54, 20, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.seed_max")) {
-			{
-				setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.seed_max").getString());
-			}
-
+		seed_max = new EditBox(this.font, this.leftPos + 115, this.topPos + 107, 52, 18, Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.seed_max")) {
 			@Override
 			public void insertText(String text) {
 				super.insertText(text);
@@ -206,6 +193,7 @@ public class MultipleBlocksCropsGuyScreen extends AbstractContainerScreen<Multip
 					setSuggestion(null);
 			}
 		};
+		seed_max.setSuggestion(Component.translatable("gui.erinium_automation.multiple_blocks_crops_guy.seed_max").getString());
 		seed_max.setMaxLength(32767);
 		guistate.put("text:seed_max", seed_max);
 		this.addWidget(this.seed_max);

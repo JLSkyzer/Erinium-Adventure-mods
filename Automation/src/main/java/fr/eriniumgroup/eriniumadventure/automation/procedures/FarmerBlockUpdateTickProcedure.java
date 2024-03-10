@@ -1,5 +1,7 @@
 package fr.eriniumgroup.eriniumadventure.automation.procedures;
 
+import org.checkerframework.checker.units.qual.s;
+
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.fml.loading.FMLPaths;
@@ -41,8 +43,18 @@ public class FarmerBlockUpdateTickProcedure {
 		double while_nbr_2 = 0;
 		boolean finish_loop = false;
 		boolean finish_loop_2 = false;
-		modid = ((ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock()).toString())).split(":")[0];
-		blockid = ((ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock()).toString())).split(":")[1];
+		modid = new Object() {
+			private String split(String text, String space, int index) {
+				String s = text.split(space)[index];
+				return s;
+			}
+		}.split((ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock()).toString()), ":", (int) 0);
+		blockid = new Object() {
+			private String split(String text, String space, int index) {
+				String s = text.split(space)[index];
+				return s;
+			}
+		}.split((ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock()).toString()), ":", (int) 1);
 		file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/" + modid + "/"), File.separator + (blockid + ".json"));
 		if (file.exists()) {
 			finish_loop = false;

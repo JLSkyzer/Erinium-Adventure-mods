@@ -17,7 +17,7 @@ public class Line3PriceProcedure {
 			return "";
 		if (!((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(3)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())) {
 			return (entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).theme_text_color + ""
-					+ (new java.text.DecimalFormat("#,###,##").format(
+					+ (new java.text.DecimalFormat("#,###.##").format(
 							(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(3)).getItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("price")))
 					+ " $";
 		}

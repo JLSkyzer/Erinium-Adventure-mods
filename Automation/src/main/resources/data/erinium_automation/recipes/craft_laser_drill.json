@@ -2,34 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "012",
-    "345",
-    "6 8"
+    "aba",
+    "acd",
+    "a a"
   ],
   "key": {
-    "0": {
+    "a": {
       "item": "erinium_automation:dark_iron_block"
     },
-    "1": {
+    "b": {
       "item": "erinium_automation:amenine_gem"
     },
-    "2": {
-      "item": "erinium_automation:dark_iron_block"
-    },
-    "3": {
-      "item": "erinium_automation:dark_iron_block"
-    },
-    "4": {
+    "c": {
       "item": "erinium_automation:battery"
     },
-    "5": {
+    "d": {
       "item": "minecraft:stone_button"
-    },
-    "6": {
-      "item": "erinium_automation:dark_iron_block"
-    },
-    "8": {
-      "item": "erinium_automation:dark_iron_block"
     }
   },
   "result": {

@@ -6,9 +6,9 @@ license="MIT License"
 modId="erinium_automation"
 version="1.0.3"
 displayName="eriunium_automation"
-credits="Created thanks to MCreator"
 displayURL="https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation"
 logoFile="logo.png"
+credits="Created thanks to MCreator"
 authors="JLSkyzer"
 description="Mod created by JLSkyzer"
 
@@ -27,10 +27,4 @@ description="Mod created by JLSkyzer"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.erinium_automation]]
-    modId="crafttweaker"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 

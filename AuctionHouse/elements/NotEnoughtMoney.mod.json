@@ -1,0 +1,11 @@
+{
+  "_fv": 57,
+  "_type": "toast",
+  "definition": {
+    "title": "Erinium Auction House",
+    "description": "§4Not enough money !",
+    "icon": "None",
+    "background": "Default",
+    "durationTime": 5000
+  }
+}

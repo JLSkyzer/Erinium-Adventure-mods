@@ -23,13 +23,6 @@ public class ClearAllProcedure {
 			count = count + 1;
 		}
 		{
-			double _setval = 0;
-			entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.ah_page = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
 			boolean _setval = false;
 			entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.ah_initialised = _setval;

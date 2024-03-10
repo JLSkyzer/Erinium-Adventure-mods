@@ -34,8 +34,18 @@ public class OneBlockCropGuiValidateProcedure {
 		String blockid = "";
 		String modid = "";
 		if (!(ForgeRegistries.ITEMS.getValue(new ResourceLocation(((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : "")).toLowerCase(java.util.Locale.ENGLISH))) == Blocks.AIR.asItem())) {
-			modid = ((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : "")).split(":")[0];
-			blockid = ((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : "")).split(":")[1];
+			modid = new Object() {
+				private String split(String text, String space, int index) {
+					String s = text.split(space)[index];
+					return s;
+				}
+			}.split((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : ""), ":", (int) 0);
+			blockid = new Object() {
+				private String split(String text, String space, int index) {
+					String s = text.split(space)[index];
+					return s;
+				}
+			}.split((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : ""), ":", (int) 1);
 			if (!((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())
 					&& !((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY).getItem() == Blocks.AIR.asItem())) {
 				file = new File((FMLPaths.GAMEDIR.get().toString() + "/config/eriniumAutomation/Farmer/" + modid + "/"), File.separator + (blockid + ".json"));

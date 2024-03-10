@@ -1,8 +1,9 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "command",
   "definition": {
     "commandName": "erilog",
+    "type": "STANDARD",
     "permissionLevel": "3",
     "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"string\"><field name=\"type\">word</field><field name=\"name\">type</field><statement name=\"args\"><block type=\"literal\"><field name=\"name\">info</field><statement name=\"args\"><block type=\"message\"><field name=\"name\">message</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ErilogInfo</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">warn</field><statement name=\"args\"><block type=\"message\"><field name=\"name\">message</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ErilogWarn</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">error</field><statement name=\"args\"><block type=\"message\"><field name=\"name\">message</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ErilogError</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">success</field><statement name=\"args\"><block type=\"message\"><field name=\"name\">message</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ErilogSuccess</field></block></statement></block></statement></block></next></block></next></block></next></block></statement></block></next></block></xml>"
   }

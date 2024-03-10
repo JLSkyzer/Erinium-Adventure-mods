@@ -31,7 +31,7 @@ public class AmenineOreBlock extends Block {
 	@Override
 	public void appendHoverText(ItemStack itemstack, BlockGetter world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(Component.translatable("\u00A725% chance to drop Amenine gem"));
+		list.add(Component.literal("\u00A725% chance to drop Amenine gem"));
 	}
 
 	@Override

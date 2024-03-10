@@ -5,6 +5,6 @@
     "commandName": "ah",
     "type": "STANDARD",
     "permissionLevel": "No requirement",
-    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"call_procedure\"><field name=\"procedure\">OpenAH</field></block></next></block></xml>"
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"literal\"><field name=\"name\">sell</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">OpenSellGui</field></block></statement><next><block type=\"literal\"><field name=\"name\">theme</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">OpenThemeSelect</field></block></statement><next><block type=\"call_procedure\"><field name=\"procedure\">OpenAH</field></block></next></block></next></block></next></block></xml>"
   }
 }

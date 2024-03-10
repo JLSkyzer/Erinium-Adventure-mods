@@ -1,3 +1,23 @@
 {
-  "gui.erinium_ah.ah_main_menu.search": ""
+  "toasts.erinium_ah.not_enought_money.title": "Erinium Auction House",
+  "gui.erinium_ah.sell_gui.announce": "Announce (1000$)",
+  "gui.erinium_ah.sell_gui.quantity": "",
+  "toasts.erinium_ah.not_enought_money.description": "§4Not enough money !",
+  "gui.erinium_ah.theme_select_0.label_dark": "Dark",
+  "gui.erinium_ah.theme_select_0.label_blue_royal_purple": "Blue royal purple",
+  "gui.erinium_ah.buy_gui.label_buy": "Buy",
+  "gui.erinium_ah.delete_items.label_are_you_sure_you_want_to_delete": "Are you sure you want to delete this item ?",
+  "gui.erinium_ah.delete_items.button_yes": "Yes",
+  "gui.erinium_ah.sell_gui.button_sell": "Sell",
+  "gui.erinium_ah.theme_select_0.label_red": "Red",
+  "gui.erinium_ah.sell_gui.label_quantity": "Quantity",
+  "gui.erinium_ah.buy_gui.label_quantity": "Quantity",
+  "gui.erinium_ah.ah_main_menu.search": "",
+  "gui.erinium_ah.sell_gui.label_price_unity": "Price (unity)",
+  "gui.erinium_ah.sell_gui.price": "",
+  "gui.erinium_ah.theme_select_0.label_white": "White",
+  "gui.erinium_ah.ah_main_menu.label_market": "Market",
+  "gui.erinium_ah.buy_gui.quantity": "",
+  "gui.erinium_ah.buy_gui.label_money": "Money : ",
+  "gui.erinium_ah.sell_gui.label_sell_item": "Sell Item"
 }

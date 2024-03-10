@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "dark_metal",
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Astral Miner",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 5.0,
     "resistance": 5.0,
     "hasGravity": false,
@@ -122,7 +124,7 @@
     "onTickUpdate": {
       "name": "AstralMinerTick"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [],
     "generationShape": "UNIFORM",
