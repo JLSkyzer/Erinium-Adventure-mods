@@ -84,3 +84,47 @@ Here the json parameter :
 ```
 JOB_ID is the job id (only one !)
 LEVEL is the required level between 0 and 100 (set 101 to completly disable an item or block !)
+
+## Ericonomy
+
+Ericonomy is basic economy mod
+You can pay, give, set, take, reset like an other economy mod !
+Here basic command :
+- /pay (player) (amount) | To pay a player
+- /money | To get your balance
+For admin
+To have admin access, go here MINECRAFTFOLDER/Ericonomy/accounts/YOURUUID.json and set "ericonomy.admin" to true. Here command :
+- /money (player) | To get player balance
+- /money reset (player) | To reset player balance
+- /money take (player) (amount) | To take money from player
+- /money set (player) (amount) | Set amount to player balance
+- /money give (player) (amount) | Give money to player
+
+To change default balance value go here:
+MINECRAFTFOLDER/config/ericonomy-common.toml
+
+## Erinium Auction House
+One of my biggest mod, this mod add an action house to sell item to other players !
+
+<span style='color: red;'>This mod require Ericonomy</span>
+
+### Here some screen
+![](https://media.discordapp.net/attachments/719811588076470312/1216060561872388136/image.png?ex=65ff03a7&is=65ec8ea7&hm=ade48c9e99b60700ad6b18887aeb54740884dc00d80bfcf463e7c4d23e68c642&=&format=webp&quality=lossless&width=810&height=430)
+![](https://media.discordapp.net/attachments/719811588076470312/1216065337141886986/image.png?ex=65ff0819&is=65ec9319&hm=58c628dbc603849d24297ffd825ee4742b222717042040723fbb21f1cb0fa290&=&format=webp&quality=lossless&width=810&height=430)
+
+### Here the list of command:
+- /ah | To open the Auction house
+- /ah sell | to sell items
+- /ah theme | To change the theme of the Auction House
+
+### FAQ
+Q. how to delete an item i set in the Auction House ?
+
+A. Just click on buy button you will able to delete the item (you will not pay)
+
+## Erilog
+
+This is a basic log mod
+how to use ?
+/erilog (type) (info, warn, error, success) (message)
+the file will be here MINECRAFTFOLDER/EriniumLogs/(TYPE)/LASTFILE.erilog
