@@ -67,24 +67,28 @@ public class RocketHeadTickProcedure {
 				} else {
 					if (entity.getY() < 10000) {
 						if (entity.getY() >= 5000 && entity.getY() < 7500) {
+							entity.setDeltaMovement(new Vec3(0, 0, 0));
 							entity.setDeltaMovement(new Vec3(0, ReturnLiftOffSpeedProcedure.execute(entity), 0));
 							if (world instanceof ServerLevel _level)
-								_level.sendParticles(ParticleTypes.CLOUD, x, (y - 2), z, 10, 0, 0, 0, 1);
+								_level.sendParticles(ParticleTypes.CLOUD, x, (entity.getY() - 8), z, 10, 0, 0, 0, 1);
 							if (world instanceof ServerLevel _level)
-								_level.sendParticles(ParticleTypes.FLAME, x, (y - 2), z, 50, 0, (-1), 0, 0.15);
+								_level.sendParticles(ParticleTypes.FLAME, x, (entity.getY() - 8), z, 50, 0, 0, 0, 1);
 						} else if (entity.getY() >= 7500) {
+							entity.setDeltaMovement(new Vec3(0, 0, 0));
 							entity.setDeltaMovement(new Vec3(0, ReturnLiftOffSpeedProcedure.execute(entity), 0));
 							if (world instanceof ServerLevel _level)
-								_level.sendParticles(ParticleTypes.CLOUD, x, (y - 2), z, 30, 0, 0, 0, 1);
+								_level.sendParticles(ParticleTypes.CLOUD, x, (entity.getY() - 8), z, 30, 0, 0, 0, 1);
 							if (world instanceof ServerLevel _level)
-								_level.sendParticles(ParticleTypes.FLAME, x, (y - 2), z, 20, 0, (-1), 0, 0.15);
+								_level.sendParticles(ParticleTypes.FLAME, x, (entity.getY() - 8), z, 20, 0, 0, 0, 1);
 						} else {
+							entity.setDeltaMovement(new Vec3(0, 0, 0));
 							entity.setDeltaMovement(new Vec3(0, ReturnLiftOffSpeedProcedure.execute(entity), 0));
 						}
 					} else {
+						entity.setDeltaMovement(new Vec3(0, 0, 0));
 						entity.setDeltaMovement(new Vec3(0, 1, 0));
 						if (world instanceof ServerLevel _level)
-							_level.sendParticles(ParticleTypes.CLOUD, x, (y - 2), z, 70, 0, 0, 0, 1);
+							_level.sendParticles(ParticleTypes.CLOUD, x, (entity.getY() - 8), z, 70, 0, 0, 0, 1);
 					}
 				}
 			} else {

@@ -19,6 +19,7 @@ public class RocketBoosterOnEntityTickUpdateProcedure {
 					_datEntSetI.getEntityData().set(RocketBoosterEntity.DATA_countdown, (int) ((entity instanceof RocketBoosterEntity _datEntI ? _datEntI.getEntityData().get(RocketBoosterEntity.DATA_countdown) : 0) - 1));
 			} else {
 				if (entity.getY() < 4994) {
+					entity.setDeltaMovement(new Vec3(0, 0, 0));
 					entity.setDeltaMovement(new Vec3(0, ReturnLiftOffSpeedBoosterProcedure.execute(entity), 0));
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.LARGE_SMOKE, x, (y - 2), z, 10, 0, 0, 0, 1);
@@ -33,8 +34,8 @@ public class RocketBoosterOnEntityTickUpdateProcedure {
 						_datEntSetL.getEntityData().set(RocketBoosterEntity.DATA_Lifting, false);
 				}
 			}
-		} else if (entity instanceof RocketBoosterEntity _datEntL11 && _datEntL11.getEntityData().get(RocketBoosterEntity.DATA_descend)) {
-			entity.setDeltaMovement(new Vec3(0, (-0.01), 0));
+		} else if (entity instanceof RocketBoosterEntity _datEntL12 && _datEntL12.getEntityData().get(RocketBoosterEntity.DATA_descend)) {
+			entity.setDeltaMovement(new Vec3(0, 1, 0));
 			EriniumAdventureMod.queueServerWork(200, () -> {
 				if (!entity.level().isClientSide())
 					entity.discard();
