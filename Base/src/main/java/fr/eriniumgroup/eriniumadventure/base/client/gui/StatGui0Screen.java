@@ -6,11 +6,16 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.GuiGraphics;
 
 import java.util.HashMap;
 
 import fr.eriniumgroup.eriniumadventure.base.world.inventory.StatGui0Menu;
+import fr.eriniumgroup.eriniumadventure.base.procedures.FlammeReturnYesProcedure;
+import fr.eriniumgroup.eriniumadventure.base.procedures.FlameReturnNoProcedure;
+import fr.eriniumgroup.eriniumadventure.base.network.StatGui0ButtonMessage;
+import fr.eriniumgroup.eriniumadventure.base.EriniumAdventureMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -19,6 +24,7 @@ public class StatGui0Screen extends AbstractContainerScreen<StatGui0Menu> {
 	private final Level world;
 	private final int x, y, z;
 	private final Player entity;
+	ImageButton imagebutton_buy_green_x;
 
 	public StatGui0Screen(StatGui0Menu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -46,6 +52,9 @@ public class StatGui0Screen extends AbstractContainerScreen<StatGui0Menu> {
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
 		guiGraphics.blit(texture, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight, this.imageWidth, this.imageHeight);
+		if (FlameReturnNoProcedure.execute(world, entity)) {
+			guiGraphics.blit(new ResourceLocation("erinium_adventure:textures/screens/buy_red_x.png"), this.leftPos + 27, this.topPos + 27, 0, 0, 18, 18, 18, 18);
+		}
 		RenderSystem.disableBlend();
 	}
 
@@ -76,5 +85,19 @@ public class StatGui0Screen extends AbstractContainerScreen<StatGui0Menu> {
 	@Override
 	public void init() {
 		super.init();
+		imagebutton_buy_green_x = new ImageButton(this.leftPos + 27, this.topPos + 27, 18, 18, 0, 0, 18, new ResourceLocation("erinium_adventure:textures/screens/atlas/imagebutton_buy_green_x.png"), 18, 36, e -> {
+			if (FlammeReturnYesProcedure.execute(world, entity)) {
+				EriniumAdventureMod.PACKET_HANDLER.sendToServer(new StatGui0ButtonMessage(0, x, y, z));
+				StatGui0ButtonMessage.handleButtonAction(entity, 0, x, y, z);
+			}
+		}) {
+			@Override
+			public void render(GuiGraphics guiGraphics, int gx, int gy, float ticks) {
+				if (FlammeReturnYesProcedure.execute(world, entity))
+					super.render(guiGraphics, gx, gy, ticks);
+			}
+		};
+		guistate.put("button:imagebutton_buy_green_x", imagebutton_buy_green_x);
+		this.addRenderableWidget(imagebutton_buy_green_x);
 	}
 }

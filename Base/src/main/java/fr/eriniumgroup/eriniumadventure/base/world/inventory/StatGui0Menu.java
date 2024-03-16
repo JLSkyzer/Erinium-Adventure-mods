@@ -255,7 +255,7 @@ public class StatGui0Menu extends AbstractContainerMenu implements Supplier<Map<
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			StatGui0WhileThisGUIIsOpenTickProcedure.execute();
+			StatGui0WhileThisGUIIsOpenTickProcedure.execute(entity);
 		}
 	}
 }

@@ -40,6 +40,34 @@
           "x": 9,
           "y": 27
         }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_buy_green_x",
+          "image": "buy_green_x.png",
+          "hoveredImage": "buy_green_x_hover.png",
+          "onClick": {
+            "name": "FlameBtnAction"
+          },
+          "displayCondition": {
+            "name": "FlammeReturnYes"
+          },
+          "x": 27,
+          "y": 27
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "buy_red_x.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "FlameReturnNo"
+          },
+          "x": 27,
+          "y": 27
+        }
       }
     ],
     "onTick": {

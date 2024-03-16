@@ -1,0 +1,12 @@
+{
+  "_fv": 57,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "S",
+    "keyBindingName": "Open Stats Gui",
+    "keyBindingCategoryKey": "eriniumadventure",
+    "onKeyPressed": {
+      "name": "OpenStatsGui"
+    }
+  }
+}

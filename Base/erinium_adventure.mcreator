@@ -760,6 +760,7 @@
       "metadata": {
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/world/inventory/StatGui0Menu.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/network/StatGui0ButtonMessage.java",
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/gui/StatGui0Screen.java"
         ]
       },
@@ -776,9 +777,390 @@
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/StatGui0WhileThisGUIIsOpenTickProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
       "path": "~/StatsSystem/Gui/Stats"
+    },
+    {
+      "name": "OpenStatsGui",
+      "type": "procedure",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_stats_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/OpenStatsGuiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/StatsSystem/Procedure"
+    },
+    {
+      "name": "OpenStatsGuiKey",
+      "type": "keybind",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_stats_gui_key",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/network/OpenStatsGuiKeyMessage.java"
+        ]
+      },
+      "path": "~/StatsSystem/KeyBinds"
+    },
+    {
+      "name": "Stats",
+      "type": "command",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stats",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/command/StatsCommand.java"
+        ]
+      },
+      "path": "~/StatsSystem/Command"
+    },
+    {
+      "name": "FlameIcon",
+      "type": "item",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flame_icon",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/FlameIconItem.java",
+          "src/main/resources/assets/erinium_adventure/models/item/flame_icon.json"
+        ]
+      },
+      "path": "~/StatsSystem/Items"
+    },
+    {
+      "name": "FlammeReturnYes",
+      "type": "procedure",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flamme_return_yes",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/FlammeReturnYesProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/StatsSystem/Gui/Stats/condition"
+    },
+    {
+      "name": "FlameReturnNo",
+      "type": "procedure",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flame_return_no",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/FlameReturnNoProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/StatsSystem/Gui/Stats/condition"
+    },
+    {
+      "name": "FlameBtnAction",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flame_btn_action",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/FlameBtnActionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/StatsSystem/Gui/Stats/Btn"
+    },
+    {
+      "name": "OnTakeDamage",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_take_damage",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/StatsSystem"
+    },
+    {
+      "name": "HealthOverlay",
+      "type": "overlay",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "health_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/screens/HealthOverlayOverlay.java"
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "IsCreativeMod",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_creative_mod",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/IsCreativeModProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "ReturnHealth",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_health",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnHealthProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "ReturnHealthInt",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_health_int",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnHealthIntProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "ReturnMaxHealthIn",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_max_health_in",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnMaxHealthInProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "JoinTheWorld",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "join_the_world",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/JoinTheWorldProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerTick",
+      "type": "procedure",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/PlayerTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OnHeal",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_heal",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/OnHealProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/StatsSystem"
+    },
+    {
+      "name": "OnRespawn",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_respawn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/OnRespawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TestProced",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_proced",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestProcedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -799,32 +1181,66 @@
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
+    },
+    {
+      "name": "stat_initialised",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "health",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "20.0"
+    },
+    {
+      "name": "max_health",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "20.0"
+    },
+    {
+      "name": "Health_regen_tick",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "20.0"
+    },
+    {
+      "name": "health_damage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "20.0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.erinium_adventure.flame_icon": "Flame Icon",
+      "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
+      "entity.erinium_adventure.rocket_booster": "Rocket Booster",
+      "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
+      "item.erinium_adventure.rocket_booster_spawn_egg": "Rocket Booster Spawn Egg",
+      "stats.flame.desc": "Decrease flame damage",
+      "block.erinium_adventure.light_dark_brick": "Light Dark Brick",
       "item.erinium_adventure.nitriate_pickaxe": "Nitriate Pickaxe",
       "item.erinium_adventure.nitriate_armor_helmet": "Nitriate Helmet",
       "item.erinium_adventure.logo_erinium": "Logo Erinium",
       "item.erinium_adventure.rocket_head_spawn_egg": "Rocket Head Spawn Egg",
-      "item.erinium_adventure.nitriate_hoe": "Nitriate Hoe",
-      "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
       "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
-      "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
-      "entity.erinium_adventure.rocket_booster": "Rocket Booster",
-      "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
+      "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
+      "item.erinium_adventure.nitriate_hoe": "Nitriate Hoe",
       "entity.erinium_adventure.rocket_head": "Rocket Head",
       "block.erinium_adventure.cave_block": "Cave Block",
       "item.erinium_adventure.nitriate_armor_chestplate": "Nitriate Chestplate",
-      "item.erinium_adventure.rocket_booster_spawn_egg": "Rocket Booster Spawn Egg",
+      "key.categories.eriniumadventure": "§e§lErinium Adventure",
       "key.erinium_adventure.launch": "Launch",
       "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
       "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
       "item.erinium_adventure.nitriate_sword": "Nitriate Sword",
       "item.erinium_adventure.nitriate_armor_leggings": "Nitriate Leggings",
       "gui.erinium_adventure.stat_gui_0.label_stats": "Stats",
-      "block.erinium_adventure.light_dark_brick": "Light Dark Brick"
+      "key.erinium_adventure.open_stats_gui_key": "Open Stats Gui"
     }
   },
   "foldersRoot": {
@@ -850,9 +1266,34 @@
             "children": [
               {
                 "name": "Stats",
-                "children": []
+                "children": [
+                  {
+                    "name": "condition",
+                    "children": []
+                  },
+                  {
+                    "name": "Btn",
+                    "children": []
+                  }
+                ]
               }
             ]
+          },
+          {
+            "name": "Command",
+            "children": []
+          },
+          {
+            "name": "KeyBinds",
+            "children": []
+          },
+          {
+            "name": "Procedure",
+            "children": []
+          },
+          {
+            "name": "Items",
+            "children": []
           }
         ]
       },
@@ -867,6 +1308,15 @@
                 "children": []
               }
             ]
+          }
+        ]
+      },
+      {
+        "name": "Overlay",
+        "children": [
+          {
+            "name": "Health",
+            "children": []
           }
         ]
       }

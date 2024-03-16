@@ -15,6 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
+import fr.eriniumgroup.eriniumadventure.base.network.OpenStatsGuiKeyMessage;
 import fr.eriniumgroup.eriniumadventure.base.network.LaunchMessage;
 import fr.eriniumgroup.eriniumadventure.base.EriniumAdventureMod;
 
@@ -33,10 +34,24 @@ public class EriniumAdventureModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping OPEN_STATS_GUI_KEY = new KeyMapping("key.erinium_adventure.open_stats_gui_key", GLFW.GLFW_KEY_S, "key.categories.eriniumadventure") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				EriniumAdventureMod.PACKET_HANDLER.sendToServer(new OpenStatsGuiKeyMessage(0, 0));
+				OpenStatsGuiKeyMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(LAUNCH);
+		event.register(OPEN_STATS_GUI_KEY);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -45,6 +60,7 @@ public class EriniumAdventureModKeyMappings {
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
 				LAUNCH.consumeClick();
+				OPEN_STATS_GUI_KEY.consumeClick();
 			}
 		}
 	}
