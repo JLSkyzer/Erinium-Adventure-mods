@@ -745,6 +745,21 @@
         ]
       },
       "path": "~/SpaceFeature/Rocket/Overlay"
+    },
+    {
+      "name": "StatGui0",
+      "type": "gui",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stat_gui_0",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/world/inventory/StatGui0Menu.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/gui/StatGui0Screen.java"
+        ]
+      },
+      "path": "~/StatsSystem/Gui/Stats"
     }
   ],
   "variable_elements": [
@@ -809,7 +824,17 @@
       },
       {
         "name": "StatsSystem",
-        "children": []
+        "children": [
+          {
+            "name": "Gui",
+            "children": [
+              {
+                "name": "Stats",
+                "children": []
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "SpaceFeature",

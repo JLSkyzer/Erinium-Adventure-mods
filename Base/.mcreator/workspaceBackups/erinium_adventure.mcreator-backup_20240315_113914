@@ -456,6 +456,10 @@
         ],
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "x",
             "type": "number"
           },
@@ -745,6 +749,62 @@
         ]
       },
       "path": "~/SpaceFeature/Rocket/Overlay"
+    },
+    {
+      "name": "StatGui0",
+      "type": "gui",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stat_gui_0",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/world/inventory/StatGui0Menu.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/network/StatGui0SlotMessage.java",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/gui/StatGui0Screen.java"
+        ]
+      },
+      "path": "~/StatsSystem/Gui/Stats"
+    },
+    {
+      "name": "TestSlot",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_slot",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestSlotProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/StatsSystem/Gui/Stats"
+    },
+    {
+      "name": "StatGui0WhileThisGUIIsOpenTick",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stat_gui_0_while_this_gui_is_open_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/StatGui0WhileThisGUIIsOpenTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/StatsSystem/Gui/Stats"
     }
   ],
   "variable_elements": [
@@ -809,7 +869,17 @@
       },
       {
         "name": "StatsSystem",
-        "children": []
+        "children": [
+          {
+            "name": "Gui",
+            "children": [
+              {
+                "name": "Stats",
+                "children": []
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "SpaceFeature",

@@ -809,7 +809,17 @@
       },
       {
         "name": "StatsSystem",
-        "children": []
+        "children": [
+          {
+            "name": "Gui",
+            "children": [
+              {
+                "name": "Stats",
+                "children": []
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "SpaceFeature",
