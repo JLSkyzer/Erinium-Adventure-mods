@@ -1,5 +1,8 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.LevelAccessor;
@@ -25,21 +28,19 @@ public class TestCmdProcedure {
 		if (entity == null)
 			return;
 		File File = new File("");
-		ItemStack item = ItemStack.EMPTY;
-		ItemStack item2 = ItemStack.EMPTY;
-		if (entity instanceof ServerPlayer _ent) {
-			BlockPos _bpos = BlockPos.containing(x, y, z);
-			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
-				@Override
-				public Component getDisplayName() {
-					return Component.literal("StatGui0");
-				}
+		//ItemStack item = ItemStack.EMPTY;
+		//ItemStack item2 = ItemStack.EMPTY;
 
-				@Override
-				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new StatGui0Menu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+		entity.animateHurt(1.5F);
+
+		{
+			if (world.isClientSide()){
+				if (entity instanceof LivingEntity livingEntity) {
+					livingEntity.hurtDuration = 10;
+					livingEntity.hurtTime = livingEntity.hurtDuration;
 				}
-			}, _bpos);
+			}
+
 		}
 	}
 }

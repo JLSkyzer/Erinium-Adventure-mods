@@ -2,4 +2,6 @@
 [Basic]
 	#Start money when first join
 	"Start money" = 500.0
+	#The prince of one stones on the cobble void
+	"Cobble Void price for one stone" = 1.0
 

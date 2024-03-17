@@ -10,8 +10,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
+import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.commands.Commands;
 
+import fr.eriniumgroup.eriniumadventure.base.procedures.ResetHealthProcedure;
+import fr.eriniumgroup.eriniumadventure.base.procedures.ResetFlameProcedure;
 import fr.eriniumgroup.eriniumadventure.base.procedures.OpenStatsGuiProcedure;
 
 @Mod.EventBusSubscriber
@@ -20,7 +23,35 @@ public class StatsCommand {
 	public static void registerCommand(RegisterCommandsEvent event) {
 		event.getDispatcher().register(Commands.literal("stats")
 
-				.executes(arguments -> {
+				.then(Commands.literal("reset").then(Commands.argument("player", EntityArgument.player()).then(Commands.literal("flame").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					ResetFlameProcedure.execute(arguments, entity);
+					return 0;
+				})).then(Commands.literal("health").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					ResetHealthProcedure.execute(arguments, entity);
+					return 0;
+				})))).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

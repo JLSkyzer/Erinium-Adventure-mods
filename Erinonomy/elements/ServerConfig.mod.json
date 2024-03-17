@@ -23,6 +23,24 @@
             "enablecomment": true,
             "onlyComment": false,
             "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 1.0,
+            "textDefault": "",
+            "comment": "The prince of one stones on the cobble void",
+            "vardisplay": "Cobble Void price for one stone",
+            "varname": "cobblevoid_priceunit",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
           }
         ]
       }

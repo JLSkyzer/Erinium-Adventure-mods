@@ -47,7 +47,7 @@ public class StatGui0Menu extends AbstractContainerMenu implements Supplier<Map<
 		super(EriniumAdventureModMenus.STAT_GUI_0.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(1);
+		this.internal = new ItemStackHandler(2);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -95,6 +95,19 @@ public class StatGui0Menu extends AbstractContainerMenu implements Supplier<Map<
 				return false;
 			}
 		}));
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 10, 55) {
+			private final int slot = 1;
+
+			@Override
+			public boolean mayPickup(Player entity) {
+				return false;
+			}
+
+			@Override
+			public boolean mayPlace(ItemStack stack) {
+				return false;
+			}
+		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)
 				this.addSlot(new Slot(inv, sj + (si + 1) * 9, 126 + 8 + sj * 18, 167 + 84 + si * 18));
@@ -122,16 +135,16 @@ public class StatGui0Menu extends AbstractContainerMenu implements Supplier<Map<
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 1) {
-				if (!this.moveItemStackTo(itemstack1, 1, this.slots.size(), true))
+			if (index < 2) {
+				if (!this.moveItemStackTo(itemstack1, 2, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 1, false)) {
-				if (index < 1 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 1 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 2, false)) {
+				if (index < 2 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 2 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 1, 1 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 2, 2 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;
@@ -231,11 +244,15 @@ public class StatGui0Menu extends AbstractContainerMenu implements Supplier<Map<
 				for (int j = 0; j < internal.getSlots(); ++j) {
 					if (j == 0)
 						continue;
+					if (j == 1)
+						continue;
 					playerIn.drop(internal.extractItem(j, internal.getStackInSlot(j).getCount(), false), false);
 				}
 			} else {
 				for (int i = 0; i < internal.getSlots(); ++i) {
 					if (i == 0)
+						continue;
+					if (i == 1)
 						continue;
 					playerIn.getInventory().placeItemBackInInventory(internal.extractItem(i, internal.getStackInSlot(i).getCount(), false));
 				}
@@ -255,7 +272,7 @@ public class StatGui0Menu extends AbstractContainerMenu implements Supplier<Map<
 			double x = entity.getX();
 			double y = entity.getY();
 			double z = entity.getZ();
-			StatGui0WhileThisGUIIsOpenTickProcedure.execute(entity);
+			StatGui0WhileThisGUIIsOpenTickProcedure.execute(x, y, z, entity);
 		}
 	}
 }

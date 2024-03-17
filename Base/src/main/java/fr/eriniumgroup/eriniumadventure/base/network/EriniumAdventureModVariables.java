@@ -85,11 +85,14 @@ public class EriniumAdventureModVariables {
 			clone.fire_reduction = original.fire_reduction;
 			clone.health = original.health;
 			clone.max_health = original.max_health;
+			clone.health_multiplier = original.health_multiplier;
+			clone.synchronisation = original.synchronisation;
 			if (!event.isWasDeath()) {
 				clone.needToChoose = original.needToChoose;
 				clone.stat_initialised = original.stat_initialised;
 				clone.Health_regen_tick = original.Health_regen_tick;
 				clone.health_damage = original.health_damage;
+				clone.Health_regen_cooldown = original.Health_regen_cooldown;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -270,6 +273,9 @@ public class EriniumAdventureModVariables {
 		public double max_health = 20.0;
 		public double Health_regen_tick = 20.0;
 		public double health_damage = 20.0;
+		public double Health_regen_cooldown = 20.0;
+		public double health_multiplier = 0;
+		public double synchronisation = 6000.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -285,6 +291,9 @@ public class EriniumAdventureModVariables {
 			nbt.putDouble("max_health", max_health);
 			nbt.putDouble("Health_regen_tick", Health_regen_tick);
 			nbt.putDouble("health_damage", health_damage);
+			nbt.putDouble("Health_regen_cooldown", Health_regen_cooldown);
+			nbt.putDouble("health_multiplier", health_multiplier);
+			nbt.putDouble("synchronisation", synchronisation);
 			return nbt;
 		}
 
@@ -297,6 +306,9 @@ public class EriniumAdventureModVariables {
 			max_health = nbt.getDouble("max_health");
 			Health_regen_tick = nbt.getDouble("Health_regen_tick");
 			health_damage = nbt.getDouble("health_damage");
+			Health_regen_cooldown = nbt.getDouble("Health_regen_cooldown");
+			health_multiplier = nbt.getDouble("health_multiplier");
+			synchronisation = nbt.getDouble("synchronisation");
 		}
 	}
 
@@ -337,6 +349,9 @@ public class EriniumAdventureModVariables {
 					variables.max_health = message.data.max_health;
 					variables.Health_regen_tick = message.data.Health_regen_tick;
 					variables.health_damage = message.data.health_damage;
+					variables.Health_regen_cooldown = message.data.Health_regen_cooldown;
+					variables.health_multiplier = message.data.health_multiplier;
+					variables.synchronisation = message.data.synchronisation;
 				}
 			});
 			context.setPacketHandled(true);

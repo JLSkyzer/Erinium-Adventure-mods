@@ -1,0 +1,12 @@
+{
+  "_fv": 57,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "I",
+    "keyBindingName": "§aInsert All Money",
+    "keyBindingCategoryKey": "ericonomy",
+    "onKeyPressed": {
+      "name": "InsetAllMoney"
+    }
+  }
+}

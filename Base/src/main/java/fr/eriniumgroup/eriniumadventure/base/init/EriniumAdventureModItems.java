@@ -21,6 +21,7 @@ import fr.eriniumgroup.eriniumadventure.base.item.NitriateGemItem;
 import fr.eriniumgroup.eriniumadventure.base.item.NitriateAxeItem;
 import fr.eriniumgroup.eriniumadventure.base.item.NitriateArmorItem;
 import fr.eriniumgroup.eriniumadventure.base.item.LogoEriniumItem;
+import fr.eriniumgroup.eriniumadventure.base.item.HeartIconItem;
 import fr.eriniumgroup.eriniumadventure.base.item.FlameIconItem;
 import fr.eriniumgroup.eriniumadventure.base.EriniumAdventureMod;
 
@@ -43,6 +44,7 @@ public class EriniumAdventureModItems {
 	public static final RegistryObject<Item> ROCKET_BOOSTER_SPAWN_EGG = REGISTRY.register("rocket_booster_spawn_egg", () -> new ForgeSpawnEggItem(EriniumAdventureModEntities.ROCKET_BOOSTER, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> ROCKET_HEAD_SPAWN_EGG = REGISTRY.register("rocket_head_spawn_egg", () -> new ForgeSpawnEggItem(EriniumAdventureModEntities.ROCKET_HEAD, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> FLAME_ICON = REGISTRY.register("flame_icon", () -> new FlameIconItem());
+	public static final RegistryObject<Item> HEART_ICON = REGISTRY.register("heart_icon", () -> new HeartIconItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

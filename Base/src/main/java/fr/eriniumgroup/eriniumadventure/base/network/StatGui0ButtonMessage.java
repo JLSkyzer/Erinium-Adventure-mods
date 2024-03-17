@@ -15,6 +15,7 @@ import java.util.function.Supplier;
 import java.util.HashMap;
 
 import fr.eriniumgroup.eriniumadventure.base.world.inventory.StatGui0Menu;
+import fr.eriniumgroup.eriniumadventure.base.procedures.HeartBtnActionProcedure;
 import fr.eriniumgroup.eriniumadventure.base.procedures.FlameBtnActionProcedure;
 import fr.eriniumgroup.eriniumadventure.base.EriniumAdventureMod;
 
@@ -65,6 +66,10 @@ public class StatGui0ButtonMessage {
 		if (buttonID == 0) {
 
 			FlameBtnActionProcedure.execute(world, entity);
+		}
+		if (buttonID == 1) {
+
+			HeartBtnActionProcedure.execute(world, entity);
 		}
 	}
 

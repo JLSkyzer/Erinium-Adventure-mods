@@ -1,8 +1,7 @@
 
 package fr.eriniumgroup.eriniumadventure.base.client.screens;
 
-import fr.eriniumgroup.eriniumadventure.base.procedures.ReturnHealthIntProcedure;
-import fr.eriniumgroup.eriniumadventure.base.procedures.ReturnMaxHealthInProcedure;
+import fr.eriniumgroup.eriniumadventure.base.procedures.*;
 import net.minecraftforge.client.event.RenderGuiOverlayEvent;
 import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
 import org.checkerframework.checker.units.qual.h;
@@ -18,9 +17,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.Minecraft;
-
-import fr.eriniumgroup.eriniumadventure.base.procedures.ReturnHealthProcedure;
-import fr.eriniumgroup.eriniumadventure.base.procedures.IsCreativeModProcedure;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -62,13 +58,14 @@ public class HealthOverlayOverlay {
 		int HealthBarValue = (int) (HealthBarIndex * ReturnHealthIntProcedure.execute(entity));
 
 		if (IsCreativeModProcedure.execute(entity)) {
-			event.getGuiGraphics().blit(new ResourceLocation("erinium_adventure:textures/screens/health_bar_empty.png"), w / 2 + -90, h - 39, 0, 0, 90, 9, 90, 9);
 
-			event.getGuiGraphics().blit(new ResourceLocation("erinium_adventure:textures/screens/health_bar.png"), w / 2 + -89, h - 38, 0, 0, HealthBarValue, 7, 88, 7);
+			event.getGuiGraphics().blit(new ResourceLocation("erinium_adventure:textures/screens/health_bar_empty.png"), w / 2 + -91, h - 39 + ((int) PlayerHaveArmorProcedure.execute(entity) * -1), 0, 0, 90, 9, 90, 9);
+
+			event.getGuiGraphics().blit(new ResourceLocation("erinium_adventure:textures/screens/health_bar.png"), w / 2 + -90, h - 38 + ((int) PlayerHaveArmorProcedure.execute(entity) * -1), 0, 0, HealthBarValue, 7, 88, 7);
 
 			event.getGuiGraphics().drawString(Minecraft.getInstance().font,
 
-					ReturnHealthProcedure.execute(entity), w / 2 + -45 - (Minecraft.getInstance().font.width(ReturnHealthProcedure.execute(entity)) / 2), h - 49, -1, false);
+					ReturnHealthProcedure.execute(entity), w / 2 + -45 - (Minecraft.getInstance().font.width(ReturnHealthProcedure.execute(entity)) / 2), h - 46 + ((int) PlayerHaveArmorProcedure.execute(entity) * -1), -1, false);
 		}
 		RenderSystem.depthMask(true);
 		RenderSystem.defaultBlendFunc();

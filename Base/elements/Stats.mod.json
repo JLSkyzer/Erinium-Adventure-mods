@@ -5,6 +5,6 @@
     "commandName": "stats",
     "type": "STANDARD",
     "permissionLevel": "No requirement",
-    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"call_procedure\"><field name=\"procedure\">OpenStatsGui</field></block></next></block></xml>"
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"literal\"><field name=\"name\">reset</field><statement name=\"args\"><block type=\"entity\"><field name=\"name\">player</field><field name=\"type\">player</field><statement name=\"args\"><block type=\"literal\"><field name=\"name\">flame</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ResetFlame</field></block></statement><next><block type=\"literal\"><field name=\"name\">health</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ResetHealth</field></block></statement></block></next></block></statement></block></statement><next><block type=\"call_procedure\"><field name=\"procedure\">OpenStatsGui</field></block></next></block></next></block></xml>"
   }
 }

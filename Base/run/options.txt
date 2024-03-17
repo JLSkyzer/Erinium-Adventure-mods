@@ -16,7 +16,7 @@ showSubtitles:false
 directionalAudio:false
 touchscreen:false
 fullscreen:false
-bobView:false
+bobView:true
 toggleCrouch:false
 toggleSprint:false
 darkMojangStudiosBackground:false
@@ -53,7 +53,7 @@ chatLineSpacing:0.0
 textBackgroundOpacity:0.5
 backgroundForChatOnly:true
 hideServerAddress:false
-advancedItemTooltips:false
+advancedItemTooltips:true
 pauseOnLostFocus:true
 overrideWidth:0
 overrideHeight:0
@@ -120,7 +120,7 @@ key_key.hotbar.8:key.keyboard.8
 key_key.hotbar.9:key.keyboard.9
 key_key.erinium_adventure.launch:key.keyboard.space
 key_key.erinium_adventure.open_stats_gui_key:key.keyboard.m
-soundCategory_master:0.3344370860927152
+soundCategory_master:0.26490066225165565
 soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0

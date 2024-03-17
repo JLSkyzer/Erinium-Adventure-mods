@@ -38,6 +38,12 @@ import java.util.Collection;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
+import fr.eriniumgroups.erinium.ericonomy.init.EriconomyModTabs;
+import fr.eriniumgroups.erinium.ericonomy.init.EriconomyModMenus;
+import fr.eriniumgroups.erinium.ericonomy.init.EriconomyModItems;
+import fr.eriniumgroups.erinium.ericonomy.init.EriconomyModBlocks;
+import fr.eriniumgroups.erinium.ericonomy.init.EriconomyModBlockEntities;
+
 @Mod("ericonomy")
 public class EriconomyMod {
 	public static final Logger LOGGER = LogManager.getLogger(EriconomyMod.class);
@@ -47,6 +53,13 @@ public class EriconomyMod {
 		MinecraftForge.EVENT_BUS.register(this);
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		EriconomyModBlocks.REGISTRY.register(bus);
+		EriconomyModBlockEntities.REGISTRY.register(bus);
+		EriconomyModItems.REGISTRY.register(bus);
+
+		EriconomyModTabs.REGISTRY.register(bus);
+
+		EriconomyModMenus.REGISTRY.register(bus);
 	}
 
 	private static final String PROTOCOL_VERSION = "1";

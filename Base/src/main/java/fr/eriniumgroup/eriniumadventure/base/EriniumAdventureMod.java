@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.AbstractMap;
 
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModTabs;
+import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModParticleTypes;
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModMenus;
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModItems;
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModEntities;
@@ -59,6 +60,8 @@ public class EriniumAdventureMod {
 		EriniumAdventureModEntities.REGISTRY.register(bus);
 
 		EriniumAdventureModTabs.REGISTRY.register(bus);
+
+		EriniumAdventureModParticleTypes.REGISTRY.register(bus);
 
 		EriniumAdventureModMenus.REGISTRY.register(bus);
 	}

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "ericonomy:block/cobblevoirstation",
+    "up": "ericonomy:block/cobblevoirstation",
+    "north": "ericonomy:block/cobblevoirstation",
+    "east": "ericonomy:block/cobblevoirstation",
+    "south": "ericonomy:block/cobblevoirstation",
+    "west": "ericonomy:block/cobblevoirstation",
+    "particle": "ericonomy:block/cobblevoirstation"
+  },
+  "render_type": "solid"
+}
