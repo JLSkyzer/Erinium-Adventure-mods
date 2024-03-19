@@ -34,14 +34,14 @@ public class HeartBtnActionProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier + 0.1;
+			double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier + 1;
 			entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.health_multiplier = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}
 		{
-			double _setval = 20 + (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier * 100;
+			double _setval = 20 + (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier * 10;
 			entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.max_health = _setval;
 				capability.syncPlayerVariables(entity);

@@ -1,0 +1,5 @@
+
+[Global]
+	#The maximum of health upgrade a player can buy (note 1 level give 10 of health)
+	"Health Max" = 18.0
+

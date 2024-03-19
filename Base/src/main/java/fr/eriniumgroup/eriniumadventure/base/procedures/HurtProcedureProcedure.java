@@ -1,39 +1,74 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.CombatRules;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.stats.Stats;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.BlockPos;
 
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModParticleTypes;
 
 public class HurtProcedureProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-		if (entity == null)
+	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, double amount) {
+		if (damagesource == null || entity == null)
 			return;
-		{
-			if (world.isClientSide()) {
-				if (entity instanceof LivingEntity livingEntity) {
-					livingEntity.hurtDuration = 10;
-					livingEntity.hurtTime = livingEntity.hurtDuration;
+		Entity erientity = null;
+		double tempDAMAGEVALUE = 0;
+		erientity = entity;
+		tempDAMAGEVALUE = damagesource.getFoodExhaustion();
+		if (new Object() {
+			private float getDamageAfterArmorAbsorb(DamageSource eridamageSource, float eridamage) {
+				if (entity instanceof LivingEntity entity1) {
+					if (eridamageSource.is(DamageTypeTags.BYPASSES_EFFECTS)) {
+						return eridamage;
+					} else {
+						if (entity1.hasEffect(MobEffects.DAMAGE_RESISTANCE) && !eridamageSource.is(DamageTypeTags.BYPASSES_RESISTANCE)) {
+							int i = (entity1.getEffect(MobEffects.DAMAGE_RESISTANCE).getAmplifier() + 1) * 5;
+							int j = 25 - i;
+							float f = (eridamage * (float) j);
+							float f1 = eridamage;
+							eridamage = Math.max(f / 25.0F, 0.0F);
+							float f2 = f1 - eridamage;
+							if (f2 > 0.0F && f2 < 3.4028235E37F) {
+								if (entity1 instanceof ServerPlayer) {
+									((ServerPlayer) entity1).awardStat(Stats.CUSTOM.get(Stats.DAMAGE_RESISTED), Math.round(f2 * 10.0F));
+								} else if (eridamageSource.getEntity() instanceof ServerPlayer) {
+									((ServerPlayer) eridamageSource.getEntity()).awardStat(Stats.CUSTOM.get(Stats.DAMAGE_DEALT_RESISTED), Math.round(f2 * 10.0F));
+								}
+							}
+						}
+						if (eridamage <= 0.0F) {
+							return 0.0F;
+						} else if (eridamageSource.is(DamageTypeTags.BYPASSES_ENCHANTMENTS)) {
+							return eridamage;
+						} else if (entity1.isUsingItem() && !entity1.getItemInHand(entity1.getUsedItemHand()).isEmpty()) {
+							net.minecraft.world.item.Item item = entity1.getItemInHand(entity1.getUsedItemHand()).getItem();
+							if (!entity1.getItemInHand(entity1.getUsedItemHand()).canPerformAction(net.minecraftforge.common.ToolActions.SHIELD_BLOCK)) {
+								return eridamage;
+							} else {
+								return 0.0F;
+							}
+						} else {
+							int k = EnchantmentHelper.getDamageProtection(entity1.getArmorSlots(), eridamageSource);
+							if (k > 0) {
+								eridamage = CombatRules.getDamageAfterMagicAbsorb(eridamage, (float) k);
+							}
+							return eridamage;
+						}
+					}
 				}
+				return 0.0F;
 			}
+		}.getDamageAfterArmorAbsorb(damagesource, (float) amount) > 0) {
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (EriniumAdventureModParticleTypes.BLOOD.get()), x, (y + 1), z, 20, 1, 0, 1, 0.3);
 		}
-		if (world instanceof Level _level) {
-			if (!_level.isClientSide()) {
-				_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.hurt")), SoundSource.PLAYERS, 1, 1);
-			} else {
-				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.hurt")), SoundSource.PLAYERS, 1, 1, false);
-			}
-		}
-		if (world instanceof ServerLevel _level)
-			_level.sendParticles((SimpleParticleType) (EriniumAdventureModParticleTypes.BLOOD.get()), x, (y + 1), z, 20, 1, 0, 1, 0.3);
 	}
 }

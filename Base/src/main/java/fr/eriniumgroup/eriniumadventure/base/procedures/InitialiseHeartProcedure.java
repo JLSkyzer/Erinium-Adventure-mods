@@ -13,6 +13,7 @@ import java.util.Map;
 
 import fr.eriniumgroup.eriniumadventure.base.network.EriniumAdventureModVariables;
 import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModItems;
+import fr.eriniumgroup.eriniumadventure.base.configuration.ServerConfigConfiguration;
 
 public class InitialiseHeartProcedure {
 	public static void execute(Entity entity) {
@@ -24,13 +25,13 @@ public class InitialiseHeartProcedure {
 		tempItem.enchant(Enchantments.BLOCK_FORTUNE, 10);
 		tempItem.setHoverName(Component.literal("\u00A76Live upgrade"));
 		componentList.add(net.minecraft.network.chat.Component.literal(("\u00A77" + Component.translatable("stats.life.desc").getString())));
-		componentList.add(net.minecraft.network.chat.Component.literal(("\u00A76Level : \u00A7a"
-				+ new java.text.DecimalFormat("##").format((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier * 10) + " \u00A7f/ \u00A72"
-				+ new java.text.DecimalFormat("##").format(1.8 * 10))));
+		componentList.add(net.minecraft.network.chat.Component.literal(
+				("\u00A76Level : \u00A7a" + new java.text.DecimalFormat("##").format((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier)
+						+ " \u00A7f/ \u00A72" + new java.text.DecimalFormat("##").format((double) ServerConfigConfiguration.HEALTH_MAX.get()))));
 		componentList.add(net.minecraft.network.chat.Component.literal(("\u00A76Your health : \u00A7a"
-				+ new java.text.DecimalFormat("##").format(20 + (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier * 100) + "")));
-		if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier < 1.8) {
-			tempItem.getOrCreateTag().putDouble("price", (12500 * ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier * 10 + 1)));
+				+ new java.text.DecimalFormat("##").format(20 + (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier * 10) + "")));
+		if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier < (double) ServerConfigConfiguration.HEALTH_MAX.get()) {
+			tempItem.getOrCreateTag().putDouble("price", (12500 * ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier + 1)));
 			componentList.add(net.minecraft.network.chat.Component.literal(("\u00A76Price : \u00A7d" + new java.text.DecimalFormat("#,###.##").format(tempItem.getOrCreateTag().getDouble("price")) + "$")));
 		}
 		if (componentList.size() > 0) {

@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroup.eriniumadventure.base.network.EriniumAdventureModVariables;
+import fr.eriniumgroup.eriniumadventure.base.configuration.ServerConfigConfiguration;
 
 import com.google.gson.Gson;
 
@@ -66,6 +67,7 @@ public class HeartReturnYesProcedure {
 				}
 			};
 		}.getPlayerMoney(entity) >= (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY).getOrCreateTag()
-				.getDouble("price") && (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier < 1.8;
+				.getDouble("price")
+				&& (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier < (double) ServerConfigConfiguration.HEALTH_MAX.get();
 	}
 }

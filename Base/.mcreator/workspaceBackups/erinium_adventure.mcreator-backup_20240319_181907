@@ -1227,13 +1227,18 @@
       "locked_code": false,
       "registry_name": "hurt_procedure",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/HurtProcedureProcedure.java"
-        ],
         "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
           },
           {
             "name": "x",
@@ -1487,6 +1492,40 @@
         ]
       },
       "path": "~/StatsSystem/Command"
+    },
+    {
+      "name": "PlayerHaveArmor",
+      "type": "procedure",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_have_armor",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/PlayerHaveArmorProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures"
+    },
+    {
+      "name": "ServerConfig",
+      "type": "config",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "server_config",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/configuration/ServerConfigConfiguration.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1582,6 +1621,7 @@
       "block.erinium_adventure.cave_block": "Cave Block",
       "item.erinium_adventure.nitriate_armor_chestplate": "Nitriate Chestplate",
       "key.categories.eriniumadventure": "§e§lErinium Adventure",
+      "config.erinium_adventure.server_config": "eriniumadventure-common",
       "key.erinium_adventure.launch": "Launch",
       "death.attack.damage_admin.player": "%1$s died whilst trying to escape %2$s",
       "item.erinium_adventure.nitriate_gem": "Nitriate Gem",

@@ -21,6 +21,7 @@
   "block.erinium_adventure.cave_block": "Cave Block",
   "item.erinium_adventure.nitriate_armor_chestplate": "Nitriate Chestplate",
   "key.categories.eriniumadventure": "§e§lErinium Adventure",
+  "config.erinium_adventure.server_config": "eriniumadventure-common",
   "key.erinium_adventure.launch": "Launch",
   "death.attack.damage_admin.player": "%1$s died whilst trying to escape %2$s",
   "item.erinium_adventure.nitriate_gem": "Nitriate Gem",

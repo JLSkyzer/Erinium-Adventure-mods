@@ -1,0 +1,33 @@
+{
+  "_fv": 57,
+  "_type": "config",
+  "definition": {
+    "pools": [
+      {
+        "category": "Global",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 18.0,
+            "textDefault": "",
+            "comment": "The maximum of health upgrade a player can buy (note 1 level give 10 of health)",
+            "vardisplay": "Health Max",
+            "varname": "health_max",
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "CUSTOM:RocketBooster"
+          }
+        ]
+      }
+    ],
+    "file": "eriniumadventure-common",
+    "configType": 0
+  }
+}
