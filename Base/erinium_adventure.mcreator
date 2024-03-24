@@ -458,22 +458,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       }
@@ -1227,6 +1211,9 @@
       "locked_code": false,
       "registry_name": "hurt_procedure",
       "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/HurtProcedureProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "damagesource",
@@ -1526,6 +1513,18 @@
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/configuration/ServerConfigConfiguration.java"
         ]
       }
+    },
+    {
+      "name": "ForTest",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "for_test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/ForTest.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1740,7 +1739,9 @@
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [],
+    "mcreatorDependencies": [
+      "jsonforhttprequest"
+    ],
     "currentGenerator": "forge-1.20.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "fr.eriniumgroup.eriniumadventure.base",

@@ -1,12 +1,5 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.stats.Stats;
-import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.world.damagesource.CombatRules;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,7 +13,6 @@ public class PlayerHaveArmorProcedure {
 		boolean returnLogic = false;
 		double slot = 0;
 		double ReturnDec = 0;
-
 		slot = 0;
 		ReturnDec = 0;
 		for (int index0 = 0; index0 < 4; index0++) {

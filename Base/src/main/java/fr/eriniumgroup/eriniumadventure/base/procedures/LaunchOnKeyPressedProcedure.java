@@ -1,7 +1,5 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
-import net.minecraft.server.level.ChunkLevel;
-import net.minecraft.server.level.ChunkMap;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
@@ -11,7 +9,6 @@ import java.util.Comparator;
 
 import fr.eriniumgroup.eriniumadventure.base.entity.RocketHeadEntity;
 import fr.eriniumgroup.eriniumadventure.base.entity.RocketBoosterEntity;
-import net.minecraftforge.event.level.ChunkTicketLevelUpdatedEvent;
 
 public class LaunchOnKeyPressedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -39,7 +36,6 @@ public class LaunchOnKeyPressedProcedure {
 				_datEntSetL.getEntityData().set(RocketBoosterEntity.DATA_Lifting, true);
 			if (entityHead instanceof RocketHeadEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(RocketHeadEntity.DATA_Lifting, true);
-
 		}
 	}
 }

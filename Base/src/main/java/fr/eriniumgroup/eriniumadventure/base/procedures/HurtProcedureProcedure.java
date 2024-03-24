@@ -6,7 +6,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.CombatRules;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.stats.Stats;
 import net.minecraft.server.level.ServerPlayer;
@@ -56,11 +55,19 @@ public class HurtProcedureProcedure {
 								return 0.0F;
 							}
 						} else {
-							int k = EnchantmentHelper.getDamageProtection(entity1.getArmorSlots(), eridamageSource);
-							if (k > 0) {
-								eridamage = CombatRules.getDamageAfterMagicAbsorb(eridamage, (float) k);
+							if (entity1.getArmorValue() > 0) {
+								int k = EnchantmentHelper.getDamageProtection(entity1.getArmorSlots(), eridamageSource);
+								if (k > 0) {
+									eridamage = net.minecraft.world.damagesource.CombatRules.getDamageAfterMagicAbsorb(eridamage, (float) k);
+								}
+								if (!eridamageSource.is(DamageTypeTags.BYPASSES_ARMOR)) {
+									eridamage = net.minecraft.world.damagesource.CombatRules.getDamageAfterAbsorb(eridamage, (float) entity1.getArmorValue(),
+											(float) entity1.getAttributeValue(net.minecraft.world.entity.ai.attributes.Attributes.ARMOR_TOUGHNESS));
+								}
+								return eridamage;
+							} else {
+								return eridamage;
 							}
-							return eridamage;
 						}
 					}
 				}
