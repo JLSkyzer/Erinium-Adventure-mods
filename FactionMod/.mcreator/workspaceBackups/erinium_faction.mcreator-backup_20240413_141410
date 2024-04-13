@@ -1,18 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "Config",
-      "type": "config",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "config",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/configuration/ConfigConfiguration.java"
-        ]
-      }
-    },
-    {
       "name": "PlayerSentChat",
       "type": "procedure",
       "sortid": 2,
@@ -505,7 +493,7 @@
       "name": "FactionStringInfo",
       "type": "procedure",
       "sortid": 22,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_string_info",
       "metadata": {
@@ -730,7 +718,7 @@
       "name": "FactionPlayerInfo",
       "type": "procedure",
       "sortid": 32,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_player_info",
       "metadata": {
@@ -2349,7 +2337,7 @@
       "name": "FactionJoin",
       "type": "procedure",
       "sortid": 109,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_join",
       "metadata": {
@@ -4192,6 +4180,9 @@
       "locked_code": false,
       "registry_name": "temp_proc",
       "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/TempProcProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4201,6 +4192,63 @@
             "name": "world",
             "type": "world"
           }
+        ]
+      }
+    },
+    {
+      "name": "GetFactionAllyList",
+      "type": "procedure",
+      "sortid": 192,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_ally_list",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionAllyListProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
+    },
+    {
+      "name": "FactionDesc",
+      "type": "procedure",
+      "sortid": 193,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "faction_desc",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionDescProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "Config",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "config",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/configuration/ConfigConfiguration.java"
         ]
       }
     }
@@ -4392,8 +4440,8 @@
       "faction.message.sethome.succeful": "Your faction home has been set !",
       "gui.erinium_faction.blacklist_item_gui.label_blacklist_item": "Blacklist Item",
       "faction.error.displaynamecharcount": "Your displayname can have 20 characters max !",
-      "gui.erinium_faction.edit_permission_gui.button_finish": "Finish",
       "faction.message.home.noexist": "Your faction home not exist !",
+      "gui.erinium_faction.edit_permission_gui.button_finish": "Finish",
       "gui.erinium_faction.selete_rank_gui.button_ancient": "Ancient",
       "gui.erinium_faction.selete_rank_gui.button_officier": "Officier",
       "safezone.desc": "A safe place to chill",
@@ -4537,7 +4585,7 @@
   "workspaceSettings": {
     "modid": "erinium_faction",
     "modName": "Erinium Faction Mod",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A mod for faction system",
     "author": "JLSkyzer, MCreator",
     "websiteURL": "https://github.com/JLSkyzer",
@@ -4547,13 +4595,11 @@
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [
-      "jsonforhttprequest"
-    ],
+    "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
     "credits": "No credit",
     "modElementsPackage": "fr.eriniumgroups.erinium.factionmod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202300452316
 }

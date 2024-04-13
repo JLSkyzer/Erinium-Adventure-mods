@@ -4192,6 +4192,9 @@
       "locked_code": false,
       "registry_name": "temp_proc",
       "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/TempProcProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4203,6 +4206,27 @@
           }
         ]
       }
+    },
+    {
+      "name": "GetFactionAllyList",
+      "type": "procedure",
+      "sortid": 192,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_faction_ally_list",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionAllyListProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/FactionSystem/Return"
     }
   ],
   "variable_elements": [
@@ -4555,5 +4579,5 @@
     "modElementsPackage": "fr.eriniumgroups.erinium.factionmod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202300452316
 }

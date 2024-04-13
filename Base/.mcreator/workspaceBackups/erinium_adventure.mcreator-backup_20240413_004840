@@ -1513,6 +1513,19 @@
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/configuration/ServerConfigConfiguration.java"
         ]
       }
+    },
+    {
+      "name": "ForTest",
+      "type": "code",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "for_test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/ForTest.java"
+        ]
+      }
     }
   ],
   "variable_elements": [

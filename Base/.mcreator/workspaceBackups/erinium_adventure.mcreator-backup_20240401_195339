@@ -448,7 +448,7 @@
       "type": "procedure",
       "sortid": 30,
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "test_cmd",
       "metadata": {
         "files": [
@@ -1511,6 +1511,19 @@
       "metadata": {
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/configuration/ServerConfigConfiguration.java"
+        ]
+      }
+    },
+    {
+      "name": "ForTest",
+      "type": "code",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "for_test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/ForTest.java"
         ]
       }
     }

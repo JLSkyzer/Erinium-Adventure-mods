@@ -4,7 +4,7 @@ license="Academic Free License v3.0"
 
 [[mods]]
 modId="erinium_faction"
-version="1.0.2"
+version="1.0.3"
 displayName="Erinium Faction Mod"
 displayURL="https://github.com/JLSkyzer"
 credits="No credit"
@@ -20,10 +20,4 @@ description="A mod for faction system"
 
 
 
-[[dependencies.erinium_faction]]
-    modId="jsonforhttprequest"
-    mandatory=false
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 

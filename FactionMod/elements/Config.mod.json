@@ -4,26 +4,8 @@
   "definition": {
     "pools": [
       {
-        "category": "Factions",
+        "category": "Common",
         "entries": [
-          {
-            "item": {
-              "value": ""
-            },
-            "silkTouchMode": 1,
-            "block": {
-              "value": ""
-            },
-            "logicField": 0,
-            "numberField": 20.0,
-            "textDefault": "",
-            "comment": "How many player can a faction have max",
-            "vardisplay": "Max Members",
-            "varname": "max_member",
-            "enablecomment": false,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
-          },
           {
             "item": {
               "value": "Items.DIAMOND"
@@ -35,10 +17,10 @@
             "logicField": 0,
             "numberField": 0.0,
             "textDefault": "",
-            "comment": "What item you need to create an faction",
-            "vardisplay": "Item needed to create faction",
+            "comment": "Item needed to create a faction",
+            "vardisplay": "Item need",
             "varname": "item_need_create",
-            "enablecomment": false,
+            "enablecomment": true,
             "onlyComment": false,
             "entityType": "EntityAgeable"
           },
@@ -53,10 +35,28 @@
             "logicField": 0,
             "numberField": 100.0,
             "textDefault": "",
-            "comment": "How many items you need to create an faction",
-            "vardisplay": "Number of items needed to create faction",
+            "comment": "Iten needed number",
+            "vardisplay": "Number item needed",
             "varname": "item_number_create",
-            "enablecomment": false,
+            "enablecomment": true,
+            "onlyComment": false,
+            "entityType": "EntityAgeable"
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 20.0,
+            "textDefault": "",
+            "comment": "Max member in a faction",
+            "vardisplay": "Max member",
+            "varname": "max_member",
+            "enablecomment": true,
             "onlyComment": false,
             "entityType": "EntityAgeable"
           }

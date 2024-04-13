@@ -32,7 +32,7 @@ public class FactionDisbandProcedure {
 		String player_name = "";
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject secJsonObject = new com.google.gson.JsonObject();
-		if (TargetEntityHaveFactionProcedure.execute(entity)) {
+		if (TargetEntityHaveFactionProcedure.execute(entity) && TargetEntityIsChefProcedure.execute(entity)) {
 			{
 				double _setval = 0;
 				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

@@ -8,14 +8,14 @@ import net.minecraft.world.item.Items;
 public class ConfigConfiguration {
 	public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 	public static final ForgeConfigSpec SPEC;
-	public static final ForgeConfigSpec.ConfigValue<Double> MAX_MEMBER;
 	public static final ForgeConfigSpec.ConfigValue<String> ITEM_NEED_CREATE;
 	public static final ForgeConfigSpec.ConfigValue<Double> ITEM_NUMBER_CREATE;
+	public static final ForgeConfigSpec.ConfigValue<Double> MAX_MEMBER;
 	static {
-		BUILDER.push("Factions");
-		MAX_MEMBER = BUILDER.define("Max Members", (double) 20);
-		ITEM_NEED_CREATE = BUILDER.define("Item needed to create faction", ForgeRegistries.ITEMS.getKey(Items.DIAMOND).toString());
-		ITEM_NUMBER_CREATE = BUILDER.define("Number of items needed to create faction", (double) 100);
+		BUILDER.push("Common");
+		ITEM_NEED_CREATE = BUILDER.comment("Item needed to create a faction").define("Item need", ForgeRegistries.ITEMS.getKey(Items.DIAMOND).toString());
+		ITEM_NUMBER_CREATE = BUILDER.comment("Iten needed number").define("Number item needed", (double) 100);
+		MAX_MEMBER = BUILDER.comment("Max member in a faction").define("Max member", (double) 20);
 		BUILDER.pop();
 
 		SPEC = BUILDER.build();
