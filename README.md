@@ -128,3 +128,12 @@ This is a basic log mod
 how to use ?
 /erilog (type) (info, warn, error, success) (message)
 the file will be here MINECRAFTFOLDER/EriniumLogs/(TYPE)/LASTFILE.erilog
+
+### Erinium Adventure - Base mod
+
+This is the base mod, with this mod, other of my mod have an reason why they exist.
+This mod will add lot of stuff, features, system, and an history system !
+
+Here a screen of stuff exist : 
+
+![image](https://github.com/JLSkyzer/Erinium-Adventure-mods/assets/60830349/81da024d-9dd5-4edd-86a1-7813c49fc911)
