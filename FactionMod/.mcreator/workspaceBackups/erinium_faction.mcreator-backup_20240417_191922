@@ -40,19 +40,6 @@
       }
     },
     {
-      "name": "TickFunctions",
-      "type": "tag",
-      "sortid": 175,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tick_functions",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/minecraft/tags/functions/tick.json"
-        ]
-      }
-    },
-    {
       "name": "PlayerTick",
       "type": "procedure",
       "sortid": 3,
@@ -131,7 +118,7 @@
       "name": "TargetEntityHaveItemNeedToCreate",
       "type": "procedure",
       "sortid": 6,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "target_entity_have_item_need_to_create",
       "metadata": {
@@ -170,7 +157,7 @@
       "name": "FactionCreate",
       "type": "procedure",
       "sortid": 7,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "faction_create",
       "metadata": {
@@ -282,7 +269,7 @@
       "name": "ReturnCommandStringEntityPower",
       "type": "procedure",
       "sortid": 12,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "return_command_string_entity_power",
       "metadata": {
@@ -303,7 +290,7 @@
       "name": "FactionCreateRank",
       "type": "procedure",
       "sortid": 13,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_create_rank",
       "metadata": {
@@ -344,7 +331,7 @@
       "name": "FactionDisband",
       "type": "procedure",
       "sortid": 15,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "faction_disband",
       "metadata": {
@@ -368,7 +355,7 @@
       "name": "FactionInfo",
       "type": "procedure",
       "sortid": 16,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "faction_info",
       "metadata": {
@@ -493,7 +480,7 @@
       "name": "FactionStringInfo",
       "type": "procedure",
       "sortid": 22,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "faction_string_info",
       "metadata": {
@@ -718,7 +705,7 @@
       "name": "FactionPlayerInfo",
       "type": "procedure",
       "sortid": 32,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "faction_player_info",
       "metadata": {
@@ -2337,7 +2324,7 @@
       "name": "FactionJoin",
       "type": "procedure",
       "sortid": 109,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "faction_join",
       "metadata": {
@@ -3825,19 +3812,6 @@
       "path": "~/Chunk System/Trigger"
     },
     {
-      "name": "CanUseBlockOnClaim",
-      "type": "tag",
-      "sortid": 174,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "can_use_block_on_claim",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/erinium_faction/tags/blocks/can_use_block_on_claim.json"
-        ]
-      }
-    },
-    {
       "name": "InterractBlock",
       "type": "procedure",
       "sortid": 176,
@@ -4239,6 +4213,18 @@
         ]
       },
       "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "Config",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "config",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/configuration/ConfigConfiguration.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -4409,6 +4395,11 @@
       "subtitle": ""
     }
   ],
+  "tag_elements": {
+    "BLOCKS:mod:can_use_block_on_claim": [
+      "Blocks.TNT"
+    ]
+  },
   "language_map": {
     "en_us": {
       "faction.message.claim.entered": "You entered at ",
@@ -4578,7 +4569,6 @@
     "author": "JLSkyzer, MCreator",
     "websiteURL": "https://github.com/JLSkyzer",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
@@ -4586,8 +4576,7 @@
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
     "credits": "No credit",
-    "modElementsPackage": "fr.eriniumgroups.erinium.factionmod",
-    "lockBaseModFiles": false
+    "modElementsPackage": "fr.eriniumgroups.erinium.factionmod"
   },
-  "mcreatorVersion": 202300452316
+  "mcreatorVersion": 202400115821
 }

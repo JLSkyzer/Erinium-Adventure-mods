@@ -13,8 +13,6 @@ import java.io.File;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.JsonObject;
-
 @Mod.EventBusSubscriber
 public class PlayerRespawnProcedure {
 	@SubscribeEvent

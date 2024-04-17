@@ -19,7 +19,6 @@ import fr.eriniumgroups.erinium.factionmod.configuration.ConfigConfiguration;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-import com.google.gson.JsonObject;
 import com.google.gson.GsonBuilder;
 import com.google.gson.Gson;
 

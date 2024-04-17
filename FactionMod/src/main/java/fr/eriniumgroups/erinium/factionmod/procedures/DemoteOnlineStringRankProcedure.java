@@ -16,8 +16,6 @@ import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.JsonObject;
-
 public class DemoteOnlineStringRankProcedure {
 	public static String execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)

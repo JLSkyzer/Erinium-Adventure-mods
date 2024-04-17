@@ -10,7 +10,6 @@ import java.util.regex.Matcher;
 import java.net.URL;
 import java.net.HttpURLConnection;
 
-import java.io.InputStreamReader;
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.File;
@@ -19,7 +18,6 @@ import java.io.BufferedReader;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-import com.google.gson.JsonObject;
 import com.google.gson.Gson;
 
 public class ReturnCommandStringEntityPowerProcedure {
@@ -39,7 +37,7 @@ public class ReturnCommandStringEntityPowerProcedure {
 					int responseCode = connection.getResponseCode();
 					if (responseCode == HttpURLConnection.HTTP_OK) {
 						// Créer un lecteur pour lire les données de la connexion
-						BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+						BufferedReader reader = new BufferedReader(new java.io.InputStreamReader(connection.getInputStream()));
 						StringBuilder stringBuilder = new StringBuilder();
 						String line;
 						// Lire le contenu de la page ligne par ligne

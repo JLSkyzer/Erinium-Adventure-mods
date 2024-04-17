@@ -23,7 +23,6 @@ import fr.eriniumgroups.erinium.factionmod.configuration.ConfigConfiguration;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-import com.google.gson.JsonObject;
 import com.google.gson.GsonBuilder;
 import com.google.gson.Gson;
 
@@ -63,7 +62,7 @@ public class FactionCreateProcedure {
 					if (!duplicatedname) {
 						if (TargetEntityHaveItemNeedToCreateProcedure.execute(world, entity)) {
 							if (entity instanceof Player _player) {
-								ItemStack _stktoremove = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation(ConfigConfiguration.ITEM_NEED_CREATE.get())));
+								ItemStack _stktoremove = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation(((ConfigConfiguration.ITEM_NEED_CREATE.get())).toLowerCase(java.util.Locale.ENGLISH))));
 								_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) (double) ConfigConfiguration.ITEM_NUMBER_CREATE.get(), _player.inventoryMenu.getCraftSlots());
 							}
 							file = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + ID + "/"), File.separator + "global_informations.json");

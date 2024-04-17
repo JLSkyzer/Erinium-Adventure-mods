@@ -76,11 +76,6 @@ public class SeleteRankGuiScreen extends AbstractContainerScreen<SeleteRankGuiMe
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		button_recruit = Button.builder(Component.translatable("gui.erinium_faction.selete_rank_gui.button_recruit"), e -> {

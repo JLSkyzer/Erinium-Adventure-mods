@@ -10,8 +10,6 @@ import java.io.File;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.JsonObject;
-
 public class DelHomeProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)

@@ -20,7 +20,6 @@ import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-import com.google.gson.JsonObject;
 import com.google.gson.Gson;
 
 public class CommandOfflineEntityRankCheckerToExecuteProcedure {

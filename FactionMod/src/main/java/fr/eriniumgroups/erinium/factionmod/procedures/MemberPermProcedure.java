@@ -24,8 +24,6 @@ import io.netty.buffer.Unpooled;
 import fr.eriniumgroups.erinium.factionmod.world.inventory.EditPermissionGuiMenu;
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.JsonObject;
-
 public class MemberPermProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)

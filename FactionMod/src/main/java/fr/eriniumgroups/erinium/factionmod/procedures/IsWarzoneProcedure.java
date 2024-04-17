@@ -5,8 +5,6 @@ import net.minecraft.world.entity.Entity;
 
 import java.io.File;
 
-import com.google.gson.JsonObject;
-
 public class IsWarzoneProcedure {
 	public static boolean execute(LevelAccessor world, Entity entity) {
 		if (entity == null)

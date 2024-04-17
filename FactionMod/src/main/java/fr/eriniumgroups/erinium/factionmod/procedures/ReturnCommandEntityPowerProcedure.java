@@ -14,7 +14,6 @@ import java.io.BufferedReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.JsonObject;
 import com.google.gson.Gson;
 
 public class ReturnCommandEntityPowerProcedure {

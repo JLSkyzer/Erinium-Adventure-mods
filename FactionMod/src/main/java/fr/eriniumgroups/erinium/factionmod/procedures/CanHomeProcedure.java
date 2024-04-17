@@ -6,8 +6,6 @@ import java.io.File;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.JsonObject;
-
 public class CanHomeProcedure {
 	public static String execute(Entity entity) {
 		if (entity == null)

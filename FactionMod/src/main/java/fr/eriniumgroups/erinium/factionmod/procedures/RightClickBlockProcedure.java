@@ -7,8 +7,6 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
 import javax.annotation.Nullable;
 
-import com.google.gson.JsonObject;
-
 @Mod.EventBusSubscriber
 public class RightClickBlockProcedure {
 	@SubscribeEvent

@@ -67,14 +67,14 @@ public class BlacklistItemGuiWhileThisGUIIsOpenTickProcedure {
 								}
 							}.split(BlackListItem, ", ", (int) 0)));
 							if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-								ItemStack _setstack = tempItem;
+								ItemStack _setstack = tempItem.copy();
 								_setstack.setCount(1);
 								((Slot) _slots.get((int) slot_count)).set(_setstack);
 								_player.containerMenu.broadcastChanges();
 							}
 						} else {
 							if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-								ItemStack _setstack = new ItemStack(Blocks.AIR);
+								ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
 								_setstack.setCount(1);
 								((Slot) _slots.get((int) slot_count)).set(_setstack);
 								_player.containerMenu.broadcastChanges();
@@ -88,7 +88,7 @@ public class BlacklistItemGuiWhileThisGUIIsOpenTickProcedure {
 						}.split(BlackListItem, ", ", (int) 0) + ", ", "");
 					} else {
 						if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-							ItemStack _setstack = new ItemStack(Blocks.AIR);
+							ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
 							_setstack.setCount(1);
 							((Slot) _slots.get((int) slot_count)).set(_setstack);
 							_player.containerMenu.broadcastChanges();

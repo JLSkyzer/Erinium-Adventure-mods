@@ -12,8 +12,6 @@ import java.io.File;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-import com.google.gson.JsonObject;
-
 public class OfflinePlayerAreInTheServerProcedure {
 	public static boolean execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments) {
 		File file = new File("");

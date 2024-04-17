@@ -11,13 +11,15 @@ credits="No credit"
 authors="JLSkyzer, MCreator"
 description="A mod for faction system"
 
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
 [[dependencies.erinium_faction]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.20.1]"
     ordering="NONE"
     side="BOTH"
-
 
 
 

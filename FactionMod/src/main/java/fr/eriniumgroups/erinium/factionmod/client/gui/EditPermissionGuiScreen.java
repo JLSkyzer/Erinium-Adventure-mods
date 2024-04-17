@@ -159,11 +159,6 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		button_finish = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_finish"), e -> {

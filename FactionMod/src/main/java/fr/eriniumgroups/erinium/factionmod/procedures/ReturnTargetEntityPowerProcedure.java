@@ -9,7 +9,6 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 
-import com.google.gson.JsonObject;
 import com.google.gson.Gson;
 
 public class ReturnTargetEntityPowerProcedure {

@@ -40,19 +40,6 @@
       }
     },
     {
-      "name": "TickFunctions",
-      "type": "tag",
-      "sortid": 175,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tick_functions",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/minecraft/tags/functions/tick.json"
-        ]
-      }
-    },
-    {
       "name": "PlayerTick",
       "type": "procedure",
       "sortid": 3,
@@ -3825,19 +3812,6 @@
       "path": "~/Chunk System/Trigger"
     },
     {
-      "name": "CanUseBlockOnClaim",
-      "type": "tag",
-      "sortid": 174,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "can_use_block_on_claim",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/erinium_faction/tags/blocks/can_use_block_on_claim.json"
-        ]
-      }
-    },
-    {
       "name": "InterractBlock",
       "type": "procedure",
       "sortid": 176,
@@ -4421,6 +4395,11 @@
       "subtitle": ""
     }
   ],
+  "tag_elements": {
+    "BLOCKS:mod:can_use_block_on_claim": [
+      "Blocks.TNT"
+    ]
+  },
   "language_map": {
     "en_us": {
       "faction.message.claim.entered": "You entered at ",
@@ -4590,7 +4569,6 @@
     "author": "JLSkyzer, MCreator",
     "websiteURL": "https://github.com/JLSkyzer",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
@@ -4598,8 +4576,7 @@
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
     "credits": "No credit",
-    "modElementsPackage": "fr.eriniumgroups.erinium.factionmod",
-    "lockBaseModFiles": false
+    "modElementsPackage": "fr.eriniumgroups.erinium.factionmod"
   },
-  "mcreatorVersion": 202300452316
+  "mcreatorVersion": 202400115821
 }

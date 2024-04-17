@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "config",
   "definition": {
     "pools": [
@@ -20,9 +20,7 @@
             "comment": "Item needed to create a faction",
             "vardisplay": "Item need",
             "varname": "item_need_create",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
+            "enablecomment": true
           },
           {
             "item": {
@@ -38,9 +36,7 @@
             "comment": "Iten needed number",
             "vardisplay": "Number item needed",
             "varname": "item_number_create",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
+            "enablecomment": true
           },
           {
             "item": {
@@ -56,9 +52,7 @@
             "comment": "Max member in a faction",
             "vardisplay": "Max member",
             "varname": "max_member",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
+            "enablecomment": true
           }
         ]
       }

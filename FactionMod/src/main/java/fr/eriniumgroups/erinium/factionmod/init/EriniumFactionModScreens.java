@@ -20,8 +20,8 @@ public class EriniumFactionModScreens {
 	@SubscribeEvent
 	public static void clientLoad(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
-			MenuScreens.register(EriniumFactionModMenus.SELETE_RANK_GUI.get(), SeleteRankGuiScreen::new);
 			MenuScreens.register(EriniumFactionModMenus.EDIT_PERMISSION_GUI.get(), EditPermissionGuiScreen::new);
+			MenuScreens.register(EriniumFactionModMenus.SELETE_RANK_GUI.get(), SeleteRankGuiScreen::new);
 			MenuScreens.register(EriniumFactionModMenus.BLACKLIST_ITEM_GUI.get(), BlacklistItemGuiScreen::new);
 		});
 	}

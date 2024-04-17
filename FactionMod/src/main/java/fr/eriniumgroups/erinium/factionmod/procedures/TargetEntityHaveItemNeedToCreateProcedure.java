@@ -26,14 +26,15 @@ public class TargetEntityHaveItemNeedToCreateProcedure {
 			if (_iitemhandlerref.get() != null) {
 				for (int _idx = 0; _idx < _iitemhandlerref.get().getSlots(); _idx++) {
 					ItemStack itemstackiterator = _iitemhandlerref.get().getStackInSlot(_idx).copy();
-					if (itemstackiterator.getItem() == ForgeRegistries.ITEMS.getValue(new ResourceLocation(ConfigConfiguration.ITEM_NEED_CREATE.get()))) {
+					if (itemstackiterator.getItem() == ForgeRegistries.ITEMS.getValue(new ResourceLocation(((ConfigConfiguration.ITEM_NEED_CREATE.get())).toLowerCase(java.util.Locale.ENGLISH)))) {
 						count = count + itemstackiterator.getCount();
 					}
 				}
 			}
 		}
-		if ((entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation(ConfigConfiguration.ITEM_NEED_CREATE.get())))) : false)
-				&& count >= (double) ConfigConfiguration.ITEM_NUMBER_CREATE.get()) {
+		if ((entity instanceof Player _playerHasItem
+				? _playerHasItem.getInventory().contains(new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation(((ConfigConfiguration.ITEM_NEED_CREATE.get())).toLowerCase(java.util.Locale.ENGLISH)))))
+				: false) && count >= (double) ConfigConfiguration.ITEM_NUMBER_CREATE.get()) {
 			return true;
 		}
 		return false;

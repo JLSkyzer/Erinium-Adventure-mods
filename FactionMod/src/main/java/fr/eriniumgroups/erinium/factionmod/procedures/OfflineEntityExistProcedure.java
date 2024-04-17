@@ -12,8 +12,6 @@ import java.io.File;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-import com.google.gson.JsonObject;
-
 public class OfflineEntityExistProcedure {
 	public static boolean execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)

@@ -7,8 +7,6 @@ import java.io.File;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.JsonObject;
-
 public class IsMyFactionTerritoryProcedure {
 	public static boolean execute(LevelAccessor world, Entity entity) {
 		if (entity == null)

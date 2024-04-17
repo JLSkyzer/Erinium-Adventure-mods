@@ -78,11 +78,6 @@ public class BlacklistItemGuiScreen extends AbstractContainerScreen<BlacklistIte
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		button_prev = Button.builder(Component.translatable("gui.erinium_faction.blacklist_item_gui.button_prev"), e -> {
