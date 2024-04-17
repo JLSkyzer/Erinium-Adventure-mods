@@ -1,10 +1,10 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.Entity;
 
@@ -17,9 +17,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
-
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber
 public class PlayerJoinWorldProcedure {
@@ -47,13 +44,13 @@ public class PlayerJoinWorldProcedure {
 				exception.printStackTrace();
 			}
 			JsonObject.addProperty("player_name", (entity.getDisplayName().getString()));
-			JsonObject.addProperty("faction", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name));
-			JsonObject.addProperty("faction_rank", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank));
+			JsonObject.addProperty("faction", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name);
+			JsonObject.addProperty("faction_rank", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank);
 			JsonObject.addProperty("power", 10);
-			JsonObject.addProperty("rank", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank));
+			JsonObject.addProperty("rank", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).rank);
 			JsonObject.addProperty("admin.permission", false);
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(file);
 					fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -72,7 +69,7 @@ public class PlayerJoinWorldProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					if (!JsonObject.has("player_name")) {
 						JsonObject.addProperty("player_name", (entity.getDisplayName().getString()));
 					} else {
@@ -81,22 +78,22 @@ public class PlayerJoinWorldProcedure {
 						}
 					}
 					if (!JsonObject.has("faction")) {
-						JsonObject.addProperty("faction", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name));
+						JsonObject.addProperty("faction", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name);
 					}
 					if (!JsonObject.has("faction_rank")) {
-						JsonObject.addProperty("faction_rank", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank));
+						JsonObject.addProperty("faction_rank", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank);
 					}
 					if (!JsonObject.has("power")) {
 						JsonObject.addProperty("power", 10);
 					}
 					if (!JsonObject.has("rank")) {
-						JsonObject.addProperty("rank", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank));
+						JsonObject.addProperty("rank", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).rank);
 					}
 					if (!JsonObject.has("admin.permission")) {
 						JsonObject.addProperty("admin.permission", false);
 					}
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(file);
 							fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -119,35 +116,27 @@ public class PlayerJoinWorldProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				{
-					String _setval = JsonObject.get("faction").getAsString();
-					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.faction_name = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+					_vars.faction_name = JsonObject.get("faction").getAsString();
+					_vars.syncPlayerVariables(entity);
 				}
 				{
-					String _setval = JsonObject.get("faction_rank").getAsString();
-					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.faction_rank = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+					_vars.faction_rank = JsonObject.get("faction_rank").getAsString();
+					_vars.syncPlayerVariables(entity);
 				}
 				{
-					String _setval = JsonObject.get("rank").getAsString();
-					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.rank = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+					_vars.rank = JsonObject.get("rank").getAsString();
+					_vars.syncPlayerVariables(entity);
 				}
-				if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name).equals("wilderness")) {
+				if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name).equals("wilderness")) {
 					{
-						String _setval = "Wilderness";
-						entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.faction_displayname = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+						_vars.faction_displayname = "Wilderness";
+						_vars.syncPlayerVariables(entity);
 					}
 				}
 			} catch (IOException e) {
@@ -164,7 +153,7 @@ public class PlayerJoinWorldProcedure {
 			}
 			UUIDJsonObject.addProperty("uuid", entity.getUUID().toString());
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(file);
 					fileWriter.write(mainGSONBuilderVariable.toJson(UUIDJsonObject));

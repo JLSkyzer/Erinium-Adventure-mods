@@ -47,9 +47,6 @@
       "locked_code": false,
       "registry_name": "player_tick",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PlayerTickProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -82,9 +79,6 @@
       "locked_code": false,
       "registry_name": "player_join_world",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PlayerJoinWorldProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -143,7 +137,7 @@
       "name": "F",
       "type": "command",
       "sortid": 68,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "f",
       "metadata": {
@@ -161,9 +155,6 @@
       "locked_code": false,
       "registry_name": "faction_create",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionCreateProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -190,9 +181,6 @@
       "registry_name": "return_target_entity_path",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnTargetEntityPathProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -211,9 +199,6 @@
       "registry_name": "return_command_entity_path",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnCommandEntityPathProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -232,15 +217,7 @@
       "registry_name": "return_target_entity_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnTargetEntityPowerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/PlayerInformations/return"
     },
@@ -253,15 +230,7 @@
       "registry_name": "return_command_entity_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnCommandEntityPowerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/PlayerInformations/return"
     },
@@ -269,20 +238,12 @@
       "name": "ReturnCommandStringEntityPower",
       "type": "procedure",
       "sortid": 12,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "return_command_string_entity_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnCommandStringEntityPowerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/PlayerInformations/return"
     },
@@ -290,19 +251,11 @@
       "name": "FactionCreateRank",
       "type": "procedure",
       "sortid": 13,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "registry_name": "faction_create_rank",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionCreateRankProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures"
     },
@@ -335,9 +288,6 @@
       "locked_code": false,
       "registry_name": "faction_disband",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionDisbandProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -359,9 +309,6 @@
       "locked_code": false,
       "registry_name": "faction_info",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionInfoProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -380,9 +327,6 @@
       "registry_name": "rtt",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/RttProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -401,15 +345,7 @@
       "registry_name": "get_faction_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionPowerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -422,9 +358,6 @@
       "registry_name": "get_max_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetMaxPowerProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -443,9 +376,6 @@
       "registry_name": "get_member_count",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetMemberCountProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -464,15 +394,7 @@
       "registry_name": "get_faction_desc",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionDescProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -484,9 +406,6 @@
       "locked_code": false,
       "registry_name": "faction_string_info",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionStringInfoProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -509,9 +428,6 @@
       "registry_name": "get_string_faction_name",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionNameProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -530,15 +446,7 @@
       "registry_name": "get_string_faction_display_name",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionDisplayNameProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -551,15 +459,7 @@
       "registry_name": "string_faction_exist",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/StringFactionExistProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Return"
     },
@@ -572,15 +472,7 @@
       "registry_name": "get_string_faction_desc",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionDescProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -593,15 +485,7 @@
       "registry_name": "get_string_faction_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionPowerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -614,14 +498,7 @@
       "registry_name": "get_string_faction_max_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionMaxPowerProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -639,14 +516,7 @@
       "registry_name": "get_string_faction_member_count",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionMemberCountProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -664,14 +534,7 @@
       "registry_name": "get_string_faction_member_list",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionMemberListProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -709,9 +572,6 @@
       "locked_code": false,
       "registry_name": "faction_player_info",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionPlayerInfoProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -734,15 +594,7 @@
       "registry_name": "get_player_faction_desc",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPlayerFactionDescProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -755,15 +607,7 @@
       "registry_name": "get_player_faction_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPlayerFactionPowerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -776,14 +620,7 @@
       "registry_name": "get_player_faction_max_power",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPlayerFactionMaxPowerProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -801,14 +638,7 @@
       "registry_name": "get_player_faction_count",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPlayerFactionCountProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -826,14 +656,7 @@
       "registry_name": "get_player_faction_member_list",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPlayerFactionMemberListProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -850,9 +673,6 @@
       "locked_code": false,
       "registry_name": "player_death",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PlayerDeathProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -870,9 +690,6 @@
       "registry_name": "entity_faction_path",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/EntityFactionPathProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -891,15 +708,7 @@
       "registry_name": "get_faction_claims_number",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionClaimsNumberProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -912,15 +721,7 @@
       "registry_name": "get_string_faction_claims_number",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetStringFactionClaimsNumberProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -933,15 +734,7 @@
       "registry_name": "get_player_faction_claims_number",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPlayerFactionClaimsNumberProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Command/Procedures/Faction Info"
     },
@@ -954,9 +747,6 @@
       "registry_name": "get_permission_of_target_entity",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPermissionOfTargetEntityProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -974,9 +764,6 @@
       "locked_code": false,
       "registry_name": "recruit_perm",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/RecruitPermProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1010,9 +797,6 @@
       "locked_code": false,
       "registry_name": "member_perm",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/MemberPermProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1046,9 +830,6 @@
       "locked_code": false,
       "registry_name": "ancient_perm",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/AncientPermProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1082,9 +863,6 @@
       "locked_code": false,
       "registry_name": "officier_perm",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/OfficierPermProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1119,9 +897,6 @@
       "registry_name": "caninteract",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CaninteractProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1140,9 +915,6 @@
       "registry_name": "can_break",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanBreakProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1161,9 +933,6 @@
       "registry_name": "can_pose",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanPoseProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1182,9 +951,6 @@
       "registry_name": "can_kick",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanKickProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1203,9 +969,6 @@
       "registry_name": "can_invite",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanInviteProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1224,9 +987,6 @@
       "registry_name": "can_promote",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanPromoteProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1245,9 +1005,6 @@
       "registry_name": "can_demote",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanDemoteProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1266,9 +1023,6 @@
       "registry_name": "can_claim",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanClaimProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1287,9 +1041,6 @@
       "registry_name": "can_unclaim",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanUnclaimProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1308,9 +1059,6 @@
       "registry_name": "can_setwarp",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanSetwarpProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1329,9 +1077,6 @@
       "registry_name": "can_delwarp",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanDelwarpProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1350,9 +1095,6 @@
       "registry_name": "cansethome",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CansethomeProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1371,9 +1113,6 @@
       "registry_name": "can_delhome",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanDelhomeProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1392,9 +1131,6 @@
       "registry_name": "can_modify",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanModifyProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1413,9 +1149,6 @@
       "registry_name": "can_home",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanHomeProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1434,9 +1167,6 @@
       "registry_name": "can_warp",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanWarpProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1471,7 +1201,7 @@
       "name": "EditPermissionGui",
       "type": "gui",
       "sortid": 89,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "edit_permission_gui",
       "metadata": {
@@ -1491,9 +1221,6 @@
       "locked_code": false,
       "registry_name": "get_all_permissions",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetAllPermissionsProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1831,9 +1558,6 @@
       "locked_code": false,
       "registry_name": "validate",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ValidateProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1867,7 +1591,7 @@
       "name": "ValidateBtn",
       "type": "procedure",
       "sortid": 87,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "validate_btn",
       "metadata": {
@@ -1887,7 +1611,7 @@
       "name": "SeleteRankGui",
       "type": "gui",
       "sortid": 88,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "selete_rank_gui",
       "metadata": {
@@ -1939,7 +1663,7 @@
       "name": "PlayerCanInteract",
       "type": "procedure",
       "sortid": 91,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_interact",
       "metadata": {
@@ -1960,7 +1684,7 @@
       "name": "PlayerCanBreak",
       "type": "procedure",
       "sortid": 92,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_break",
       "metadata": {
@@ -1981,7 +1705,7 @@
       "name": "PlayerCanPose",
       "type": "procedure",
       "sortid": 93,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_pose",
       "metadata": {
@@ -2002,7 +1726,7 @@
       "name": "PlayerCanKick",
       "type": "procedure",
       "sortid": 94,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_kick",
       "metadata": {
@@ -2023,7 +1747,7 @@
       "name": "PlayerCanInvite",
       "type": "procedure",
       "sortid": 95,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_invite",
       "metadata": {
@@ -2044,7 +1768,7 @@
       "name": "PlayerCanPromote",
       "type": "procedure",
       "sortid": 96,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_promote",
       "metadata": {
@@ -2065,7 +1789,7 @@
       "name": "PlayerCanDemote",
       "type": "procedure",
       "sortid": 97,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_demote",
       "metadata": {
@@ -2086,7 +1810,7 @@
       "name": "PlayerCanClaim",
       "type": "procedure",
       "sortid": 98,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_claim",
       "metadata": {
@@ -2107,7 +1831,7 @@
       "name": "PlayerCanUnclaim",
       "type": "procedure",
       "sortid": 99,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_unclaim",
       "metadata": {
@@ -2128,7 +1852,7 @@
       "name": "PlayerSetWarp",
       "type": "procedure",
       "sortid": 100,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_set_warp",
       "metadata": {
@@ -2149,7 +1873,7 @@
       "name": "PlayerCanDelwarp",
       "type": "procedure",
       "sortid": 101,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_delwarp",
       "metadata": {
@@ -2170,7 +1894,7 @@
       "name": "PlayerCanSethome",
       "type": "procedure",
       "sortid": 102,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_sethome",
       "metadata": {
@@ -2191,7 +1915,7 @@
       "name": "PlayerCanDelhome",
       "type": "procedure",
       "sortid": 103,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_delhome",
       "metadata": {
@@ -2212,7 +1936,7 @@
       "name": "PlayerCanModify",
       "type": "procedure",
       "sortid": 104,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_modify",
       "metadata": {
@@ -2233,7 +1957,7 @@
       "name": "PlayerCanHome",
       "type": "procedure",
       "sortid": 105,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_home",
       "metadata": {
@@ -2254,7 +1978,7 @@
       "name": "PlayerCanWarp",
       "type": "procedure",
       "sortid": 106,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_can_warp",
       "metadata": {
@@ -2328,9 +2052,6 @@
       "locked_code": false,
       "registry_name": "faction_join",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionJoinProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2352,9 +2073,6 @@
       "locked_code": false,
       "registry_name": "faction_leave",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionLeaveProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2373,15 +2091,7 @@
       "registry_name": "return_command_offline_entity_path",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnCommandOfflineEntityPathProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/PlayerInformations/return"
     },
@@ -2394,14 +2104,7 @@
       "registry_name": "offline_entity_exist",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/OfflineEntityExistProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -2419,14 +2122,7 @@
       "registry_name": "command_offline_entity_are_same_faction",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CommandOfflineEntityAreSameFactionProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -2444,14 +2140,7 @@
       "registry_name": "command_offline_entity_rank_checker_to_execute",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CommandOfflineEntityRankCheckerToExecuteProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -2469,9 +2158,6 @@
       "registry_name": "command_entity_rank_checker_to_execute",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CommandEntityRankCheckerToExecuteProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2493,9 +2179,6 @@
       "locked_code": false,
       "registry_name": "faction_kick_offline",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionKickOfflineProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2521,9 +2204,6 @@
       "locked_code": false,
       "registry_name": "faction_kick_online",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionKickOnlineProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2546,14 +2226,7 @@
       "registry_name": "promote_offline_logic_rank",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PromoteOfflineLogicRankProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -2571,9 +2244,6 @@
       "registry_name": "promote_online_logic_rank",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PromoteOnlineLogicRankProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2596,14 +2266,7 @@
       "registry_name": "promote_offline_string_rank",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PromoteOfflineStringRankProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -2621,9 +2284,6 @@
       "registry_name": "promote_online_string_rank",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PromoteOnlineStringRankProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2645,9 +2305,6 @@
       "locked_code": false,
       "registry_name": "faction_promote_offline",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionPromoteOfflineProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2673,9 +2330,6 @@
       "locked_code": false,
       "registry_name": "faction_promote_online",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionPromoteOnlineProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2698,14 +2352,7 @@
       "registry_name": "demote_offline_logic_rank",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DemoteOfflineLogicRankProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -2723,9 +2370,6 @@
       "registry_name": "demote_online_logic_rank",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DemoteOnlineLogicRankProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2748,14 +2392,7 @@
       "registry_name": "demont_offline_string_rank",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DemontOfflineStringRankProcedure.java"
-        ],
         "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          },
           {
             "name": "entity",
             "type": "entity"
@@ -2773,9 +2410,6 @@
       "registry_name": "demote_online_string_rank",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DemoteOnlineStringRankProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2797,9 +2431,6 @@
       "locked_code": false,
       "registry_name": "faction_demote_offline",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionDemoteOfflineProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2825,9 +2456,6 @@
       "locked_code": false,
       "registry_name": "faction_demote_online",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionDemoteOnlineProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2850,9 +2478,6 @@
       "registry_name": "offline_player_are_in_the_server",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/OfflinePlayerAreInTheServerProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -2875,15 +2500,7 @@
       "registry_name": "return_command_offline_entity_uuid",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnCommandOfflineEntityUuidProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "arguments",
-            "type": "cmdcontext"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/PlayerInformations/return"
     },
@@ -2896,19 +2513,7 @@
       "registry_name": "return_owned_factiion",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnOwnedFactiionProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Chunk System"
     },
@@ -2921,9 +2526,6 @@
       "registry_name": "get_chunk_path",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetChunkPathProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -2946,19 +2548,7 @@
       "registry_name": "is_warzone",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/IsWarzoneProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Chunk System"
     },
@@ -2971,19 +2561,7 @@
       "registry_name": "is_safezone",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/IsSafezoneProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Chunk System"
     },
@@ -2996,17 +2574,10 @@
       "registry_name": "can_interact_with_claims",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/CanInteractWithClaimsProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3021,9 +2592,6 @@
       "registry_name": "faction_claims_path",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionClaimsPathProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3046,15 +2614,7 @@
       "registry_name": "get_faction_desc_at_chunk",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionDescAtChunkProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Return"
     },
@@ -3067,15 +2627,7 @@
       "registry_name": "get_faction_displayname_at_chunk",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionDisplaynameAtChunkProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Return"
     },
@@ -3087,9 +2639,6 @@
       "locked_code": false,
       "registry_name": "right_click_block",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/RightClickBlockProcedure.java"
-        ],
         "dependencies": []
       }
     },
@@ -3101,9 +2650,6 @@
       "locked_code": false,
       "registry_name": "f_claim",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FClaimProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3138,15 +2684,7 @@
       "registry_name": "get_faction_power_at_chunk",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionPowerAtChunkProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Return"
     },
@@ -3159,15 +2697,7 @@
       "registry_name": "get_faction_claims_at_chunk",
       "metadata": {
         "return_type": "number",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionClaimsAtChunkProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Return"
     },
@@ -3179,9 +2709,6 @@
       "locked_code": false,
       "registry_name": "f_unclaim",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FUnclaimProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3204,9 +2731,6 @@
       "registry_name": "get_player_list_at_faction_chunk",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetPlayerListAtFactionChunkProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3225,17 +2749,10 @@
       "registry_name": "is_my_faction_territory",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/IsMyFactionTerritoryProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3249,9 +2766,6 @@
       "locked_code": false,
       "registry_name": "faction_map",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionMapProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3269,7 +2783,7 @@
       "name": "FactionPower",
       "type": "procedure",
       "sortid": 148,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_power",
       "metadata": {
@@ -3314,9 +2828,6 @@
       "registry_name": "entity_faction_home",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/EntityFactionHomeProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3334,9 +2845,6 @@
       "locked_code": false,
       "registry_name": "faction_set_home",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionSetHomeProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3354,9 +2862,6 @@
       "locked_code": false,
       "registry_name": "del_home",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DelHomeProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3374,9 +2879,6 @@
       "locked_code": false,
       "registry_name": "faction_home",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionHomeProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3390,7 +2892,7 @@
       "name": "OnPlace",
       "type": "procedure",
       "sortid": 154,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "on_place",
       "metadata": {
@@ -3401,10 +2903,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3414,7 +2912,7 @@
       "name": "OnBreak",
       "type": "procedure",
       "sortid": 155,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "on_break",
       "metadata": {
@@ -3425,10 +2923,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3438,7 +2932,7 @@
       "name": "OnMultiplace",
       "type": "procedure",
       "sortid": 156,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "on_multiplace",
       "metadata": {
@@ -3449,10 +2943,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3466,9 +2956,6 @@
       "locked_code": false,
       "registry_name": "mod_initialised",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ModInitialisedProcedure.java"
-        ],
         "dependencies": []
       }
     },
@@ -3481,9 +2968,6 @@
       "registry_name": "target_entity_is_admin",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/TargetEntityIsAdminProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3497,7 +2981,7 @@
       "name": "Blacklistitem",
       "type": "command",
       "sortid": 159,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "blacklistitem",
       "metadata": {
@@ -3553,9 +3037,6 @@
       "registry_name": "return_black_list_item",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ReturnBlackListItemProcedure.java"
-        ],
         "dependencies": []
       },
       "path": "~/Chunk System/BlackListItem"
@@ -3564,7 +3045,7 @@
       "name": "BlacklistItemGuiWhileThisGUIIsOpenTick",
       "type": "procedure",
       "sortid": 163,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "blacklist_item_gui_while_this_gui_is_open_tick",
       "metadata": {
@@ -3624,7 +3105,7 @@
       "name": "OpenBlacklistItemGui",
       "type": "procedure",
       "sortid": 166,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "open_blacklist_item_gui",
       "metadata": {
@@ -3664,9 +3145,6 @@
       "locked_code": false,
       "registry_name": "black_list_item_add",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/BlackListItemAddProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -3688,9 +3166,6 @@
       "locked_code": false,
       "registry_name": "black_list_item_remove",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/BlackListItemRemoveProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -3722,7 +3197,7 @@
       "name": "ProcedBypassClaim",
       "type": "procedure",
       "sortid": 170,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "proced_bypass_claim",
       "metadata": {
@@ -3746,9 +3221,6 @@
       "locked_code": false,
       "registry_name": "delete_claim_at_enemy_faction",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/DeleteClaimAtEnemyFactionProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3771,17 +3243,10 @@
       "registry_name": "chunk_faction_path",
       "metadata": {
         "return_type": "file",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ChunkFactionPathProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3791,7 +3256,7 @@
       "name": "UseItem",
       "type": "procedure",
       "sortid": 173,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "use_item",
       "metadata": {
@@ -3802,10 +3267,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3815,7 +3276,7 @@
       "name": "InterractBlock",
       "type": "procedure",
       "sortid": 176,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "interract_block",
       "metadata": {
@@ -3855,9 +3316,6 @@
       "locked_code": false,
       "registry_name": "force_unclaim_proced",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/ForceUnclaimProcedProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3887,7 +3345,7 @@
       "name": "ForceUnclaim",
       "type": "command",
       "sortid": 178,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "force_unclaim",
       "metadata": {
@@ -3901,7 +3359,7 @@
       "name": "Warzone",
       "type": "command",
       "sortid": 179,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "warzone",
       "metadata": {
@@ -3919,17 +3377,10 @@
       "locked_code": false,
       "registry_name": "warzone_unclaim",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/WarzoneUnclaimProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3943,9 +3394,6 @@
       "locked_code": false,
       "registry_name": "warzone_claim",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/WarzoneClaimProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -3967,17 +3415,10 @@
       "locked_code": false,
       "registry_name": "safezone_unclaim",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/SafezoneUnclaimProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -3991,9 +3432,6 @@
       "locked_code": false,
       "registry_name": "safezone_claim",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/SafezoneClaimProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4011,7 +3449,7 @@
       "name": "Safezone",
       "type": "command",
       "sortid": 182,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "safezone",
       "metadata": {
@@ -4025,7 +3463,7 @@
       "name": "FightPlayer",
       "type": "procedure",
       "sortid": 185,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "fight_player",
       "metadata": {
@@ -4044,10 +3482,6 @@
           {
             "name": "sourceentity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -4097,9 +3531,6 @@
       "locked_code": false,
       "registry_name": "player_respawn",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/PlayerRespawnProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4117,19 +3548,7 @@
       "registry_name": "is_wilderness",
       "metadata": {
         "return_type": "logic",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/IsWildernessProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Chunk System"
     },
@@ -4137,7 +3556,7 @@
       "name": "Temp",
       "type": "command",
       "sortid": 190,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "temp",
       "metadata": {
@@ -4154,9 +3573,6 @@
       "locked_code": false,
       "registry_name": "temp_proc",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/TempProcProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "entity",
@@ -4178,15 +3594,7 @@
       "registry_name": "get_faction_ally_list",
       "metadata": {
         "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/GetFactionAllyListProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/FactionSystem/Return"
     },
@@ -4198,9 +3606,6 @@
       "locked_code": false,
       "registry_name": "faction_desc",
       "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/procedures/FactionDescProcedure.java"
-        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -4419,8 +3824,8 @@
       "faction.message.sethome.succeful": "Your faction home has been set !",
       "gui.erinium_faction.blacklist_item_gui.label_blacklist_item": "Blacklist Item",
       "faction.error.displaynamecharcount": "Your displayname can have 20 characters max !",
-      "gui.erinium_faction.edit_permission_gui.button_finish": "Finish",
       "faction.message.home.noexist": "Your faction home not exist !",
+      "gui.erinium_faction.edit_permission_gui.button_finish": "Finish",
       "gui.erinium_faction.selete_rank_gui.button_ancient": "Ancient",
       "gui.erinium_faction.selete_rank_gui.button_officier": "Officier",
       "safezone.desc": "A safe place to chill",
@@ -4574,7 +3979,7 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.20.1",
+    "currentGenerator": "neoforge-1.20.4",
     "credits": "No credit",
     "modElementsPackage": "fr.eriniumgroups.erinium.factionmod"
   },

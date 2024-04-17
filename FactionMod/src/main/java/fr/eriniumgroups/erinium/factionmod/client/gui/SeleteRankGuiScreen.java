@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.factionmod.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,7 +15,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.factionmod.world.inventory.SeleteRankGuiMenu;
 import fr.eriniumgroups.erinium.factionmod.network.SeleteRankGuiButtonMessage;
-import fr.eriniumgroups.erinium.factionmod.EriniumFactionMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -42,7 +43,7 @@ public class SeleteRankGuiScreen extends AbstractContainerScreen<SeleteRankGuiMe
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -66,11 +67,6 @@ public class SeleteRankGuiScreen extends AbstractContainerScreen<SeleteRankGuiMe
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_faction.selete_rank_gui.label_select_the_rank_to_modify"), 24, 7, -16777216, false);
 	}
@@ -80,7 +76,7 @@ public class SeleteRankGuiScreen extends AbstractContainerScreen<SeleteRankGuiMe
 		super.init();
 		button_recruit = Button.builder(Component.translatable("gui.erinium_faction.selete_rank_gui.button_recruit"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new SeleteRankGuiButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new SeleteRankGuiButtonMessage(0, x, y, z));
 				SeleteRankGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 6, this.topPos + 43, 54, 20).build();
@@ -88,7 +84,7 @@ public class SeleteRankGuiScreen extends AbstractContainerScreen<SeleteRankGuiMe
 		this.addRenderableWidget(button_recruit);
 		button_member = Button.builder(Component.translatable("gui.erinium_faction.selete_rank_gui.button_member"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new SeleteRankGuiButtonMessage(1, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new SeleteRankGuiButtonMessage(1, x, y, z));
 				SeleteRankGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}).bounds(this.leftPos + 114, this.topPos + 43, 54, 20).build();
@@ -96,7 +92,7 @@ public class SeleteRankGuiScreen extends AbstractContainerScreen<SeleteRankGuiMe
 		this.addRenderableWidget(button_member);
 		button_ancient = Button.builder(Component.translatable("gui.erinium_faction.selete_rank_gui.button_ancient"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new SeleteRankGuiButtonMessage(2, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new SeleteRankGuiButtonMessage(2, x, y, z));
 				SeleteRankGuiButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		}).bounds(this.leftPos + 6, this.topPos + 79, 54, 20).build();
@@ -104,7 +100,7 @@ public class SeleteRankGuiScreen extends AbstractContainerScreen<SeleteRankGuiMe
 		this.addRenderableWidget(button_ancient);
 		button_officier = Button.builder(Component.translatable("gui.erinium_faction.selete_rank_gui.button_officier"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new SeleteRankGuiButtonMessage(3, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new SeleteRankGuiButtonMessage(3, x, y, z));
 				SeleteRankGuiButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}).bounds(this.leftPos + 114, this.topPos + 79, 54, 20).build();

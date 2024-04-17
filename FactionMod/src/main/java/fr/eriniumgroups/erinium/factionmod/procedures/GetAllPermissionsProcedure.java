@@ -9,8 +9,6 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.Gson;
-
 public class GetAllPermissionsProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
@@ -19,8 +17,7 @@ public class GetAllPermissionsProcedure {
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		String result_text = "";
 		String permission = "";
-		File = new File(((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_path),
-				File.separator + ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_file + ".json"));
+		File = new File(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_path, File.separator + (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_file + ".json"));
 		{
 			try {
 				BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
@@ -30,13 +27,11 @@ public class GetAllPermissionsProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				{
-					String _setval = JsonObject.get("permissions_list").getAsString();
-					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.temp_perm_list = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+					_vars.temp_perm_list = JsonObject.get("permissions_list").getAsString();
+					_vars.syncPlayerVariables(entity);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

@@ -8,7 +8,7 @@ public class TargetEntityIsChefProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Chef")) {
+		if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Chef")) {
 			return true;
 		}
 		return false;

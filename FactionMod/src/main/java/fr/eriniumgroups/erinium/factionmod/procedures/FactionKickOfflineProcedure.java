@@ -14,9 +14,6 @@ import java.io.BufferedReader;
 
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FactionKickOfflineProcedure {
 	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -40,11 +37,11 @@ public class FactionKickOfflineProcedure {
 											jsonstringbuilder.append(line);
 										}
 										bufferedReader.close();
-										JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+										JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 										JsonObject.addProperty("faction", "wilderness");
 										JsonObject.addProperty("faction_rank", "");
 										{
-											Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+											com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 											try {
 												FileWriter fileWriter = new FileWriter(File);
 												fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -69,10 +66,10 @@ public class FactionKickOfflineProcedure {
 											jsonstringbuilder.append(line);
 										}
 										bufferedReader.close();
-										SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+										SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 										SecJsonObject.addProperty("member_count", (SecJsonObject.get("member_count").getAsString().replace(ReturnCommandOfflineEntityUuidProcedure.execute(arguments) + ", ", "")));
 										{
-											Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+											com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 											try {
 												FileWriter fileWriter = new FileWriter(File);
 												fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));

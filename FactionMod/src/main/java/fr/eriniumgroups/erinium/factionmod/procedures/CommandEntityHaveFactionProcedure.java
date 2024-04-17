@@ -11,7 +11,7 @@ import com.mojang.brigadier.context.CommandContext;
 
 public class CommandEntityHaveFactionProcedure {
 	public static boolean execute(CommandContext<CommandSourceStack> arguments) {
-		if (!((((new Object() {
+		if (!(((new Object() {
 			public Entity getEntity() {
 				try {
 					return EntityArgument.getEntity(arguments, "player");
@@ -20,7 +20,7 @@ public class CommandEntityHaveFactionProcedure {
 					return null;
 				}
 			}
-		}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name).equals("wilderness") || (((new Object() {
+		}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name).equals("wilderness") || ((new Object() {
 			public Entity getEntity() {
 				try {
 					return EntityArgument.getEntity(arguments, "player");
@@ -29,7 +29,7 @@ public class CommandEntityHaveFactionProcedure {
 					return null;
 				}
 			}
-		}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name).equals(""))) {
+		}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name).equals(""))) {
 			return true;
 		}
 		return false;

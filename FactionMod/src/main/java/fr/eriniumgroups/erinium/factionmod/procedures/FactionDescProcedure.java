@@ -15,9 +15,6 @@ import java.io.BufferedReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FactionDescProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -35,7 +32,7 @@ public class FactionDescProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					JsonObject.addProperty("faction_desc", (new Object() {
 						public String getMessage() {
 							try {
@@ -46,7 +43,7 @@ public class FactionDescProcedure {
 						}
 					}).getMessage());
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(file);
 							fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

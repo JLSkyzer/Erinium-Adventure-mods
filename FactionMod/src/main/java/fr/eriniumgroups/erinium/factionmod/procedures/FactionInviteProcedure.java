@@ -19,7 +19,7 @@ public class FactionInviteProcedure {
 			if (TargetEntityIsChefProcedure.execute(entity) || PlayerCanInviteProcedure.execute(entity)) {
 				if (!CommandEntityAreSameFactionProcedure.execute(arguments, entity)) {
 					{
-						String _setval = ((new Object() {
+						EriniumFactionModVariables.PlayerVariables _vars = (new Object() {
 							public Entity getEntity() {
 								try {
 									return EntityArgument.getEntity(arguments, "player");
@@ -28,9 +28,8 @@ public class FactionInviteProcedure {
 									return null;
 								}
 							}
-						}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).InvitedBy + ""
-								+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + ", ";
-						(new Object() {
+						}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+						_vars.InvitedBy = (new Object() {
 							public Entity getEntity() {
 								try {
 									return EntityArgument.getEntity(arguments, "player");
@@ -39,23 +38,20 @@ public class FactionInviteProcedure {
 									return null;
 								}
 							}
-						}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.InvitedBy = _setval;
-							capability.syncPlayerVariables((new Object() {
-								public Entity getEntity() {
-									try {
-										return EntityArgument.getEntity(arguments, "player");
-									} catch (CommandSyntaxException e) {
-										e.printStackTrace();
-										return null;
-									}
+						}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).InvitedBy + "" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + ", ";
+						_vars.syncPlayerVariables((new Object() {
+							public Entity getEntity() {
+								try {
+									return EntityArgument.getEntity(arguments, "player");
+								} catch (CommandSyntaxException e) {
+									e.printStackTrace();
+									return null;
 								}
-							}.getEntity()));
-						});
+							}
+						}.getEntity()));
 					}
 					{
-						double _setval = 1200;
-						(new Object() {
+						EriniumFactionModVariables.PlayerVariables _vars = (new Object() {
 							public Entity getEntity() {
 								try {
 									return EntityArgument.getEntity(arguments, "player");
@@ -64,19 +60,18 @@ public class FactionInviteProcedure {
 									return null;
 								}
 							}
-						}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.Invite_timer = _setval;
-							capability.syncPlayerVariables((new Object() {
-								public Entity getEntity() {
-									try {
-										return EntityArgument.getEntity(arguments, "player");
-									} catch (CommandSyntaxException e) {
-										e.printStackTrace();
-										return null;
-									}
+						}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+						_vars.Invite_timer = 1200;
+						_vars.syncPlayerVariables((new Object() {
+							public Entity getEntity() {
+								try {
+									return EntityArgument.getEntity(arguments, "player");
+								} catch (CommandSyntaxException e) {
+									e.printStackTrace();
+									return null;
 								}
-							}.getEntity()));
-						});
+							}
+						}.getEntity()));
 					}
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7eInvitation sent !"), false);
@@ -90,11 +85,8 @@ public class FactionInviteProcedure {
 							}
 						}
 					}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(
-								Component.literal(("\u00A7eThe faction \u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name
-										+ " \u00A7eInvite you, join this faction by doing \u00A7a/f join "
-										+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name)),
-								false);
+						_player.displayClientMessage(Component.literal(("\u00A7eThe faction \u00A7a" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + " \u00A7eInvite you, join this faction by doing \u00A7a/f join "
+								+ entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name)), false);
 				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7cThe player is already on your faction"), false);

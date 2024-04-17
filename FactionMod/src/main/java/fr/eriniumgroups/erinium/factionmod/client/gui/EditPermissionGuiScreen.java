@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.factionmod.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -30,7 +32,6 @@ import fr.eriniumgroups.erinium.factionmod.procedures.CanDelhomeProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.CanClaimProcedure;
 import fr.eriniumgroups.erinium.factionmod.procedures.CanBreakProcedure;
 import fr.eriniumgroups.erinium.factionmod.network.EditPermissionGuiButtonMessage;
-import fr.eriniumgroups.erinium.factionmod.EriniumFactionMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -72,7 +73,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -96,11 +97,6 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 			return true;
 		}
 		return super.keyPressed(key, b, c);
-	}
-
-	@Override
-	public void containerTick() {
-		super.containerTick();
 	}
 
 	@Override
@@ -163,7 +159,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		super.init();
 		button_finish = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_finish"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(0, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 261, this.topPos + 179, 36, 20).build();
@@ -171,7 +167,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_finish);
 		button_x = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(1, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(1, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}).bounds(this.leftPos + -122, this.topPos + -8, 20, 20).build();
@@ -179,7 +175,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x);
 		button_x1 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x1"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(2, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(2, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
 		}).bounds(this.leftPos + -122, this.topPos + 22, 20, 20).build();
@@ -187,7 +183,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x1);
 		button_empty = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_empty"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(3, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(3, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
 		}).bounds(this.leftPos + -122, this.topPos + 52, 20, 20).build();
@@ -195,7 +191,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_empty);
 		button_x2 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x2"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(4, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(4, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
 		}).bounds(this.leftPos + -122, this.topPos + 82, 20, 20).build();
@@ -203,7 +199,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x2);
 		button_x3 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x3"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(5, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(5, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
 		}).bounds(this.leftPos + -122, this.topPos + 112, 20, 20).build();
@@ -211,7 +207,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x3);
 		button_x4 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x4"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(6, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(6, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
 		}).bounds(this.leftPos + -122, this.topPos + 142, 20, 20).build();
@@ -219,7 +215,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x4);
 		button_x5 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x5"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(7, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(7, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
 		}).bounds(this.leftPos + -122, this.topPos + 172, 20, 20).build();
@@ -227,7 +223,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x5);
 		button_x6 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x6"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(8, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(8, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 8, x, y, z);
 			}
 		}).bounds(this.leftPos + -42, this.topPos + -8, 20, 20).build();
@@ -235,7 +231,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x6);
 		button_x7 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x7"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(9, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(9, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 9, x, y, z);
 			}
 		}).bounds(this.leftPos + -42, this.topPos + 22, 20, 20).build();
@@ -243,7 +239,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x7);
 		button_x8 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x8"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(10, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(10, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 10, x, y, z);
 			}
 		}).bounds(this.leftPos + -42, this.topPos + 52, 20, 20).build();
@@ -251,7 +247,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x8);
 		button_x9 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x9"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(11, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(11, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 11, x, y, z);
 			}
 		}).bounds(this.leftPos + -42, this.topPos + 82, 20, 20).build();
@@ -259,7 +255,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x9);
 		button_x10 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x10"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(12, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(12, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 12, x, y, z);
 			}
 		}).bounds(this.leftPos + -42, this.topPos + 112, 20, 20).build();
@@ -267,7 +263,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x10);
 		button_x11 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x11"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(13, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(13, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 13, x, y, z);
 			}
 		}).bounds(this.leftPos + -42, this.topPos + 142, 20, 20).build();
@@ -275,7 +271,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x11);
 		button_x12 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x12"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(14, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(14, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 14, x, y, z);
 			}
 		}).bounds(this.leftPos + -42, this.topPos + 172, 20, 20).build();
@@ -283,7 +279,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x12);
 		button_x13 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x13"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(15, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(15, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 15, x, y, z);
 			}
 		}).bounds(this.leftPos + 28, this.topPos + -8, 20, 20).build();
@@ -291,7 +287,7 @@ public class EditPermissionGuiScreen extends AbstractContainerScreen<EditPermiss
 		this.addRenderableWidget(button_x13);
 		button_x14 = Button.builder(Component.translatable("gui.erinium_faction.edit_permission_gui.button_x14"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new EditPermissionGuiButtonMessage(16, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EditPermissionGuiButtonMessage(16, x, y, z));
 				EditPermissionGuiButtonMessage.handleButtonAction(entity, 16, x, y, z);
 			}
 		}).bounds(this.leftPos + 28, this.topPos + 22, 20, 20).build();

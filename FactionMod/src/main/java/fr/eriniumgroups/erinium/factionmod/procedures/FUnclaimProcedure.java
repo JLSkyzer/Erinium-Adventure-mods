@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ChunkPos;
@@ -17,9 +17,6 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FUnclaimProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
@@ -30,32 +27,30 @@ public class FUnclaimProcedure {
 		com.google.gson.JsonObject ThirdJsonObject = new com.google.gson.JsonObject();
 		if (TargetEntityHaveFactionProcedure.execute(entity)) {
 			if (PlayerCanUnclaimProcedure.execute(entity) || TargetEntityIsChefProcedure.execute(entity)) {
-				if ((ReturnOwnedFactiionProcedure.execute(world, entity)).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name)) {
-					if (new java.io.File(new String((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/"
-							+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/claim_list/" + new Object() {
-								private String getRegion(int chunkX, int chunkZ) {
-									ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
-									return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
-								}
-							}.getRegion((int) (entity.getX()), (int) (entity.getZ())) + "/" + new Object() {
-								private String getChunk(int chunkX, int chunkZ) {
-									ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
-									return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
-								}
-							}.getChunk((int) (entity.getX()), (int) (entity.getZ())) + ".json"))).exists()) { // Vérifie si le fichier existe avant de le supprimer
+				if ((ReturnOwnedFactiionProcedure.execute(world, entity)).equals(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name)) {
+					if (new java.io.File(new String((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/claim_list/" + new Object() {
+						private String getRegion(int chunkX, int chunkZ) {
+							ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
+							return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
+						}
+					}.getRegion((int) (entity.getX()), (int) (entity.getZ())) + "/" + new Object() {
+						private String getChunk(int chunkX, int chunkZ) {
+							ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
+							return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
+						}
+					}.getChunk((int) (entity.getX()), (int) (entity.getZ())) + ".json"))).exists()) { // Vérifie si le fichier existe avant de le supprimer
 						// Supprime le fichier
-						boolean suppressionReussie = new java.io.File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/"
-								+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/claim_list/" + new Object() {
-									private String getRegion(int chunkX, int chunkZ) {
-										ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
-										return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
-									}
-								}.getRegion((int) (entity.getX()), (int) (entity.getZ())) + "/" + new Object() {
-									private String getChunk(int chunkX, int chunkZ) {
-										ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
-										return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
-									}
-								}.getChunk((int) (entity.getX()), (int) (entity.getZ())) + ".json")).delete();
+						boolean suppressionReussie = new java.io.File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/claim_list/" + new Object() {
+							private String getRegion(int chunkX, int chunkZ) {
+								ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
+								return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
+							}
+						}.getRegion((int) (entity.getX()), (int) (entity.getZ())) + "/" + new Object() {
+							private String getChunk(int chunkX, int chunkZ) {
+								ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
+								return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
+							}
+						}.getChunk((int) (entity.getX()), (int) (entity.getZ())) + ".json")).delete();
 						if (suppressionReussie) {
 							System.out.println("Le fichier a été supprimé avec succès.");
 						} else {
@@ -74,10 +69,10 @@ public class FUnclaimProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							SecJsonObject.addProperty("claims", (SecJsonObject.get("claims").getAsDouble() - 1));
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(File);
 									fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -100,10 +95,10 @@ public class FUnclaimProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							ThirdJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							ThirdJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							ThirdJsonObject.addProperty("captured_by", "wilderness");
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(File);
 									fileWriter.write(mainGSONBuilderVariable.toJson(ThirdJsonObject));

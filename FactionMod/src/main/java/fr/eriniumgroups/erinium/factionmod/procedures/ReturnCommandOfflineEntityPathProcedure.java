@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.commands.CommandSourceStack;
 
@@ -11,8 +11,6 @@ import java.io.BufferedReader;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
-
-import com.google.gson.Gson;
 
 public class ReturnCommandOfflineEntityPathProcedure {
 	public static File execute(CommandContext<CommandSourceStack> arguments) {
@@ -29,7 +27,7 @@ public class ReturnCommandOfflineEntityPathProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				tempUUID = JsonObject.get("uuid").getAsString();
 			} catch (IOException e) {
 				e.printStackTrace();

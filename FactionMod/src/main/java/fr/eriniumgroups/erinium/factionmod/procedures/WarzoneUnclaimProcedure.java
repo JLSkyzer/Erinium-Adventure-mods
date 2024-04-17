@@ -11,9 +11,6 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class WarzoneUnclaimProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
@@ -34,10 +31,10 @@ public class WarzoneUnclaimProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						JsonObject.addProperty("captured_by", "wilderness");
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 
@@ -16,8 +16,7 @@ public class EntityFactionHomeProcedure {
 		String player_name = "";
 		File File = new File("");
 		if (TargetEntityHaveFactionProcedure.execute(entity)) {
-			return new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/"),
-					File.separator + "faction_home.json");
+			return new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/"), File.separator + "faction_home.json");
 		}
 		return new File((FMLPaths.GAMEDIR.get().toString() + "/tmp/"), File.separator + "tmp.json");
 	}

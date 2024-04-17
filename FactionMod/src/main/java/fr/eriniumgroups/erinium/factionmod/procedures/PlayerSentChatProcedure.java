@@ -1,9 +1,10 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.ServerChatEvent;
+import net.neoforged.neoforge.event.ServerChatEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.ICancellableEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -37,25 +38,25 @@ public class PlayerSentChatProcedure {
 			return;
 		String temp_text = "";
 		if (EriniumFactionModVariables.MapVariables.get(world).custom_chat) {
-			if (event != null && event.isCancelable()) {
-				event.setCanceled(true);
+			if (event instanceof ICancellableEvent _cancellable) {
+				_cancellable.setCanceled(true);
 			}
 			temp_text = text;
 			for (Entity entityiterator : new ArrayList<>(world.players())) {
 				if (temp_text.contains(entityiterator.getDisplayName().getString())) {
 					temp_text = temp_text.replace(entityiterator.getDisplayName().getString(), "\u00A76\u00A7l" + entityiterator.getDisplayName().getString());
 					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname
-								+ " " + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank + " \u00A7e" + entity.getDisplayName().getString()
-								+ "\u00A7r> " + (text.replace("&", "\u00A7")).replace(entityiterator.getDisplayName().getString(), "\u00A76\u00A7l" + entityiterator.getDisplayName().getString()))), false);
+						_player.displayClientMessage(
+								Component.literal(("<\u00A7a" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_displayname + " " + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).rank + " \u00A7e"
+										+ entity.getDisplayName().getString() + "\u00A7r> " + (text.replace("&", "\u00A7")).replace(entityiterator.getDisplayName().getString(), "\u00A76\u00A7l" + entityiterator.getDisplayName().getString()))),
+								false);
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								("playsound erinium_faction:ding ambient " + entityiterator.getDisplayName().getString()));
 				} else {
 					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("<\u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname
-								+ " " + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).rank + " \u00A7e" + entity.getDisplayName().getString()
-								+ "\u00A7r> " + text.replace("&", "\u00A7"))), false);
+						_player.displayClientMessage(Component.literal(("<\u00A7a" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_displayname + " " + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).rank + " \u00A7e"
+								+ entity.getDisplayName().getString() + "\u00A7r> " + text.replace("&", "\u00A7"))), false);
 				}
 			}
 		}

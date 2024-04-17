@@ -1,7 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -33,31 +32,24 @@ public class AncientPermProcedure {
 		List<Object> myArray = new ArrayList<>();
 		double count = 0;
 		{
-			String _setval = FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name
-					+ "/permissions/";
-			entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.temp_perm_path = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+			_vars.temp_perm_path = FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/permissions/";
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			String _setval = "Ancient";
-			entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.temp_perm_file = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+			_vars.temp_perm_file = "Ancient";
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			String _setval = "";
-			entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.temp_perm_list = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+			_vars.temp_perm_list = "";
+			_vars.syncPlayerVariables(entity);
 		}
 		GetAllPermissionsProcedure.execute(entity);
 		if (entity instanceof ServerPlayer _ent) {
 			BlockPos _bpos = BlockPos.containing(x, y, z);
-			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
+			_ent.openMenu(new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
 					return Component.literal("EditPermissionGui");

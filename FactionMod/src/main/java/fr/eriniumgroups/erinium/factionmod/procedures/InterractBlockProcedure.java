@@ -1,9 +1,10 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.ICancellableEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
@@ -35,8 +36,8 @@ public class InterractBlockProcedure {
 		if (entity instanceof Player || entity instanceof ServerPlayer) {
 			if (!CanInteractWithClaimsProcedure.execute(world, entity) && (!IsWarzoneProcedure.execute(world, entity) || !IsSafezoneProcedure.execute(world, entity))) {
 				if (!(world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("erinium_faction:can_use_block_on_claim")))) {
-					if (event != null && event.isCancelable()) {
-						event.setCanceled(true);
+					if (event instanceof ICancellableEvent _cancellable) {
+						_cancellable.setCanceled(true);
 					}
 				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())

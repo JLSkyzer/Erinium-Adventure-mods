@@ -1,11 +1,11 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.commands.arguments.item.ItemArgument;
 import net.minecraft.commands.CommandSourceStack;
 
@@ -16,9 +16,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import com.mojang.brigadier.context.CommandContext;
-
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 public class BlackListItemRemoveProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
@@ -39,11 +36,11 @@ public class BlackListItemRemoveProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-						if (JsonObject.get("list").getAsString().contains(ForgeRegistries.ITEMS.getKey((ItemArgument.getItem(arguments, "item").getItem().getDefaultInstance()).getItem()).toString() + ", ")) {
-							JsonObject.addProperty("list", (JsonObject.get("list").getAsString().replace(ForgeRegistries.ITEMS.getKey((ItemArgument.getItem(arguments, "item").getItem().getDefaultInstance()).getItem()).toString() + ", ", "")));
+						JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						if (JsonObject.get("list").getAsString().contains(BuiltInRegistries.ITEM.getKey((ItemArgument.getItem(arguments, "item").getItem().getDefaultInstance()).getItem()).toString() + ", ")) {
+							JsonObject.addProperty("list", (JsonObject.get("list").getAsString().replace(BuiltInRegistries.ITEM.getKey((ItemArgument.getItem(arguments, "item").getItem().getDefaultInstance()).getItem()).toString() + ", ", "")));
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(File);
 									fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -53,7 +50,7 @@ public class BlackListItemRemoveProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level().isClientSide())
-								_player.displayClientMessage(Component.literal(("\u00A7aRemoved : \u00A7b" + ForgeRegistries.ITEMS.getKey((ItemArgument.getItem(arguments, "item").getItem().getDefaultInstance()).getItem()).toString())), false);
+								_player.displayClientMessage(Component.literal(("\u00A7aRemoved : \u00A7b" + BuiltInRegistries.ITEM.getKey((ItemArgument.getItem(arguments, "item").getItem().getDefaultInstance()).getItem()).toString())), false);
 						} else {
 							if (entity instanceof Player _player && !_player.level().isClientSide())
 								_player.displayClientMessage(Component.literal("\u00A7cNo exist !"), false);
@@ -71,7 +68,7 @@ public class BlackListItemRemoveProcedure {
 				}
 				JsonObject.addProperty("list", "");
 				{
-					Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+					com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 					try {
 						FileWriter fileWriter = new FileWriter(File);
 						fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

@@ -17,9 +17,6 @@ import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FactionKickOnlineProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -41,11 +38,11 @@ public class FactionKickOnlineProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								JsonObject.addProperty("faction", "wilderness");
 								JsonObject.addProperty("faction_rank", "");
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -68,7 +65,7 @@ public class FactionKickOnlineProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								SecJsonObject.addProperty("member_count", (SecJsonObject.get("member_count").getAsString().replace((new Object() {
 									public Entity getEntity() {
 										try {
@@ -80,7 +77,7 @@ public class FactionKickOnlineProcedure {
 									}
 								}.getEntity()).getUUID().toString() + ", ", "")));
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -94,8 +91,7 @@ public class FactionKickOnlineProcedure {
 							}
 						}
 						{
-							String _setval = "wilderness";
-							(new Object() {
+							EriniumFactionModVariables.PlayerVariables _vars = (new Object() {
 								public Entity getEntity() {
 									try {
 										return EntityArgument.getEntity(arguments, "player");
@@ -104,23 +100,21 @@ public class FactionKickOnlineProcedure {
 										return null;
 									}
 								}
-							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.faction_name = _setval;
-								capability.syncPlayerVariables((new Object() {
-									public Entity getEntity() {
-										try {
-											return EntityArgument.getEntity(arguments, "player");
-										} catch (CommandSyntaxException e) {
-											e.printStackTrace();
-											return null;
-										}
+							}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+							_vars.faction_name = "wilderness";
+							_vars.syncPlayerVariables((new Object() {
+								public Entity getEntity() {
+									try {
+										return EntityArgument.getEntity(arguments, "player");
+									} catch (CommandSyntaxException e) {
+										e.printStackTrace();
+										return null;
 									}
-								}.getEntity()));
-							});
+								}
+							}.getEntity()));
 						}
 						{
-							String _setval = "Wilderness";
-							(new Object() {
+							EriniumFactionModVariables.PlayerVariables _vars = (new Object() {
 								public Entity getEntity() {
 									try {
 										return EntityArgument.getEntity(arguments, "player");
@@ -129,23 +123,21 @@ public class FactionKickOnlineProcedure {
 										return null;
 									}
 								}
-							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.faction_displayname = _setval;
-								capability.syncPlayerVariables((new Object() {
-									public Entity getEntity() {
-										try {
-											return EntityArgument.getEntity(arguments, "player");
-										} catch (CommandSyntaxException e) {
-											e.printStackTrace();
-											return null;
-										}
+							}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+							_vars.faction_displayname = "Wilderness";
+							_vars.syncPlayerVariables((new Object() {
+								public Entity getEntity() {
+									try {
+										return EntityArgument.getEntity(arguments, "player");
+									} catch (CommandSyntaxException e) {
+										e.printStackTrace();
+										return null;
 									}
-								}.getEntity()));
-							});
+								}
+							}.getEntity()));
 						}
 						{
-							String _setval = "";
-							(new Object() {
+							EriniumFactionModVariables.PlayerVariables _vars = (new Object() {
 								public Entity getEntity() {
 									try {
 										return EntityArgument.getEntity(arguments, "player");
@@ -154,19 +146,18 @@ public class FactionKickOnlineProcedure {
 										return null;
 									}
 								}
-							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.faction_rank = _setval;
-								capability.syncPlayerVariables((new Object() {
-									public Entity getEntity() {
-										try {
-											return EntityArgument.getEntity(arguments, "player");
-										} catch (CommandSyntaxException e) {
-											e.printStackTrace();
-											return null;
-										}
+							}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+							_vars.faction_rank = "";
+							_vars.syncPlayerVariables((new Object() {
+								public Entity getEntity() {
+									try {
+										return EntityArgument.getEntity(arguments, "player");
+									} catch (CommandSyntaxException e) {
+										e.printStackTrace();
+										return null;
 									}
-								}.getEntity()));
-							});
+								}
+							}.getEntity()));
 						}
 						if ((new Object() {
 							public Entity getEntity() {

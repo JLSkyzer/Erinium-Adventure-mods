@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.commands.CommandSourceStack;
@@ -17,8 +17,6 @@ import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
-
-import com.google.gson.Gson;
 
 public class CommandOfflineEntityAreSameFactionProcedure {
 	public static boolean execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
@@ -41,7 +39,7 @@ public class CommandOfflineEntityAreSameFactionProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					tempUUID = JsonObject.get("uuid").getAsString();
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -57,14 +55,14 @@ public class CommandOfflineEntityAreSameFactionProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					return_faction_name = SecJsonObject.get("faction").getAsString();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
 		}
-		if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name).equals(return_faction_name)) {
+		if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name).equals(return_faction_name)) {
 			return true;
 		}
 		return false;

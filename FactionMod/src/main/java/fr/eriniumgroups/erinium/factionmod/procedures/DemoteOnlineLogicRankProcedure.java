@@ -26,10 +26,10 @@ public class DemoteOnlineLogicRankProcedure {
 		List<Object> return_logic = new ArrayList<>();
 		String tempUUID = "";
 		String return_faction_name = "";
-		if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Chef")) {
+		if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Chef")) {
 			return true;
-		} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Officier")) {
-			if ((((new Object() {
+		} else if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Officier")) {
+			if (((new Object() {
 				public Entity getEntity() {
 					try {
 						return EntityArgument.getEntity(arguments, "player");
@@ -38,9 +38,9 @@ public class DemoteOnlineLogicRankProcedure {
 						return null;
 					}
 				}
-			}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Ancient")) {
+			}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Ancient")) {
 				return true;
-			} else if ((((new Object() {
+			} else if (((new Object() {
 				public Entity getEntity() {
 					try {
 						return EntityArgument.getEntity(arguments, "player");
@@ -49,11 +49,11 @@ public class DemoteOnlineLogicRankProcedure {
 						return null;
 					}
 				}
-			}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Member")) {
+			}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Member")) {
 				return true;
 			}
-		} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Ancient")) {
-			if ((((new Object() {
+		} else if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Ancient")) {
+			if (((new Object() {
 				public Entity getEntity() {
 					try {
 						return EntityArgument.getEntity(arguments, "player");
@@ -62,7 +62,7 @@ public class DemoteOnlineLogicRankProcedure {
 						return null;
 					}
 				}
-			}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Member")) {
+			}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Member")) {
 				return true;
 			}
 		} else {

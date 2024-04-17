@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 
@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
-
-import com.google.gson.Gson;
 
 public class ReturnTargetEntityPowerProcedure {
 	public static double execute(Entity entity) {
@@ -29,7 +27,7 @@ public class ReturnTargetEntityPowerProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				power = JsonObject.get("power").getAsDouble();
 			} catch (IOException e) {
 				e.printStackTrace();

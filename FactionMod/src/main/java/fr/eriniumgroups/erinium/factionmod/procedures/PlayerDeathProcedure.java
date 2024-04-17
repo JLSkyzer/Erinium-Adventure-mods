@@ -1,9 +1,9 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -18,9 +18,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
-
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber
 public class PlayerDeathProcedure {
@@ -52,11 +49,11 @@ public class PlayerDeathProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					if (JsonObject.get("power").getAsDouble() > 0) {
 						JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() - 1));
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -83,10 +80,10 @@ public class PlayerDeathProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() - 1));
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(File);
 									fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -102,18 +99,14 @@ public class PlayerDeathProcedure {
 				}
 			}
 			{
-				double _setval = 12000;
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.power_timer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.power_timer = 12000;
+				_vars.syncPlayerVariables(entity);
 			}
 			{
-				boolean _setval = true;
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.CurrentlyDead = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.CurrentlyDead = true;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 	}

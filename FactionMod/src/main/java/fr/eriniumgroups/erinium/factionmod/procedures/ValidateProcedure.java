@@ -12,9 +12,6 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class ValidateProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
@@ -23,8 +20,7 @@ public class ValidateProcedure {
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		String result_text = "";
 		String permission = "";
-		File = new File(((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_path),
-				File.separator + ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_file + ".json"));
+		File = new File(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_path, File.separator + (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_file + ".json"));
 		{
 			try {
 				BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
@@ -34,10 +30,10 @@ public class ValidateProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-				JsonObject.addProperty("permissions_list", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_list));
+				JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JsonObject.addProperty("permissions_list", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_list);
 				{
-					Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+					com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 					try {
 						FileWriter fileWriter = new FileWriter(File);
 						fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

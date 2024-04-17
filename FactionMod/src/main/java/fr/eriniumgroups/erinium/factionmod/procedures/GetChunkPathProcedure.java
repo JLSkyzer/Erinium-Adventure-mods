@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ChunkPos;
@@ -10,9 +10,6 @@ import net.minecraft.core.BlockPos;
 import java.io.IOException;
 import java.io.FileWriter;
 import java.io.File;
-
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 public class GetChunkPathProcedure {
 	public static File execute(LevelAccessor world, Entity entity) {
@@ -44,7 +41,7 @@ public class GetChunkPathProcedure {
 			JsonObject.addProperty("cord_y", (entity.getY()));
 			JsonObject.addProperty("cord_z", (entity.getZ()));
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(File);
 					fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

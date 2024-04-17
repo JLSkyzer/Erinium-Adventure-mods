@@ -8,9 +8,6 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.io.File;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FactionSetHomeProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
@@ -31,7 +28,7 @@ public class FactionSetHomeProcedure {
 					JsonObject.addProperty("y", (entity.getY()));
 					JsonObject.addProperty("z", (entity.getZ()));
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(File);
 							fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

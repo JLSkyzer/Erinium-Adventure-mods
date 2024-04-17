@@ -13,7 +13,7 @@ public class CommandEntityAreSameFactionProcedure {
 	public static boolean execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
 			return false;
-		if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name).equals(((new Object() {
+		if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name).equals((new Object() {
 			public Entity getEntity() {
 				try {
 					return EntityArgument.getEntity(arguments, "player");
@@ -22,7 +22,7 @@ public class CommandEntityAreSameFactionProcedure {
 					return null;
 				}
 			}
-		}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name)) {
+		}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name)) {
 			return true;
 		}
 		return false;

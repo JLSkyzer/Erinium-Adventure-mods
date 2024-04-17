@@ -2,7 +2,7 @@ package fr.eriniumgroups.erinium.factionmod.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -18,8 +18,6 @@ import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.Gson;
-
 public class GetPlayerFactionCountProcedure {
 	public static double execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -31,7 +29,7 @@ public class GetPlayerFactionCountProcedure {
 		double whilecount = 0;
 		double TempMemberCount = 0;
 		TempMemberCount = 0;
-		File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + ((new Object() {
+		File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + (new Object() {
 			public Entity getEntity() {
 				try {
 					return EntityArgument.getEntity(arguments, "player");
@@ -40,7 +38,7 @@ public class GetPlayerFactionCountProcedure {
 					return null;
 				}
 			}
-		}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/"), File.separator + "global_informations.json");
+		}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/"), File.separator + "global_informations.json");
 		{
 			try {
 				BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
@@ -50,7 +48,7 @@ public class GetPlayerFactionCountProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JSonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JSonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				uuid_list = JSonObject.get("member_count").getAsString();
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -63,7 +61,7 @@ public class GetPlayerFactionCountProcedure {
 						String s = text.split(space)[index];
 						return s;
 					}
-				}.split(uuid_list, ", ", (int) ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_count)) + ", ", "");
+				}.split(uuid_list, ", ", (int) entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_count) + ", ", "");
 				TempMemberCount = TempMemberCount + 1;
 			} else {
 				return TempMemberCount;

@@ -1,13 +1,11 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
-
-import com.google.gson.Gson;
 
 public class ReturnBlackListItemProcedure {
 	public static String execute() {
@@ -26,7 +24,7 @@ public class ReturnBlackListItemProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					temp_string = JsonObject.get("list").getAsString();
 				} catch (IOException e) {
 					e.printStackTrace();

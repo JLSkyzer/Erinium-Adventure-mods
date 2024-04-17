@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -20,11 +20,9 @@ public class DelHomeProcedure {
 			if (PlayerCanDelhomeProcedure.execute(entity) || TargetEntityIsChefProcedure.execute(entity)) {
 				File = EntityFactionHomeProcedure.execute(entity);
 				if (File.exists()) {
-					if (new java.io.File(new String((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/"
-							+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/" + "faction_home.json"))).exists()) { // Vérifie si le fichier existe avant de le supprimer
+					if (new java.io.File(new String((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/" + "faction_home.json"))).exists()) { // Vérifie si le fichier existe avant de le supprimer
 						// Supprime le fichier
-						boolean suppressionReussie = new java.io.File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/"
-								+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/" + "faction_home.json")).delete();
+						boolean suppressionReussie = new java.io.File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/" + "faction_home.json")).delete();
 						if (suppressionReussie) {
 							System.out.println("Le fichier a été supprimé avec succès.");
 						} else {

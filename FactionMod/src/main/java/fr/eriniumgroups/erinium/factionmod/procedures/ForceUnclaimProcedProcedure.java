@@ -13,9 +13,6 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class ForceUnclaimProcedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
@@ -36,10 +33,10 @@ public class ForceUnclaimProcedProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						JsonObject.addProperty("captured_by", "wilderness");
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -66,10 +63,10 @@ public class ForceUnclaimProcedProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							JsonObject.addProperty("claims", (JsonObject.get("claims").getAsDouble() - 1));
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(File);
 									fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -101,10 +98,10 @@ public class ForceUnclaimProcedProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							SecJsonObject.addProperty("captured_by", "wilderness");
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(File);
 									fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));

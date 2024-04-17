@@ -17,9 +17,6 @@ import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FactionDemoteOnlineProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -40,10 +37,10 @@ public class FactionDemoteOnlineProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								JsonObject.addProperty("faction_rank", DemoteOnlineStringRankProcedure.execute(arguments, entity));
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -57,8 +54,7 @@ public class FactionDemoteOnlineProcedure {
 							}
 						}
 						{
-							String _setval = DemoteOnlineStringRankProcedure.execute(arguments, entity);
-							(new Object() {
+							EriniumFactionModVariables.PlayerVariables _vars = (new Object() {
 								public Entity getEntity() {
 									try {
 										return EntityArgument.getEntity(arguments, "player");
@@ -67,19 +63,18 @@ public class FactionDemoteOnlineProcedure {
 										return null;
 									}
 								}
-							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.faction_rank = _setval;
-								capability.syncPlayerVariables((new Object() {
-									public Entity getEntity() {
-										try {
-											return EntityArgument.getEntity(arguments, "player");
-										} catch (CommandSyntaxException e) {
-											e.printStackTrace();
-											return null;
-										}
+							}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+							_vars.faction_rank = DemoteOnlineStringRankProcedure.execute(arguments, entity);
+							_vars.syncPlayerVariables((new Object() {
+								public Entity getEntity() {
+									try {
+										return EntityArgument.getEntity(arguments, "player");
+									} catch (CommandSyntaxException e) {
+										e.printStackTrace();
+										return null;
 									}
-								}.getEntity()));
-							});
+								}
+							}.getEntity()));
 						}
 						if ((new Object() {
 							public Entity getEntity() {
@@ -91,7 +86,7 @@ public class FactionDemoteOnlineProcedure {
 								}
 							}
 						}.getEntity()) instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal(("\u00A7aYou have been demoted to \u00A75" + ((new Object() {
+							_player.displayClientMessage(Component.literal(("\u00A7aYou have been demoted to \u00A75" + (new Object() {
 								public Entity getEntity() {
 									try {
 										return EntityArgument.getEntity(arguments, "player");
@@ -100,9 +95,9 @@ public class FactionDemoteOnlineProcedure {
 										return null;
 									}
 								}
-							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank)), false);
+							}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank)), false);
 						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal(("\u00A7aDemoted \u00A7e" + JsonObject.get("player_name").getAsString() + " \u00A7ato rank : \u00A75" + ((new Object() {
+							_player.displayClientMessage(Component.literal(("\u00A7aDemoted \u00A7e" + JsonObject.get("player_name").getAsString() + " \u00A7ato rank : \u00A75" + (new Object() {
 								public Entity getEntity() {
 									try {
 										return EntityArgument.getEntity(arguments, "player");
@@ -111,7 +106,7 @@ public class FactionDemoteOnlineProcedure {
 										return null;
 									}
 								}
-							}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank)), false);
+							}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank)), false);
 					}
 				} else {
 					if (entity instanceof Player _player && !_player.level().isClientSide())

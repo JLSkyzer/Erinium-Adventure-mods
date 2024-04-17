@@ -1,9 +1,9 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.Entity;
 
@@ -31,11 +31,9 @@ public class PlayerRespawnProcedure {
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		boolean upFactionPower = false;
 		{
-			boolean _setval = false;
-			entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.CurrentlyDead = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+			_vars.CurrentlyDead = false;
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

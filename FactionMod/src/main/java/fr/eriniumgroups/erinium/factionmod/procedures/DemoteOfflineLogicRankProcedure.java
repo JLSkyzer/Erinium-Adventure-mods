@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -19,8 +19,6 @@ import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
-
-import com.google.gson.Gson;
 
 public class DemoteOfflineLogicRankProcedure {
 	public static boolean execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
@@ -43,7 +41,7 @@ public class DemoteOfflineLogicRankProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					tempUUID = JsonObject.get("uuid").getAsString();
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -59,22 +57,22 @@ public class DemoteOfflineLogicRankProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					return_faction_name = JsonObject.get("faction_rank").getAsString();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 			}
 		}
-		if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Chef")) {
+		if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Chef")) {
 			return true;
-		} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Officier")) {
+		} else if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Officier")) {
 			if ((return_faction_name).equals("Ancient")) {
 				return true;
 			} else if ((return_faction_name).equals("Member")) {
 				return true;
 			}
-		} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank).equals("Ancient")) {
+		} else if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank).equals("Ancient")) {
 			if ((return_faction_name).equals("Member")) {
 				return true;
 			}

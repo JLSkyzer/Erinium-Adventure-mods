@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.factionmod.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +16,6 @@ import java.util.HashMap;
 import fr.eriniumgroups.erinium.factionmod.world.inventory.BlacklistItemGuiMenu;
 import fr.eriniumgroups.erinium.factionmod.procedures.BlackListItemGetPageProcedure;
 import fr.eriniumgroups.erinium.factionmod.network.BlacklistItemGuiButtonMessage;
-import fr.eriniumgroups.erinium.factionmod.EriniumFactionMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -41,7 +42,7 @@ public class BlacklistItemGuiScreen extends AbstractContainerScreen<BlacklistIte
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -65,11 +66,6 @@ public class BlacklistItemGuiScreen extends AbstractContainerScreen<BlacklistIte
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_faction.blacklist_item_gui.label_blacklist_item"), 6, 7, -16777216, false);
 		guiGraphics.drawString(this.font,
@@ -82,7 +78,7 @@ public class BlacklistItemGuiScreen extends AbstractContainerScreen<BlacklistIte
 		super.init();
 		button_prev = Button.builder(Component.translatable("gui.erinium_faction.blacklist_item_gui.button_prev"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new BlacklistItemGuiButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new BlacklistItemGuiButtonMessage(0, x, y, z));
 				BlacklistItemGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 6, this.topPos + 61, 46, 20).build();
@@ -90,7 +86,7 @@ public class BlacklistItemGuiScreen extends AbstractContainerScreen<BlacklistIte
 		this.addRenderableWidget(button_prev);
 		button_next = Button.builder(Component.translatable("gui.erinium_faction.blacklist_item_gui.button_next"), e -> {
 			if (true) {
-				EriniumFactionMod.PACKET_HANDLER.sendToServer(new BlacklistItemGuiButtonMessage(1, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new BlacklistItemGuiButtonMessage(1, x, y, z));
 				BlacklistItemGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}).bounds(this.leftPos + 123, this.topPos + 61, 46, 20).build();

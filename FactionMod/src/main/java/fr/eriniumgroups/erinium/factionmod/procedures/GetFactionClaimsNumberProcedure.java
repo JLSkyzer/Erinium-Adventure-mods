@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 
@@ -10,8 +10,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
-
-import com.google.gson.Gson;
 
 public class GetFactionClaimsNumberProcedure {
 	public static double execute(Entity entity) {
@@ -24,8 +22,7 @@ public class GetFactionClaimsNumberProcedure {
 		double whilecount = 0;
 		double powerReturn = 0;
 		powerReturn = 0;
-		File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/"),
-				File.separator + "global_informations.json");
+		File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/"), File.separator + "global_informations.json");
 		{
 			try {
 				BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
@@ -35,7 +32,7 @@ public class GetFactionClaimsNumberProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JSonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JSonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				powerReturn = JSonObject.get("claims").getAsDouble();
 			} catch (IOException e) {
 				e.printStackTrace();

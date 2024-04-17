@@ -15,9 +15,6 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FClaimProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
@@ -44,7 +41,7 @@ public class FClaimProcedure {
 						JsonObject.addProperty("y", (entity.getY()));
 						JsonObject.addProperty("z", (entity.getZ()));
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -63,10 +60,10 @@ public class FClaimProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								SecJsonObject.addProperty("claims", (SecJsonObject.get("claims").getAsDouble() + 1));
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -89,10 +86,10 @@ public class FClaimProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								ThirdJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								ThirdJsonObject.addProperty("captured_by", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name));
+								ThirdJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								ThirdJsonObject.addProperty("captured_by", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name);
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(ThirdJsonObject));
@@ -112,7 +109,7 @@ public class FClaimProcedure {
 							_player.displayClientMessage(Component.literal(("\u00A7c" + Component.translatable("faction.message.power.enough").getString())), false);
 					}
 				} else if (!IsWarzoneProcedure.execute(world, entity) && !IsSafezoneProcedure.execute(world, entity)
-						&& !(ReturnOwnedFactiionProcedure.execute(world, entity)).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name)) {
+						&& !(ReturnOwnedFactiionProcedure.execute(world, entity)).equals(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name)) {
 					if (GetFactionClaimsAtChunkProcedure.execute(entity) > GetFactionPowerAtChunkProcedure.execute(entity) && GetFactionPowerProcedure.execute(entity) > GetFactionClaimsNumberProcedure.execute(entity)) {
 						File = FactionClaimsPathProcedure.execute(world, entity);
 						try {
@@ -125,7 +122,7 @@ public class FClaimProcedure {
 						JsonObject.addProperty("y", (entity.getY()));
 						JsonObject.addProperty("z", (entity.getZ()));
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -144,10 +141,10 @@ public class FClaimProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								SecJsonObject.addProperty("claims", (SecJsonObject.get("claims").getAsDouble() + 1));
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -170,10 +167,10 @@ public class FClaimProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								FourthJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								FourthJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								FourthJsonObject.addProperty("claims", (FourthJsonObject.get("claims").getAsDouble() - 1));
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(FourthJsonObject));
@@ -205,10 +202,10 @@ public class FClaimProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								ThirdJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								ThirdJsonObject.addProperty("captured_by", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name));
+								ThirdJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								ThirdJsonObject.addProperty("captured_by", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name);
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(ThirdJsonObject));

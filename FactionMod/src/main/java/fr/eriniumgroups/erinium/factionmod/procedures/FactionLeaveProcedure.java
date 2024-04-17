@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -14,9 +14,6 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FactionLeaveProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
@@ -28,11 +25,8 @@ public class FactionLeaveProcedure {
 		if (!TargetEntityIsChefProcedure.execute(entity)) {
 			if (TargetEntityHaveFactionProcedure.execute(entity)) {
 				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(
-							Component.literal(("\u00A7cYou leave the faction \u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name)),
-							false);
-				File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/"),
-						File.separator + "global_informations.json");
+					_player.displayClientMessage(Component.literal(("\u00A7cYou leave the faction \u00A7a" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name)), false);
+				File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/"), File.separator + "global_informations.json");
 				{
 					try {
 						BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
@@ -42,12 +36,12 @@ public class FactionLeaveProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() - ReturnTargetEntityPowerProcedure.execute(entity)));
 						JsonObject.addProperty("max_power", (JsonObject.get("max_power").getAsDouble() - 10));
 						JsonObject.addProperty("member_count", (JsonObject.get("member_count").getAsString().replace(entity.getUUID().toString() + ", ", "")));
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -70,11 +64,11 @@ public class FactionLeaveProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						SecJsonObject.addProperty("faction", "wilderness");
 						SecJsonObject.addProperty("faction_rank", "");
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -84,25 +78,19 @@ public class FactionLeaveProcedure {
 							}
 						}
 						{
-							String _setval = SecJsonObject.get("faction").getAsString();
-							entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.faction_name = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+							EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+							_vars.faction_name = SecJsonObject.get("faction").getAsString();
+							_vars.syncPlayerVariables(entity);
 						}
 						{
-							String _setval = SecJsonObject.get("faction_rank").getAsString();
-							entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.faction_rank = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+							EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+							_vars.faction_rank = SecJsonObject.get("faction_rank").getAsString();
+							_vars.syncPlayerVariables(entity);
 						}
 						{
-							String _setval = "Wilderness";
-							entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.faction_displayname = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+							EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+							_vars.faction_displayname = "Wilderness";
+							_vars.syncPlayerVariables(entity);
 						}
 					} catch (IOException e) {
 						e.printStackTrace();

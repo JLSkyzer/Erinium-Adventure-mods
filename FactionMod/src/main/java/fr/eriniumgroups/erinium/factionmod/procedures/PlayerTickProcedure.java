@@ -1,9 +1,9 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -28,9 +28,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
-
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber
 public class PlayerTickProcedure {
@@ -58,31 +55,27 @@ public class PlayerTickProcedure {
 					ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 					return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
 				}
-			}.getChunk((int) (entity.getX()), (int) (entity.getZ()))).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_chunk)) {
+			}.getChunk((int) (entity.getX()), (int) (entity.getZ()))).equals(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).current_chunk)) {
 				{
-					String _setval = new Object() {
+					EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+					_vars.current_chunk = new Object() {
 						private String getChunk(int chunkX, int chunkZ) {
 							ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 							return new String(chunkpos.getRegionLocalX() + "-" + chunkpos.getRegionLocalZ());
 						}
 					}.getChunk((int) (entity.getX()), (int) (entity.getZ()));
-					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.current_chunk = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					_vars.syncPlayerVariables(entity);
 				}
-				if (!((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals(ReturnOwnedFactiionProcedure.execute(world, entity))) {
+				if (!(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).last_owned).equals(ReturnOwnedFactiionProcedure.execute(world, entity))) {
 					{
-						String _setval = ReturnOwnedFactiionProcedure.execute(world, entity);
-						entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.last_owned = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+						_vars.last_owned = ReturnOwnedFactiionProcedure.execute(world, entity);
+						_vars.syncPlayerVariables(entity);
 					}
 					if (world instanceof ServerLevel _level)
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								("title " + entity.getDisplayName().getString() + " times 10 40 10"));
-					if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("Safezone")) {
+					if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).last_owned).equals("Safezone")) {
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 									("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("safezone.desc").getString() + "\""));
@@ -91,7 +84,7 @@ public class PlayerTickProcedure {
 									("title " + entity.getDisplayName().getString() + " title \"" + "\u00A72Safezone" + "\""));
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + "\u00A72Safezone")), false);
-					} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("Warzone")) {
+					} else if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).last_owned).equals("Warzone")) {
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 									("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("warzone.desc").getString() + "\""));
@@ -100,7 +93,7 @@ public class PlayerTickProcedure {
 									("title " + entity.getDisplayName().getString() + " title \"" + "\u00A74Warzone" + "\""));
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + "\u00A74Warzone")), false);
-					} else if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned).equals("wilderness")) {
+					} else if ((entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).last_owned).equals("wilderness")) {
 						if (world instanceof ServerLevel _level)
 							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 									("title " + entity.getDisplayName().getString() + " subtitle \"\u00A7e" + Component.translatable("wilderness.desc").getString() + "\""));
@@ -117,11 +110,11 @@ public class PlayerTickProcedure {
 							_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 									("title " + entity.getDisplayName().getString() + " title \"" + "\u00A7b" + GetFactionDisplaynameAtChunkProcedure.execute(entity) + "\""));
 						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a"
-									+ (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).last_owned)), false);
+							_player.displayClientMessage(Component.literal(("\u00A7e" + Component.translatable("faction.message.claim.entered").getString() + "\u00A7a" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).last_owned)),
+									false);
 					}
 				}
-				if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).FMapToggle) {
+				if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).FMapToggle) {
 					FactionMapProcedure.execute(world, entity);
 				}
 			}
@@ -131,36 +124,30 @@ public class PlayerTickProcedure {
 				ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 				return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 			}
-		}.getRegion((int) (entity.getX()), (int) (entity.getZ()))).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).current_region)) {
+		}.getRegion((int) (entity.getX()), (int) (entity.getZ()))).equals(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).current_region)) {
 			{
-				String _setval = new Object() {
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.current_region = new Object() {
 					private String getRegion(int chunkX, int chunkZ) {
 						ChunkPos chunkpos = new ChunkPos(new BlockPos(chunkX, 0, chunkZ));
 						return new String("r." + chunkpos.getRegionX() + "." + chunkpos.getRegionZ());
 					}
 				}.getRegion((int) (entity.getX()), (int) (entity.getZ()));
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.current_region = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				_vars.syncPlayerVariables(entity);
 			}
 		}
-		if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).Invite_timer > 0) {
+		if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).Invite_timer > 0) {
 			{
-				double _setval = (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).Invite_timer - 1;
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.Invite_timer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.Invite_timer = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).Invite_timer - 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
-		if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).power_timer > 0) {
+		if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).power_timer > 0) {
 			{
-				double _setval = (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).power_timer - 1;
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.power_timer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.power_timer = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).power_timer - 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		} else {
 			File = ReturnTargetEntityPathProcedure.execute(entity);
@@ -173,11 +160,11 @@ public class PlayerTickProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					if (JsonObject.get("power").getAsDouble() < 10) {
 						JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() + 1));
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -204,10 +191,10 @@ public class PlayerTickProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							SecJsonObject.addProperty("power", (SecJsonObject.get("power").getAsDouble() + 1));
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(File);
 									fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -223,39 +210,30 @@ public class PlayerTickProcedure {
 				}
 			}
 			{
-				double _setval = 12000;
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.power_timer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.power_timer = 12000;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
-		if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).teleport_cooldown > 0) {
+		if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).teleport_cooldown > 0) {
 			{
-				double _setval = (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).teleport_cooldown - 1;
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.teleport_cooldown = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.teleport_cooldown = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).teleport_cooldown - 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		} else {
-			if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).teleported) {
+			if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).teleported) {
 				{
 					Entity _ent = entity;
-					_ent.teleportTo(((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_x),
-							((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_y),
-							((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_z));
+					_ent.teleportTo(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_x, entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_y, entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_z);
 					if (_ent instanceof ServerPlayer _serverPlayer)
-						_serverPlayer.connection.teleport(((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_x),
-								((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_y),
-								((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_z), _ent.getYRot(), _ent.getXRot());
+						_serverPlayer.connection.teleport(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_x, entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_y,
+								entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_z, _ent.getYRot(), _ent.getXRot());
 				}
 				{
-					boolean _setval = false;
-					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.teleported = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+					_vars.teleported = false;
+					_vars.syncPlayerVariables(entity);
 				}
 			}
 		}

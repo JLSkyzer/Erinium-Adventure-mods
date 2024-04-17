@@ -21,11 +21,9 @@ public class FactionInfoProcedure {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A75===== Faction Info ====="), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal(("\u00A7bName : \u00A7e" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name)),
-						false);
+				_player.displayClientMessage(Component.literal(("\u00A7bName : \u00A7e" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name)), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(
-						Component.literal(("\u00A7bDisplayname : \u00A7e" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname)), false);
+				_player.displayClientMessage(Component.literal(("\u00A7bDisplayname : \u00A7e" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_displayname)), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(("\u00A7bDescription : \u00A7e" + GetFactionDescProcedure.execute(entity))), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())

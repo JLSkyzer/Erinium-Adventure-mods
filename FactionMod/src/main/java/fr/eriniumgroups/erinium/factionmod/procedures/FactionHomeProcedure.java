@@ -11,8 +11,6 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 
-import com.google.gson.Gson;
-
 public class FactionHomeProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
@@ -34,41 +32,31 @@ public class FactionHomeProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							{
-								double _setval = JsonObject.get("x").getAsDouble();
-								entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.temp_x = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+								_vars.temp_x = JsonObject.get("x").getAsDouble();
+								_vars.syncPlayerVariables(entity);
 							}
 							{
-								double _setval = JsonObject.get("y").getAsDouble();
-								entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.temp_y = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+								_vars.temp_y = JsonObject.get("y").getAsDouble();
+								_vars.syncPlayerVariables(entity);
 							}
 							{
-								double _setval = JsonObject.get("z").getAsDouble();
-								entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.temp_z = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+								_vars.temp_z = JsonObject.get("z").getAsDouble();
+								_vars.syncPlayerVariables(entity);
 							}
 							{
-								double _setval = 100;
-								entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.teleport_cooldown = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+								_vars.teleport_cooldown = 100;
+								_vars.syncPlayerVariables(entity);
 							}
 							{
-								boolean _setval = true;
-								entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.teleported = _setval;
-									capability.syncPlayerVariables(entity);
-								});
+								EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+								_vars.teleported = true;
+								_vars.syncPlayerVariables(entity);
 							}
 						} catch (IOException e) {
 							e.printStackTrace();

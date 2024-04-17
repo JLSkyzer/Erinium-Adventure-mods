@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -19,9 +19,6 @@ import fr.eriniumgroups.erinium.factionmod.configuration.ConfigConfiguration;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class FactionJoinProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -34,7 +31,7 @@ public class FactionJoinProcedure {
 		com.google.gson.JsonObject SecJsonObject = new com.google.gson.JsonObject();
 		if (!TargetEntityHaveFactionProcedure.execute(entity)) {
 			if (GetStringFactionMemberCountProcedure.execute(arguments, entity) < (double) ConfigConfiguration.MAX_MEMBER.get()) {
-				if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).InvitedBy).contains(StringArgumentType.getString(arguments, "factionName"))) {
+				if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).InvitedBy.contains(StringArgumentType.getString(arguments, "factionName"))) {
 					File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + StringArgumentType.getString(arguments, "factionName") + "/"), File.separator + "global_informations.json");
 					if (File.exists()) {
 						{
@@ -46,33 +43,27 @@ public class FactionJoinProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								JsonObject.addProperty("max_power", (JsonObject.get("max_power").getAsDouble() + 10));
 								JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() + ReturnTargetEntityPowerProcedure.execute(entity)));
 								JsonObject.addProperty("member_count", (JsonObject.get("member_count").getAsString() + "" + entity.getUUID().toString() + ", "));
 								{
-									String _setval = StringArgumentType.getString(arguments, "factionName");
-									entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.faction_name = _setval;
-										capability.syncPlayerVariables(entity);
-									});
+									EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+									_vars.faction_name = StringArgumentType.getString(arguments, "factionName");
+									_vars.syncPlayerVariables(entity);
 								}
 								{
-									String _setval = JsonObject.get("faction_displayname").getAsString();
-									entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.faction_displayname = _setval;
-										capability.syncPlayerVariables(entity);
-									});
+									EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+									_vars.faction_displayname = JsonObject.get("faction_displayname").getAsString();
+									_vars.syncPlayerVariables(entity);
 								}
 								{
-									String _setval = "Recruit";
-									entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-										capability.faction_rank = _setval;
-										capability.syncPlayerVariables(entity);
-									});
+									EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+									_vars.faction_rank = "Recruit";
+									_vars.syncPlayerVariables(entity);
 								}
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -95,11 +86,11 @@ public class FactionJoinProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								SecJsonObject.addProperty("faction", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name));
-								SecJsonObject.addProperty("faction_rank", ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_rank));
+								SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								SecJsonObject.addProperty("faction", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name);
+								SecJsonObject.addProperty("faction_rank", entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_rank);
 								{
-									Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {
 										FileWriter fileWriter = new FileWriter(File);
 										fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -113,17 +104,12 @@ public class FactionJoinProcedure {
 							}
 						}
 						{
-							String _setval = ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).InvitedBy)
-									.replace(StringArgumentType.getString(arguments, "factionName") + ", ", "");
-							entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.InvitedBy = _setval;
-								capability.syncPlayerVariables(entity);
-							});
+							EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+							_vars.InvitedBy = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).InvitedBy.replace(StringArgumentType.getString(arguments, "factionName") + ", ", "");
+							_vars.syncPlayerVariables(entity);
 						}
 						if (entity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal(
-									("\u00A7eYou joinded the faction \u00A7a" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname)),
-									false);
+							_player.displayClientMessage(Component.literal(("\u00A7eYou joinded the faction \u00A7a" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_displayname)), false);
 					} else {
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(Component.literal("\u00A7cThe faction dont exist"), false);

@@ -8,6 +8,6 @@ public class ReturnTempFileProcedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		return "\u00A7aYou are editing permission of rank : \u00A7e" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_file;
+		return "\u00A7aYou are editing permission of rank : \u00A7e" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_file;
 	}
 }

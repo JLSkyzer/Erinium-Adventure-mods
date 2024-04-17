@@ -10,21 +10,17 @@ public class ChangeInviteProcedure {
 			return;
 		String permission = "";
 		permission = "can_" + "invite";
-		if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_list).contains(permission)) {
+		if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_list.contains(permission)) {
 			{
-				String _setval = ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_list).replace(permission + ", ", "");
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.temp_perm_list = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.temp_perm_list = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_list.replace(permission + ", ", "");
+				_vars.syncPlayerVariables(entity);
 			}
 		} else {
 			{
-				String _setval = (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_list + "" + permission + ", ";
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.temp_perm_list = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.temp_perm_list = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_list + "" + permission + ", ";
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 	}

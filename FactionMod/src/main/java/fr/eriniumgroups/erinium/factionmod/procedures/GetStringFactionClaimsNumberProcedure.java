@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.commands.CommandSourceStack;
 
@@ -11,8 +11,6 @@ import java.io.BufferedReader;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
-
-import com.google.gson.Gson;
 
 public class GetStringFactionClaimsNumberProcedure {
 	public static double execute(CommandContext<CommandSourceStack> arguments) {
@@ -33,7 +31,7 @@ public class GetStringFactionClaimsNumberProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JSonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JSonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				powerReturn = JSonObject.get("claims").getAsDouble();
 			} catch (IOException e) {
 				e.printStackTrace();

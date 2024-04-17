@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 
@@ -12,9 +12,6 @@ import java.io.FileWriter;
 import java.io.File;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
-
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 public class FactionCreateRankProcedure {
 	public static void execute(Entity entity) {
@@ -33,8 +30,7 @@ public class FactionCreateRankProcedure {
 		myArray.add("Officier");
 		count = 0;
 		while (!(count == 4)) {
-			file = new File(
-					(FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + (entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/permissions/"),
+			file = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/permissions/"),
 					File.separator + ((myArray.get((int) count) instanceof String _s ? _s : "") + ".json"));
 			try {
 				file.getParentFile().mkdirs();
@@ -44,7 +40,7 @@ public class FactionCreateRankProcedure {
 			}
 			JsonObject.addProperty("permissions_list", "");
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(file);
 					fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

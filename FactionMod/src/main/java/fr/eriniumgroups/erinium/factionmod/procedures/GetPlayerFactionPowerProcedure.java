@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -16,8 +16,6 @@ import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.Gson;
-
 public class GetPlayerFactionPowerProcedure {
 	public static double execute(CommandContext<CommandSourceStack> arguments) {
 		com.google.gson.JsonObject JSonObject = new com.google.gson.JsonObject();
@@ -27,7 +25,7 @@ public class GetPlayerFactionPowerProcedure {
 		double whilecount = 0;
 		double powerReturn = 0;
 		powerReturn = 0;
-		File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + ((new Object() {
+		File = new File((FMLPaths.GAMEDIR.get().toString() + "/Faction_list/" + (new Object() {
 			public Entity getEntity() {
 				try {
 					return EntityArgument.getEntity(arguments, "player");
@@ -36,7 +34,7 @@ public class GetPlayerFactionPowerProcedure {
 					return null;
 				}
 			}
-		}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name + "/"), File.separator + "global_informations.json");
+		}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + "/"), File.separator + "global_informations.json");
 		{
 			try {
 				BufferedReader bufferedReader = new BufferedReader(new FileReader(File));
@@ -46,7 +44,7 @@ public class GetPlayerFactionPowerProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JSonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JSonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				powerReturn = JSonObject.get("power").getAsDouble();
 			} catch (IOException e) {
 				e.printStackTrace();

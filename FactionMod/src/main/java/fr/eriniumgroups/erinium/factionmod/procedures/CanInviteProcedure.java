@@ -15,7 +15,7 @@ public class CanInviteProcedure {
 		String result_text = "";
 		String permission = "";
 		permission = "can_" + "invite";
-		if (((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).temp_perm_list).contains(permission)) {
+		if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).temp_perm_list.contains(permission)) {
 			result_text = "\u00A7a" + permission;
 		} else {
 			result_text = "\u00A7c" + permission;

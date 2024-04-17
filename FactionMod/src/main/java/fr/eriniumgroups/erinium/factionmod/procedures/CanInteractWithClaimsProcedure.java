@@ -16,12 +16,11 @@ public class CanInteractWithClaimsProcedure {
 		File File = new File("");
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		String returnOwned = "";
-		if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).bypass_claim) {
+		if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).bypass_claim) {
 			return true;
 		} else {
 			if (!IsWarzoneProcedure.execute(world, entity) && !IsSafezoneProcedure.execute(world, entity)) {
-				if ((ReturnOwnedFactiionProcedure.execute(world, entity)).equals("wilderness")
-						|| (ReturnOwnedFactiionProcedure.execute(world, entity)).equals((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name)) {
+				if ((ReturnOwnedFactiionProcedure.execute(world, entity)).equals("wilderness") || (ReturnOwnedFactiionProcedure.execute(world, entity)).equals(entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name)) {
 					return true;
 				}
 				if (entity instanceof Player _player && !_player.level().isClientSide())

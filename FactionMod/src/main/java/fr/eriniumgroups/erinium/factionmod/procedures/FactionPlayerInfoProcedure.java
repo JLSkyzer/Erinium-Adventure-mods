@@ -26,7 +26,7 @@ public class FactionPlayerInfoProcedure {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("\u00A75===== Faction Info ====="), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal(("\u00A7bName : \u00A7e" + ((new Object() {
+				_player.displayClientMessage(Component.literal(("\u00A7bName : \u00A7e" + (new Object() {
 					public Entity getEntity() {
 						try {
 							return EntityArgument.getEntity(arguments, "player");
@@ -35,9 +35,9 @@ public class FactionPlayerInfoProcedure {
 							return null;
 						}
 					}
-				}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_name)), false);
+				}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name)), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal(("\u00A7bDisplayname : \u00A7e" + ((new Object() {
+				_player.displayClientMessage(Component.literal(("\u00A7bDisplayname : \u00A7e" + (new Object() {
 					public Entity getEntity() {
 						try {
 							return EntityArgument.getEntity(arguments, "player");
@@ -46,7 +46,7 @@ public class FactionPlayerInfoProcedure {
 							return null;
 						}
 					}
-				}.getEntity()).getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).faction_displayname)), false);
+				}.getEntity()).getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_displayname)), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(("\u00A7bDescription : \u00A7e" + GetPlayerFactionDescProcedure.execute(arguments))), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())

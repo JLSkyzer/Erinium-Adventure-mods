@@ -1,7 +1,5 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.network.NetworkHooks;
-
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
@@ -24,22 +22,18 @@ public class OpenBlacklistItemGuiProcedure {
 			return;
 		if (TargetEntityIsAdminProcedure.execute(entity)) {
 			{
-				double _setval = 0;
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.blacklist_item_page = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.blacklist_item_page = 0;
+				_vars.syncPlayerVariables(entity);
 			}
 			{
-				boolean _setval = false;
-				entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.BL_Item_page_initialised = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+				_vars.BL_Item_page_initialised = false;
+				_vars.syncPlayerVariables(entity);
 			}
 			if (entity instanceof ServerPlayer _ent) {
 				BlockPos _bpos = BlockPos.containing(x, y, z);
-				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
+				_ent.openMenu(new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
 						return Component.literal("BlacklistItemGui");

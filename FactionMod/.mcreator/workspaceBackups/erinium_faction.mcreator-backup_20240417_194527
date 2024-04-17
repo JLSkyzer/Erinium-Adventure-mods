@@ -1,18 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "Config",
-      "type": "config",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "config",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/factionmod/configuration/ConfigConfiguration.java"
-        ]
-      }
-    },
-    {
       "name": "PlayerSentChat",
       "type": "procedure",
       "sortid": 2,
@@ -52,23 +40,10 @@
       }
     },
     {
-      "name": "TickFunctions",
-      "type": "tag",
-      "sortid": 175,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "tick_functions",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/minecraft/tags/functions/tick.json"
-        ]
-      }
-    },
-    {
       "name": "PlayerTick",
       "type": "procedure",
       "sortid": 3,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_tick",
       "metadata": {
@@ -103,7 +78,7 @@
       "name": "PlayerJoinWorld",
       "type": "procedure",
       "sortid": 4,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_join_world",
       "metadata": {
@@ -182,7 +157,7 @@
       "name": "FactionCreate",
       "type": "procedure",
       "sortid": 7,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_create",
       "metadata": {
@@ -315,7 +290,7 @@
       "name": "FactionCreateRank",
       "type": "procedure",
       "sortid": 13,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_create_rank",
       "metadata": {
@@ -356,7 +331,7 @@
       "name": "FactionDisband",
       "type": "procedure",
       "sortid": 15,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_disband",
       "metadata": {
@@ -380,7 +355,7 @@
       "name": "FactionInfo",
       "type": "procedure",
       "sortid": 16,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_info",
       "metadata": {
@@ -505,7 +480,7 @@
       "name": "FactionStringInfo",
       "type": "procedure",
       "sortid": 22,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_string_info",
       "metadata": {
@@ -730,7 +705,7 @@
       "name": "FactionPlayerInfo",
       "type": "procedure",
       "sortid": 32,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_player_info",
       "metadata": {
@@ -871,7 +846,7 @@
       "name": "PlayerDeath",
       "type": "procedure",
       "sortid": 38,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "player_death",
       "metadata": {
@@ -1852,7 +1827,7 @@
       "name": "Validate",
       "type": "procedure",
       "sortid": 85,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "validate",
       "metadata": {
@@ -2349,7 +2324,7 @@
       "name": "FactionJoin",
       "type": "procedure",
       "sortid": 109,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_join",
       "metadata": {
@@ -2373,7 +2348,7 @@
       "name": "FactionLeave",
       "type": "procedure",
       "sortid": 110,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_leave",
       "metadata": {
@@ -2514,7 +2489,7 @@
       "name": "FactionKickOffline",
       "type": "procedure",
       "sortid": 116,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_kick_offline",
       "metadata": {
@@ -2542,7 +2517,7 @@
       "name": "FactionKickOnline",
       "type": "procedure",
       "sortid": 117,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_kick_online",
       "metadata": {
@@ -2666,7 +2641,7 @@
       "name": "FactionPromoteOffline",
       "type": "procedure",
       "sortid": 122,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_promote_offline",
       "metadata": {
@@ -2694,7 +2669,7 @@
       "name": "FactionPromoteOnline",
       "type": "procedure",
       "sortid": 123,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_promote_online",
       "metadata": {
@@ -2818,7 +2793,7 @@
       "name": "FactionDemoteOffline",
       "type": "procedure",
       "sortid": 128,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_demote_offline",
       "metadata": {
@@ -2846,7 +2821,7 @@
       "name": "FactionDemoteOnline",
       "type": "procedure",
       "sortid": 129,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_demote_online",
       "metadata": {
@@ -2941,7 +2916,7 @@
       "name": "GetChunkPath",
       "type": "procedure",
       "sortid": 133,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "get_chunk_path",
       "metadata": {
@@ -3122,7 +3097,7 @@
       "name": "FClaim",
       "type": "procedure",
       "sortid": 141,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "f_claim",
       "metadata": {
@@ -3200,7 +3175,7 @@
       "name": "FUnclaim",
       "type": "procedure",
       "sortid": 144,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "f_unclaim",
       "metadata": {
@@ -3355,7 +3330,7 @@
       "name": "FactionSetHome",
       "type": "procedure",
       "sortid": 151,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_set_home",
       "metadata": {
@@ -3487,7 +3462,7 @@
       "name": "ModInitialised",
       "type": "procedure",
       "sortid": 157,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "mod_initialised",
       "metadata": {
@@ -3685,7 +3660,7 @@
       "name": "BlackListItemAdd",
       "type": "procedure",
       "sortid": 167,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "black_list_item_add",
       "metadata": {
@@ -3709,7 +3684,7 @@
       "name": "BlackListItemRemove",
       "type": "procedure",
       "sortid": 168,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "black_list_item_remove",
       "metadata": {
@@ -3837,19 +3812,6 @@
       "path": "~/Chunk System/Trigger"
     },
     {
-      "name": "CanUseBlockOnClaim",
-      "type": "tag",
-      "sortid": 174,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "can_use_block_on_claim",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/erinium_faction/tags/blocks/can_use_block_on_claim.json"
-        ]
-      }
-    },
-    {
       "name": "InterractBlock",
       "type": "procedure",
       "sortid": 176,
@@ -3889,7 +3851,7 @@
       "name": "ForceUnclaimProced",
       "type": "procedure",
       "sortid": 177,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "force_unclaim_proced",
       "metadata": {
@@ -3939,7 +3901,7 @@
       "name": "Warzone",
       "type": "command",
       "sortid": 179,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "warzone",
       "metadata": {
@@ -3953,7 +3915,7 @@
       "name": "WarzoneUnclaim",
       "type": "procedure",
       "sortid": 180,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "warzone_unclaim",
       "metadata": {
@@ -3977,7 +3939,7 @@
       "name": "WarzoneClaim",
       "type": "procedure",
       "sortid": 181,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "warzone_claim",
       "metadata": {
@@ -4001,7 +3963,7 @@
       "name": "SafezoneUnclaim",
       "type": "procedure",
       "sortid": 183,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "safezone_unclaim",
       "metadata": {
@@ -4025,7 +3987,7 @@
       "name": "SafezoneClaim",
       "type": "procedure",
       "sortid": 184,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "safezone_claim",
       "metadata": {
@@ -4232,7 +4194,7 @@
       "name": "FactionDesc",
       "type": "procedure",
       "sortid": 193,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "faction_desc",
       "metadata": {
@@ -4251,6 +4213,18 @@
         ]
       },
       "path": "~/FactionSystem/Command/Procedures"
+    },
+    {
+      "name": "Config",
+      "type": "config",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "config",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/factionmod/configuration/ConfigConfiguration.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -4421,6 +4395,11 @@
       "subtitle": ""
     }
   ],
+  "tag_elements": {
+    "BLOCKS:mod:can_use_block_on_claim": [
+      "Blocks.TNT"
+    ]
+  },
   "language_map": {
     "en_us": {
       "faction.message.claim.entered": "You entered at ",
@@ -4440,8 +4419,8 @@
       "faction.message.sethome.succeful": "Your faction home has been set !",
       "gui.erinium_faction.blacklist_item_gui.label_blacklist_item": "Blacklist Item",
       "faction.error.displaynamecharcount": "Your displayname can have 20 characters max !",
-      "faction.message.home.noexist": "Your faction home not exist !",
       "gui.erinium_faction.edit_permission_gui.button_finish": "Finish",
+      "faction.message.home.noexist": "Your faction home not exist !",
       "gui.erinium_faction.selete_rank_gui.button_ancient": "Ancient",
       "gui.erinium_faction.selete_rank_gui.button_officier": "Officier",
       "safezone.desc": "A safe place to chill",
@@ -4585,23 +4564,19 @@
   "workspaceSettings": {
     "modid": "erinium_faction",
     "modName": "Erinium Faction Mod",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A mod for faction system",
     "author": "JLSkyzer, MCreator",
     "websiteURL": "https://github.com/JLSkyzer",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [
-      "jsonforhttprequest"
-    ],
-    "currentGenerator": "forge-1.20.1",
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.20.4",
     "credits": "No credit",
-    "modElementsPackage": "fr.eriniumgroups.erinium.factionmod",
-    "lockBaseModFiles": false
+    "modElementsPackage": "fr.eriniumgroups.erinium.factionmod"
   },
-  "mcreatorVersion": 202300452316
+  "mcreatorVersion": 202400115821
 }

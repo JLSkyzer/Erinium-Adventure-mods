@@ -11,23 +11,19 @@ public class ProcedBypassClaimProcedure {
 		if (entity == null)
 			return;
 		if (TargetEntityIsAdminProcedure.execute(entity)) {
-			if ((entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumFactionModVariables.PlayerVariables())).bypass_claim) {
+			if (entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).bypass_claim) {
 				{
-					boolean _setval = false;
-					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.bypass_claim = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+					_vars.bypass_claim = false;
+					_vars.syncPlayerVariables(entity);
 				}
 				if (entity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A74OFF"), false);
 			} else {
 				{
-					boolean _setval = true;
-					entity.getCapability(EriniumFactionModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.bypass_claim = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumFactionModVariables.PlayerVariables _vars = entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES);
+					_vars.bypass_claim = true;
+					_vars.syncPlayerVariables(entity);
 				}
 				if (entity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A7aON"), false);

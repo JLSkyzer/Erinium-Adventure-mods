@@ -1,0 +1,8 @@
+/f create Erinium "La faction a kiki"
+/eriniumfactioncustomchat
+/f f
+/f info
+/f desc ici c'est Paris et Paris est magique
+/f info
+/f claim
+/f map

@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.factionmod.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -13,8 +13,6 @@ import java.io.BufferedReader;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
-
-import com.google.gson.Gson;
 
 public class ReturnCommandEntityPowerProcedure {
 	public static double execute(CommandContext<CommandSourceStack> arguments) {
@@ -41,7 +39,7 @@ public class ReturnCommandEntityPowerProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				power = JsonObject.get("power").getAsDouble();
 			} catch (IOException e) {
 				e.printStackTrace();
