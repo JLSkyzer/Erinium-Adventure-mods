@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.ericonomy.procedures;
 
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -24,10 +24,6 @@ import fr.eriniumgroups.erinium.ericonomy.configuration.ServerConfigConfiguratio
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class MoneyResetProcedure {
 	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -46,8 +42,8 @@ public class MoneyResetProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-					JsonObject.addProperty("money", (double) ServerConfigConfiguration.START_MONEY.get());
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject.addProperty("money", ((double) ServerConfigConfiguration.START_MONEY.get()));
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A7eEriconomy \u00A7f>> " + "\u00A7dRESET " + "\u00A7b--> " + (new Object() {
 							public Entity getEntity() {
@@ -87,7 +83,7 @@ public class MoneyResetProcedure {
 						System.out.println("Erilog is not installed ! install here : https://github.com/JLSkyzer/Erinium-Adventure-mods/releases/tag/Erilog");
 					}
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(file);
 							fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

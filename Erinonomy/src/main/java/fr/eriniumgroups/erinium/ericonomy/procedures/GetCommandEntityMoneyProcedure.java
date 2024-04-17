@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.ericonomy.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -13,8 +13,6 @@ import java.io.BufferedReader;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
-
-import com.google.gson.Gson;
 
 public class GetCommandEntityMoneyProcedure {
 	public static double execute(CommandContext<CommandSourceStack> arguments) {
@@ -40,7 +38,7 @@ public class GetCommandEntityMoneyProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				jsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				jsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				return_value = jsonObject.get("money").getAsDouble();
 			} catch (IOException e) {
 				e.printStackTrace();

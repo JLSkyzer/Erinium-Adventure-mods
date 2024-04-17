@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "config",
   "definition": {
     "pools": [
@@ -20,9 +20,7 @@
             "comment": "Start money when first join",
             "vardisplay": "Start money",
             "varname": "start_money",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
+            "enablecomment": true
           },
           {
             "item": {
@@ -38,9 +36,7 @@
             "comment": "The prince of one stones on the cobble void",
             "vardisplay": "Cobble Void price for one stone",
             "varname": "cobblevoid_priceunit",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
+            "enablecomment": true
           }
         ]
       }

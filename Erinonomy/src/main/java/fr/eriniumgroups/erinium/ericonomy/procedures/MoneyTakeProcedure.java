@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.ericonomy.procedures;
 
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -23,10 +23,6 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class MoneyTakeProcedure {
 	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -45,7 +41,7 @@ public class MoneyTakeProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					if (JsonObject.get("money").getAsDouble() >= DoubleArgumentType.getDouble(arguments, "amount")) {
 						JsonObject.addProperty("money", (JsonObject.get("money").getAsDouble() - DoubleArgumentType.getDouble(arguments, "amount")));
 						if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -89,7 +85,7 @@ public class MoneyTakeProcedure {
 							System.out.println("Erilog is not installed ! install here : https://github.com/JLSkyzer/Erinium-Adventure-mods/releases/tag/Erilog");
 						}
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(file);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -141,7 +137,7 @@ public class MoneyTakeProcedure {
 							System.out.println("Erilog is not installed ! install here : https://github.com/JLSkyzer/Erinium-Adventure-mods/releases/tag/Erilog");
 						}
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(file);
 								fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

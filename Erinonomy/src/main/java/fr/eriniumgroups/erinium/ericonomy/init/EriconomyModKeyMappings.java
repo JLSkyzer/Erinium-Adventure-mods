@@ -6,17 +6,17 @@ package fr.eriniumgroups.erinium.ericonomy.init;
 
 import org.lwjgl.glfw.GLFW;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
-import net.minecraftforge.api.distmarker.Dist;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
 import fr.eriniumgroups.erinium.ericonomy.network.InsertAllMoneyMessage;
-import fr.eriniumgroups.erinium.ericonomy.EriconomyMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class EriconomyModKeyMappings {
@@ -27,7 +27,7 @@ public class EriconomyModKeyMappings {
 		public void setDown(boolean isDown) {
 			super.setDown(isDown);
 			if (isDownOld != isDown && isDown) {
-				EriconomyMod.PACKET_HANDLER.sendToServer(new InsertAllMoneyMessage(0, 0));
+				PacketDistributor.SERVER.noArg().send(new InsertAllMoneyMessage(0, 0));
 				InsertAllMoneyMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;

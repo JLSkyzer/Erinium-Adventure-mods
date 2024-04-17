@@ -1,12 +1,12 @@
 package fr.eriniumgroups.erinium.ericonomy.configuration;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class ServerConfigConfiguration {
-	public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-	public static final ForgeConfigSpec SPEC;
-	public static final ForgeConfigSpec.ConfigValue<Double> START_MONEY;
-	public static final ForgeConfigSpec.ConfigValue<Double> COBBLEVOID_PRICEUNIT;
+	public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+	public static final ModConfigSpec SPEC;
+	public static final ModConfigSpec.ConfigValue<Double> START_MONEY;
+	public static final ModConfigSpec.ConfigValue<Double> COBBLEVOID_PRICEUNIT;
 	static {
 		BUILDER.push("Basic");
 		START_MONEY = BUILDER.comment("Start money when first join").define("Start money", (double) 500);

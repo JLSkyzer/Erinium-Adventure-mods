@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.ericonomy.procedures;
 
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -23,9 +23,6 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class PayCommandProcedure {
 	public static void execute(LevelAccessor world, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -45,7 +42,7 @@ public class PayCommandProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				TargetEntityJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				TargetEntityJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				if (TargetEntityJsonObject.get("money").getAsDouble() >= DoubleArgumentType.getDouble(arguments, "amount")) {
 					TargetEntityJsonObject.addProperty("money", (TargetEntityJsonObject.get("money").getAsDouble() - DoubleArgumentType.getDouble(arguments, "amount")));
 					if (entity instanceof Player _player && !_player.level().isClientSide())
@@ -78,7 +75,7 @@ public class PayCommandProcedure {
 						System.out.println("Erilog is not installed ! install here : https://github.com/JLSkyzer/Erinium-Adventure-mods/releases/tag/Erilog");
 					}
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(file);
 							fileWriter.write(mainGSONBuilderVariable.toJson(TargetEntityJsonObject));
@@ -108,7 +105,7 @@ public class PayCommandProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					CommandEntityJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					CommandEntityJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					CommandEntityJsonObject.addProperty("money", (CommandEntityJsonObject.get("money").getAsDouble() + DoubleArgumentType.getDouble(arguments, "amount")));
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal(("\u00A7eEriconomy \u00A7f>> " + Component.translatable("ericonomy.pay.message.receive1").getString()
@@ -131,7 +128,7 @@ public class PayCommandProcedure {
 						System.out.println("Erilog is not installed ! install here : https://github.com/JLSkyzer/Erinium-Adventure-mods/releases/tag/Erilog");
 					}
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(file);
 							fileWriter.write(mainGSONBuilderVariable.toJson(CommandEntityJsonObject));

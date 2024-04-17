@@ -1,8 +1,8 @@
 package fr.eriniumgroups.erinium.ericonomy.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.ModList;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -28,9 +28,6 @@ import java.io.BufferedReader;
 import fr.eriniumgroups.erinium.ericonomy.init.EriconomyModItems;
 import fr.eriniumgroups.erinium.ericonomy.configuration.ServerConfigConfiguration;
 
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class SellBtnProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
@@ -52,13 +49,13 @@ public class SellBtnProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							eriJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							eriJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							eriJsonObject.addProperty("money",
 									(eriJsonObject.get("money").getAsDouble()
 											+ ((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY).getOrCreateTag()
 													.getDouble("stones") * (double) ServerConfigConfiguration.COBBLEVOID_PRICEUNIT.get())));
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(eriFile);
 									fileWriter.write(mainGSONBuilderVariable.toJson(eriJsonObject));
@@ -86,7 +83,7 @@ public class SellBtnProcedure {
 								+ "$")), false);
 					(entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("stones", 0);
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY);
+						ItemStack _setstack = (entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}

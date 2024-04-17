@@ -4,10 +4,10 @@
  */
 package fr.eriniumgroups.erinium.ericonomy.init;
 
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,12 +21,9 @@ public class EriconomyModTabs {
 
 	@SubscribeEvent
 	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-
 		if (tabData.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
 			tabData.accept(EriconomyModBlocks.COBBLE_VOID_STATION.get().asItem());
-		}
-
-		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+		} else if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
 			tabData.accept(EriconomyModItems.PIECE_1_CENT.get());
 			tabData.accept(EriconomyModItems.PIECE_5_CENT.get());
 			tabData.accept(EriconomyModItems.PIECE_10_CENT.get());
@@ -42,9 +39,7 @@ public class EriconomyModTabs {
 			tabData.accept(EriconomyModItems.BILL_200_DOLLARS.get());
 			tabData.accept(EriconomyModItems.BILLE_500_DOLLARS.get());
 			tabData.accept(EriconomyModItems.BILL_1000_DOLLARS.get());
-		}
-
-		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+		} else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
 			tabData.accept(EriconomyModItems.COBBLE_VOID.get());
 		}
 	}

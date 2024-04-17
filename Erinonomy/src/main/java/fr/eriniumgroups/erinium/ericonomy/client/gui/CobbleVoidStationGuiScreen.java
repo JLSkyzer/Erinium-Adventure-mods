@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.ericonomy.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +16,6 @@ import java.util.HashMap;
 import fr.eriniumgroups.erinium.ericonomy.world.inventory.CobbleVoidStationGuiMenu;
 import fr.eriniumgroups.erinium.ericonomy.procedures.ReturnStonePriceProcedure;
 import fr.eriniumgroups.erinium.ericonomy.network.CobbleVoidStationGuiButtonMessage;
-import fr.eriniumgroups.erinium.ericonomy.EriconomyMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -40,7 +41,7 @@ public class CobbleVoidStationGuiScreen extends AbstractContainerScreen<CobbleVo
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -64,11 +65,6 @@ public class CobbleVoidStationGuiScreen extends AbstractContainerScreen<CobbleVo
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.ericonomy.cobble_void_station_gui.label_cobble_void_station"), 6, 7, -12829636, false);
 		guiGraphics.drawString(this.font,
@@ -77,16 +73,11 @@ public class CobbleVoidStationGuiScreen extends AbstractContainerScreen<CobbleVo
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		button_sell = Button.builder(Component.translatable("gui.ericonomy.cobble_void_station_gui.button_sell"), e -> {
 			if (true) {
-				EriconomyMod.PACKET_HANDLER.sendToServer(new CobbleVoidStationGuiButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new CobbleVoidStationGuiButtonMessage(0, x, y, z));
 				CobbleVoidStationGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 69, this.topPos + 52, 36, 20).build();

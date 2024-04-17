@@ -1,29 +1,6 @@
 {
   "mod_elements": [
     {
-      "name": "Temp",
-      "type": "procedure",
-      "sortid": 2,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "temp",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/TempProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "ServerConfig",
       "type": "config",
       "sortid": 19,
@@ -651,7 +628,7 @@
       "name": "InsetAllMoney",
       "type": "procedure",
       "sortid": 37,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "registry_name": "inset_all_money",
       "metadata": {
@@ -768,7 +745,8 @@
           "src/main/resources/assets/ericonomy/blockstates/cobble_void_station.json",
           "src/main/resources/assets/ericonomy/models/block/cobble_void_station.json",
           "src/main/java/fr/eriniumgroups/erinium/ericonomy/block/entity/CobbleVoidStationBlockEntity.java",
-          "src/main/resources/assets/ericonomy/models/item/cobble_void_station.json"
+          "src/main/resources/assets/ericonomy/models/item/cobble_void_station.json",
+          "src/main/resources/data/ericonomy/loot_tables/blocks/cobble_void_station.json"
         ]
       },
       "path": "~/Items/Cobble Void"
@@ -798,8 +776,61 @@
       "registry_name": "cobble_void_station_gui",
       "metadata": {
         "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/network/CobbleVoidStationGuiButtonMessage.java",
           "src/main/java/fr/eriniumgroups/erinium/ericonomy/world/inventory/CobbleVoidStationGuiMenu.java",
           "src/main/java/fr/eriniumgroups/erinium/ericonomy/client/gui/CobbleVoidStationGuiScreen.java"
+        ]
+      },
+      "path": "~/Items/Cobble Void"
+    },
+    {
+      "name": "SellBtn",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": false,
+      "locked_code": false,
+      "registry_name": "sell_btn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/ericonomy/procedures/SellBtnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Items/Cobble Void"
+    },
+    {
+      "name": "CraftCobbleVoid",
+      "type": "recipe",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_cobble_void",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/ericonomy/recipes/craft_cobble_void.json"
+        ]
+      },
+      "path": "~/Items/Cobble Void"
+    },
+    {
+      "name": "CraftCobbleVoidStation",
+      "type": "recipe",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_cobble_void_station",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/ericonomy/recipes/craft_cobble_void_station.json"
         ]
       },
       "path": "~/Items/Cobble Void"
@@ -814,19 +845,20 @@
     }
   ],
   "sound_elements": [],
+  "tag_elements": {},
   "language_map": {
     "en_us": {
-      "item.ericonomy.bill_1000_dollars": "Bill 1000 Dollars",
       "erinocomy.message.nomoney": "§cNot enough money !",
+      "item.ericonomy.bill_1000_dollars": "Bill 1000 Dollars",
       "item.ericonomy.cobble_void": "Cobble Void",
       "item.ericonomy.piece_10_cent": "Piece 10 Cent",
       "item.ericonomy.bille_20_dollars": "Bill 20 Dollars",
       "gui.ericonomy.cobble_void_station_gui.label_cobble_void_station": "Cobble Void station",
       "item.ericonomy.bill_100_dollars": "Bill 100 Dollars",
-      "item.ericonomy.piece_5_dollars": "Bill 5 Dollars",
       "item.ericonomy.bill_10_dollars": "Bill 10 Dollars",
-      "item.ericonomy.piece_5_cent": "Piece 5 Cent",
+      "item.ericonomy.piece_5_dollars": "Bill 5 Dollars",
       "config.ericonomy.server_config": "ericonomy-common",
+      "item.ericonomy.piece_5_cent": "Piece 5 Cent",
       "block.ericonomy.cobble_void_station": "Cobble Void Station",
       "item.ericonomy.piece_50_cent": "Piece 50 Cent",
       "gui.ericonomy.cobble_void_station_gui.button_sell": "Sell",
@@ -883,20 +915,18 @@
   "workspaceSettings": {
     "modid": "ericonomy",
     "modName": "Ericonomy",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "author": "killi, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.20.1",
+    "currentGenerator": "neoforge-1.20.4",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
-    "modElementsPackage": "fr.eriniumgroups.erinium.ericonomy",
-    "lockBaseModFiles": false
+    "modElementsPackage": "fr.eriniumgroups.erinium.ericonomy"
   },
-  "mcreatorVersion": 202300452316
+  "mcreatorVersion": 202400115821
 }

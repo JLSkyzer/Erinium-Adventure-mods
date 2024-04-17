@@ -1,11 +1,11 @@
 package fr.eriniumgroups.erinium.ericonomy.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.ModList;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -23,9 +23,6 @@ import java.io.FileWriter;
 import java.io.File;
 
 import fr.eriniumgroups.erinium.ericonomy.configuration.ServerConfigConfiguration;
-
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber
 public class JoinTheWorldProcedure {
@@ -51,10 +48,10 @@ public class JoinTheWorldProcedure {
 			} catch (IOException exception) {
 				exception.printStackTrace();
 			}
-			jsonObject.addProperty("money", (double) ServerConfigConfiguration.START_MONEY.get());
+			jsonObject.addProperty("money", ((double) ServerConfigConfiguration.START_MONEY.get()));
 			jsonObject.addProperty("ericonomy.admin", false);
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(file);
 					fileWriter.write(mainGSONBuilderVariable.toJson(jsonObject));

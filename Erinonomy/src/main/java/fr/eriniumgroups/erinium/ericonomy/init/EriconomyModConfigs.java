@@ -1,10 +1,10 @@
 package fr.eriniumgroups.erinium.ericonomy.init;
 
-import net.minecraftforge.fml.event.lifecycle.FMLConstructModEvent;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.fml.event.lifecycle.FMLConstructModEvent;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import fr.eriniumgroups.erinium.ericonomy.configuration.ServerConfigConfiguration;
 import fr.eriniumgroups.erinium.ericonomy.EriconomyMod;
