@@ -1,5 +1,7 @@
 package fr.eriniumgroup.eriniumadventure.automation.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,7 +15,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroup.eriniumadventure.automation.world.inventory.FarmerJsonBuilderGuiMainMenu;
 import fr.eriniumgroup.eriniumadventure.automation.network.FarmerJsonBuilderGuiMainButtonMessage;
-import fr.eriniumgroup.eriniumadventure.automation.EriniumAutomationMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -40,7 +41,7 @@ public class FarmerJsonBuilderGuiMainScreen extends AbstractContainerScreen<Farm
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -64,18 +65,8 @@ public class FarmerJsonBuilderGuiMainScreen extends AbstractContainerScreen<Farm
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.farmer_json_builder_gui_main.label_choose_your_block"), 42, 7, -16777216, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
@@ -83,7 +74,7 @@ public class FarmerJsonBuilderGuiMainScreen extends AbstractContainerScreen<Farm
 		super.init();
 		button_one_block_crop = Button.builder(Component.translatable("gui.erinium_automation.farmer_json_builder_gui_main.button_one_block_crop"), e -> {
 			if (true) {
-				EriniumAutomationMod.PACKET_HANDLER.sendToServer(new FarmerJsonBuilderGuiMainButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new FarmerJsonBuilderGuiMainButtonMessage(0, x, y, z));
 				FarmerJsonBuilderGuiMainButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 33, this.topPos + 25, 108, 20).build();
@@ -91,7 +82,7 @@ public class FarmerJsonBuilderGuiMainScreen extends AbstractContainerScreen<Farm
 		this.addRenderableWidget(button_one_block_crop);
 		button_multiple_blocks_crop = Button.builder(Component.translatable("gui.erinium_automation.farmer_json_builder_gui_main.button_multiple_blocks_crop"), e -> {
 			if (true) {
-				EriniumAutomationMod.PACKET_HANDLER.sendToServer(new FarmerJsonBuilderGuiMainButtonMessage(1, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new FarmerJsonBuilderGuiMainButtonMessage(1, x, y, z));
 				FarmerJsonBuilderGuiMainButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}).bounds(this.leftPos + 33, this.topPos + 52, 108, 20).build();

@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "erinium_automation:amenine_ore",
-    "erinium_automation:astral_miner",
+    "erinium_automation:wither_skeleton_block",
     "erinium_automation:nether_star_generator",
-    "erinium_automation:wither_skeleton_block"
+    "erinium_automation:astral_miner",
+    "erinium_automation:amenine_ore"
   ]
 }

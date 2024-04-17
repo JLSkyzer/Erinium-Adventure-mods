@@ -2,8 +2,7 @@ package fr.eriniumgroup.eriniumadventure.automation.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.item.ItemStack;
@@ -11,6 +10,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.client.gui.components.EditBox;
 
 import java.util.function.Supplier;
@@ -21,10 +21,6 @@ import java.io.IOException;
 import java.io.FileWriter;
 import java.io.File;
 
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
-
 public class OneBlockCropGuiValidateProcedure {
 	public static void execute(Entity entity, HashMap guistate) {
 		if (entity == null || guistate == null)
@@ -33,7 +29,7 @@ public class OneBlockCropGuiValidateProcedure {
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		String blockid = "";
 		String modid = "";
-		if (!(ForgeRegistries.ITEMS.getValue(new ResourceLocation(((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : "")).toLowerCase(java.util.Locale.ENGLISH))) == Blocks.AIR.asItem())) {
+		if (!(BuiltInRegistries.ITEM.get(new ResourceLocation(((guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : "")).toLowerCase(java.util.Locale.ENGLISH))) == Blocks.AIR.asItem())) {
 			modid = new Object() {
 				private String split(String text, String space, int index) {
 					String s = text.split(space)[index];
@@ -56,7 +52,7 @@ public class OneBlockCropGuiValidateProcedure {
 					} catch (IOException exception) {
 						exception.printStackTrace();
 					}
-					JsonObject.addProperty("result", (ForgeRegistries.ITEMS
+					JsonObject.addProperty("result", (BuiltInRegistries.ITEM
 							.getKey((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(0)).getItem() : ItemStack.EMPTY).getItem()).toString()));
 					JsonObject.addProperty("result_min", new Object() {
 						double convert(String s) {
@@ -76,7 +72,7 @@ public class OneBlockCropGuiValidateProcedure {
 							return 0;
 						}
 					}.convert(guistate.containsKey("text:result_max") ? ((EditBox) guistate.get("text:result_max")).getValue() : ""));
-					JsonObject.addProperty("seed", (ForgeRegistries.ITEMS
+					JsonObject.addProperty("seed", (BuiltInRegistries.ITEM
 							.getKey((entity instanceof Player _plrSlotItem && _plrSlotItem.containerMenu instanceof Supplier _splr && _splr.get() instanceof Map _slt ? ((Slot) _slt.get(1)).getItem() : ItemStack.EMPTY).getItem()).toString()));
 					JsonObject.addProperty("seed_min", new Object() {
 						double convert(String s) {
@@ -98,7 +94,7 @@ public class OneBlockCropGuiValidateProcedure {
 					}.convert(guistate.containsKey("text:seed_max") ? ((EditBox) guistate.get("text:seed_max")).getValue() : ""));
 					JsonObject.addProperty("replaced_block", (guistate.containsKey("text:id") ? ((EditBox) guistate.get("text:id")).getValue() : ""));
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(file);
 							fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

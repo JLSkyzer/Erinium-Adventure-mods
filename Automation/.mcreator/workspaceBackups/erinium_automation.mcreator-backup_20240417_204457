@@ -15,46 +15,6 @@
       }
     },
     {
-      "name": "WikiPage",
-      "type": "code",
-      "sortid": 5,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "wiki_page",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/WikiPage.java"
-        ]
-      }
-    },
-    {
-      "name": "OpenWiki",
-      "type": "procedure",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "open_wiki",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OpenWikiProcedure.java"
-        ],
-        "dependencies": []
-      }
-    },
-    {
-      "name": "Wiki",
-      "type": "command",
-      "sortid": 6,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wiki",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/command/WikiCommand.java"
-        ]
-      }
-    },
-    {
       "name": "FarmerBlock",
       "type": "block",
       "sortid": 7,
@@ -302,7 +262,6 @@
       "registry_name": "amenine_ore",
       "metadata": {
         "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/features/ores/AmenineOreFeature.java",
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/AmenineOreBlock.java",
           "src/main/resources/assets/erinium_automation/models/block/amenine_ore.json",
           "src/main/resources/data/erinium_automation/forge/biome_modifier/amenine_ore_biome_modifier.json",
@@ -1220,13 +1179,11 @@
     ],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [
-      "crafttweaker"
-    ],
+    "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
     "credits": "Created thanks to MCreator",
     "modElementsPackage": "fr.eriniumgroup.eriniumadventure.automation",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202300452316
 }

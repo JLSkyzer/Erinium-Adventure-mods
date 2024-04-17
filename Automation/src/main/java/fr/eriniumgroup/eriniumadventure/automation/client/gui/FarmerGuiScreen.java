@@ -1,5 +1,7 @@
 package fr.eriniumgroup.eriniumadventure.automation.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +16,6 @@ import java.util.HashMap;
 import fr.eriniumgroup.eriniumadventure.automation.world.inventory.FarmerGuiMenu;
 import fr.eriniumgroup.eriniumadventure.automation.procedures.GetEnergyProcedure;
 import fr.eriniumgroup.eriniumadventure.automation.network.FarmerGuiButtonMessage;
-import fr.eriniumgroup.eriniumadventure.automation.EriniumAutomationMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -40,7 +41,7 @@ public class FarmerGuiScreen extends AbstractContainerScreen<FarmerGuiMenu> {
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -64,11 +65,6 @@ public class FarmerGuiScreen extends AbstractContainerScreen<FarmerGuiMenu> {
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.farmer_gui.label_farmer"), 69, 7, -16777216, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.farmer_gui.label_proc_get_energy"), 6, 16, -12829636, false);
@@ -80,16 +76,11 @@ public class FarmerGuiScreen extends AbstractContainerScreen<FarmerGuiMenu> {
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		button_help = Button.builder(Component.translatable("gui.erinium_automation.farmer_gui.button_help"), e -> {
 			if (true) {
-				EriniumAutomationMod.PACKET_HANDLER.sendToServer(new FarmerGuiButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new FarmerGuiButtonMessage(0, x, y, z));
 				FarmerGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 123, this.topPos + 7, 46, 20).build();

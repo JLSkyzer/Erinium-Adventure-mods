@@ -37,7 +37,7 @@ public class AstralMinerGuiScreen extends AbstractContainerScreen<AstralMinerGui
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -64,11 +64,6 @@ public class AstralMinerGuiScreen extends AbstractContainerScreen<AstralMinerGui
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.astral_miner_gui.label_astral_miner"), 2, 3, -1, false);
 		guiGraphics.drawString(this.font,
@@ -77,11 +72,6 @@ public class AstralMinerGuiScreen extends AbstractContainerScreen<AstralMinerGui
 		guiGraphics.drawString(this.font,
 
 				AstralGetPercentProcedure.execute(world, x, y, z), 78, 61, -12829636, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override

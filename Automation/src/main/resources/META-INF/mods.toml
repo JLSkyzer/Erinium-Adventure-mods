@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[47,)"
+loaderVersion="[2,)"
 license="MIT License"
 
 [[mods]]
 modId="erinium_automation"
-version="1.0.3"
+version="1.0.4"
 displayName="eriunium_automation"
 displayURL="https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation"
 logoFile="logo.png"
@@ -12,17 +12,26 @@ credits="Created thanks to MCreator"
 authors="JLSkyzer"
 description="Mod created by JLSkyzer"
 
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
 [[dependencies.erinium_automation]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.20.1]"
+    modId="neoforge"
+    type="required"
+    versionRange="[20.4.223,)"
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.erinium_automation]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.20.4]"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.erinium_automation]]
     modId="mekanism"
-    mandatory=true
+    type="required"
     versionRange="[0,)"
     ordering="NONE"
     side="BOTH"

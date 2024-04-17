@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "erinium_automation:blocks/astral_miner",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "erinium_automation:astral_miner"
+        }
+      ]
+    }
+  ]
+}

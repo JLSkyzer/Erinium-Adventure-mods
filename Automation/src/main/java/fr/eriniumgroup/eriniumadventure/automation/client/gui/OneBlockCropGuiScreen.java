@@ -1,5 +1,7 @@
 package fr.eriniumgroup.eriniumadventure.automation.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +16,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroup.eriniumadventure.automation.world.inventory.OneBlockCropGuiMenu;
 import fr.eriniumgroup.eriniumadventure.automation.network.OneBlockCropGuiButtonMessage;
-import fr.eriniumgroup.eriniumadventure.automation.EriniumAutomationMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -45,7 +46,7 @@ public class OneBlockCropGuiScreen extends AbstractContainerScreen<OneBlockCropG
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		id.render(guiGraphics, mouseX, mouseY, partialTicks);
 		result_min.render(guiGraphics, mouseX, mouseY, partialTicks);
@@ -84,26 +85,11 @@ public class OneBlockCropGuiScreen extends AbstractContainerScreen<OneBlockCropG
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-		id.tick();
-		result_min.tick();
-		result_max.tick();
-		seed_min.tick();
-		seed_max.tick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.one_block_crop_gui.label_one_block_crop_configurator"), 15, 7, -16777216, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.one_block_crop_gui.label_crop_block"), 60, 25, -16777216, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.one_block_crop_gui.label_result_item"), 6, 61, -16777216, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_automation.one_block_crop_gui.label_seeds_item"), 114, 61, -16777216, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
@@ -120,16 +106,16 @@ public class OneBlockCropGuiScreen extends AbstractContainerScreen<OneBlockCropG
 			}
 
 			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
+			public void moveCursorTo(int pos, boolean flag) {
+				super.moveCursorTo(pos, flag);
 				if (getValue().isEmpty())
 					setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.id").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		id.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.id").getString());
 		id.setMaxLength(32767);
+		id.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.id").getString());
 		guistate.put("text:id", id);
 		this.addWidget(this.id);
 		result_min = new EditBox(this.font, this.leftPos + 7, this.topPos + 89, 52, 18, Component.translatable("gui.erinium_automation.one_block_crop_gui.result_min")) {
@@ -143,16 +129,16 @@ public class OneBlockCropGuiScreen extends AbstractContainerScreen<OneBlockCropG
 			}
 
 			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
+			public void moveCursorTo(int pos, boolean flag) {
+				super.moveCursorTo(pos, flag);
 				if (getValue().isEmpty())
 					setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.result_min").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		result_min.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.result_min").getString());
 		result_min.setMaxLength(32767);
+		result_min.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.result_min").getString());
 		guistate.put("text:result_min", result_min);
 		this.addWidget(this.result_min);
 		result_max = new EditBox(this.font, this.leftPos + 7, this.topPos + 107, 52, 18, Component.translatable("gui.erinium_automation.one_block_crop_gui.result_max")) {
@@ -166,16 +152,16 @@ public class OneBlockCropGuiScreen extends AbstractContainerScreen<OneBlockCropG
 			}
 
 			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
+			public void moveCursorTo(int pos, boolean flag) {
+				super.moveCursorTo(pos, flag);
 				if (getValue().isEmpty())
 					setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.result_max").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		result_max.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.result_max").getString());
 		result_max.setMaxLength(32767);
+		result_max.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.result_max").getString());
 		guistate.put("text:result_max", result_max);
 		this.addWidget(this.result_max);
 		seed_min = new EditBox(this.font, this.leftPos + 115, this.topPos + 89, 52, 18, Component.translatable("gui.erinium_automation.one_block_crop_gui.seed_min")) {
@@ -189,16 +175,16 @@ public class OneBlockCropGuiScreen extends AbstractContainerScreen<OneBlockCropG
 			}
 
 			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
+			public void moveCursorTo(int pos, boolean flag) {
+				super.moveCursorTo(pos, flag);
 				if (getValue().isEmpty())
 					setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.seed_min").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		seed_min.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.seed_min").getString());
 		seed_min.setMaxLength(32767);
+		seed_min.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.seed_min").getString());
 		guistate.put("text:seed_min", seed_min);
 		this.addWidget(this.seed_min);
 		seed_max = new EditBox(this.font, this.leftPos + 115, this.topPos + 107, 52, 18, Component.translatable("gui.erinium_automation.one_block_crop_gui.seed_max")) {
@@ -212,21 +198,21 @@ public class OneBlockCropGuiScreen extends AbstractContainerScreen<OneBlockCropG
 			}
 
 			@Override
-			public void moveCursorTo(int pos) {
-				super.moveCursorTo(pos);
+			public void moveCursorTo(int pos, boolean flag) {
+				super.moveCursorTo(pos, flag);
 				if (getValue().isEmpty())
 					setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.seed_max").getString());
 				else
 					setSuggestion(null);
 			}
 		};
-		seed_max.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.seed_max").getString());
 		seed_max.setMaxLength(32767);
+		seed_max.setSuggestion(Component.translatable("gui.erinium_automation.one_block_crop_gui.seed_max").getString());
 		guistate.put("text:seed_max", seed_max);
 		this.addWidget(this.seed_max);
 		button_validate = Button.builder(Component.translatable("gui.erinium_automation.one_block_crop_gui.button_validate"), e -> {
 			if (true) {
-				EriniumAutomationMod.PACKET_HANDLER.sendToServer(new OneBlockCropGuiButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new OneBlockCropGuiButtonMessage(0, x, y, z));
 				OneBlockCropGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 60, this.topPos + 106, 54, 20).build();

@@ -4,8 +4,8 @@
  */
 package fr.eriniumgroup.eriniumadventure.automation.init;
 
-import net.minecraftforge.registries.RegistryObject;
-import net.minecraftforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.CreativeModeTab;
@@ -16,7 +16,7 @@ import fr.eriniumgroup.eriniumadventure.automation.EriniumAutomationMod;
 
 public class EriniumAutomationModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, EriniumAutomationMod.MODID);
-	public static final RegistryObject<CreativeModeTab> ERINIUM_AUTOMATION = REGISTRY.register("erinium_automation",
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ERINIUM_AUTOMATION = REGISTRY.register("erinium_automation",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.erinium_automation.erinium_automation")).icon(() -> new ItemStack(EriniumAutomationModItems.MOD_LOGO.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(EriniumAutomationModBlocks.FARMER_BLOCK.get().asItem());
 				tabData.accept(EriniumAutomationModItems.ASTRAL_FOOT.get());

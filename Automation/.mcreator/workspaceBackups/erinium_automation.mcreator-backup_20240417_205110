@@ -15,46 +15,6 @@
       }
     },
     {
-      "name": "WikiPage",
-      "type": "code",
-      "sortid": 5,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "wiki_page",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/WikiPage.java"
-        ]
-      }
-    },
-    {
-      "name": "OpenWiki",
-      "type": "procedure",
-      "sortid": 3,
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "open_wiki",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/procedures/OpenWikiProcedure.java"
-        ],
-        "dependencies": []
-      }
-    },
-    {
-      "name": "Wiki",
-      "type": "command",
-      "sortid": 6,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "wiki",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/command/WikiCommand.java"
-        ]
-      }
-    },
-    {
       "name": "FarmerBlock",
       "type": "block",
       "sortid": 7,
@@ -67,6 +27,7 @@
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/entity/FarmerBlockBlockEntity.java",
           "src/main/resources/assets/erinium_automation/models/item/farmer_block.json",
           "src/main/resources/assets/erinium_automation/blockstates/farmer_block.json",
+          "src/main/resources/data/erinium_automation/loot_tables/blocks/farmer_block.json",
           "src/main/resources/assets/erinium_automation/models/block/farmer_block.json"
         ]
       },
@@ -285,6 +246,7 @@
       "registry_name": "dark_iron_block",
       "metadata": {
         "files": [
+          "src/main/resources/data/erinium_automation/loot_tables/blocks/dark_iron_block.json",
           "src/main/resources/assets/erinium_automation/models/block/dark_iron_block.json",
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/DarkIronBlockBlock.java",
           "src/main/resources/assets/erinium_automation/blockstates/dark_iron_block.json",
@@ -302,10 +264,10 @@
       "registry_name": "amenine_ore",
       "metadata": {
         "files": [
-          "src/main/java/fr/eriniumgroup/eriniumadventure/automation/world/features/ores/AmenineOreFeature.java",
+          "src/main/resources/data/erinium_automation/loot_tables/blocks/amenine_ore.json",
+          "src/main/resources/data/erinium_automation/neoforge/biome_modifier/amenine_ore_biome_modifier.json",
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/AmenineOreBlock.java",
           "src/main/resources/assets/erinium_automation/models/block/amenine_ore.json",
-          "src/main/resources/data/erinium_automation/forge/biome_modifier/amenine_ore_biome_modifier.json",
           "src/main/resources/data/erinium_automation/worldgen/placed_feature/amenine_ore.json",
           "src/main/resources/assets/erinium_automation/blockstates/amenine_ore.json",
           "src/main/resources/data/erinium_automation/worldgen/configured_feature/amenine_ore.json",
@@ -521,6 +483,7 @@
       "registry_name": "astral_miner",
       "metadata": {
         "files": [
+          "src/main/resources/data/erinium_automation/loot_tables/blocks/astral_miner.json",
           "src/main/resources/assets/erinium_automation/blockstates/astral_miner.json",
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/entity/AstralMinerBlockEntity.java",
           "src/main/resources/assets/erinium_automation/models/block/astral_miner.json",
@@ -575,6 +538,7 @@
       "metadata": {
         "files": [
           "src/main/resources/assets/erinium_automation/blockstates/enriched_farmland.json",
+          "src/main/resources/data/erinium_automation/loot_tables/blocks/enriched_farmland.json",
           "src/main/resources/assets/erinium_automation/models/item/enriched_farmland.json",
           "src/main/resources/assets/erinium_automation/models/block/enriched_farmland.json",
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/EnrichedFarmlandBlock.java"
@@ -595,19 +559,6 @@
         ]
       },
       "path": "~/Farm"
-    },
-    {
-      "name": "ForgeFarmland",
-      "type": "tag",
-      "sortid": 33,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "forge_farmland",
-      "metadata": {
-        "files": [
-          "src/main/resources/data/forge/tags/blocks/farmland.json"
-        ]
-      }
     },
     {
       "name": "Farmerjsonbuilder",
@@ -1037,7 +988,8 @@
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/entity/NetherStarGeneratorBlockEntity.java",
           "src/main/resources/assets/erinium_automation/models/item/nether_star_generator.json",
           "src/main/resources/assets/erinium_automation/blockstates/nether_star_generator.json",
-          "src/main/resources/assets/erinium_automation/models/block/nether_star_generator.json"
+          "src/main/resources/assets/erinium_automation/models/block/nether_star_generator.json",
+          "src/main/resources/data/erinium_automation/loot_tables/blocks/nether_star_generator.json"
         ]
       },
       "path": "~/generator/nether star"
@@ -1052,6 +1004,7 @@
       "metadata": {
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/automation/block/WitherSkeletonBlockBlock.java",
+          "src/main/resources/data/erinium_automation/loot_tables/blocks/wither_skeleton_block.json",
           "src/main/resources/assets/erinium_automation/models/item/wither_skeleton_block.json",
           "src/main/resources/assets/erinium_automation/models/block/wither_skeleton_block.json",
           "src/main/resources/assets/erinium_automation/blockstates/wither_skeleton_block.json"
@@ -1086,6 +1039,19 @@
         ]
       },
       "path": "~/generator/nether star"
+    },
+    {
+      "name": "Ss",
+      "type": "recipe",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ss",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_automation/recipes/ss.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1097,6 +1063,20 @@
     }
   ],
   "sound_elements": [],
+  "tag_elements": {
+    "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:WitherSkeletonBlock",
+      "~CUSTOM:NetherStarGenerator",
+      "~CUSTOM:AstralMiner",
+      "~CUSTOM:AmenineOre"
+    ],
+    "BLOCKS:minecraft:mineable/shovel": [
+      "~CUSTOM:EnrichedFarmland"
+    ],
+    "BLOCKS:forge:farmland": [
+      "CUSTOM:FarmerBlock"
+    ]
+  },
   "language_map": {
     "en_us": {
       "gui.eriunium_automation.farmer_gui.label_farmer": "Farmer",
@@ -1207,12 +1187,11 @@
   "workspaceSettings": {
     "modid": "erinium_automation",
     "modName": "eriunium_automation",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Mod created by JLSkyzer",
     "author": "JLSkyzer",
     "websiteURL": "https://legacy.curseforge.com/minecraft/mc-mods/erinium-automation",
     "license": "MIT License",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "modPicture": "erinium_automation",
     "requiredMods": [
@@ -1220,13 +1199,10 @@
     ],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [
-      "crafttweaker"
-    ],
-    "currentGenerator": "forge-1.20.1",
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.20.4",
     "credits": "Created thanks to MCreator",
-    "modElementsPackage": "fr.eriniumgroup.eriniumadventure.automation",
-    "lockBaseModFiles": false
+    "modElementsPackage": "fr.eriniumgroup.eriniumadventure.automation"
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202400115821
 }
