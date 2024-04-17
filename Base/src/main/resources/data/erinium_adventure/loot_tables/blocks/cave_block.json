@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "erinium_adventure:blocks/cave_block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "erinium_adventure:cave_block"
+        }
+      ]
+    }
+  ]
+}

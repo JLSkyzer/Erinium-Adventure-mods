@@ -1,6 +1,6 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -120,7 +120,7 @@ public class RocketHeadTickProcedure {
 							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 						}
 					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(EriniumAdventureModItems.NITRIATE_ARMOR_HELMET.get());
+						ItemStack _setstack = new ItemStack(EriniumAdventureModItems.STARSHIP_ITEM.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
@@ -134,13 +134,13 @@ public class RocketHeadTickProcedure {
 							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 						}
 					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(EriniumAdventureModItems.NITRIATE_ARMOR_CHESTPLATE.get());
+						ItemStack _setstack = new ItemStack(EriniumAdventureModItems.STARSHIP_ITEM.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 				} else {
 					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumAdventureModItems.ROCKET_HEAD_SPAWN_EGG.get()));
+						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(EriniumAdventureModItems.STARSHIP_ITEM.get()));
 						entityToSpawn.setPickUpDelay(10);
 						entityToSpawn.setUnlimitedLifetime();
 						_level.addFreshEntity(entityToSpawn);

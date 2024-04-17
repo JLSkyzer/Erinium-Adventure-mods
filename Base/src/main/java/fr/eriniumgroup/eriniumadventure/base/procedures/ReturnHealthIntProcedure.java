@@ -8,6 +8,6 @@ public class ReturnHealthIntProcedure {
 	public static double execute(Entity entity) {
 		if (entity == null)
 			return 0;
-		return (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health;
+		return entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health;
 	}
 }

@@ -1,9 +1,9 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.Entity;
 
@@ -26,11 +26,9 @@ public class OnRespawnProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).max_health;
-			entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.health = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+			_vars.health = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).max_health;
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

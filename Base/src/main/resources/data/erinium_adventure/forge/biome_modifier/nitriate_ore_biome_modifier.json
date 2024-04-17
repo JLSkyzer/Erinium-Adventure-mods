@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#is_overworld",
-  "features": "erinium_adventure:nitriate_ore",
-  "step": "underground_ores"
-}

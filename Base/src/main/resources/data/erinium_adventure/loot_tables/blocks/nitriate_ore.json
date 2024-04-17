@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "erinium_adventure:blocks/nitriate_ore",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "erinium_adventure:nitriate_gem"
+        }
+      ]
+    }
+  ]
+}

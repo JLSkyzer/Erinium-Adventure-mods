@@ -1,10 +1,10 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.Entity;
 
@@ -15,10 +15,6 @@ import java.io.FileWriter;
 import java.io.File;
 
 import fr.eriniumgroup.eriniumadventure.base.network.EriniumAdventureModVariables;
-
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber
 public class JoinTheWorldProcedure {
@@ -37,22 +33,18 @@ public class JoinTheWorldProcedure {
 		File file = new File("");
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		if (entity.isAlive()) {
-			if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).max_health == 0) {
+			if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).max_health == 0) {
 				{
-					double _setval = 20;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.max_health = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.max_health = 20;
+					_vars.syncPlayerVariables(entity);
 				}
 			}
-			if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health == 0) {
+			if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health == 0) {
 				{
-					double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).max_health;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.health = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.health = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).max_health;
+					_vars.syncPlayerVariables(entity);
 				}
 			}
 			file = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumAdventure/permissions/"), File.separator + (entity.getUUID().toString() + ".json"));
@@ -65,7 +57,7 @@ public class JoinTheWorldProcedure {
 				}
 				JsonObject.addProperty("stats.admin.command", false);
 				{
-					Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+					com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 					try {
 						FileWriter fileWriter = new FileWriter(file);
 						fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "config",
   "definition": {
     "pools": [
@@ -20,9 +20,7 @@
             "comment": "The maximum of health upgrade a player can buy (note 1 level give 10 of health)",
             "vardisplay": "Health Max",
             "varname": "health_max",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "CUSTOM:RocketBooster"
+            "enablecomment": true
           }
         ]
       }

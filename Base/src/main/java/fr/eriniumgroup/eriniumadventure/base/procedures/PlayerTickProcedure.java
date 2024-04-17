@@ -1,9 +1,9 @@
 package fr.eriniumgroup.eriniumadventure.base.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -29,97 +29,75 @@ public class PlayerTickProcedure {
 		if (entity == null)
 			return;
 		if (entity.isAlive()) {
-			if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).Health_regen_tick > 0) {
+			if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).Health_regen_tick > 0) {
 				{
-					double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).Health_regen_tick - 1;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.Health_regen_tick = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.Health_regen_tick = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).Health_regen_tick - 1;
+					_vars.syncPlayerVariables(entity);
 				}
 			} else {
-				if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health < (entity
-						.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).max_health
-						&& (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).Health_regen_cooldown == 0) {
+				if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health < entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).max_health
+						&& entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).Health_regen_cooldown == 0) {
 					{
-						double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health + 0.5;
-						entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.health = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+						_vars.health = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health + 0.5;
+						_vars.syncPlayerVariables(entity);
 					}
 					{
-						double _setval = 40;
-						entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.Health_regen_tick = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+						_vars.Health_regen_tick = 40;
+						_vars.syncPlayerVariables(entity);
 					}
 				}
 			}
-			if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health > (entity
-					.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).max_health) {
+			if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health > entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).max_health) {
 				{
-					double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).max_health;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.health = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.health = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).max_health;
+					_vars.syncPlayerVariables(entity);
 				}
 			}
-			if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health <= 0) {
+			if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health <= 0) {
 				{
-					double _setval = 0;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.health = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.health = 0;
+					_vars.syncPlayerVariables(entity);
 				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(0);
 			}
-			if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_damage > 0) {
+			if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health_damage > 0) {
 				{
-					double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_damage - 1;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.health_damage = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.health_damage = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health_damage - 1;
+					_vars.syncPlayerVariables(entity);
 				}
 				{
-					double _setval = 20;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.Health_regen_cooldown = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.Health_regen_cooldown = 20;
+					_vars.syncPlayerVariables(entity);
 				}
 			} else {
-				if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).Health_regen_cooldown > 0) {
+				if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).Health_regen_cooldown > 0) {
 					{
-						double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).Health_regen_cooldown - 1;
-						entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.Health_regen_cooldown = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+						_vars.Health_regen_cooldown = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).Health_regen_cooldown - 1;
+						_vars.syncPlayerVariables(entity);
 					}
 				}
 			}
-			if ((entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).synchronisation > 0) {
+			if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).synchronisation > 0) {
 				{
-					double _setval = (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).synchronisation - 1;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.synchronisation = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.synchronisation = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).synchronisation - 1;
+					_vars.syncPlayerVariables(entity);
 				}
 			} else {
 				SynchronisePlayerProcedure.execute(entity);
 				{
-					double _setval = 6000;
-					entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.synchronisation = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.synchronisation = 6000;
+					_vars.syncPlayerVariables(entity);
 				}
 			}
 		}

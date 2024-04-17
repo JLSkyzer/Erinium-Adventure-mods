@@ -1,0 +1,1162 @@
+{
+  "mod_elements": [
+    {
+      "name": "NitriateGem",
+      "type": "item",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_gem",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_gem.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateGemItem.java"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "LogoErinium",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "logo_erinium",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/logo_erinium.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/LogoEriniumItem.java"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "EriniumAdventureTab",
+      "type": "tab",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_adventure_tab",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "NitriateOre",
+      "type": "block",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_ore",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/block/NitriateOreBlock.java",
+          "src/main/resources/data/erinium_adventure/loot_tables/blocks/nitriate_ore.json",
+          "src/main/resources/assets/erinium_adventure/blockstates/nitriate_ore.json",
+          "src/main/resources/assets/erinium_adventure/models/block/nitriate_ore.json",
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_ore.json",
+          "src/main/resources/data/erinium_adventure/worldgen/configured_feature/nitriate_ore.json",
+          "src/main/resources/data/erinium_adventure/neoforge/biome_modifier/nitriate_ore_biome_modifier.json",
+          "src/main/resources/data/erinium_adventure/worldgen/placed_feature/nitriate_ore.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriatePickaxe",
+      "type": "tool",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_pickaxe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_pickaxe.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriatePickaxeItem.java"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateAxe",
+      "type": "tool",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_axe",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_axe.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateAxeItem.java"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateSword",
+      "type": "tool",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_sword",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_sword.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateSwordItem.java"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateShovel",
+      "type": "tool",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_shovel",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_shovel.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateShovelItem.java"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateHoe",
+      "type": "tool",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_hoe",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateHoeItem.java",
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_hoe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriatePickaxeRecipe",
+      "type": "recipe",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_pickaxe_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_pickaxe_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateAxeRecipe",
+      "type": "recipe",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_axe_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_axe_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateSwordRecipe",
+      "type": "recipe",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_sword_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_sword_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateShovelRecipe",
+      "type": "recipe",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_shovel_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_shovel_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateHoeRecipe",
+      "type": "recipe",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_hoe_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_hoe_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateArmor",
+      "type": "armor",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_armor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_boots.json",
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_leggings.json",
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_chestplate.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/NitriateArmorItem.java",
+          "src/main/resources/assets/erinium_adventure/models/item/nitriate_armor_helmet.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateArmorHelmetRecipe",
+      "type": "recipe",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_armor_helmet_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_armor_helmet_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateArmorChestplateRecipe",
+      "type": "recipe",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_armor_chestplate_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_armor_chestplate_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateArmorLeggingsRecipe",
+      "type": "recipe",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_armor_leggings_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_armor_leggings_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "NitriateArmorBootsRecipe",
+      "type": "recipe",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_armor_boots_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/nitriate_armor_boots_recipe.json"
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "CaveBlock",
+      "type": "block",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cave_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/cave_block.json",
+          "src/main/resources/data/erinium_adventure/loot_tables/blocks/cave_block.json",
+          "src/main/resources/assets/erinium_adventure/blockstates/cave_block.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/block/CaveBlockBlock.java",
+          "src/main/resources/assets/erinium_adventure/models/block/cave_block.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "CraftCaveBlock",
+      "type": "recipe",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_cave_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/craft_cave_block.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "NitriateArmorHelmetTickEvent",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nitriate_armor_helmet_tick_event",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/NitriateArmorHelmetTickEventProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Nitriate"
+    },
+    {
+      "name": "RealTimeProcedure",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "real_time_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/RealTimeProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ToggleRealTime",
+      "type": "command",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toggle_real_time",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/command/ToggleRealTimeCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "ToggleRealTimeMode",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "toggle_real_time_mode",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ToggleRealTimeModeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LightDarkBrick",
+      "type": "block",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "light_dark_brick",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/block/light_dark_brick.json",
+          "src/main/resources/assets/erinium_adventure/blockstates/light_dark_brick.json",
+          "src/main/resources/data/erinium_adventure/loot_tables/blocks/light_dark_brick.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/block/LightDarkBrickBlock.java",
+          "src/main/resources/assets/erinium_adventure/models/item/light_dark_brick.json"
+        ]
+      },
+      "path": "~/Blocks"
+    },
+    {
+      "name": "CraftDarkLightBrick",
+      "type": "recipe",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_dark_light_brick",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/erinium_adventure/recipes/craft_dark_light_brick.json"
+        ]
+      },
+      "path": "~/Recipes"
+    },
+    {
+      "name": "Test",
+      "type": "command",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/command/TestCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "TestCmd",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_cmd",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestCmdProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "RocketBooster",
+      "type": "livingentity",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rocket_booster",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/entity/RocketBoosterEntity.java",
+          "src/main/resources/assets/erinium_adventure/models/item/rocket_booster_spawn_egg.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/renderer/RocketBoosterRenderer.java"
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "RocketHead",
+      "type": "livingentity",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rocket_head",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/renderer/RocketHeadRenderer.java",
+          "src/main/resources/assets/erinium_adventure/models/item/rocket_head_spawn_egg.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/entity/RocketHeadEntity.java"
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "RocketBoosterOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rocket_booster_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/RocketBoosterOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "LaunchOnKeyPressed",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "launch_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/LaunchOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "Launch",
+      "type": "keybind",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "launch",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/network/LaunchMessage.java"
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "RocketBoosterOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rocket_booster_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/RocketBoosterOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "RocketHeadTick",
+      "type": "procedure",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rocket_head_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/RocketHeadTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "ReturnLiftOffSpeed",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_lift_off_speed",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnLiftOffSpeedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "ReturnLiftOffSpeedBooster",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_lift_off_speed_booster",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnLiftOffSpeedBoosterProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket"
+    },
+    {
+      "name": "LiftOffProgressionOverlay",
+      "type": "overlay",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lift_off_progression_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/screens/LiftOffProgressionOverlayOverlay.java"
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket/Overlay"
+    },
+    {
+      "name": "LiftOffProgressionOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lift_off_progression_overlay_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/LiftOffProgressionOverlayDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket/Overlay"
+    },
+    {
+      "name": "ReturnOverlayPosition",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_overlay_position",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnOverlayPositionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket/Overlay"
+    },
+    {
+      "name": "IsCreativeMod",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "is_creative_mod",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/IsCreativeModProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "ReturnHealth",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_health",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnHealthProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "ReturnHealthInt",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_health_int",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnHealthIntProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "ReturnMaxHealthIn",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_max_health_in",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/ReturnMaxHealthInProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay/Health"
+    },
+    {
+      "name": "JoinTheWorld",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "join_the_world",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/JoinTheWorldProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlayerTick",
+      "type": "procedure",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/PlayerTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OnRespawn",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_respawn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/OnRespawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TestProced",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_proced",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestProcedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Blood",
+      "type": "particle",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blood",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/particles/blood.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/client/particle/BloodParticle.java"
+        ]
+      },
+      "path": "~/Particle"
+    },
+    {
+      "name": "CanUseAdminStatsCommand",
+      "type": "procedure",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_use_admin_stats_command",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/CanUseAdminStatsCommandProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Return"
+    },
+    {
+      "name": "SynchronisePlayer",
+      "type": "procedure",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "synchronise_player",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/SynchronisePlayerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures"
+    },
+    {
+      "name": "PlayerHaveArmor",
+      "type": "procedure",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_have_armor",
+      "metadata": {
+        "return_type": "number",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/PlayerHaveArmorProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/procedures"
+    },
+    {
+      "name": "ServerConfig",
+      "type": "config",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "server_config",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/configuration/ServerConfigConfiguration.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "toggle_realtime",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "fire_reduction",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "needToChoose",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "stat_initialised",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "health",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "20.0"
+    },
+    {
+      "name": "max_health",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "20.0"
+    },
+    {
+      "name": "Health_regen_tick",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "20.0"
+    },
+    {
+      "name": "health_damage",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "20.0"
+    },
+    {
+      "name": "Health_regen_cooldown",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "20.0"
+    },
+    {
+      "name": "health_multiplier",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "synchronisation",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "6000.0"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {
+    "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:LightDarkBrick",
+      "~CUSTOM:NitriateOre"
+    ]
+  },
+  "language_map": {
+    "en_us": {
+      "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
+      "entity.erinium_adventure.rocket_booster": "Rocket Booster",
+      "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
+      "item.erinium_adventure.rocket_booster_spawn_egg": "Rocket Booster Spawn Egg",
+      "stats.flame.desc": "Decrease flame damage",
+      "block.erinium_adventure.light_dark_brick": "Light Dark Brick",
+      "stats.life.desc": "Increase your max life",
+      "item.erinium_adventure.nitriate_pickaxe": "Nitriate Pickaxe",
+      "eriniumadventure.admin.need": "§cYou need to be admin",
+      "item.erinium_adventure.nitriate_armor_helmet": "Nitriate Helmet",
+      "item.erinium_adventure.logo_erinium": "Logo Erinium",
+      "item.erinium_adventure.rocket_head_spawn_egg": "Rocket Head Spawn Egg",
+      "item_group.erinium_adventure.erinium_adventure_tab": "Erinium Adventure",
+      "item.erinium_adventure.nitriate_shovel": "Nitriate Shovel",
+      "item.erinium_adventure.nitriate_hoe": "Nitriate Hoe",
+      "entity.erinium_adventure.rocket_head": "Rocket Head",
+      "block.erinium_adventure.cave_block": "Cave Block",
+      "item.erinium_adventure.nitriate_armor_chestplate": "Nitriate Chestplate",
+      "key.categories.eriniumadventure": "§e§lErinium Adventure",
+      "config.erinium_adventure.server_config": "eriniumadventure-common",
+      "key.erinium_adventure.launch": "Launch",
+      "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
+      "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
+      "item.erinium_adventure.nitriate_sword": "Nitriate Sword",
+      "item.erinium_adventure.nitriate_armor_leggings": "Nitriate Leggings"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Nitriate",
+        "children": []
+      },
+      {
+        "name": "Blocks",
+        "children": []
+      },
+      {
+        "name": "Recipes",
+        "children": []
+      },
+      {
+        "name": "StatsSystem",
+        "children": []
+      },
+      {
+        "name": "SpaceFeature",
+        "children": [
+          {
+            "name": "Rocket",
+            "children": [
+              {
+                "name": "Overlay",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Overlay",
+        "children": [
+          {
+            "name": "Health",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Particle",
+        "children": []
+      },
+      {
+        "name": "Return",
+        "children": []
+      },
+      {
+        "name": "procedures",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "erinium_adventure",
+    "modName": "Erinium Adventure",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.20.4",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "fr.eriniumgroup.eriniumadventure.base"
+  },
+  "mcreatorVersion": 202400115821
+}

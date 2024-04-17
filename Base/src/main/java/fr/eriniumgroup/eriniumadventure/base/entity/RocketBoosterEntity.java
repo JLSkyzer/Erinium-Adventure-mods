@@ -1,12 +1,12 @@
 
 package fr.eriniumgroup.eriniumadventure.base.entity;
 
-import net.minecraftforge.network.PlayMessages;
-import net.minecraftforge.network.NetworkHooks;
+import net.neoforged.neoforge.common.NeoForgeMod;
 
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
@@ -29,8 +29,6 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
@@ -38,17 +36,12 @@ import javax.annotation.Nullable;
 
 import fr.eriniumgroup.eriniumadventure.base.procedures.RocketBoosterOnInitialEntitySpawnProcedure;
 import fr.eriniumgroup.eriniumadventure.base.procedures.RocketBoosterOnEntityTickUpdateProcedure;
-import fr.eriniumgroup.eriniumadventure.base.init.EriniumAdventureModEntities;
 
 public class RocketBoosterEntity extends PathfinderMob {
 	public static final EntityDataAccessor<Boolean> DATA_Lifting = SynchedEntityData.defineId(RocketBoosterEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_speed = SynchedEntityData.defineId(RocketBoosterEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_countdown = SynchedEntityData.defineId(RocketBoosterEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_descend = SynchedEntityData.defineId(RocketBoosterEntity.class, EntityDataSerializers.BOOLEAN);
-
-	public RocketBoosterEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(EriniumAdventureModEntities.ROCKET_BOOSTER.get(), world);
-	}
 
 	public RocketBoosterEntity(EntityType<RocketBoosterEntity> type, Level world) {
 		super(type, world);
@@ -57,11 +50,6 @@ public class RocketBoosterEntity extends PathfinderMob {
 		setNoAi(false);
 		setPersistenceRequired();
 		this.moveControl = new FlyingMoveControl(this, 10, true);
-	}
-
-	@Override
-	public Packet<ClientGamePacketListener> getAddEntityPacket() {
-		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 
 	@Override
@@ -107,7 +95,7 @@ public class RocketBoosterEntity extends PathfinderMob {
 			return false;
 		if (damagesource.getDirectEntity() instanceof Player)
 			return false;
-		if (damagesource.getDirectEntity() instanceof ThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud)
+		if (damagesource.getDirectEntity() instanceof ThrownPotion || damagesource.getDirectEntity() instanceof AreaEffectCloud || damagesource.typeHolder().is(NeoForgeMod.POISON_DAMAGE))
 			return false;
 		if (damagesource.is(DamageTypes.FALL))
 			return false;
@@ -117,7 +105,7 @@ public class RocketBoosterEntity extends PathfinderMob {
 			return false;
 		if (damagesource.is(DamageTypes.LIGHTNING_BOLT))
 			return false;
-		if (damagesource.is(DamageTypes.EXPLOSION))
+		if (damagesource.is(DamageTypes.EXPLOSION) || damagesource.is(DamageTypes.PLAYER_EXPLOSION))
 			return false;
 		if (damagesource.is(DamageTypes.TRIDENT))
 			return false;
@@ -125,11 +113,19 @@ public class RocketBoosterEntity extends PathfinderMob {
 			return false;
 		if (damagesource.is(DamageTypes.DRAGON_BREATH))
 			return false;
-		if (damagesource.is(DamageTypes.WITHER))
-			return false;
-		if (damagesource.is(DamageTypes.WITHER_SKULL))
+		if (damagesource.is(DamageTypes.WITHER) || damagesource.is(DamageTypes.WITHER_SKULL))
 			return false;
 		return super.hurt(damagesource, amount);
+	}
+
+	@Override
+	public boolean ignoreExplosion(Explosion explosion) {
+		return true;
+	}
+
+	@Override
+	public boolean fireImmune() {
+		return true;
 	}
 
 	@Override

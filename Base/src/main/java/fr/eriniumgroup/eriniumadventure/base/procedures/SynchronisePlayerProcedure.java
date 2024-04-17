@@ -15,11 +15,9 @@ public class SynchronisePlayerProcedure {
 		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal("\u00A7eSynch your player...."), false);
 		{
-			double _setval = 20 + (entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAdventureModVariables.PlayerVariables())).health_multiplier * 10;
-			entity.getCapability(EriniumAdventureModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.max_health = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+			_vars.max_health = 20 + entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).health_multiplier * 10;
+			_vars.syncPlayerVariables(entity);
 		}
 		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal("\u00A7aSuccefully synched your data !"), false);

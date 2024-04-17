@@ -6,18 +6,17 @@ package fr.eriniumgroup.eriniumadventure.base.init;
 
 import org.lwjgl.glfw.GLFW;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
-import net.minecraftforge.api.distmarker.Dist;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
-import fr.eriniumgroup.eriniumadventure.base.network.OpenStatsGuiKeyMessage;
 import fr.eriniumgroup.eriniumadventure.base.network.LaunchMessage;
-import fr.eriniumgroup.eriniumadventure.base.EriniumAdventureMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class EriniumAdventureModKeyMappings {
@@ -28,21 +27,8 @@ public class EriniumAdventureModKeyMappings {
 		public void setDown(boolean isDown) {
 			super.setDown(isDown);
 			if (isDownOld != isDown && isDown) {
-				EriniumAdventureMod.PACKET_HANDLER.sendToServer(new LaunchMessage(0, 0));
+				PacketDistributor.SERVER.noArg().send(new LaunchMessage(0, 0));
 				LaunchMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-			}
-			isDownOld = isDown;
-		}
-	};
-	public static final KeyMapping OPEN_STATS_GUI_KEY = new KeyMapping("key.erinium_adventure.open_stats_gui_key", GLFW.GLFW_KEY_S, "key.categories.eriniumadventure") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				EriniumAdventureMod.PACKET_HANDLER.sendToServer(new OpenStatsGuiKeyMessage(0, 0));
-				OpenStatsGuiKeyMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;
 		}
@@ -51,7 +37,6 @@ public class EriniumAdventureModKeyMappings {
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(LAUNCH);
-		event.register(OPEN_STATS_GUI_KEY);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -60,7 +45,6 @@ public class EriniumAdventureModKeyMappings {
 		public static void onClientTick(TickEvent.ClientTickEvent event) {
 			if (Minecraft.getInstance().screen == null) {
 				LAUNCH.consumeClick();
-				OPEN_STATS_GUI_KEY.consumeClick();
 			}
 		}
 	}
