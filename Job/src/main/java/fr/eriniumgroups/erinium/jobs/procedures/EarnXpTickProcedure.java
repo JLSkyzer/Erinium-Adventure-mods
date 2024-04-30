@@ -2,8 +2,7 @@ package fr.eriniumgroups.erinium.jobs.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
@@ -13,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -23,9 +23,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.jobs.network.EriniumjobsModVariables;
-
-import com.google.gson.JsonObject;
-import com.google.gson.Gson;
 
 public class EarnXpTickProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -43,9 +40,8 @@ public class EarnXpTickProcedure {
 		double slot_count = 0;
 		double return_level = 0;
 		double return_xp_multiplier = 0;
-		if (!(entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).wonxp_initialised) {
-			File = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumJobs/player_information/" + entity.getUUID().toString()),
-					File.separator + ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).temp_job_id + ".json"));
+		if (!entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).wonxp_initialised) {
+			File = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumJobs/player_information/" + entity.getUUID().toString()), File.separator + (entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).temp_job_id + ".json"));
 			if (File.exists()) {
 				{
 					try {
@@ -56,7 +52,7 @@ public class EarnXpTickProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						LevelJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						LevelJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						return_level = LevelJsonObject.get("level").getAsDouble();
 						return_xp_multiplier = LevelJsonObject.get("xp_multiplier").getAsDouble();
 					} catch (IOException e) {
@@ -90,8 +86,8 @@ public class EarnXpTickProcedure {
 												jsonstringbuilder.append(line);
 											}
 											bufferedReader.close();
-											JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-											if ((JsonObject.get("job_id").getAsString()).equals((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).temp_job_id)) {
+											JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+											if ((JsonObject.get("job_id").getAsString()).equals(entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).temp_job_id)) {
 												if (JsonObject.get("min-level").getAsDouble() <= return_level && JsonObject.get("max-level").getAsDouble() >= return_level) {
 													object = object + "" + currentFolder.getName() + ":" + currentFile.getName().replace(".json", "") + ", ";
 												}
@@ -110,7 +106,7 @@ public class EarnXpTickProcedure {
 			} else {
 				System.out.println("Le dossier parent n'existe pas ou n'est pas un dossier valide.");
 			}
-			Count = (entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).wonxp_page * 18;
+			Count = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).wonxp_page * 18;
 			whilecount = 0;
 			if (Count > 0) {
 				for (int index0 = 0; index0 < (int) Count; index0++) {
@@ -160,14 +156,14 @@ public class EarnXpTickProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								if (!(ForgeRegistries.ITEMS.getValue(new ResourceLocation((new Object() {
+								SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								if (!(BuiltInRegistries.ITEM.get(new ResourceLocation((new Object() {
 									private String split(String text, String space, int index) {
 										String s = text.split(space)[index];
 										return s;
 									}
 								}.split(object, ", ", (int) 0)).toLowerCase(java.util.Locale.ENGLISH))) == Blocks.AIR.asItem())) {
-									tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((new Object() {
+									tempItem = new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation((new Object() {
 										private String split(String text, String space, int index) {
 											String s = text.split(space)[index];
 											return s;
@@ -177,14 +173,14 @@ public class EarnXpTickProcedure {
 											+ new java.text.DecimalFormat("##.##").format(SecJsonObject.get("min-level").getAsDouble()) + "->" + new java.text.DecimalFormat("##.##").format(SecJsonObject.get("max-level").getAsDouble())
 											+ " \u00A7eXp : \u00A76" + new java.text.DecimalFormat("##.##").format(SecJsonObject.get("xp").getAsDouble() * return_xp_multiplier) + "xp")));
 									if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-										ItemStack _setstack = tempItem;
+										ItemStack _setstack = tempItem.copy();
 										_setstack.setCount(1);
 										((Slot) _slots.get((int) slot_count)).set(_setstack);
 										_player.containerMenu.broadcastChanges();
 									}
 								} else {
 									if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-										ItemStack _setstack = new ItemStack(Blocks.AIR);
+										ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
 										_setstack.setCount(1);
 										((Slot) _slots.get((int) slot_count)).set(_setstack);
 										_player.containerMenu.broadcastChanges();
@@ -204,7 +200,7 @@ public class EarnXpTickProcedure {
 					SecJsonObject = ClearJsonObject;
 				} else {
 					if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-						ItemStack _setstack = new ItemStack(Blocks.AIR);
+						ItemStack _setstack = new ItemStack(Blocks.AIR).copy();
 						_setstack.setCount(1);
 						((Slot) _slots.get((int) slot_count)).set(_setstack);
 						_player.containerMenu.broadcastChanges();
@@ -213,11 +209,9 @@ public class EarnXpTickProcedure {
 				slot_count = slot_count + 1;
 			}
 			{
-				boolean _setval = true;
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.wonxp_initialised = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+				_vars.wonxp_initialised = true;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 	}

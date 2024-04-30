@@ -6,17 +6,17 @@ package fr.eriniumgroups.erinium.jobs.init;
 
 import org.lwjgl.glfw.GLFW;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
-import net.minecraftforge.api.distmarker.Dist;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.api.distmarker.Dist;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
 import fr.eriniumgroups.erinium.jobs.network.OpenOverlaySettingsPageMessage;
-import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
 public class EriniumjobsModKeyMappings {
@@ -27,7 +27,7 @@ public class EriniumjobsModKeyMappings {
 		public void setDown(boolean isDown) {
 			super.setDown(isDown);
 			if (isDownOld != isDown && isDown) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new OpenOverlaySettingsPageMessage(0, 0));
+				PacketDistributor.SERVER.noArg().send(new OpenOverlaySettingsPageMessage(0, 0));
 				OpenOverlaySettingsPageMessage.pressAction(Minecraft.getInstance().player, 0, 0);
 			}
 			isDownOld = isDown;

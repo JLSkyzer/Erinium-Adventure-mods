@@ -9,25 +9,19 @@ public class WonXpOverlayConfigCloseProcedure {
 		if (entity == null)
 			return;
 		{
-			boolean _setval = false;
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_config = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_config = false;
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			String _setval = "";
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_message = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_message = "";
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			String _setval = "";
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_message_2 = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_message_2 = "";
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

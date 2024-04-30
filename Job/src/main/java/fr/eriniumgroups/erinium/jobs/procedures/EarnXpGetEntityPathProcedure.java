@@ -2,11 +2,11 @@ package fr.eriniumgroups.erinium.jobs.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import java.io.File;
 
@@ -28,11 +28,11 @@ public class EarnXpGetEntityPathProcedure {
 				String s = text.split(space)[index];
 				return s;
 			}
-		}.split((ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).toString()), ":", (int) 0) + "/"), File.separator + (new Object() {
+		}.split((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()), ":", (int) 0) + "/"), File.separator + (new Object() {
 			private String split(String text, String space, int index) {
 				String s = text.split(space)[index];
 				return s;
 			}
-		}.split((ForgeRegistries.ENTITY_TYPES.getKey(entity.getType()).toString()), ":", (int) 1) + ".json"));
+		}.split((BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString()), ":", (int) 1) + ".json"));
 	}
 }

@@ -9,19 +9,14 @@ public class ResetProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = 75;
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_percent_x = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_percent_x = 75;
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			double _setval = 15;
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_percent_y = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_percent_y = 15;
+			_vars.syncPlayerVariables(entity);
 		}
-		UpdateOverlayPositionProcedure.execute(entity);
 	}
 }

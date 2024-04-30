@@ -1,11 +1,14 @@
 package fr.eriniumgroups.erinium.jobs.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.GuiGraphics;
 
@@ -13,7 +16,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.jobs.world.inventory.WonXpOverlayConfigMenu;
 import fr.eriniumgroups.erinium.jobs.network.WonXpOverlayConfigButtonMessage;
-import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -41,15 +43,16 @@ public class WonXpOverlayConfigScreen extends AbstractContainerScreen<WonXpOverl
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
 
 	@Override
 	protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int gx, int gy) {
-		RenderSystem.setShaderColor(1, 1, 1, 1);
-		RenderSystem.enableBlend();
-		RenderSystem.defaultBlendFunc();
+		RenderSystem.setShaderColor(1, 1, 1, 0);
+		/*RenderSystem.enableBlend();
+		RenderSystem.defaultBlendFunc();*/
 		RenderSystem.disableBlend();
 	}
 
@@ -63,60 +66,75 @@ public class WonXpOverlayConfigScreen extends AbstractContainerScreen<WonXpOverl
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
 	public void init() {
 		super.init();
-		imagebutton_down = new ImageButton(this.leftPos + 79, this.topPos + 187, 16, 16, 0, 0, 16, new ResourceLocation("eriniumjobs:textures/screens/atlas/imagebutton_down.png"), 16, 32, e -> {
+		imagebutton_down = new ImageButton(this.leftPos + 79, this.topPos + 187, 16, 16, new WidgetSprites(new ResourceLocation("eriniumjobs:textures/screens/down.png"), new ResourceLocation("eriniumjobs:textures/screens/down_hover.png")), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new WonXpOverlayConfigButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new WonXpOverlayConfigButtonMessage(0, x, y, z));
 				WonXpOverlayConfigButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_down", imagebutton_down);
 		this.addRenderableWidget(imagebutton_down);
-		imagebutton_reset = new ImageButton(this.leftPos + 79, this.topPos + 171, 16, 16, 0, 0, 16, new ResourceLocation("eriniumjobs:textures/screens/atlas/imagebutton_reset.png"), 16, 32, e -> {
+		imagebutton_reset = new ImageButton(this.leftPos + 79, this.topPos + 171, 16, 16, new WidgetSprites(new ResourceLocation("eriniumjobs:textures/screens/reset.png"), new ResourceLocation("eriniumjobs:textures/screens/reset_hover.png")), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new WonXpOverlayConfigButtonMessage(1, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new WonXpOverlayConfigButtonMessage(1, x, y, z));
 				WonXpOverlayConfigButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_reset", imagebutton_reset);
 		this.addRenderableWidget(imagebutton_reset);
-		imagebutton_left = new ImageButton(this.leftPos + 63, this.topPos + 171, 16, 16, 0, 0, 16, new ResourceLocation("eriniumjobs:textures/screens/atlas/imagebutton_left.png"), 16, 32, e -> {
+		imagebutton_left = new ImageButton(this.leftPos + 63, this.topPos + 171, 16, 16, new WidgetSprites(new ResourceLocation("eriniumjobs:textures/screens/left.png"), new ResourceLocation("eriniumjobs:textures/screens/left_hover.png")), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new WonXpOverlayConfigButtonMessage(2, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new WonXpOverlayConfigButtonMessage(2, x, y, z));
 				WonXpOverlayConfigButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_left", imagebutton_left);
 		this.addRenderableWidget(imagebutton_left);
-		imagebutton_right = new ImageButton(this.leftPos + 95, this.topPos + 171, 16, 16, 0, 0, 16, new ResourceLocation("eriniumjobs:textures/screens/atlas/imagebutton_right.png"), 16, 32, e -> {
+		imagebutton_right = new ImageButton(this.leftPos + 95, this.topPos + 171, 16, 16, new WidgetSprites(new ResourceLocation("eriniumjobs:textures/screens/right.png"), new ResourceLocation("eriniumjobs:textures/screens/right_hover.png")), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new WonXpOverlayConfigButtonMessage(3, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new WonXpOverlayConfigButtonMessage(3, x, y, z));
 				WonXpOverlayConfigButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_right", imagebutton_right);
 		this.addRenderableWidget(imagebutton_right);
-		imagebutton_up = new ImageButton(this.leftPos + 79, this.topPos + 155, 16, 16, 0, 0, 16, new ResourceLocation("eriniumjobs:textures/screens/atlas/imagebutton_up.png"), 16, 32, e -> {
+		imagebutton_up = new ImageButton(this.leftPos + 79, this.topPos + 155, 16, 16, new WidgetSprites(new ResourceLocation("eriniumjobs:textures/screens/up.png"), new ResourceLocation("eriniumjobs:textures/screens/up_hover.png")), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new WonXpOverlayConfigButtonMessage(4, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new WonXpOverlayConfigButtonMessage(4, x, y, z));
 				WonXpOverlayConfigButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_up", imagebutton_up);
 		this.addRenderableWidget(imagebutton_up);
 	}

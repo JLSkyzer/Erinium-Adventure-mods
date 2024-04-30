@@ -1,13 +1,13 @@
 package fr.eriniumgroups.erinium.jobs.configuration;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class CommonConfigConfiguration {
-	public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-	public static final ForgeConfigSpec SPEC;
-	public static final ForgeConfigSpec.ConfigValue<Double> XP_MULTIPLIER;
-	public static final ForgeConfigSpec.ConfigValue<Double> WONXP_MULTIPLIER;
-	public static final ForgeConfigSpec.ConfigValue<String> ITEM_GIVE;
+	public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+	public static final ModConfigSpec SPEC;
+	public static final ModConfigSpec.ConfigValue<Double> XP_MULTIPLIER;
+	public static final ModConfigSpec.ConfigValue<Double> WONXP_MULTIPLIER;
+	public static final ModConfigSpec.ConfigValue<String> ITEM_GIVE;
 	static {
 		BUILDER.push("Multiplier");
 		XP_MULTIPLIER = BUILDER.comment("Xp multiplier see here : https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=zVMCg7").define("XP Multiplier", (double) 1.095);

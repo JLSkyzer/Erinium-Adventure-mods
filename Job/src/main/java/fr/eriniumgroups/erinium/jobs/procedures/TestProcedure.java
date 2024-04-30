@@ -9,11 +9,9 @@ public class TestProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = 60;
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_timer = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_timer = 60;
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

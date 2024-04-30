@@ -9,25 +9,19 @@ public class WonXpOverlayConfigOpenProcedure {
 		if (entity == null)
 			return;
 		{
-			boolean _setval = true;
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_config = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_config = true;
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			String _setval = "Message 1";
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_message = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_message = "Message 1";
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			String _setval = "Message 2";
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_message_2 = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_message_2 = "Message 2";
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

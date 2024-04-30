@@ -104,7 +104,7 @@ public class FactionDisbandProcedure {
 				}
 			}
 			if (!world.isClientSide() && world.getServer() != null)
-				world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("\u00A7eLa faction \u00A7a" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + " \u00A7e\u00E0 \u00E9t\u00E9 disband")), false);
+				world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(("\u00A7eThe faction \u00A7a" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + " \u00A7ehas been disband")), false);
 			for (int index0 = 0; index0 < (int) (double) ConfigConfiguration.MAX_MEMBER.get(); index0++) {
 				if (!(new Object() {
 					private String split(String text, String space, int index) {

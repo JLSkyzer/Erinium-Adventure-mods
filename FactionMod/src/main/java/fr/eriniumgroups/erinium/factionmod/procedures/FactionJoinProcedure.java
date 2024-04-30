@@ -44,7 +44,7 @@ public class FactionJoinProcedure {
 								}
 								bufferedReader.close();
 								JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-								JsonObject.addProperty("max_power", (JsonObject.get("max_power").getAsDouble() + 10));
+								JsonObject.addProperty("max_power", (JsonObject.get("max_power").getAsDouble() + (double) ConfigConfiguration.MAX_POWER.get()));
 								JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() + ReturnTargetEntityPowerProcedure.execute(entity)));
 								JsonObject.addProperty("member_count", (JsonObject.get("member_count").getAsString() + "" + entity.getUUID().toString() + ", "));
 								{

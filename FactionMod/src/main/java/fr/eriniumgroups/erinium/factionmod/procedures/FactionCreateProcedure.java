@@ -71,7 +71,7 @@ public class FactionCreateProcedure {
 							}
 							JsonObject.addProperty("faction_displayname", Displayname);
 							JsonObject.addProperty("power", ReturnTargetEntityPowerProcedure.execute(entity));
-							JsonObject.addProperty("max_power", 10);
+							JsonObject.addProperty("max_power", ((double) ConfigConfiguration.MAX_POWER.get()));
 							JsonObject.addProperty("faction_desc", "No description");
 							JsonObject.addProperty("member_count", (entity.getUUID().toString() + ", "));
 							JsonObject.addProperty("claims", 0);
@@ -129,10 +129,7 @@ public class FactionCreateProcedure {
 								}
 							}
 							if (entity instanceof Player _player && !_player.level().isClientSide())
-								_player.displayClientMessage(Component.literal(("\u00A7cVous avez cr\u00E9er la faction : \u00A7e" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + " \u00A7cavec succ\u00E8s !")), false);
-							if (!world.isClientSide() && world.getServer() != null)
-								world.getServer().getPlayerList().broadcastSystemMessage(
-										Component.literal(("\u00A7a" + entity.getDisplayName().getString() + " \u00A7ea cr\u00E9er la faction \u00A7b" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_displayname)), false);
+								_player.displayClientMessage(Component.literal(("\u00A7cCreated faction : \u00A7e" + entity.getData(EriniumFactionModVariables.PLAYER_VARIABLES).faction_name + " \u00A7cwith succes !")), false);
 						} else {
 							if (entity instanceof Player _player && !_player.level().isClientSide())
 								_player.displayClientMessage(Component.literal(("\u00A7cYou need " + (double) ConfigConfiguration.ITEM_NUMBER_CREATE.get() + "x " + ConfigConfiguration.ITEM_NEED_CREATE.get() + " !")), false);

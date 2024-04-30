@@ -23,6 +23,7 @@
   "safezone.desc": "A safe place to chill",
   "faction.error.factionalreadyexist": "An other faction use this ID",
   "faction.message.nofaction": "You d\u0027ont have faction !",
+  "faction.disband.message1": "§eThe faction §a",
   "faction.message.faction.getpower": "Power of your faction : ",
   "faction.message.power.enough": "You don\u0027t have enough of power !",
   "gui.erinium_faction.edit_permission_gui.button_x1": "X",

@@ -1,10 +1,10 @@
 package fr.eriniumgroups.erinium.jobs.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -20,10 +20,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.jobs.network.EriniumjobsModVariables;
-
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber
 public class KillEntityProcedure {
@@ -65,7 +61,7 @@ public class KillEntityProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						job_id = JsonObject.get("job_id").getAsString();
 						min_level = JsonObject.get("min-level").getAsDouble();
 						max_level = JsonObject.get("max-level").getAsDouble();
@@ -87,7 +83,7 @@ public class KillEntityProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						ThirdJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						ThirdJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						jobDisplayName = ThirdJsonObject.get("displayname").getAsString();
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -105,40 +101,32 @@ public class KillEntityProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						if (SecJsonObject.get("level").getAsDouble() < 100) {
 							if ((type).equals("KILL")) {
 								if (min_level <= SecJsonObject.get("level").getAsDouble() && max_level >= SecJsonObject.get("level").getAsDouble()) {
 									SecJsonObject.addProperty("xp", (SecJsonObject.get("xp").getAsDouble() + xp * SecJsonObject.get("xp_multiplier").getAsDouble()));
 									{
-										double _setval = 60;
-										sourceentity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.won_xp_timer = _setval;
-											capability.syncPlayerVariables(sourceentity);
-										});
+										EriniumjobsModVariables.PlayerVariables _vars = sourceentity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+										_vars.won_xp_timer = 60;
+										_vars.syncPlayerVariables(sourceentity);
 									}
 									{
-										String _setval = "\u00A7a+" + new java.text.DecimalFormat("#,###.##").format(xp * SecJsonObject.get("xp_multiplier").getAsDouble()) + " \u00A72(" + jobDisplayName + ")";
-										sourceentity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.won_xp_message = _setval;
-											capability.syncPlayerVariables(sourceentity);
-										});
+										EriniumjobsModVariables.PlayerVariables _vars = sourceentity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+										_vars.won_xp_message = "\u00A7a+" + new java.text.DecimalFormat("#,###.##").format(xp * SecJsonObject.get("xp_multiplier").getAsDouble()) + " \u00A72(" + jobDisplayName + ")";
+										_vars.syncPlayerVariables(sourceentity);
 									}
 									{
-										String _setval = "\u00A7e" + new java.text.DecimalFormat("#,###.##").format(SecJsonObject.get("xp").getAsDouble()) + " \u00A7f/ \u00A76"
+										EriniumjobsModVariables.PlayerVariables _vars = sourceentity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+										_vars.won_xp_message_2 = "\u00A7e" + new java.text.DecimalFormat("#,###.##").format(SecJsonObject.get("xp").getAsDouble()) + " \u00A7f/ \u00A76"
 												+ new java.text.DecimalFormat("#,###.##").format(SecJsonObject.get("cap_xp").getAsDouble());
-										sourceentity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-											capability.won_xp_message_2 = _setval;
-											capability.syncPlayerVariables(sourceentity);
-										});
+										_vars.syncPlayerVariables(sourceentity);
 									}
 									if (SecJsonObject.get("xp").getAsDouble() >= SecJsonObject.get("cap_xp").getAsDouble() && SecJsonObject.get("level").getAsDouble() < 100) {
 										while (SecJsonObject.get("xp").getAsDouble() >= SecJsonObject.get("cap_xp").getAsDouble() && SecJsonObject.get("level").getAsDouble() < 100) {
 											SecJsonObject.addProperty("old_cap_xp", SecJsonObject.get("cap_xp").getAsDouble());
-											SecJsonObject.addProperty("cap_xp", (SecJsonObject.get("cap_xp").getAsDouble()
-													* (sourceentity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).xp_multiplier));
-											SecJsonObject.addProperty("xp_multiplier", (SecJsonObject.get("xp_multiplier").getAsDouble()
-													* (sourceentity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_multiplier));
+											SecJsonObject.addProperty("cap_xp", (SecJsonObject.get("cap_xp").getAsDouble() * sourceentity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).xp_multiplier));
+											SecJsonObject.addProperty("xp_multiplier", (SecJsonObject.get("xp_multiplier").getAsDouble() * sourceentity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_multiplier));
 											SecJsonObject.addProperty("xp", (SecJsonObject.get("xp").getAsDouble() - SecJsonObject.get("old_cap_xp").getAsDouble()));
 											SecJsonObject.addProperty("level", (SecJsonObject.get("level").getAsDouble() + 1));
 											if (sourceentity instanceof Player _player && !_player.level().isClientSide())
@@ -148,7 +136,7 @@ public class KillEntityProcedure {
 										}
 									}
 									{
-										Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+										com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 										try {
 											FileWriter fileWriter = new FileWriter(File);
 											fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));

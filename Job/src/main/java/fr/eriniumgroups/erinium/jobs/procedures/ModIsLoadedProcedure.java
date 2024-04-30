@@ -1,20 +1,16 @@
 package fr.eriniumgroups.erinium.jobs.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import javax.annotation.Nullable;
 
 import java.io.IOException;
 import java.io.FileWriter;
 import java.io.File;
-
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModIsLoadedProcedure {
@@ -43,7 +39,7 @@ public class ModIsLoadedProcedure {
 			}
 			JsonObject.addProperty("displayname", "Mineur");
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(File);
 					fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -63,7 +59,7 @@ public class ModIsLoadedProcedure {
 			}
 			SecJsonObject.addProperty("displayname", "Hunter");
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(File);
 					fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -83,7 +79,7 @@ public class ModIsLoadedProcedure {
 			}
 			ThirdJsonObject.addProperty("displayname", "Farmeur");
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(File);
 					fileWriter.write(mainGSONBuilderVariable.toJson(ThirdJsonObject));
@@ -103,7 +99,7 @@ public class ModIsLoadedProcedure {
 			}
 			FourthJsonObject.addProperty("displayname", "Alchimiste");
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(File);
 					fileWriter.write(mainGSONBuilderVariable.toJson(FourthJsonObject));

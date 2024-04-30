@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "config",
   "definition": {
     "pools": [
@@ -20,9 +20,7 @@
             "comment": "Xp multiplier see here : https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=zVMCg7",
             "vardisplay": "XP Multiplier",
             "varname": "xp_multiplier",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
+            "enablecomment": true
           },
           {
             "item": {
@@ -38,9 +36,7 @@
             "comment": "Won XP multiplier see here : https://1drv.ms/x/s!Aq5o6W9h7OB9gYExyFZm1cFhJ0n0EA?e=zVMCg7",
             "vardisplay": "Won XP Multiplier",
             "varname": "wonxp_multiplier",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
+            "enablecomment": true
           }
         ]
       },
@@ -61,9 +57,7 @@
             "comment": "Example \\\"minecraft:diamond 12, minecraft:iron_sword 1\\\" Please separe each item by \\\", \\\" ! The \\\",\\\" and the space is very important",
             "vardisplay": "Item give each level",
             "varname": "item_give",
-            "enablecomment": true,
-            "onlyComment": false,
-            "entityType": "EntityAgeable"
+            "enablecomment": true
           }
         ]
       }

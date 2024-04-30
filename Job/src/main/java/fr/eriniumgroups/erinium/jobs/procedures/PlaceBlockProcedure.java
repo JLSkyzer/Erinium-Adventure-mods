@@ -1,10 +1,11 @@
 package fr.eriniumgroups.erinium.jobs.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.level.BlockEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.ICancellableEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
@@ -18,9 +19,6 @@ import java.io.IOException;
 import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
-
-import com.google.gson.JsonObject;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber
 public class PlaceBlockProcedure {
@@ -55,7 +53,7 @@ public class PlaceBlockProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						job_id = JsonObject.get("job_id").getAsString();
 						required_level = JsonObject.get("level").getAsDouble();
 					} catch (IOException e) {
@@ -74,7 +72,7 @@ public class PlaceBlockProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						jsonDisplayName = SecJsonObject.get("displayname").getAsString();
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -92,10 +90,10 @@ public class PlaceBlockProcedure {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						ThirdJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						ThirdJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						if (!(ThirdJsonObject.get("level").getAsDouble() >= required_level)) {
-							if (event != null && event.isCancelable()) {
-								event.setCanceled(true);
+							if (event instanceof ICancellableEvent _cancellable) {
+								_cancellable.setCanceled(true);
 							}
 							if (entity instanceof Player _player && !_player.level().isClientSide())
 								_player.displayClientMessage(Component.literal((Component.translatable("jobs.message.required.message1").getString() + "" + new java.text.DecimalFormat("###").format(required_level)

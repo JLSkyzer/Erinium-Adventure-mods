@@ -1,10 +1,10 @@
 package fr.eriniumgroups.erinium.jobs.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
@@ -21,10 +21,6 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.jobs.network.EriniumjobsModVariables;
 import fr.eriniumgroups.erinium.jobs.configuration.CommonConfigConfiguration;
-
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 @Mod.EventBusSubscriber
 public class PlayerJoinTheWorldProcedure {
@@ -48,40 +44,30 @@ public class PlayerJoinTheWorldProcedure {
 		com.google.gson.JsonObject ClearJsonObject = new com.google.gson.JsonObject();
 		com.google.gson.JsonObject JobJsonObject = new com.google.gson.JsonObject();
 		{
-			double _setval = (double) CommonConfigConfiguration.XP_MULTIPLIER.get();
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.xp_multiplier = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.xp_multiplier = (double) CommonConfigConfiguration.XP_MULTIPLIER.get();
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			double _setval = (double) CommonConfigConfiguration.WONXP_MULTIPLIER.get();
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.won_xp_multiplier = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.won_xp_multiplier = (double) CommonConfigConfiguration.WONXP_MULTIPLIER.get();
+			_vars.syncPlayerVariables(entity);
 		}
-		if (!(entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).FirstJoined) {
+		if (!entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).FirstJoined) {
 			{
-				double _setval = 75;
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.won_xp_percent_x = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+				_vars.won_xp_percent_x = 75;
+				_vars.syncPlayerVariables(entity);
 			}
 			{
-				double _setval = 15;
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.won_xp_percent_y = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+				_vars.won_xp_percent_y = 15;
+				_vars.syncPlayerVariables(entity);
 			}
 			{
-				boolean _setval = true;
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.FirstJoined = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+				_vars.FirstJoined = true;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 		File = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumJobs/player_information/playername/"), File.separator + (entity.getDisplayName().getString() + ".json"));
@@ -94,7 +80,7 @@ public class PlayerJoinTheWorldProcedure {
 			}
 			JsonObject.addProperty("uuid", entity.getUUID().toString());
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(File);
 					fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -115,7 +101,7 @@ public class PlayerJoinTheWorldProcedure {
 			SecJsonObject.addProperty("name", (entity.getDisplayName().getString()));
 			SecJsonObject.addProperty("command.admin", false);
 			{
-				Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+				com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 				try {
 					FileWriter fileWriter = new FileWriter(File);
 					fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -134,11 +120,11 @@ public class PlayerJoinTheWorldProcedure {
 						jsonstringbuilder.append(line);
 					}
 					bufferedReader.close();
-					SecJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+					SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 					if (!(SecJsonObject.get("name").getAsString()).equals(entity.getDisplayName().getString())) {
 						SecJsonObject.addProperty("name", (entity.getDisplayName().getString()));
 						{
-							Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 							try {
 								FileWriter fileWriter = new FileWriter(File);
 								fileWriter.write(mainGSONBuilderVariable.toJson(SecJsonObject));
@@ -176,7 +162,7 @@ public class PlayerJoinTheWorldProcedure {
 					JobJsonObject.addProperty("old_cap_xp", 0);
 					JobJsonObject.addProperty("xp_multiplier", 1);
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(File);
 							fileWriter.write(mainGSONBuilderVariable.toJson(JobJsonObject));

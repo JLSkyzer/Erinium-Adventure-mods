@@ -35,6 +35,8 @@ public class EriniumFactionMod {
 	public static final String MODID = "erinium_faction";
 
 	public EriniumFactionMod(IEventBus modEventBus) {
+		// Start of user code block mod constructor
+		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
 		EriniumFactionModSounds.REGISTRY.register(modEventBus);

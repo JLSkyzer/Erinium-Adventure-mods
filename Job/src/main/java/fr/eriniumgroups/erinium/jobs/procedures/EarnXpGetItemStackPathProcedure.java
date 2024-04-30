@@ -2,10 +2,10 @@ package fr.eriniumgroups.erinium.jobs.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import java.io.File;
 
@@ -25,11 +25,11 @@ public class EarnXpGetItemStackPathProcedure {
 				String s = text.split(space)[index];
 				return s;
 			}
-		}.split((ForgeRegistries.ITEMS.getKey(itemstack.getItem()).toString()), ":", (int) 0) + "/"), File.separator + (new Object() {
+		}.split((BuiltInRegistries.ITEM.getKey(itemstack.getItem()).toString()), ":", (int) 0) + "/"), File.separator + (new Object() {
 			private String split(String text, String space, int index) {
 				String s = text.split(space)[index];
 				return s;
 			}
-		}.split((ForgeRegistries.ITEMS.getKey(itemstack.getItem()).toString()), ":", (int) 1) + ".json"));
+		}.split((BuiltInRegistries.ITEM.getKey(itemstack.getItem()).toString()), ":", (int) 1) + ".json"));
 	}
 }

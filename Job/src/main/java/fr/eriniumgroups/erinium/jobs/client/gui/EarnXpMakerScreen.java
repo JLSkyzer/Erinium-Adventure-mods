@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.jobs.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +16,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.jobs.world.inventory.EarnXpMakerMenu;
 import fr.eriniumgroups.erinium.jobs.network.EarnXpMakerButtonMessage;
-import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -45,7 +46,7 @@ public class EarnXpMakerScreen extends AbstractContainerScreen<EarnXpMakerMenu> 
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		job_id.render(guiGraphics, mouseX, mouseY, partialTicks);
 		min_level.render(guiGraphics, mouseX, mouseY, partialTicks);
@@ -84,16 +85,6 @@ public class EarnXpMakerScreen extends AbstractContainerScreen<EarnXpMakerMenu> 
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-		job_id.tick();
-		min_level.tick();
-		max_level.tick();
-		type.tick();
-		xp.tick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.earn_xp_maker.label_earnxp_creator"), 6, 10, -65536, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.earn_xp_maker.label_job_id"), 96, 28, -16777012, false);
@@ -102,11 +93,6 @@ public class EarnXpMakerScreen extends AbstractContainerScreen<EarnXpMakerMenu> 
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.earn_xp_maker.label_type"), 6, 100, -16776961, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.earn_xp_maker.label_item_block"), 6, 28, -16776961, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.earn_xp_maker.label_xp"), 96, 100, -16776961, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
@@ -134,7 +120,7 @@ public class EarnXpMakerScreen extends AbstractContainerScreen<EarnXpMakerMenu> 
 		this.addWidget(this.xp);
 		button_validate = Button.builder(Component.translatable("gui.eriniumjobs.earn_xp_maker.button_validate"), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new EarnXpMakerButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EarnXpMakerButtonMessage(0, x, y, z));
 				EarnXpMakerButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 177, this.topPos + 109, 63, 20).build();

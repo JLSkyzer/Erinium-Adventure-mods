@@ -8,15 +8,12 @@ public class LeftProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_percent_x - 1 >= 0) {
+		if (entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_percent_x - 1 >= 0) {
 			{
-				double _setval = (entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_percent_x - 1;
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.won_xp_percent_x = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+				_vars.won_xp_percent_x = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_percent_x - 1;
+				_vars.syncPlayerVariables(entity);
 			}
-			UpdateOverlayPositionProcedure.execute(entity);
 		}
 	}
 }

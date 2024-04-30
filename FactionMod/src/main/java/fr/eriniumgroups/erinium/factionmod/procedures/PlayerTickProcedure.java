@@ -28,6 +28,7 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
+import fr.eriniumgroups.erinium.factionmod.configuration.ConfigConfiguration;
 
 @Mod.EventBusSubscriber
 public class PlayerTickProcedure {
@@ -161,7 +162,7 @@ public class PlayerTickProcedure {
 					}
 					bufferedReader.close();
 					JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-					if (JsonObject.get("power").getAsDouble() < 10) {
+					if (JsonObject.get("power").getAsDouble() < (double) ConfigConfiguration.MAX_POWER.get()) {
 						JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() + 1));
 						{
 							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();

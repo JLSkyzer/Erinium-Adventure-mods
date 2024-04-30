@@ -1,5 +1,5 @@
 {
-  "_fv": 57,
+  "_fv": 60,
   "_type": "procedure",
   "definition": {
     "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"event_trigger\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"return_string\"><value name=\"return\"><block type=\"java_code_get\"><field name=\"CODE\">\"Hello\\nworld\"</field></block></value></block></next></block><block type=\"text_join\" x=\"486\" y=\"41\"><mutation items=\"2\"/><value name=\"ADD0\"><block type=\"text\"><field name=\"TEXT\">Hey, is my tooltip \\n how are your</field></block></value><value name=\"ADD1\"><block type=\"text\"><field name=\"TEXT\">qfq</field></block></value></block><block type=\"java_code\" x=\"94\" y=\"280\"><field name=\"CODE\">public MyComponent() {&amp;#10;        append(\"Première ligne\");&amp;#10;        append(\"Deuxième ligne\");&amp;#10;    }&amp;#10;&amp;#10;return new MyComponent();</field></block></xml>"

@@ -1,7 +1,6 @@
 package fr.eriniumgroups.erinium.jobs.procedures;
 
-import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -25,8 +24,6 @@ import fr.eriniumgroups.erinium.jobs.network.EriniumjobsModVariables;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
 
-import com.google.gson.JsonObject;
-
 public class OpenRankInfoProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, CommandContext<CommandSourceStack> arguments, Entity entity) {
 		if (entity == null)
@@ -35,18 +32,15 @@ public class OpenRankInfoProcedure {
 		com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
 		double temp_number = 0;
 		{
-			String _setval = StringArgumentType.getString(arguments, "jobid");
-			entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.temp_job_id = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+			_vars.temp_job_id = StringArgumentType.getString(arguments, "jobid");
+			_vars.syncPlayerVariables(entity);
 		}
-		File = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumJobs/player_information/" + entity.getUUID().toString()),
-				File.separator + ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).temp_job_id + ".json"));
+		File = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumJobs/player_information/" + entity.getUUID().toString()), File.separator + (entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).temp_job_id + ".json"));
 		if (File.exists()) {
 			if (entity instanceof ServerPlayer _ent) {
 				BlockPos _bpos = BlockPos.containing(x, y, z);
-				NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
+				_ent.openMenu(new MenuProvider() {
 					@Override
 					public Component getDisplayName() {
 						return Component.literal("RankInfo");

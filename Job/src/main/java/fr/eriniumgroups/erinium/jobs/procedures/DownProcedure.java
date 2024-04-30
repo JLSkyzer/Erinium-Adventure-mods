@@ -8,15 +8,12 @@ public class DownProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_percent_y + 1 <= 100) {
+		if (entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_percent_y + 1 <= 100) {
 			{
-				double _setval = (entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_percent_y + 1;
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.won_xp_percent_y = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+				_vars.won_xp_percent_y = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_percent_y + 1;
+				_vars.syncPlayerVariables(entity);
 			}
-			UpdateOverlayPositionProcedure.execute(entity);
 		}
 	}
 }

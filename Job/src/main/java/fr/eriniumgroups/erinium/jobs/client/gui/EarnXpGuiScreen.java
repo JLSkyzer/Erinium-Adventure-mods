@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.jobs.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +16,6 @@ import java.util.HashMap;
 import fr.eriniumgroups.erinium.jobs.world.inventory.EarnXpGuiMenu;
 import fr.eriniumgroups.erinium.jobs.procedures.GetPageProcedure;
 import fr.eriniumgroups.erinium.jobs.network.EarnXpGuiButtonMessage;
-import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -41,7 +42,7 @@ public class EarnXpGuiScreen extends AbstractContainerScreen<EarnXpGuiMenu> {
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -65,11 +66,6 @@ public class EarnXpGuiScreen extends AbstractContainerScreen<EarnXpGuiMenu> {
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.earn_xp_gui.label_earn_xp"), 132, 5, -3407872, false);
 		guiGraphics.drawString(this.font,
@@ -78,16 +74,11 @@ public class EarnXpGuiScreen extends AbstractContainerScreen<EarnXpGuiMenu> {
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
 		button_empty = Button.builder(Component.translatable("gui.eriniumjobs.earn_xp_gui.button_empty"), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new EarnXpGuiButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EarnXpGuiButtonMessage(0, x, y, z));
 				EarnXpGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 6, this.topPos + 68, 35, 20).build();
@@ -95,7 +86,7 @@ public class EarnXpGuiScreen extends AbstractContainerScreen<EarnXpGuiMenu> {
 		this.addRenderableWidget(button_empty);
 		button_empty1 = Button.builder(Component.translatable("gui.eriniumjobs.earn_xp_gui.button_empty1"), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new EarnXpGuiButtonMessage(1, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new EarnXpGuiButtonMessage(1, x, y, z));
 				EarnXpGuiButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
 		}).bounds(this.leftPos + 132, this.topPos + 68, 35, 20).build();

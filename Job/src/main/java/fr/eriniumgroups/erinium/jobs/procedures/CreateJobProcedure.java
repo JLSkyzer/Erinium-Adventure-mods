@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.jobs.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
@@ -13,10 +13,6 @@ import java.io.File;
 
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.arguments.StringArgumentType;
-
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 public class CreateJobProcedure {
 	public static void execute(CommandContext<CommandSourceStack> arguments, Entity entity) {
@@ -35,7 +31,7 @@ public class CreateJobProcedure {
 				}
 				JsonObject.addProperty("displayname", (StringArgumentType.getString(arguments, "jobdisplayname")));
 				{
-					Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+					com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 					try {
 						FileWriter fileWriter = new FileWriter(File);
 						fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

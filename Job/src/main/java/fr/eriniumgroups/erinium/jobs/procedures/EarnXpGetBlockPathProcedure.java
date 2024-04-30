@@ -2,11 +2,11 @@ package fr.eriniumgroups.erinium.jobs.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.BlockPos;
 
 import java.io.File;
@@ -27,11 +27,11 @@ public class EarnXpGetBlockPathProcedure {
 				String s = text.split(space)[index];
 				return s;
 			}
-		}.split((ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString()), ":", (int) 0) + "/"), File.separator + (new Object() {
+		}.split((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString()), ":", (int) 0) + "/"), File.separator + (new Object() {
 			private String split(String text, String space, int index) {
 				String s = text.split(space)[index];
 				return s;
 			}
-		}.split((ForgeRegistries.BLOCKS.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString()), ":", (int) 1) + ".json"));
+		}.split((BuiltInRegistries.BLOCK.getKey((world.getBlockState(BlockPos.containing(x, y, z))).getBlock()).toString()), ":", (int) 1) + ".json"));
 	}
 }

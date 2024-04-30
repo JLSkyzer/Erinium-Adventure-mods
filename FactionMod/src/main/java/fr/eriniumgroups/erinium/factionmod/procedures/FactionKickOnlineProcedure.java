@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
+import fr.eriniumgroups.erinium.factionmod.configuration.ConfigConfiguration;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
@@ -76,6 +77,8 @@ public class FactionKickOnlineProcedure {
 										}
 									}
 								}.getEntity()).getUUID().toString() + ", ", "")));
+								JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() - ReturnTargetEntityPowerProcedure.execute(entity)));
+								JsonObject.addProperty("max_power", (JsonObject.get("max_power").getAsDouble() - (double) ConfigConfiguration.MAX_POWER.get()));
 								{
 									com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 									try {

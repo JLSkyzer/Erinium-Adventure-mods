@@ -53,6 +53,22 @@
             "vardisplay": "Max member",
             "varname": "max_member",
             "enablecomment": true
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 10.0,
+            "textDefault": "",
+            "comment": "Max power per member",
+            "vardisplay": "Max power",
+            "varname": "max_power",
+            "enablecomment": true
           }
         ]
       }

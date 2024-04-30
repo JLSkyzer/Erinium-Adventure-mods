@@ -8,6 +8,6 @@ public class ReturnMessage2Procedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		return (entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_message_2;
+		return entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_message_2;
 	}
 }

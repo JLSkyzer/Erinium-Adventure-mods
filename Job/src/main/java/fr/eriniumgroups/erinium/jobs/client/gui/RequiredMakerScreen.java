@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.jobs.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,7 +16,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.jobs.world.inventory.RequiredMakerMenu;
 import fr.eriniumgroups.erinium.jobs.network.RequiredMakerButtonMessage;
-import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -42,7 +43,7 @@ public class RequiredMakerScreen extends AbstractContainerScreen<RequiredMakerMe
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		job_id.render(guiGraphics, mouseX, mouseY, partialTicks);
 		level.render(guiGraphics, mouseX, mouseY, partialTicks);
@@ -72,23 +73,11 @@ public class RequiredMakerScreen extends AbstractContainerScreen<RequiredMakerMe
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-		job_id.tick();
-		level.tick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.required_maker.label_earnxp_creator"), 6, 10, -65536, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.required_maker.label_job_id"), 96, 28, -16777012, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.required_maker.label_min_level"), 6, 64, -16776961, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.required_maker.label_item_block"), 6, 28, -16776961, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
@@ -104,7 +93,7 @@ public class RequiredMakerScreen extends AbstractContainerScreen<RequiredMakerMe
 		this.addWidget(this.level);
 		button_validate = Button.builder(Component.translatable("gui.eriniumjobs.required_maker.button_validate"), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new RequiredMakerButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new RequiredMakerButtonMessage(0, x, y, z));
 				RequiredMakerButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 96, this.topPos + 73, 72, 20).build();

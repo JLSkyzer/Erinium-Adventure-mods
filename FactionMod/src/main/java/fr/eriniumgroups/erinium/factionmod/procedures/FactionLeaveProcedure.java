@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.factionmod.network.EriniumFactionModVariables;
+import fr.eriniumgroups.erinium.factionmod.configuration.ConfigConfiguration;
 
 public class FactionLeaveProcedure {
 	public static void execute(Entity entity) {
@@ -38,7 +39,7 @@ public class FactionLeaveProcedure {
 						bufferedReader.close();
 						JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() - ReturnTargetEntityPowerProcedure.execute(entity)));
-						JsonObject.addProperty("max_power", (JsonObject.get("max_power").getAsDouble() - 10));
+						JsonObject.addProperty("max_power", (JsonObject.get("max_power").getAsDouble() - (double) ConfigConfiguration.MAX_POWER.get()));
 						JsonObject.addProperty("member_count", (JsonObject.get("member_count").getAsString().replace(entity.getUUID().toString() + ", ", "")));
 						{
 							com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();

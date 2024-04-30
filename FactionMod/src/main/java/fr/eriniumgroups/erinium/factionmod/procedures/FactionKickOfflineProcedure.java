@@ -12,6 +12,8 @@ import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedReader;
 
+import fr.eriniumgroups.erinium.factionmod.configuration.ConfigConfiguration;
+
 import com.mojang.brigadier.context.CommandContext;
 
 public class FactionKickOfflineProcedure {
@@ -68,6 +70,8 @@ public class FactionKickOfflineProcedure {
 										bufferedReader.close();
 										SecJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 										SecJsonObject.addProperty("member_count", (SecJsonObject.get("member_count").getAsString().replace(ReturnCommandOfflineEntityUuidProcedure.execute(arguments) + ", ", "")));
+										JsonObject.addProperty("power", (JsonObject.get("power").getAsDouble() - ReturnTargetEntityPowerProcedure.execute(entity)));
+										JsonObject.addProperty("max_power", (JsonObject.get("max_power").getAsDouble() - (double) ConfigConfiguration.MAX_POWER.get()));
 										{
 											com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 											try {

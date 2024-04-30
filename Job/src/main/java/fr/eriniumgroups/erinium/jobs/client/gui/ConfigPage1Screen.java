@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.jobs.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,7 +15,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.jobs.world.inventory.ConfigPage1Menu;
 import fr.eriniumgroups.erinium.jobs.network.ConfigPage1ButtonMessage;
-import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -39,7 +40,7 @@ public class ConfigPage1Screen extends AbstractContainerScreen<ConfigPage1Menu> 
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -63,18 +64,8 @@ public class ConfigPage1Screen extends AbstractContainerScreen<ConfigPage1Menu> 
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.eriniumjobs.config_page_1.label_overlay_config"), 51, 7, -16777216, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
@@ -82,7 +73,7 @@ public class ConfigPage1Screen extends AbstractContainerScreen<ConfigPage1Menu> 
 		super.init();
 		button_won_xp = Button.builder(Component.translatable("gui.eriniumjobs.config_page_1.button_won_xp"), e -> {
 			if (true) {
-				EriniumjobsMod.PACKET_HANDLER.sendToServer(new ConfigPage1ButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new ConfigPage1ButtonMessage(0, x, y, z));
 				ConfigPage1ButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 6, this.topPos + 25, 54, 20).build();

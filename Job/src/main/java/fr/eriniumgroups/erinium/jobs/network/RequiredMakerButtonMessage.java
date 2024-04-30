@@ -1,17 +1,20 @@
 
 package fr.eriniumgroups.erinium.jobs.network;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.neoforge.network.handling.PlayPayloadContext;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.network.protocol.PacketFlow;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Supplier;
 import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.jobs.world.inventory.RequiredMakerMenu;
@@ -19,41 +22,40 @@ import fr.eriniumgroups.erinium.jobs.procedures.RequiredValidateButtonProcedure;
 import fr.eriniumgroups.erinium.jobs.EriniumjobsMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class RequiredMakerButtonMessage {
-	private final int buttonID, x, y, z;
+public record RequiredMakerButtonMessage(int buttonID, int x, int y, int z) implements CustomPacketPayload {
 
+	public static final ResourceLocation ID = new ResourceLocation(EriniumjobsMod.MODID, "required_maker_buttons");
 	public RequiredMakerButtonMessage(FriendlyByteBuf buffer) {
-		this.buttonID = buffer.readInt();
-		this.x = buffer.readInt();
-		this.y = buffer.readInt();
-		this.z = buffer.readInt();
+		this(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt());
 	}
 
-	public RequiredMakerButtonMessage(int buttonID, int x, int y, int z) {
-		this.buttonID = buttonID;
-		this.x = x;
-		this.y = y;
-		this.z = z;
+	@Override
+	public void write(final FriendlyByteBuf buffer) {
+		buffer.writeInt(buttonID);
+		buffer.writeInt(x);
+		buffer.writeInt(y);
+		buffer.writeInt(z);
 	}
 
-	public static void buffer(RequiredMakerButtonMessage message, FriendlyByteBuf buffer) {
-		buffer.writeInt(message.buttonID);
-		buffer.writeInt(message.x);
-		buffer.writeInt(message.y);
-		buffer.writeInt(message.z);
+	@Override
+	public ResourceLocation id() {
+		return ID;
 	}
 
-	public static void handler(RequiredMakerButtonMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
-		NetworkEvent.Context context = contextSupplier.get();
-		context.enqueueWork(() -> {
-			Player entity = context.getSender();
-			int buttonID = message.buttonID;
-			int x = message.x;
-			int y = message.y;
-			int z = message.z;
-			handleButtonAction(entity, buttonID, x, y, z);
-		});
-		context.setPacketHandled(true);
+	public static void handleData(final RequiredMakerButtonMessage message, final PlayPayloadContext context) {
+		if (context.flow() == PacketFlow.SERVERBOUND) {
+			context.workHandler().submitAsync(() -> {
+				Player entity = context.player().get();
+				int buttonID = message.buttonID;
+				int x = message.x;
+				int y = message.y;
+				int z = message.z;
+				handleButtonAction(entity, buttonID, x, y, z);
+			}).exceptionally(e -> {
+				context.packetHandler().disconnect(Component.literal(e.getMessage()));
+				return null;
+			});
+		}
 	}
 
 	public static void handleButtonAction(Player entity, int buttonID, int x, int y, int z) {
@@ -70,6 +72,6 @@ public class RequiredMakerButtonMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		EriniumjobsMod.addNetworkMessage(RequiredMakerButtonMessage.class, RequiredMakerButtonMessage::buffer, RequiredMakerButtonMessage::new, RequiredMakerButtonMessage::handler);
+		EriniumjobsMod.addNetworkMessage(RequiredMakerButtonMessage.ID, RequiredMakerButtonMessage::new, RequiredMakerButtonMessage::handleData);
 	}
 }

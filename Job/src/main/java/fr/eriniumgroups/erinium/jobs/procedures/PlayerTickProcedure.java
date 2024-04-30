@@ -1,9 +1,9 @@
 package fr.eriniumgroups.erinium.jobs.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.TickEvent;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.entity.Entity;
 
@@ -27,54 +27,27 @@ public class PlayerTickProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_timer > 0) {
+		if (entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_timer > 0) {
 			{
-				double _setval = (entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_timer - 1;
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.won_xp_timer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+				_vars.won_xp_timer = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_timer - 1;
+				_vars.syncPlayerVariables(entity);
 			}
 		} else {
-			if (((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_message).length() > 0
-					|| ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_message_2).length() > 0) {
-				if (!(entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).won_xp_config) {
+			if ((entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_message).length() > 0 || (entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_message_2).length() > 0) {
+				if (!entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_config) {
 					{
-						String _setval = "";
-						entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+						_vars.won_xp_message = "";
+						_vars.syncPlayerVariables(entity);
 					}
 					{
-						String _setval = "";
-						entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.won_xp_message_2 = _setval;
-							capability.syncPlayerVariables(entity);
-						});
+						EriniumjobsModVariables.PlayerVariables _vars = entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES);
+						_vars.won_xp_message_2 = "";
+						_vars.syncPlayerVariables(entity);
 					}
 				}
 			}
-		}
-		if ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).windows_width != net.minecraft.client.Minecraft.getInstance().getWindow().getWidth()) {
-			{
-				double _setval = net.minecraft.client.Minecraft.getInstance().getWindow().getWidth();
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.windows_width = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			UpdateOverlayPositionProcedure.execute(entity);
-		}
-		if ((entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumjobsModVariables.PlayerVariables())).windows_height != net.minecraft.client.Minecraft.getInstance().getWindow().getHeight()) {
-			{
-				double _setval = net.minecraft.client.Minecraft.getInstance().getWindow().getHeight();
-				entity.getCapability(EriniumjobsModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.windows_width = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			UpdateOverlayPositionProcedure.execute(entity);
 		}
 	}
 }
