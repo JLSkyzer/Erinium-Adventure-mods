@@ -137,41 +137,11 @@
         ]
       },
       "path": "~/Erilog"
-    },
-    {
-      "name": "TempProc",
-      "type": "procedure",
-      "sortid": 9,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "temp_proc",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/TempProcProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
+  "tag_elements": {},
   "language_map": {
     "en_us": {}
   },
@@ -187,20 +157,18 @@
   "workspaceSettings": {
     "modid": "erinium_logs",
     "modName": "Erinium Logs",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "killi, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.20.1",
+    "currentGenerator": "neoforge-1.20.4",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
-    "modElementsPackage": "fr.eriniumgroups.erinium.logs",
-    "lockBaseModFiles": false
+    "modElementsPackage": "fr.eriniumgroups.erinium.logs"
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202400117319
 }

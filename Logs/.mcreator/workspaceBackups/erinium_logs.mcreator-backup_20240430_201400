@@ -141,6 +141,7 @@
   ],
   "variable_elements": [],
   "sound_elements": [],
+  "tag_elements": {},
   "language_map": {
     "en_us": {}
   },
@@ -160,7 +161,6 @@
     "author": "killi, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
@@ -168,8 +168,7 @@
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
-    "modElementsPackage": "fr.eriniumgroups.erinium.logs",
-    "lockBaseModFiles": false
+    "modElementsPackage": "fr.eriniumgroups.erinium.logs"
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202400117319
 }

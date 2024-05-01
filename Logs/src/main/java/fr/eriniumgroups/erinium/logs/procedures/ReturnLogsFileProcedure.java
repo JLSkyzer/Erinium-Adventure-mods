@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.logs.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import java.util.Calendar;
 

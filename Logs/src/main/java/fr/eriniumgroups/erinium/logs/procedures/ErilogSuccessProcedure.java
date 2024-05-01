@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.logs.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.commands.arguments.MessageArgument;
 import net.minecraft.commands.CommandSourceStack;
@@ -10,10 +10,8 @@ import java.util.ArrayList;
 
 import java.io.IOException;
 import java.io.FileWriter;
-import java.io.FileReader;
 import java.io.File;
 import java.io.BufferedWriter;
-import java.io.BufferedReader;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.context.CommandContext;
@@ -33,7 +31,7 @@ public class ErilogSuccessProcedure {
 				exception.printStackTrace();
 			}
 			try {
-				FileWriter filewriter = new FileWriter(file);
+				FileWriter filewriter = new FileWriter(file, true);
 				BufferedWriter filebw = new BufferedWriter(filewriter);
 				{
 					filebw.write("========== Erinium Logs ==========");
@@ -46,25 +44,8 @@ public class ErilogSuccessProcedure {
 			}
 		}
 		try {
-			BufferedReader fileReader = new BufferedReader(new FileReader(file));
-			String stringiterator = "";
-			while ((stringiterator = fileReader.readLine()) != null) {
-				array.add(stringiterator);
-			}
-			fileReader.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		try {
-			FileWriter filewriter = new FileWriter(file);
+			FileWriter filewriter = new FileWriter(file, true);
 			BufferedWriter filebw = new BufferedWriter(filewriter);
-			while (array.size() > 0) {
-				{
-					filebw.write((array.get(0) instanceof String _s ? _s : ""));
-					filebw.newLine();
-				}
-				array.remove(0);
-			}
 			{
 				filebw.write(("[" + ReturnDateStringProcedure.execute() + "] [" + "SUCCESS" + "] " + (new Object() {
 					public String getMessage() {

@@ -97,10 +97,51 @@
         ]
       },
       "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogError",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_error",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogErrorProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
+    },
+    {
+      "name": "ErilogSuccess",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erilog_success",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/logs/procedures/ErilogSuccessProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          }
+        ]
+      },
+      "path": "~/Erilog"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
+  "tag_elements": {},
   "language_map": {
     "en_us": {}
   },
@@ -120,15 +161,14 @@
     "author": "killi, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.20.1",
-    "modElementsPackage": "fr.eriniumgroups.erinium.logs",
-    "lockBaseModFiles": false
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "fr.eriniumgroups.erinium.logs"
   },
-  "mcreatorVersion": 202300336712
+  "mcreatorVersion": 202400117319
 }

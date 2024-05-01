@@ -1,22 +1,31 @@
 modLoader="javafml"
-loaderVersion="[47,)"
+loaderVersion="[2,)"
 license="Academic Free License v3.0"
 
 [[mods]]
 modId="erinium_logs"
-version="1.0.0"
+version="1.1.0"
 displayName="Erinium Logs"
 displayURL="https://mcreator.net"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 authors="killi, MCreator"
 
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
 [[dependencies.erinium_logs]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.20.1]"
+    modId="neoforge"
+    type="required"
+    versionRange="[20.4.223,)"
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.erinium_logs]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.20.4]"
+    ordering="NONE"
+    side="BOTH"
 
 
 
