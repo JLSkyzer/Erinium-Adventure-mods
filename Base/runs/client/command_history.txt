@@ -1,1 +1,9 @@
 /test
+/tes
+/test
+/tp 0 ~ 0
+/test
+/tp 10 ~ 10
+/test
+/tp 0 ~ 0
+/test

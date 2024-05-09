@@ -76,6 +76,8 @@ public class EriniumAdventureModVariables {
 				clone.Health_regen_tick = original.Health_regen_tick;
 				clone.health_damage = original.health_damage;
 				clone.Health_regen_cooldown = original.Health_regen_cooldown;
+				clone.movement_type = original.movement_type;
+				clone.speed = original.speed;
 			}
 			event.getEntity().setData(PLAYER_VARIABLES, clone);
 		}
@@ -233,6 +235,8 @@ public class EriniumAdventureModVariables {
 		public double Health_regen_cooldown = 20.0;
 		public double health_multiplier = 0;
 		public double synchronisation = 6000.0;
+		public String movement_type = "HOLD";
+		public double speed = 0;
 
 		@Override
 		public CompoundTag serializeNBT() {
@@ -247,6 +251,8 @@ public class EriniumAdventureModVariables {
 			nbt.putDouble("Health_regen_cooldown", Health_regen_cooldown);
 			nbt.putDouble("health_multiplier", health_multiplier);
 			nbt.putDouble("synchronisation", synchronisation);
+			nbt.putString("movement_type", movement_type);
+			nbt.putDouble("speed", speed);
 			return nbt;
 		}
 
@@ -262,6 +268,8 @@ public class EriniumAdventureModVariables {
 			Health_regen_cooldown = nbt.getDouble("Health_regen_cooldown");
 			health_multiplier = nbt.getDouble("health_multiplier");
 			synchronisation = nbt.getDouble("synchronisation");
+			movement_type = nbt.getString("movement_type");
+			speed = nbt.getDouble("speed");
 		}
 
 		public void syncPlayerVariables(Entity entity) {

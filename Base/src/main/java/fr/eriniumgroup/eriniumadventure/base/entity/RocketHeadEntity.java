@@ -1,6 +1,9 @@
 
 package fr.eriniumgroup.eriniumadventure.base.entity;
 
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
 import net.neoforged.neoforge.common.NeoForgeMod;
@@ -18,15 +21,6 @@ import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnGroupData;
-import net.minecraft.world.entity.PathfinderMob;
-import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
@@ -86,12 +80,42 @@ public class RocketHeadEntity extends PathfinderMob {
 		return false;
 	}
 
-	@Override
-	protected Vector3f getPassengerAttachmentPoint(Entity entity, EntityDimensions dimensions, float f) {
-		return super.getPassengerAttachmentPoint(entity, dimensions, f).add(0, 1f, 0);
+	protected float getSinglePassengerXOffset() {
+		return 0.0F;
 	}
 
 	@Override
+	protected Vector3f getPassengerAttachmentPoint(Entity entity, EntityDimensions dimensions, float f) {
+		float z = this.getSinglePassengerXOffset();
+		if (this.getPassengers().size() > 1) {
+			int i = this.getPassengers().indexOf(entity);
+			if (i == 0) {
+				z = 0.2F;
+			} else {
+				z = -2.5F;
+			}
+		}
+
+		return super.getPassengerAttachmentPoint(entity, dimensions, f).add(0, 1f, z);
+	}
+
+	@Nullable
+	@Override
+	public LivingEntity getControllingPassenger() {
+		Entity entity = this.getFirstPassenger();
+		return entity instanceof LivingEntity livingentity ? livingentity : super.getControllingPassenger();
+	}
+
+	@Override
+	protected boolean canAddPassenger(Entity p_38390_) {
+		return this.getPassengers().size() < this.getMaxPassengers();
+	}
+
+	protected int getMaxPassengers() {
+		return 2;
+	}
+
+		@Override
 	public boolean causeFallDamage(float l, float d, DamageSource source) {
 		return false;
 	}

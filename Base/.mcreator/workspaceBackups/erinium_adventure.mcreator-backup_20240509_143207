@@ -438,13 +438,34 @@
       "type": "procedure",
       "sortid": 30,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "test_cmd",
       "metadata": {
         "files": [
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestCmdProcedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -468,7 +489,7 @@
       "type": "livingentity",
       "sortid": 32,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "rocket_head",
       "metadata": {
         "files": [
@@ -995,6 +1016,57 @@
         ]
       },
       "path": "~/SpaceFeature/Rocket/Item"
+    },
+    {
+      "name": "TestKeyOnKeyPressed",
+      "type": "procedure",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_key_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestKeyOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TestKey",
+      "type": "keybind",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_key",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/network/TestKeyMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "TestKeyOnKeyReleased",
+      "type": "procedure",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_key_on_key_released",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestKeyOnKeyReleasedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1063,6 +1135,18 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "6000.0"
+    },
+    {
+      "name": "movement_type",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "HOLD"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -1070,6 +1154,9 @@
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CUSTOM:LightDarkBrick",
       "~CUSTOM:NitriateOre"
+    ],
+    "BLOCKS:minecraft:needs_stone_tool": [
+      "~CUSTOM:LightDarkBrick"
     ]
   },
   "language_map": {
@@ -1098,6 +1185,7 @@
       "key.erinium_adventure.launch": "Launch",
       "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
       "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
+      "key.erinium_adventure.test_key": "Test Key",
       "item.erinium_adventure.nitriate_sword": "Nitriate Sword",
       "item.erinium_adventure.nitriate_armor_leggings": "Nitriate Leggings"
     }
@@ -1178,5 +1266,5 @@
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "fr.eriniumgroup.eriniumadventure.base"
   },
-  "mcreatorVersion": 202400115821
+  "mcreatorVersion": 202400118518
 }

@@ -468,7 +468,7 @@
       "type": "livingentity",
       "sortid": 32,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "rocket_head",
       "metadata": {
         "files": [
@@ -980,6 +980,72 @@
           "src/main/java/fr/eriniumgroup/eriniumadventure/base/configuration/ServerConfigConfiguration.java"
         ]
       }
+    },
+    {
+      "name": "StarshipItem",
+      "type": "item",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "starship_item",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/erinium_adventure/models/item/starship_item.json",
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/item/StarshipItemItem.java"
+        ]
+      },
+      "path": "~/SpaceFeature/Rocket/Item"
+    },
+    {
+      "name": "TestKeyOnKeyPressed",
+      "type": "procedure",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_key_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestKeyOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TestKey",
+      "type": "keybind",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_key",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/network/TestKeyMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "TestKeyOnKeyReleased",
+      "type": "procedure",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_key_on_key_released",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumadventure/base/procedures/TestKeyOnKeyReleasedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1048,6 +1114,18 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "6000.0"
+    },
+    {
+      "name": "movement_type",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": "HOLD"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [],
@@ -1055,10 +1133,14 @@
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CUSTOM:LightDarkBrick",
       "~CUSTOM:NitriateOre"
+    ],
+    "BLOCKS:minecraft:needs_stone_tool": [
+      "~CUSTOM:LightDarkBrick"
     ]
   },
   "language_map": {
     "en_us": {
+      "item.erinium_adventure.starship_item": "Starship Item",
       "block.erinium_adventure.nitriate_ore": "Nitriate Ore",
       "entity.erinium_adventure.rocket_booster": "Rocket Booster",
       "item.erinium_adventure.nitriate_armor_boots": "Nitriate Boots",
@@ -1082,6 +1164,7 @@
       "key.erinium_adventure.launch": "Launch",
       "item.erinium_adventure.nitriate_gem": "Nitriate Gem",
       "item.erinium_adventure.nitriate_axe": "Nitriate Axe",
+      "key.erinium_adventure.test_key": "Test Key",
       "item.erinium_adventure.nitriate_sword": "Nitriate Sword",
       "item.erinium_adventure.nitriate_armor_leggings": "Nitriate Leggings"
     }
@@ -1113,6 +1196,10 @@
             "children": [
               {
                 "name": "Overlay",
+                "children": []
+              },
+              {
+                "name": "Item",
                 "children": []
               }
             ]
@@ -1158,5 +1245,5 @@
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "fr.eriniumgroup.eriniumadventure.base"
   },
-  "mcreatorVersion": 202400115821
+  "mcreatorVersion": 202400118518
 }

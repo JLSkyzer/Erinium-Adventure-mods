@@ -38,6 +38,8 @@ public class EriniumAdventureMod {
 	public static final String MODID = "erinium_adventure";
 
 	public EriniumAdventureMod(IEventBus modEventBus) {
+		// Start of user code block mod constructor
+		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
 

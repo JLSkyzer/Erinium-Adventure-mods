@@ -100,6 +100,51 @@ public class PlayerTickProcedure {
 					_vars.syncPlayerVariables(entity);
 				}
 			}
+			if ((entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).movement_type).equals("DRIVE")) {
+				if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).speed < 1) {
+					{
+						EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+						_vars.speed = Math.min(entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).speed + 0.0083333333, 1);
+						_vars.syncPlayerVariables(entity);
+					}
+				}
+				{
+					double yawRadians = java.lang.Math.toRadians(entity.getYRot()); // Angle horizontal (yaw) du joueur en radians
+					// Calcul des composantes du vecteur de direction dans le plan horizontal (XZ)
+					double directionX = -java.lang.Math.sin(yawRadians); // Composante X du vecteur de direction
+					double directionZ = java.lang.Math.cos(yawRadians); // Composante Z du vecteur de direction
+					double speed = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).speed; // Vitesse de déplacement (ajustez selon vos besoins)
+					// Calcul du déplacement dans le plan horizontal (XZ) en fonction de la direction du joueur
+					double deltaX = directionX * speed;
+					double deltaZ = directionZ * speed;
+					entity.setDeltaMovement(deltaX, 0, deltaZ);
+				}
+			} else if ((entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).movement_type).equals("HOLD")) {
+				if (entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).speed > 0) {
+					{
+						EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+						_vars.speed = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).speed - 0.01;
+						_vars.syncPlayerVariables(entity);
+					}
+					{
+						double yawRadians = java.lang.Math.toRadians(entity.getYRot()); // Angle horizontal (yaw) du joueur en radians
+						// Calcul des composantes du vecteur de direction dans le plan horizontal (XZ)
+						double directionX = -java.lang.Math.sin(yawRadians); // Composante X du vecteur de direction
+						double directionZ = java.lang.Math.cos(yawRadians); // Composante Z du vecteur de direction
+						double speed = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).speed; // Vitesse de déplacement (ajustez selon vos besoins)
+						// Calcul du déplacement dans le plan horizontal (XZ) en fonction de la direction du joueur
+						double deltaX = directionX * speed;
+						double deltaZ = directionZ * speed;
+						entity.setDeltaMovement(deltaX, 0, deltaZ);
+					}
+				}
+			} else if ((entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES).movement_type).equals("")) {
+				{
+					EriniumAdventureModVariables.PlayerVariables _vars = entity.getData(EriniumAdventureModVariables.PLAYER_VARIABLES);
+					_vars.movement_type = "HOLD";
+					_vars.syncPlayerVariables(entity);
+				}
+			}
 		}
 	}
 }

@@ -1,0 +1,15 @@
+{
+  "_fv": 60,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "K",
+    "keyBindingName": "Test Key",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "TestKeyOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "TestKeyOnKeyReleased"
+    }
+  }
+}

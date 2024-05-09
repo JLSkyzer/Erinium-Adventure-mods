@@ -99,7 +99,47 @@
           </messages>
           <updatedAt value="2024-02-28T17:54:24.0654835" />
         </chat>
+        <chat>
+          <accountId value="VXNlcjozMDM3ODY=" />
+          <internalId value="70a89378-4f45-4de0-b801-2cf684330650" />
+          <llm>
+            <llm>
+              <model value="anthropic/claude-3-sonnet-20240229" />
+              <provider value="Anthropic" />
+              <title value="Claude 3 Sonnet" />
+            </llm>
+          </llm>
+        </chat>
+        <chat>
+          <accountId value="VXNlcjozMDM3ODY=" />
+          <internalId value="28ffbd2c-cee6-4c07-86dd-16f7f03be220" />
+          <llm>
+            <llm>
+              <model value="anthropic/claude-3-sonnet-20240229" />
+              <provider value="Anthropic" />
+              <title value="Claude 3 Sonnet" />
+            </llm>
+          </llm>
+        </chat>
+        <chat>
+          <accountId value="VXNlcjozMDM3ODY=" />
+          <internalId value="6fa4b4bd-f62c-4053-b24f-f6c3a74ef3e3" />
+          <llm>
+            <llm>
+              <model value="anthropic/claude-3-sonnet-20240229" />
+              <provider value="Anthropic" />
+              <title value="Claude 3 Sonnet" />
+            </llm>
+          </llm>
+        </chat>
       </list>
     </chats>
+    <defaultLlm>
+      <llm>
+        <model value="anthropic/claude-3-sonnet-20240229" />
+        <provider value="Anthropic" />
+        <title value="Claude 3 Sonnet" />
+      </llm>
+    </defaultLlm>
   </component>
 </project>

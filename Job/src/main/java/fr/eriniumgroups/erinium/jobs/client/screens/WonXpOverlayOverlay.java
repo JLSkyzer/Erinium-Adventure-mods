@@ -57,10 +57,10 @@ public class WonXpOverlayOverlay {
 			int finalY = (int) (posY * capability.won_xp_percent_y) / 100;
 
 			if (entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_percent_x >= 51) {
-				finalX = finalX - 120;
+				finalX = finalX - 120; // Taille de mon élément
 			}
 			if (entity.getData(EriniumjobsModVariables.PLAYER_VARIABLES).won_xp_percent_y >= 51) {
-				finalY = finalY - 44;
+				finalY = finalY - 44; // Taille de mon élément
 			}
 
 			if (entity != null)
