@@ -1257,19 +1257,6 @@
       "path": "~/Menu/Buy Gui"
     },
     {
-      "name": "NotEnoughtMoney",
-      "type": "toast",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "not_enought_money",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/client/toasts/NotEnoughtMoneyToast.java"
-        ]
-      },
-      "path": "~/Menu"
-    },
-    {
       "name": "SellItem",
       "type": "procedure",
       "sortid": 55,
@@ -1629,12 +1616,11 @@
     }
   ],
   "sound_elements": [],
+  "tag_elements": {},
   "language_map": {
     "en_us": {
-      "toasts.erinium_ah.not_enought_money.title": "Erinium Auction House",
       "gui.erinium_ah.sell_gui.announce": "Announce (1000$)",
       "gui.erinium_ah.sell_gui.quantity": "",
-      "toasts.erinium_ah.not_enought_money.description": "§4Not enough money !",
       "gui.erinium_ah.theme_select_0.label_dark": "Dark",
       "gui.erinium_ah.theme_select_0.label_blue_royal_purple": "Blue royal purple",
       "gui.erinium_ah.buy_gui.label_buy": "Buy",
@@ -1721,19 +1707,18 @@
   "workspaceSettings": {
     "modid": "erinium_ah",
     "modName": "Erinium AH",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "killi, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
-    "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.20.1",
-    "modElementsPackage": "fr.eriniumgroups.erinium.auctionhouse",
-    "lockBaseModFiles": false
+    "currentGenerator": "neoforge-1.20.4",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "fr.eriniumgroups.erinium.auctionhouse"
   },
-  "mcreatorVersion": 202300452316
+  "mcreatorVersion": 202400118518
 }

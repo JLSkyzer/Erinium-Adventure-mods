@@ -1,0 +1,11 @@
+{
+  "parent": "eriniumcrate:custom/basic_crate",
+  "textures": {
+    "all": "eriniumcrate:block/crate_basic_main",
+    "particle": "eriniumcrate:block/crate_basic_main",
+    "top": "eriniumcrate:block/texture",
+    "crate_basic_border.png": "eriniumcrate:block/crate_basic_border",
+    "crate_basic_main.png": "eriniumcrate:block/crate_basic_main"
+  },
+  "render_type": "solid"
+}

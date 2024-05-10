@@ -1,0 +1,29 @@
+{
+  "loot_0": {
+    "item": "eriniumcrate:basic_key",
+    "item_name": "§3Basic Key",
+    "item_enchant": "[]",
+    "count": 11,
+    "chance": 11.0,
+    "eventname": "11",
+    "eventmessage": ""
+  },
+  "loot_1": {
+    "item": "eriniumcrate:basic_key",
+    "item_name": "§3Basic Key",
+    "item_enchant": "[]",
+    "count": 12,
+    "chance": 12.0,
+    "eventname": "12",
+    "eventmessage": ""
+  },
+  "loot_2": {
+    "item": "eriniumcrate:basic_key",
+    "item_name": "§3Basic Key",
+    "item_enchant": "[]",
+    "count": 12,
+    "chance": 0.02,
+    "eventname": "Je suis putain de beau",
+    "eventmessage": ""
+  }
+}

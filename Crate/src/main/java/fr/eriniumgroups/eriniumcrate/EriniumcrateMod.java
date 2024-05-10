@@ -25,6 +25,12 @@ import java.util.HashMap;
 import java.util.Collection;
 import java.util.ArrayList;
 
+import fr.eriniumgroups.eriniumcrate.network.EriniumcrateModVariables;
+import fr.eriniumgroups.eriniumcrate.init.EriniumcrateModTabs;
+import fr.eriniumgroups.eriniumcrate.init.EriniumcrateModMenus;
+import fr.eriniumgroups.eriniumcrate.init.EriniumcrateModItems;
+import fr.eriniumgroups.eriniumcrate.init.EriniumcrateModBlocks;
+
 @Mod("eriniumcrate")
 public class EriniumcrateMod {
 	public static final Logger LOGGER = LogManager.getLogger(EriniumcrateMod.class);
@@ -35,6 +41,15 @@ public class EriniumcrateMod {
 		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
+
+		EriniumcrateModBlocks.REGISTRY.register(modEventBus);
+
+		EriniumcrateModItems.register(modEventBus);
+
+		EriniumcrateModTabs.REGISTRY.register(modEventBus);
+		EriniumcrateModVariables.ATTACHMENT_TYPES.register(modEventBus);
+
+		EriniumcrateModMenus.REGISTRY.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init

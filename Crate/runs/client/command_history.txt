@@ -1,0 +1,10 @@
+/crateloot basic
+/crateloot custom
+/crateloot custom rg
+/crateloot basic
+/crateloot
+/crateloot basic
+/crateloot
+/crateloot basic
+/crateloot
+/crateloot basic

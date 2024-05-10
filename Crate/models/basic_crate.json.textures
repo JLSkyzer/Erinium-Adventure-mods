@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "top": "texture",
+        "crate_basic_border.png": "crate_basic_border",
+        "crate_basic_main.png": "crate_basic_main"
+      },
+      "name": "default"
+    }
+  }
+}

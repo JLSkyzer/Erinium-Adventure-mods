@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "eriniumcrate:block/basiccrate"
+    },
+    "facing=east": {
+      "model": "eriniumcrate:block/basiccrate",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "eriniumcrate:block/basiccrate",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "eriniumcrate:block/basiccrate",
+      "y": 270
+    }
+  }
+}

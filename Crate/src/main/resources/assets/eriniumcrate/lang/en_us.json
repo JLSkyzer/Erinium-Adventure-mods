@@ -1,1 +1,16 @@
-{}
+{
+  "gui.eriniumcrate.loot_creator_gui.eventmessage": "Event Message to send to player",
+  "gui.eriniumcrate.loot_creator_gui.label_loot_creator": "Loot creator",
+  "gui.eriniumcrate.loot_creator_gui.chance": "",
+  "gui.eriniumcrate.loot_list.button_empty": "\u003c-",
+  "block.eriniumcrate.basiccrate": "Basiccrate",
+  "gui.eriniumcrate.loot_creator_gui.count": "",
+  "gui.eriniumcrate.loot_creator_gui.eventname": "Event Name",
+  "gui.eriniumcrate.loot_creator_gui.tooltip_change_in_001_max": "Chance in % (0.01 max)",
+  "gui.eriniumcrate.loot_creator_gui.button_create_the_loot": "Create the loot",
+  "gui.eriniumcrate.loot_list.button_empty1": "-\u003e",
+  "gui.eriniumcrate.loot_list.label_loot_list": "Loot list",
+  "gui.eriniumcrate.loot_creator_gui.tooltip_item_count_min_1_to_dont_broke": "Item count (min 1 to dont broke the mod)",
+  "item.eriniumcrate.basic_key": "§3Basic Key",
+  "gui.eriniumcrate.loot_list.label_page": "Page"
+}

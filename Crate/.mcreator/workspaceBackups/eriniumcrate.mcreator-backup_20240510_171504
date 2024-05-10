@@ -33,22 +33,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -78,7 +62,6 @@
       "registry_name": "loot_list",
       "metadata": {
         "files": [
-          "src/main/java/fr/eriniumgroups/eriniumcrate/network/LootListButtonMessage.java",
           "src/main/java/fr/eriniumgroups/eriniumcrate/world/inventory/LootListMenu.java",
           "src/main/java/fr/eriniumgroups/eriniumcrate/client/gui/LootListScreen.java"
         ]
@@ -369,12 +352,7 @@
         "files": [
           "src/main/java/fr/eriniumgroups/eriniumcrate/procedures/LootListWhileThisGUIIsOpenTickProcedure.java"
         ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       },
       "path": "~/Loot"
     },
@@ -398,88 +376,6 @@
         ]
       },
       "path": "~/File"
-    },
-    {
-      "name": "ReturnJsonObjectForLoot",
-      "type": "procedure",
-      "sortid": 20,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "return_json_object_for_loot",
-      "metadata": {
-        "return_type": "jsonobject",
-        "files": [
-          "src/main/java/fr/eriniumgroups/eriniumcrate/procedures/ReturnJsonObjectForLootProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Loot"
-    },
-    {
-      "name": "Prev",
-      "type": "procedure",
-      "sortid": 21,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "prev",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/eriniumcrate/procedures/PrevProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Loot"
-    },
-    {
-      "name": "Next",
-      "type": "procedure",
-      "sortid": 22,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "next",
-      "metadata": {
-        "files": [
-          "src/main/java/fr/eriniumgroups/eriniumcrate/procedures/NextProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Loot"
-    },
-    {
-      "name": "ReturnPage",
-      "type": "procedure",
-      "sortid": 23,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "return_page",
-      "metadata": {
-        "return_type": "string",
-        "files": [
-          "src/main/java/fr/eriniumgroups/eriniumcrate/procedures/ReturnPageProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Loot"
     }
   ],
   "variable_elements": [
