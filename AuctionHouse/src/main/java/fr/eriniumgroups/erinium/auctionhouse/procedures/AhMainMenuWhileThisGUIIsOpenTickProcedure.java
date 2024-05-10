@@ -1,7 +1,6 @@
 package fr.eriniumgroups.erinium.auctionhouse.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
@@ -12,6 +11,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.StringTag;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.client.gui.components.EditBox;
 
 import java.util.function.Supplier;
@@ -25,9 +25,6 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.auctionhouse.network.EriniumAhModVariables;
 
-import com.google.gson.JsonObject;
-import com.google.gson.Gson;
-
 public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 	public static void execute(LevelAccessor world, Entity entity, HashMap guistate) {
 		if (entity == null || guistate == null)
@@ -40,8 +37,8 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 		double Count = 0;
 		double slot_count = 0;
 		double lore_count = 0;
-		if (!(entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_initialised) {
-			Count = (entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_page * 7;
+		if (!entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_initialised) {
+			Count = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_page * 7;
 			slot_count = 0;
 			whilecount = 0;
 			String cheminDossier = (FMLPaths.GAMEDIR.get().toString() + "/EriniumAH/");
@@ -67,9 +64,9 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 												jsonstringbuilder.append(line);
 											}
 											bufferedReader.close();
-											JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+											JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 											java.util.List<net.minecraft.network.chat.Component> componentList = new java.util.ArrayList<>();
-											tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
+											tempItem = new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
 											lore_count = 0;
 											if (!(tempItem.getItem() == Blocks.AIR.asItem())) {
 												while (JsonObject.has(("lore" + new java.text.DecimalFormat("##").format(lore_count)))) {
@@ -114,7 +111,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 												tempItem.getOrCreateTag().putDouble("quantity", JsonObject.get("quantity").getAsDouble());
 												tempItem.getOrCreateTag().putDouble("price", JsonObject.get("price").getAsDouble());
 												if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-													ItemStack _setstack = tempItem;
+													ItemStack _setstack = tempItem.copy();
 													_setstack.setCount(1);
 													((Slot) _slots.get((int) slot_count)).set(_setstack);
 													_player.containerMenu.broadcastChanges();
@@ -136,9 +133,9 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 												jsonstringbuilder.append(line);
 											}
 											bufferedReader.close();
-											JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+											JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 											java.util.List<net.minecraft.network.chat.Component> componentList = new java.util.ArrayList<>();
-											tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
+											tempItem = new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
 											if (!(tempItem.getItem() == Blocks.AIR.asItem()) && (tempItem.getDisplayName().getString()).contains(guistate.containsKey("text:search") ? ((EditBox) guistate.get("text:search")).getValue() : "")) {
 												lore_count = 0;
 												while (JsonObject.has(("lore" + new java.text.DecimalFormat("##").format(lore_count)))) {
@@ -183,7 +180,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 												tempItem.getOrCreateTag().putDouble("quantity", JsonObject.get("quantity").getAsDouble());
 												tempItem.getOrCreateTag().putDouble("price", JsonObject.get("price").getAsDouble());
 												if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-													ItemStack _setstack = tempItem;
+													ItemStack _setstack = tempItem.copy();
 													_setstack.setCount(1);
 													((Slot) _slots.get((int) slot_count)).set(_setstack);
 													_player.containerMenu.broadcastChanges();
@@ -208,9 +205,9 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 											jsonstringbuilder.append(line);
 										}
 										bufferedReader.close();
-										JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+										JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 										java.util.List<net.minecraft.network.chat.Component> componentList = new java.util.ArrayList<>();
-										tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
+										tempItem = new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
 										if (!(tempItem.getItem() == Blocks.AIR.asItem())) {
 											lore_count = 0;
 											while (JsonObject.has(("lore" + new java.text.DecimalFormat("##").format(lore_count)))) {
@@ -255,7 +252,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 											tempItem.getOrCreateTag().putDouble("quantity", JsonObject.get("quantity").getAsDouble());
 											tempItem.getOrCreateTag().putDouble("price", JsonObject.get("price").getAsDouble());
 											if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-												ItemStack _setstack = tempItem;
+												ItemStack _setstack = tempItem.copy();
 												_setstack.setCount(1);
 												((Slot) _slots.get((int) slot_count)).set(_setstack);
 												_player.containerMenu.broadcastChanges();
@@ -277,9 +274,9 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 											jsonstringbuilder.append(line);
 										}
 										bufferedReader.close();
-										JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+										JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 										java.util.List<net.minecraft.network.chat.Component> componentList = new java.util.ArrayList<>();
-										tempItem = new ItemStack(ForgeRegistries.ITEMS.getValue(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
+										tempItem = new ItemStack(BuiltInRegistries.ITEM.get(new ResourceLocation((JsonObject.get("item").getAsString()).toLowerCase(java.util.Locale.ENGLISH))));
 										if (!(tempItem.getItem() == Blocks.AIR.asItem()) && (tempItem.getDisplayName().getString()).contains(guistate.containsKey("text:search") ? ((EditBox) guistate.get("text:search")).getValue() : "")) {
 											lore_count = 0;
 											while (JsonObject.has(("lore" + new java.text.DecimalFormat("##").format(lore_count)))) {
@@ -324,7 +321,7 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 											tempItem.getOrCreateTag().putDouble("quantity", JsonObject.get("quantity").getAsDouble());
 											tempItem.getOrCreateTag().putDouble("price", JsonObject.get("price").getAsDouble());
 											if (entity instanceof Player _player && _player.containerMenu instanceof Supplier _current && _current.get() instanceof Map _slots) {
-												ItemStack _setstack = tempItem;
+												ItemStack _setstack = tempItem.copy();
 												_setstack.setCount(1);
 												((Slot) _slots.get((int) slot_count)).set(_setstack);
 												_player.containerMenu.broadcastChanges();
@@ -345,11 +342,9 @@ public class AhMainMenuWhileThisGUIIsOpenTickProcedure {
 				System.out.println("Le dossier n'existe pas ou n'est pas un dossier valide.");
 			}
 			{
-				boolean _setval = true;
-				entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ah_initialised = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumAhModVariables.PlayerVariables _vars = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES);
+				_vars.ah_initialised = true;
+				_vars.syncPlayerVariables(entity);
 			}
 		}
 	}

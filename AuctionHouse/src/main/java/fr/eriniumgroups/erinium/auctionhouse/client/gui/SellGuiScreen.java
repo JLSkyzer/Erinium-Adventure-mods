@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.auctionhouse.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -16,7 +18,6 @@ import java.util.HashMap;
 import fr.eriniumgroups.erinium.auctionhouse.world.inventory.SellGuiMenu;
 import fr.eriniumgroups.erinium.auctionhouse.procedures.ReturnSellQuantityProcedure;
 import fr.eriniumgroups.erinium.auctionhouse.network.SellGuiButtonMessage;
-import fr.eriniumgroups.erinium.auctionhouse.EriniumAhMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -45,7 +46,7 @@ public class SellGuiScreen extends AbstractContainerScreen<SellGuiMenu> {
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		price.render(guiGraphics, mouseX, mouseY, partialTicks);
 		quantity.render(guiGraphics, mouseX, mouseY, partialTicks);
@@ -75,24 +76,12 @@ public class SellGuiScreen extends AbstractContainerScreen<SellGuiMenu> {
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-		price.tick();
-		quantity.tick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_ah.sell_gui.label_sell_item"), 60, 4, -12829636, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_ah.sell_gui.label_price_unity"), 6, 40, -12829636, false);
 		guiGraphics.drawString(this.font,
 
 				ReturnSellQuantityProcedure.execute(entity), 6, 76, -12829636, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
@@ -108,13 +97,15 @@ public class SellGuiScreen extends AbstractContainerScreen<SellGuiMenu> {
 		this.addWidget(this.quantity);
 		button_sell = Button.builder(Component.translatable("gui.erinium_ah.sell_gui.button_sell"), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new SellGuiButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new SellGuiButtonMessage(0, x, y, z));
 				SellGuiButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 60, this.topPos + 130, 46, 20).build();
 		guistate.put("button:button_sell", button_sell);
 		this.addRenderableWidget(button_sell);
-		announce = new Checkbox(this.leftPos + 6, this.topPos + 112, 20, 20, Component.translatable("gui.erinium_ah.sell_gui.announce"), false);
+		announce = Checkbox.builder(Component.translatable("gui.erinium_ah.sell_gui.announce"), this.font).pos(this.leftPos + 6, this.topPos + 112)
+
+				.build();
 		guistate.put("checkbox:announce", announce);
 		this.addRenderableWidget(announce);
 	}

@@ -8,6 +8,6 @@ public class ReturnThemeStringProcedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		return (entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).theme;
+		return entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).theme;
 	}
 }

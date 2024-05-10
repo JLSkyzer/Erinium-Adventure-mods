@@ -1,11 +1,14 @@
 package fr.eriniumgroups.erinium.auctionhouse.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.GuiGraphics;
 
@@ -13,7 +16,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.auctionhouse.world.inventory.ThemeSelect0Menu;
 import fr.eriniumgroups.erinium.auctionhouse.network.ThemeSelect0ButtonMessage;
-import fr.eriniumgroups.erinium.auctionhouse.EriniumAhMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -40,7 +42,7 @@ public class ThemeSelect0Screen extends AbstractContainerScreen<ThemeSelect0Menu
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -66,11 +68,6 @@ public class ThemeSelect0Screen extends AbstractContainerScreen<ThemeSelect0Menu
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_ah.theme_select_0.label_dark"), -125, 4, -3407872, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_ah.theme_select_0.label_white"), 18, 4, -3407872, false);
@@ -79,43 +76,61 @@ public class ThemeSelect0Screen extends AbstractContainerScreen<ThemeSelect0Menu
 	}
 
 	@Override
-	public void onClose() {
-		super.onClose();
-	}
-
-	@Override
 	public void init() {
 		super.init();
-		imagebutton_dark_btn = new ImageButton(this.leftPos + -124, this.topPos + 15, 138, 68, 0, 0, 68, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_dark_btn.png"), 138, 136, e -> {
-			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new ThemeSelect0ButtonMessage(0, x, y, z));
-				ThemeSelect0ButtonMessage.handleButtonAction(entity, 0, x, y, z);
+		imagebutton_dark_btn = new ImageButton(this.leftPos + -124, this.topPos + 15, 138, 68, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/dark_btn.png"), new ResourceLocation("erinium_ah:textures/screens/dark_btn.png")),
+				e -> {
+					if (true) {
+						PacketDistributor.SERVER.noArg().send(new ThemeSelect0ButtonMessage(0, x, y, z));
+						ThemeSelect0ButtonMessage.handleButtonAction(entity, 0, x, y, z);
+					}
+				}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
 			}
-		});
+		};
 		guistate.put("button:imagebutton_dark_btn", imagebutton_dark_btn);
 		this.addRenderableWidget(imagebutton_dark_btn);
-		imagebutton_white_btn = new ImageButton(this.leftPos + 19, this.topPos + 15, 138, 68, 0, 0, 68, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_white_btn.png"), 138, 136, e -> {
-			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new ThemeSelect0ButtonMessage(1, x, y, z));
-				ThemeSelect0ButtonMessage.handleButtonAction(entity, 1, x, y, z);
+		imagebutton_white_btn = new ImageButton(this.leftPos + 19, this.topPos + 15, 138, 68, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/white_btn.png"), new ResourceLocation("erinium_ah:textures/screens/white_btn.png")),
+				e -> {
+					if (true) {
+						PacketDistributor.SERVER.noArg().send(new ThemeSelect0ButtonMessage(1, x, y, z));
+						ThemeSelect0ButtonMessage.handleButtonAction(entity, 1, x, y, z);
+					}
+				}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
 			}
-		});
+		};
 		guistate.put("button:imagebutton_white_btn", imagebutton_white_btn);
 		this.addRenderableWidget(imagebutton_white_btn);
-		imagebutton_red_btn = new ImageButton(this.leftPos + 162, this.topPos + 15, 138, 68, 0, 0, 68, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_red_btn.png"), 138, 136, e -> {
+		imagebutton_red_btn = new ImageButton(this.leftPos + 162, this.topPos + 15, 138, 68, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/red_btn.png"), new ResourceLocation("erinium_ah:textures/screens/red_btn.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new ThemeSelect0ButtonMessage(2, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new ThemeSelect0ButtonMessage(2, x, y, z));
 				ThemeSelect0ButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_red_btn", imagebutton_red_btn);
 		this.addRenderableWidget(imagebutton_red_btn);
-		imagebutton_blueroyal_purple_bnt = new ImageButton(this.leftPos + -124, this.topPos + 133, 138, 68, 0, 0, 68, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_blueroyal_purple_bnt.png"), 138, 136, e -> {
-			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new ThemeSelect0ButtonMessage(3, x, y, z));
-				ThemeSelect0ButtonMessage.handleButtonAction(entity, 3, x, y, z);
+		imagebutton_blueroyal_purple_bnt = new ImageButton(this.leftPos + -124, this.topPos + 133, 138, 68,
+				new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/blueroyal_purple_bnt.png"), new ResourceLocation("erinium_ah:textures/screens/blueroyal_purple_bnt.png")), e -> {
+					if (true) {
+						PacketDistributor.SERVER.noArg().send(new ThemeSelect0ButtonMessage(3, x, y, z));
+						ThemeSelect0ButtonMessage.handleButtonAction(entity, 3, x, y, z);
+					}
+				}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
 			}
-		});
+		};
 		guistate.put("button:imagebutton_blueroyal_purple_bnt", imagebutton_blueroyal_purple_bnt);
 		this.addRenderableWidget(imagebutton_blueroyal_purple_bnt);
 	}

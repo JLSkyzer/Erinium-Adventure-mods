@@ -1,5 +1,7 @@
 package fr.eriniumgroups.erinium.auctionhouse.client.gui;
 
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -12,7 +14,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.auctionhouse.world.inventory.DeleteItemsMenu;
 import fr.eriniumgroups.erinium.auctionhouse.network.DeleteItemsButtonMessage;
-import fr.eriniumgroups.erinium.auctionhouse.EriniumAhMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -36,7 +37,7 @@ public class DeleteItemsScreen extends AbstractContainerScreen<DeleteItemsMenu> 
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
 	}
@@ -59,18 +60,8 @@ public class DeleteItemsScreen extends AbstractContainerScreen<DeleteItemsMenu> 
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_ah.delete_items.label_are_you_sure_you_want_to_delete"), -21, 70, -3407872, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
@@ -78,7 +69,7 @@ public class DeleteItemsScreen extends AbstractContainerScreen<DeleteItemsMenu> 
 		super.init();
 		button_yes = Button.builder(Component.translatable("gui.erinium_ah.delete_items.button_yes"), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new DeleteItemsButtonMessage(0, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new DeleteItemsButtonMessage(0, x, y, z));
 				DeleteItemsButtonMessage.handleButtonAction(entity, 0, x, y, z);
 			}
 		}).bounds(this.leftPos + 69, this.topPos + 88, 40, 20).build();

@@ -8,8 +8,6 @@ public class QuantityProcedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		return "Quantity ("
-				+ new java.text.DecimalFormat("##").format(((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getDouble("quantity"))
-				+ ")";
+		return "Quantity (" + new java.text.DecimalFormat("##").format(entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getDouble("quantity")) + ")";
 	}
 }

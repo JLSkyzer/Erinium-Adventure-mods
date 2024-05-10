@@ -8,6 +8,6 @@ public class ReturnSellQuantityProcedure {
 	public static String execute(Entity entity) {
 		if (entity == null)
 			return "";
-		return "\u00A79Quantity (max: " + new java.text.DecimalFormat("##").format((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).selltempquantity) + ")";
+		return "\u00A79Quantity (max: " + new java.text.DecimalFormat("##").format(entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).selltempquantity) + ")";
 	}
 }

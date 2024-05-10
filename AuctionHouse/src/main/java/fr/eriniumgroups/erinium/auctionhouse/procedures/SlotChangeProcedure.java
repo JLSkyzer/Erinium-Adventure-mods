@@ -9,11 +9,9 @@ public class SlotChangeProcedure {
 		if (entity == null)
 			return;
 		{
-			boolean _setval = false;
-			entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.sell_loaded = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumAhModVariables.PlayerVariables _vars = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES);
+			_vars.sell_loaded = false;
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }

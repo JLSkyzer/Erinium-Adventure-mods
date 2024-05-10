@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.auctionhouse.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
@@ -13,9 +13,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.auctionhouse.network.EriniumAhModVariables;
-
-import com.google.gson.JsonObject;
-import com.google.gson.Gson;
 
 public class YesBtnProcedure {
 	public static void execute(Entity entity) {
@@ -34,14 +31,14 @@ public class YesBtnProcedure {
 					jsonstringbuilder.append(line);
 				}
 				bufferedReader.close();
-				JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+				JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 				quantity = JsonObject.get("quantity").getAsDouble();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 		if (entity instanceof Player _player) {
-			ItemStack _setstack = ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item);
+			ItemStack _setstack = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.copy();
 			_setstack.setCount((int) quantity);
 			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 		}

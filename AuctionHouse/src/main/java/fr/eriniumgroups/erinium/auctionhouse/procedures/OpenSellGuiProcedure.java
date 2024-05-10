@@ -1,7 +1,5 @@
 package fr.eriniumgroups.erinium.auctionhouse.procedures;
 
-import net.minecraftforge.network.NetworkHooks;
-
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
@@ -23,15 +21,13 @@ public class OpenSellGuiProcedure {
 		if (entity == null)
 			return;
 		{
-			double _setval = 0;
-			entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.selltempquantity = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumAhModVariables.PlayerVariables _vars = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES);
+			_vars.selltempquantity = 0;
+			_vars.syncPlayerVariables(entity);
 		}
 		if (entity instanceof ServerPlayer _ent) {
 			BlockPos _bpos = BlockPos.containing(x, y, z);
-			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
+			_ent.openMenu(new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
 					return Component.literal("SellGui");

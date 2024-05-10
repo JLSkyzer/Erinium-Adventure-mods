@@ -1,14 +1,15 @@
 package fr.eriniumgroups.erinium.auctionhouse.client.gui;
 
 import fr.eriniumgroups.erinium.auctionhouse.procedures.*;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.Font;
+import net.neoforged.neoforge.network.PacketDistributor;
+
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.components.WidgetSprites;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.GuiGraphics;
@@ -17,7 +18,6 @@ import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.auctionhouse.world.inventory.AhMainMenuMenu;
 import fr.eriniumgroups.erinium.auctionhouse.network.AhMainMenuButtonMessage;
-import fr.eriniumgroups.erinium.auctionhouse.EriniumAhMod;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 
@@ -53,7 +53,7 @@ public class AhMainMenuScreen extends AbstractContainerScreen<AhMainMenuMenu> {
 
 	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-		this.renderBackground(guiGraphics);
+		this.renderBackground(guiGraphics, mouseX, mouseY, partialTicks);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		search.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
@@ -83,119 +83,95 @@ public class AhMainMenuScreen extends AbstractContainerScreen<AhMainMenuMenu> {
 	}
 
 	@Override
-	public void containerTick() {
-		super.containerTick();
-		search.tick();
-	}
-
-	private String MakeString(int width, String text){
-		Font font = Minecraft.getInstance().font;
-
-		String resulttext = text;
-		int maxWidth = width;
-
-		if (font.width(resulttext) > maxWidth) {
-			resulttext = font.plainSubstrByWidth(resulttext, maxWidth - font.width("...")) + "...";
-		}
-
-		return resulttext;
-	}
-
-	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
 		guiGraphics.drawString(this.font,
 
-				MakeString(160, Line0ItemNameProcedure.execute(entity)), 25, 32, -12829636, false);
+				Line0ItemNameProcedure.execute(entity), 25, 32, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(160, Line1ItemNameProcedure.execute(entity)), 25, 63, -12829636, false);
+				Line1ItemNameProcedure.execute(entity), 25, 63, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(160, Line2ItemNameProcedure.execute(entity)), 25, 94, -12829636, false);
+				Line2ItemNameProcedure.execute(entity), 25, 94, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(160, Line3ItemNameProcedure.execute(entity)), 25, 125, -12829636, false);
+				Line3ItemNameProcedure.execute(entity), 25, 125, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(160, Line4ItemNameProcedure.execute(entity)), 25, 156, -12829636, false);
+				Line4ItemNameProcedure.execute(entity), 25, 156, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(160, Line5ItemNameProcedure.execute(entity)), 25, 187, -12829636, false);
+				Line5ItemNameProcedure.execute(entity), 25, 187, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(160, Line6ItemNameProcedure.execute(entity)), 25, 218, -12829636, false);
+				Line6PlayerNameProcedure.execute(entity), 25, 218, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(100, Line0PlayerNameProcedure.execute(entity)), 186, 32, -12829636, false);
+				Line0PlayerNameProcedure.execute(entity), 186, 32, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(100, Line1PlayerNameProcedure.execute(entity)), 186, 63, -12829636, false);
+				Line1PlayerNameProcedure.execute(entity), 186, 63, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(100, Line2PlayerNameProcedure.execute(entity)), 186, 94, -12829636, false);
+				Line2PlayerNameProcedure.execute(entity), 186, 94, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(100, Line3PlayerNameProcedure.execute(entity)), 186, 125, -12829636, false);
+				Line3PlayerNameProcedure.execute(entity), 186, 125, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(100, Line4PlayerNameProcedure.execute(entity)), 186, 156, -12829636, false);
+				Line4PlayerNameProcedure.execute(entity), 186, 156, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(100, Line5PlayerNameProcedure.execute(entity)), 186, 187, -12829636, false);
+				Line5PlayerNameProcedure.execute(entity), 186, 187, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(100, Line6PlayerNameProcedure.execute(entity)), 186, 218, -12829636, false);
+				Line6PlayerNameProcedure.execute(entity), 186, 218, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line0QuantityProcedure.execute(entity)), 287, 27, -12829636, false);
+				Line0QuantityProcedure.execute(entity), 287, 27, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line0PriceProcedure.execute(entity)), 287, 37, -12829636, false);
+				Line0PriceProcedure.execute(entity), 287, 37, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line1QuantityProcedure.execute(entity)), 287, 58, -12829636, false);
+				Line1QuantityProcedure.execute(entity), 287, 58, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line1PriceProcedure.execute(entity)), 287, 68, -12829636, false);
+				Line1PriceProcedure.execute(entity), 287, 68, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line2QuantityProcedure.execute(entity)), 287, 89, -12829636, false);
+				Line2QuantityProcedure.execute(entity), 287, 89, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line2PriceProcedure.execute(entity)), 287, 99, -12829636, false);
+				Line2PriceProcedure.execute(entity), 287, 99, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line3QuantityProcedure.execute(entity)), 287, 120, -12829636, false);
+				Line3QuantityProcedure.execute(entity), 287, 120, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line3PriceProcedure.execute(entity)), 287, 130, -12829636, false);
+				Line3PriceProcedure.execute(entity), 287, 130, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line4QuantityProcedure.execute(entity)), 287, 151, -12829636, false);
+				Line4QuantityProcedure.execute(entity), 287, 151, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line4PriceProcedure.execute(entity)), 287, 161, -12829636, false);
+				Line4PriceProcedure.execute(entity), 287, 161, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line5QuantityProcedure.execute(entity)), 287, 182, -12829636, false);
+				Line5QuantityProcedure.execute(entity), 287, 182, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line5PriceProcedure.execute(entity)), 287, 192, -12829636, false);
+				Line5PriceProcedure.execute(entity), 287, 192, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line6QuantityProcedure.execute(entity)), 287, 213, -12829636, false);
+				Line6QuantityProcedure.execute(entity), 287, 213, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				MakeString(60, Line6PriceProcedure.execute(entity)), 287, 223, -12829636, false);
+				Line6PriceProcedure.execute(entity), 287, 223, -12829636, false);
 		guiGraphics.drawString(this.font,
 
-				GetMoneyMainPageProcedure.execute(world, entity), 427 - this.font.width(GetMoneyMainPageProcedure.execute(world, entity)) - 1, 1, -12829636, false);
+				GetMoneyMainPageProcedure.execute(world, entity), 343, 0, -12829636, false);
 		guiGraphics.drawString(this.font, Component.translatable("gui.erinium_ah.ah_main_menu.label_market"), 1, 1, -16750951, false);
-	}
-
-	@Override
-	public void onClose() {
-		super.onClose();
 	}
 
 	@Override
@@ -205,84 +181,135 @@ public class AhMainMenuScreen extends AbstractContainerScreen<AhMainMenuMenu> {
 		search.setMaxLength(32767);
 		guistate.put("text:search", search);
 		this.addWidget(this.search);
-		imagebutton_search_btn = new ImageButton(this.leftPos + 258, this.topPos + 0, 20, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_search_btn.png"), 20, 40, e -> {
-			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(0, x, y, z));
-				AhMainMenuButtonMessage.handleButtonAction(entity, 0, x, y, z);
+		imagebutton_search_btn = new ImageButton(this.leftPos + 258, this.topPos + 0, 20, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/search_btn.png"), new ResourceLocation("erinium_ah:textures/screens/search_btn.png")),
+				e -> {
+					if (true) {
+						PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(0, x, y, z));
+						AhMainMenuButtonMessage.handleButtonAction(entity, 0, x, y, z);
+					}
+				}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
 			}
-		});
+		};
 		guistate.put("button:imagebutton_search_btn", imagebutton_search_btn);
 		this.addRenderableWidget(imagebutton_search_btn);
-		imagebutton_buy = new ImageButton(this.leftPos + 348, this.topPos + 27, 54, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_buy.png"), 54, 40, e -> {
+		imagebutton_buy = new ImageButton(this.leftPos + 348, this.topPos + 27, 54, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/buy.png"), new ResourceLocation("erinium_ah:textures/screens/buy.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(1, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(1, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 1, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_buy", imagebutton_buy);
 		this.addRenderableWidget(imagebutton_buy);
-		imagebutton_buy1 = new ImageButton(this.leftPos + 348, this.topPos + 58, 54, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_buy1.png"), 54, 40, e -> {
+		imagebutton_buy1 = new ImageButton(this.leftPos + 348, this.topPos + 58, 54, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/buy.png"), new ResourceLocation("erinium_ah:textures/screens/buy.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(2, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(2, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 2, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_buy1", imagebutton_buy1);
 		this.addRenderableWidget(imagebutton_buy1);
-		imagebutton_buy2 = new ImageButton(this.leftPos + 348, this.topPos + 89, 54, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_buy2.png"), 54, 40, e -> {
+		imagebutton_buy2 = new ImageButton(this.leftPos + 348, this.topPos + 89, 54, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/buy.png"), new ResourceLocation("erinium_ah:textures/screens/buy.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(3, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(3, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 3, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_buy2", imagebutton_buy2);
 		this.addRenderableWidget(imagebutton_buy2);
-		imagebutton_buy3 = new ImageButton(this.leftPos + 348, this.topPos + 120, 54, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_buy3.png"), 54, 40, e -> {
+		imagebutton_buy3 = new ImageButton(this.leftPos + 348, this.topPos + 120, 54, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/buy.png"), new ResourceLocation("erinium_ah:textures/screens/buy.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(4, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(4, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 4, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_buy3", imagebutton_buy3);
 		this.addRenderableWidget(imagebutton_buy3);
-		imagebutton_buy4 = new ImageButton(this.leftPos + 348, this.topPos + 151, 54, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_buy4.png"), 54, 40, e -> {
+		imagebutton_buy4 = new ImageButton(this.leftPos + 348, this.topPos + 151, 54, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/buy.png"), new ResourceLocation("erinium_ah:textures/screens/buy.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(5, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(5, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 5, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_buy4", imagebutton_buy4);
 		this.addRenderableWidget(imagebutton_buy4);
-		imagebutton_buy5 = new ImageButton(this.leftPos + 348, this.topPos + 182, 54, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_buy5.png"), 54, 40, e -> {
+		imagebutton_buy5 = new ImageButton(this.leftPos + 348, this.topPos + 182, 54, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/buy.png"), new ResourceLocation("erinium_ah:textures/screens/buy.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(6, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(6, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 6, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_buy5", imagebutton_buy5);
 		this.addRenderableWidget(imagebutton_buy5);
-		imagebutton_buy6 = new ImageButton(this.leftPos + 348, this.topPos + 213, 54, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_buy6.png"), 54, 40, e -> {
+		imagebutton_buy6 = new ImageButton(this.leftPos + 348, this.topPos + 213, 54, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/buy.png"), new ResourceLocation("erinium_ah:textures/screens/buy.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(7, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(7, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 7, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_buy6", imagebutton_buy6);
 		this.addRenderableWidget(imagebutton_buy6);
-		imagebutton_up = new ImageButton(this.leftPos + 406, this.topPos + 21, 20, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_up.png"), 20, 40, e -> {
+		imagebutton_up = new ImageButton(this.leftPos + 406, this.topPos + 21, 20, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/up.png"), new ResourceLocation("erinium_ah:textures/screens/up.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(8, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(8, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 8, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_up", imagebutton_up);
 		this.addRenderableWidget(imagebutton_up);
-		imagebutton_down = new ImageButton(this.leftPos + 406, this.topPos + 219, 20, 20, 0, 0, 20, new ResourceLocation("erinium_ah:textures/screens/atlas/imagebutton_down.png"), 20, 40, e -> {
+		imagebutton_down = new ImageButton(this.leftPos + 406, this.topPos + 219, 20, 20, new WidgetSprites(new ResourceLocation("erinium_ah:textures/screens/down.png"), new ResourceLocation("erinium_ah:textures/screens/down.png")), e -> {
 			if (true) {
-				EriniumAhMod.PACKET_HANDLER.sendToServer(new AhMainMenuButtonMessage(9, x, y, z));
+				PacketDistributor.SERVER.noArg().send(new AhMainMenuButtonMessage(9, x, y, z));
 				AhMainMenuButtonMessage.handleButtonAction(entity, 9, x, y, z);
 			}
-		});
+		}) {
+			@Override
+			public void renderWidget(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
+				guiGraphics.blit(sprites.get(isActive(), isHoveredOrFocused()), getX(), getY(), 0, 0, width, height, width, height);
+			}
+		};
 		guistate.put("button:imagebutton_down", imagebutton_down);
 		this.addRenderableWidget(imagebutton_down);
 	}

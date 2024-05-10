@@ -13,18 +13,14 @@ public class BlueroyalpurpleProcedure {
 		if (entity instanceof Player _player)
 			_player.closeContainer();
 		{
-			String _setval = "\u00A7f";
-			entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.theme_text_color = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumAhModVariables.PlayerVariables _vars = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES);
+			_vars.theme_text_color = "\u00A7f";
+			_vars.syncPlayerVariables(entity);
 		}
 		{
-			String _setval = "blueroyal_purple";
-			entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.theme = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumAhModVariables.PlayerVariables _vars = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES);
+			_vars.theme = "blueroyal_purple";
+			_vars.syncPlayerVariables(entity);
 		}
 		if (entity instanceof Player _player && !_player.level().isClientSide())
 			_player.displayClientMessage(Component.literal("Set to red"), false);

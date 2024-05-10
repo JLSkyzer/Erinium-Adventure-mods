@@ -2,9 +2,9 @@ package fr.eriniumgroups.erinium.auctionhouse.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.ModList;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -17,7 +17,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.Minecraft;
 
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -29,11 +28,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.auctionhouse.network.EriniumAhModVariables;
-import fr.eriniumgroups.erinium.auctionhouse.client.toasts.NotEnoughtMoneyToast;
-
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 public class BuyBtnProcedure {
 	public static void execute(LevelAccessor world, Entity entity, HashMap guistate) {
@@ -44,8 +38,7 @@ public class BuyBtnProcedure {
 		double quantity = 0;
 		String finalText = "";
 		boolean needToBeDelete = false;
-		file = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumAH/"),
-				File.separator + (((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getString("id")));
+		file = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumAH/"), File.separator + (entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getString("id")));
 		if (file.exists()) {
 			quantity = new Object() {
 				double convert(String s) {
@@ -57,8 +50,8 @@ public class BuyBtnProcedure {
 				}
 			}.convert(guistate.containsKey("text:quantity") ? ((EditBox) guistate.get("text:quantity")).getValue() : "");
 			needToBeDelete = false;
-			if (quantity > 0 && quantity <= ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getDouble("quantity")) {
-				if (!(quantity * ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getDouble("price") > new Object() {
+			if (quantity > 0 && quantity <= entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getDouble("quantity")) {
+				if (!(quantity * entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getDouble("price") > new Object() {
 					private double getPlayerMoney(Entity entity) {
 						if (ModList.get().isLoaded("ericonomy")) {
 							// Procedure here
@@ -74,7 +67,7 @@ public class BuyBtnProcedure {
 									jsonstringbuilder.append(line);
 								}
 								bufferedReader.close();
-								eriJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+								eriJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 								// Retour
 								returnnbr = eriJsonObject.get("money").getAsDouble();
 							} catch (IOException e) {
@@ -103,7 +96,7 @@ public class BuyBtnProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							JsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 							if (JsonObject.get("quantity").getAsDouble() - quantity <= 0) {
 								needToBeDelete = true;
 							} else {
@@ -139,16 +132,14 @@ public class BuyBtnProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							eriJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-							if (eriJsonObject.get("money").getAsDouble() >= (quantity
-									* ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getDouble("price"))) {
-								eriJsonObject.addProperty("money", (eriJsonObject.get("money").getAsDouble()
-										- (quantity * ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getDouble("price"))));
+							eriJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							if (eriJsonObject.get("money").getAsDouble() >= (quantity * entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getDouble("price"))) {
+								eriJsonObject.addProperty("money", (eriJsonObject.get("money").getAsDouble() - (quantity * entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getDouble("price"))));
 							} else {
 								eriJsonObject.addProperty("money", 0);
 							}
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(eriFile);
 									fileWriter.write(mainGSONBuilderVariable.toJson(eriJsonObject));
@@ -173,8 +164,7 @@ public class BuyBtnProcedure {
 						// Procedure here
 						java.io.File eriFile = new java.io.File("");
 						com.google.gson.JsonObject eriJsonObject = new com.google.gson.JsonObject();
-						eriFile = new File((FMLPaths.GAMEDIR.get().toString() + "/Ericonomy/accounts/"),
-								File.separator + ((((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getString("uuid")) + ".json"));
+						eriFile = new File((FMLPaths.GAMEDIR.get().toString() + "/Ericonomy/accounts/"), File.separator + ((entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getString("uuid")) + ".json"));
 						try {
 							BufferedReader bufferedReader = new BufferedReader(new FileReader(eriFile));
 							StringBuilder jsonstringbuilder = new StringBuilder();
@@ -183,11 +173,10 @@ public class BuyBtnProcedure {
 								jsonstringbuilder.append(line);
 							}
 							bufferedReader.close();
-							eriJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
-							eriJsonObject.addProperty("money", (eriJsonObject.get("money").getAsDouble()
-									+ (quantity * ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getDouble("price"))));
+							eriJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+							eriJsonObject.addProperty("money", (eriJsonObject.get("money").getAsDouble() + (quantity * entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getDouble("price"))));
 							{
-								Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+								com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 								try {
 									FileWriter fileWriter = new FileWriter(eriFile);
 									fileWriter.write(mainGSONBuilderVariable.toJson(eriJsonObject));
@@ -209,25 +198,25 @@ public class BuyBtnProcedure {
 						}
 					}
 					for (Entity entityiterator : new ArrayList<>(world.players())) {
-						if ((entityiterator.getDisplayName().getString())
-								.equals(((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getString("player"))) {
+						if ((entityiterator.getDisplayName().getString()).equals(entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getString("player"))) {
 							if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-								_player.displayClientMessage(Component.literal(("\u00A76Erinium AH >>> \u00A7a+"
-										+ new java.text.DecimalFormat("#,###.##")
-												.format(quantity * ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getDouble("price"))
-										+ "$ \u00A7ereason : item sell")), false);
+								_player.displayClientMessage(
+										Component.literal(("\u00A76Erinium AH >>> \u00A7a+"
+												+ new java.text.DecimalFormat("#,###.##").format(quantity * entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getDouble("price")) + "$ \u00A7ereason : item sell")),
+										false);
 							break;
 						}
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item);
+						ItemStack _setstack = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.copy();
 						_setstack.setCount((int) quantity);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entity instanceof Player _player)
 						_player.closeContainer();
 				} else {
-					Minecraft.getInstance().getToasts().addToast(new NotEnoughtMoneyToast());
+					if (entity instanceof Player _player && !_player.level().isClientSide())
+						_player.displayClientMessage(Component.literal("\u00A7cNot enough money"), false);
 				}
 			} else {
 				if (guistate.get("text:quantity") instanceof EditBox _tf)

@@ -1,0 +1,1724 @@
+{
+  "mod_elements": [
+    {
+      "name": "AhMainMenu",
+      "type": "gui",
+      "sortid": 32,
+      "compiles": false,
+      "locked_code": true,
+      "registry_name": "ah_main_menu",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/client/gui/AhMainMenuScreen.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/network/AhMainMenuButtonMessage.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/world/inventory/AhMainMenuMenu.java"
+        ]
+      },
+      "path": "~/Menu"
+    },
+    {
+      "name": "Line0ItemName",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_0_item_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line0ItemNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/ItemName"
+    },
+    {
+      "name": "Line1ItemName",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_1_item_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line1ItemNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/ItemName"
+    },
+    {
+      "name": "Line2ItemName",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_2_item_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line2ItemNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/ItemName"
+    },
+    {
+      "name": "Line3ItemName",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_3_item_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line3ItemNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/ItemName"
+    },
+    {
+      "name": "Line4ItemName",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_4_item_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line4ItemNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/ItemName"
+    },
+    {
+      "name": "Line5ItemName",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_5_item_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line5ItemNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/ItemName"
+    },
+    {
+      "name": "Line6ItemName",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_6_item_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line6ItemNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/ItemName"
+    },
+    {
+      "name": "Line0PlayerName",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_0_player_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line0PlayerNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/PlayerName"
+    },
+    {
+      "name": "Line1PlayerName",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_1_player_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line1PlayerNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/PlayerName"
+    },
+    {
+      "name": "Line2PlayerName",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_2_player_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line2PlayerNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/PlayerName"
+    },
+    {
+      "name": "Line3PlayerName",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_3_player_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line3PlayerNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/PlayerName"
+    },
+    {
+      "name": "Line4PlayerName",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_4_player_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line4PlayerNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/PlayerName"
+    },
+    {
+      "name": "Line5PlayerName",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_5_player_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line5PlayerNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/PlayerName"
+    },
+    {
+      "name": "Line6PlayerName",
+      "type": "procedure",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_6_player_name",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line6PlayerNameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/PlayerName"
+    },
+    {
+      "name": "Line0Quantity",
+      "type": "procedure",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_0_quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line0QuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Quantity"
+    },
+    {
+      "name": "Line1Quantity",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_1_quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line1QuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Quantity"
+    },
+    {
+      "name": "Line2Quantity",
+      "type": "procedure",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_2_quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line2QuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Quantity"
+    },
+    {
+      "name": "Line3Quantity",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_3_quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line3QuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Quantity"
+    },
+    {
+      "name": "Line4Quantity",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_4_quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line4QuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Quantity"
+    },
+    {
+      "name": "Line5Quantity",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_5_quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line5QuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Quantity"
+    },
+    {
+      "name": "Line6Quantity",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_6_quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line6QuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Quantity"
+    },
+    {
+      "name": "Line0Price",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_0_price",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line0PriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/price"
+    },
+    {
+      "name": "Line1Price",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_1_price",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line1PriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/price"
+    },
+    {
+      "name": "Line2Price",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_2_price",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line2PriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/price"
+    },
+    {
+      "name": "Line3Price",
+      "type": "procedure",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_3_price",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line3PriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/price"
+    },
+    {
+      "name": "Line4Price",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_4_price",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line4PriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/price"
+    },
+    {
+      "name": "Line5Price",
+      "type": "procedure",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_5_price",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line5PriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/price"
+    },
+    {
+      "name": "Line6Price",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_6_price",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line6PriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/price"
+    },
+    {
+      "name": "AhMainMenuWhileThisGUIIsOpenTick",
+      "type": "procedure",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ah_main_menu_while_this_gui_is_open_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/AhMainMenuWhileThisGUIIsOpenTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu"
+    },
+    {
+      "name": "ClearAll",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clear_all",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/ClearAllProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu"
+    },
+    {
+      "name": "SearchBtn",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "search_btn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/SearchBtnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu"
+    },
+    {
+      "name": "JoinTheWorld",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "join_the_world",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/JoinTheWorldProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu"
+    },
+    {
+      "name": "AH",
+      "type": "command",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ah",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/command/AHCommand.java"
+        ]
+      },
+      "path": "~/Menu/Command"
+    },
+    {
+      "name": "OpenAH",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_ah",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/OpenAHProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Command"
+    },
+    {
+      "name": "Up",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "up",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/UpProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu"
+    },
+    {
+      "name": "Down",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "down",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/DownProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu"
+    },
+    {
+      "name": "BuyGui",
+      "type": "gui",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buy_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/client/gui/BuyGuiScreen.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/world/inventory/BuyGuiMenu.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/network/BuyGuiButtonMessage.java"
+        ]
+      },
+      "path": "~/Menu/Buy Gui"
+    },
+    {
+      "name": "Quantity",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/QuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy Gui"
+    },
+    {
+      "name": "GetMoney",
+      "type": "procedure",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_money",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/GetMoneyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy Gui"
+    },
+    {
+      "name": "Price",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "price",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/PriceProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy Gui"
+    },
+    {
+      "name": "Line0Buy",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_0_buy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line0BuyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy"
+    },
+    {
+      "name": "Line1Buy",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_1_buy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line1BuyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy"
+    },
+    {
+      "name": "Line2Buy",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_2_buy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line2BuyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy"
+    },
+    {
+      "name": "Line3Buy",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_3_buy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line3BuyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy"
+    },
+    {
+      "name": "Line4Buy",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_4_buy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line4BuyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy"
+    },
+    {
+      "name": "Line5Buy",
+      "type": "procedure",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_5_buy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line5BuyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy"
+    },
+    {
+      "name": "Line6Buy",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "line_6_buy",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/Line6BuyProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy"
+    },
+    {
+      "name": "GetMoneyMainPage",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_money_main_page",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/GetMoneyMainPageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu"
+    },
+    {
+      "name": "ReturnThemeString",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_theme_string",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/ReturnThemeStringProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/return"
+    },
+    {
+      "name": "DeleteItems",
+      "type": "gui",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "delete_items",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/client/gui/DeleteItemsScreen.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/world/inventory/DeleteItemsMenu.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/network/DeleteItemsButtonMessage.java"
+        ]
+      },
+      "path": "~/Menu/DeleteGui"
+    },
+    {
+      "name": "GetItemPath",
+      "type": "procedure",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_item_path",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/GetItemPathProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Return"
+    },
+    {
+      "name": "YesBtn",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "yes_btn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/YesBtnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/DeleteGui"
+    },
+    {
+      "name": "BuyBtn",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buy_btn",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/BuyBtnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Buy Gui"
+    },
+    {
+      "name": "SellItem",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sell_item",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/SellItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Command/Sell"
+    },
+    {
+      "name": "SellGui",
+      "type": "gui",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sell_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/world/inventory/SellGuiMenu.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/network/SellGuiButtonMessage.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/network/SellGuiSlotMessage.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/client/gui/SellGuiScreen.java"
+        ]
+      },
+      "path": "~/Menu/Command/Sell"
+    },
+    {
+      "name": "SlotChange",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "slot_change",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/SlotChangeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Command/Sell"
+    },
+    {
+      "name": "ReturnSellQuantity",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_sell_quantity",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/ReturnSellQuantityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Command/Sell"
+    },
+    {
+      "name": "OpenSellGui",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_sell_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/OpenSellGuiProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Command"
+    },
+    {
+      "name": "SellGuiTick",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sell_gui_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/SellGuiTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "guistate",
+            "type": "map"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Command/Sell"
+    },
+    {
+      "name": "ThemeSelect0",
+      "type": "gui",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "theme_select_0",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/client/gui/ThemeSelect0Screen.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/world/inventory/ThemeSelect0Menu.java",
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/network/ThemeSelect0ButtonMessage.java"
+        ]
+      },
+      "path": "~/Menu/Command/Theme"
+    },
+    {
+      "name": "Dark",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dark",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/DarkProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Command/Theme/Button"
+    },
+    {
+      "name": "White",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "white",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/WhiteProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Command/Theme/Button"
+    },
+    {
+      "name": "Red",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "red",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/RedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Command/Theme/Button"
+    },
+    {
+      "name": "Blueroyalpurple",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blueroyalpurple",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/BlueroyalpurpleProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Menu/Command/Theme/Button"
+    },
+    {
+      "name": "OpenThemeSelect",
+      "type": "procedure",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "open_theme_select",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/OpenThemeSelectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Menu/Command"
+    },
+    {
+      "name": "EriniumAH",
+      "type": "command",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "erinium_ah",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/command/EriniumAHCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "GetCommandList",
+      "type": "procedure",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "get_command_list",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroups/erinium/auctionhouse/procedures/GetCommandListProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "ah_initialised",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "ah_page",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "theme_text_color",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "§f"
+    },
+    {
+      "name": "ah_temp_item",
+      "type": "itemstack",
+      "scope": "player_lifetime",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "theme",
+      "type": "string",
+      "scope": "player_persistent",
+      "value": "dark"
+    },
+    {
+      "name": "selltempquantity",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "sell_loaded",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {},
+  "language_map": {
+    "en_us": {
+      "gui.erinium_ah.sell_gui.announce": "Announce (1000$)",
+      "gui.erinium_ah.sell_gui.quantity": "",
+      "gui.erinium_ah.theme_select_0.label_dark": "Dark",
+      "gui.erinium_ah.theme_select_0.label_blue_royal_purple": "Blue royal purple",
+      "gui.erinium_ah.buy_gui.label_buy": "Buy",
+      "gui.erinium_ah.delete_items.label_are_you_sure_you_want_to_delete": "Are you sure you want to delete this item ?",
+      "gui.erinium_ah.delete_items.button_yes": "Yes",
+      "gui.erinium_ah.sell_gui.button_sell": "Sell",
+      "gui.erinium_ah.theme_select_0.label_red": "Red",
+      "gui.erinium_ah.sell_gui.label_quantity": "Quantity",
+      "gui.erinium_ah.buy_gui.label_quantity": "Quantity",
+      "gui.erinium_ah.ah_main_menu.search": "",
+      "gui.erinium_ah.sell_gui.label_price_unity": "Price (unity)",
+      "gui.erinium_ah.sell_gui.price": "",
+      "gui.erinium_ah.theme_select_0.label_white": "White",
+      "gui.erinium_ah.ah_main_menu.label_market": "Market",
+      "gui.erinium_ah.buy_gui.quantity": "",
+      "gui.erinium_ah.buy_gui.label_money": "Money : ",
+      "gui.erinium_ah.sell_gui.label_sell_item": "Sell Item"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Menu",
+        "children": [
+          {
+            "name": "ItemName",
+            "children": []
+          },
+          {
+            "name": "PlayerName",
+            "children": []
+          },
+          {
+            "name": "Quantity",
+            "children": []
+          },
+          {
+            "name": "price",
+            "children": []
+          },
+          {
+            "name": "Buy",
+            "children": []
+          },
+          {
+            "name": "Buy Gui",
+            "children": []
+          },
+          {
+            "name": "DeleteGui",
+            "children": []
+          },
+          {
+            "name": "Return",
+            "children": []
+          },
+          {
+            "name": "Command",
+            "children": [
+              {
+                "name": "Sell",
+                "children": []
+              },
+              {
+                "name": "Theme",
+                "children": [
+                  {
+                    "name": "Button",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "return",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "erinium_ah",
+    "modName": "Erinium AH",
+    "version": "1.0.1",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.20.4",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "fr.eriniumgroups.erinium.auctionhouse"
+  },
+  "mcreatorVersion": 202400118518
+}

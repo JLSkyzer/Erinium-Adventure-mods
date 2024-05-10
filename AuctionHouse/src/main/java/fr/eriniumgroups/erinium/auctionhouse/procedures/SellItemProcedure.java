@@ -2,9 +2,8 @@ package fr.eriniumgroups.erinium.auctionhouse.procedures;
 
 import org.checkerframework.checker.units.qual.s;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.ModList;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -16,11 +15,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Checkbox;
-import net.minecraft.client.Minecraft;
 
 import java.util.function.Supplier;
 import java.util.Map;
@@ -33,11 +32,6 @@ import java.io.File;
 import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.auctionhouse.network.EriniumAhModVariables;
-import fr.eriniumgroups.erinium.auctionhouse.client.toasts.NotEnoughtMoneyToast;
-
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 public class SellItemProcedure {
 	public static void execute(LevelAccessor world, Entity entity, HashMap guistate) {
@@ -67,9 +61,7 @@ public class SellItemProcedure {
 						}
 						return 0;
 					}
-				}.convert(guistate.containsKey("text:quantity")
-						? ((EditBox) guistate.get("text:quantity")).getValue()
-						: "") <= (entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).selltempquantity) {
+				}.convert(guistate.containsKey("text:quantity") ? ((EditBox) guistate.get("text:quantity")).getValue() : "") <= entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).selltempquantity) {
 					file = new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumAH/"), File.separator + (new java.text.DecimalFormat("##").format(idCount) + ".json"));
 					while (file.exists()) {
 						idCount = idCount + 1;
@@ -88,7 +80,7 @@ public class SellItemProcedure {
 					} catch (IOException exception) {
 						exception.printStackTrace();
 					}
-					JsonObject.addProperty("item", (ForgeRegistries.ITEMS.getKey(temp_item.getItem()).toString()));
+					JsonObject.addProperty("item", (BuiltInRegistries.ITEM.getKey(temp_item.getItem()).toString()));
 					if (temp_item != null && temp_item.getOrCreateTagElement("display").get("Lore") != null) {
 						String result = temp_item.getOrCreateTagElement("display").get("Lore").toString();
 						result = result.replaceAll("'", "");
@@ -124,7 +116,7 @@ public class SellItemProcedure {
 						}
 					}.convert(guistate.containsKey("text:price") ? ((EditBox) guistate.get("text:price")).getValue() : ""));
 					{
-						Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+						com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 						try {
 							FileWriter fileWriter = new FileWriter(file);
 							fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));
@@ -150,7 +142,7 @@ public class SellItemProcedure {
 											jsonstringbuilder.append(line);
 										}
 										bufferedReader.close();
-										eriJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+										eriJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 										// Retour
 										returnnbr = eriJsonObject.get("money").getAsDouble();
 									} catch (IOException e) {
@@ -183,14 +175,14 @@ public class SellItemProcedure {
 										jsonstringbuilder.append(line);
 									}
 									bufferedReader.close();
-									eriJsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+									eriJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 									if (eriJsonObject.get("money").getAsDouble() >= 1000) {
 										eriJsonObject.addProperty("money", (eriJsonObject.get("money").getAsDouble() - 1000));
 									} else {
 										eriJsonObject.addProperty("money", 0);
 									}
 									{
-										Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+										com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 										try {
 											FileWriter fileWriter = new FileWriter(eriFile);
 											fileWriter.write(mainGSONBuilderVariable.toJson(eriJsonObject));
@@ -233,13 +225,14 @@ public class SellItemProcedure {
 													}
 												}.convert(guistate.containsKey("text:price") ? ((EditBox) guistate.get("text:price")).getValue() : "")) + "$")), false);
 						} else {
-							Minecraft.getInstance().getToasts().addToast(new NotEnoughtMoneyToast());
+							if (entity instanceof Player _player && !_player.level().isClientSide())
+								_player.displayClientMessage(Component.literal("\u00A7cNot enough money"), false);
 						}
 					}
 					if (entity instanceof Player _player) {
 						ItemStack _stktoremove = temp_item;
-						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(),
-								(int) ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).selltempquantity - temp_quantity), _player.inventoryMenu.getCraftSlots());
+						_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) (entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).selltempquantity - temp_quantity),
+								_player.inventoryMenu.getCraftSlots());
 					}
 					if (entity instanceof Player _player && !_player.level().isClientSide())
 						_player.displayClientMessage(Component.literal("\u00A7aSuccefully set your item in auction house"), false);

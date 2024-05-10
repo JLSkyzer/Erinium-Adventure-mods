@@ -1,6 +1,6 @@
 package fr.eriniumgroups.erinium.auctionhouse.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.entity.Entity;
 
@@ -13,7 +13,6 @@ public class GetItemPathProcedure {
 		if (entity == null)
 			return new File("");
 		File file = new File("");
-		return new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumAH/"),
-				File.separator + (((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_temp_item).getOrCreateTag().getString("id")));
+		return new File((FMLPaths.GAMEDIR.get().toString() + "/EriniumAH/"), File.separator + (entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_temp_item.getOrCreateTag().getString("id")));
 	}
 }

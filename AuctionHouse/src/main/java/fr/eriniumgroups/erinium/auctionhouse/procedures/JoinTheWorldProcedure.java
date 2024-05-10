@@ -1,21 +1,17 @@
 package fr.eriniumgroups.erinium.auctionhouse.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.fml.loading.FMLPaths;
 
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.nbt.StringTag;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import java.io.IOException;
 import java.io.FileWriter;
 import java.io.File;
-
-import com.google.gson.JsonObject;
-import com.google.gson.GsonBuilder;
-import com.google.gson.Gson;
 
 public class JoinTheWorldProcedure {
 	public static void execute(Entity entity) {
@@ -60,8 +56,8 @@ public class JoinTheWorldProcedure {
 		} catch (IOException exception) {
 			exception.printStackTrace();
 		}
-		JsonObject.addProperty("item", (ForgeRegistries.ITEMS.getKey(temp_item.getItem()).toString()));
-		if (temp_item != null) {
+		JsonObject.addProperty("item", (BuiltInRegistries.ITEM.getKey(temp_item.getItem()).toString()));
+		if (temp_item != null && temp_item.getOrCreateTagElement("display").get("Lore") != null) {
 			String result = temp_item.getOrCreateTagElement("display").get("Lore").toString();
 			result = result.replaceAll("'", "");
 			com.google.gson.JsonArray jsonArray = com.google.gson.JsonParser.parseString(result).getAsJsonArray();
@@ -80,7 +76,7 @@ public class JoinTheWorldProcedure {
 		JsonObject.addProperty("quantity", (temp_item.getOrCreateTag().getDouble("quantity")));
 		JsonObject.addProperty("price", (temp_item.getOrCreateTag().getDouble("price")));
 		{
-			Gson mainGSONBuilderVariable = new GsonBuilder().setPrettyPrinting().create();
+			com.google.gson.Gson mainGSONBuilderVariable = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
 			try {
 				FileWriter fileWriter = new FileWriter(file);
 				fileWriter.write(mainGSONBuilderVariable.toJson(JsonObject));

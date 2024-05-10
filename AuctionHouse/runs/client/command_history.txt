@@ -1,0 +1,8 @@
+/help
+/eriniumAH
+/ah sell
+/time set day
+/ah sell
+/ah
+/ah sell
+/ah

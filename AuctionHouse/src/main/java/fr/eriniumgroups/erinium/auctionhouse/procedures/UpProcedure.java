@@ -8,20 +8,16 @@ public class UpProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_page - 1 >= 0) {
+		if (entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_page - 1 >= 0) {
 			{
-				double _setval = (entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).ah_page - 1;
-				entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ah_page = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumAhModVariables.PlayerVariables _vars = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES);
+				_vars.ah_page = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).ah_page - 1;
+				_vars.syncPlayerVariables(entity);
 			}
 			{
-				boolean _setval = false;
-				entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.ah_initialised = _setval;
-					capability.syncPlayerVariables(entity);
-				});
+				EriniumAhModVariables.PlayerVariables _vars = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES);
+				_vars.ah_initialised = false;
+				_vars.syncPlayerVariables(entity);
 			}
 			ClearAllProcedure.execute(entity);
 		}

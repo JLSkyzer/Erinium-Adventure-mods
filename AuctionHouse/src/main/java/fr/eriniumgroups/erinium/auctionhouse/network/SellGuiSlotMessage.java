@@ -1,17 +1,20 @@
 
 package fr.eriniumgroups.erinium.auctionhouse.network;
 
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.neoforge.network.handling.PlayPayloadContext;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.bus.api.SubscribeEvent;
 
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.network.protocol.PacketFlow;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import java.util.function.Supplier;
 import java.util.HashMap;
 
 import fr.eriniumgroups.erinium.auctionhouse.world.inventory.SellGuiMenu;
@@ -19,49 +22,44 @@ import fr.eriniumgroups.erinium.auctionhouse.procedures.SlotChangeProcedure;
 import fr.eriniumgroups.erinium.auctionhouse.EriniumAhMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class SellGuiSlotMessage {
-	private final int slotID, x, y, z, changeType, meta;
+public record SellGuiSlotMessage(int slotID, int x, int y, int z, int changeType, int meta) implements CustomPacketPayload {
 
-	public SellGuiSlotMessage(int slotID, int x, int y, int z, int changeType, int meta) {
-		this.slotID = slotID;
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		this.changeType = changeType;
-		this.meta = meta;
-	}
-
+	public static final ResourceLocation ID = new ResourceLocation(EriniumAhMod.MODID, "sell_gui_slots");
 	public SellGuiSlotMessage(FriendlyByteBuf buffer) {
-		this.slotID = buffer.readInt();
-		this.x = buffer.readInt();
-		this.y = buffer.readInt();
-		this.z = buffer.readInt();
-		this.changeType = buffer.readInt();
-		this.meta = buffer.readInt();
+		this(buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt(), buffer.readInt());
 	}
 
-	public static void buffer(SellGuiSlotMessage message, FriendlyByteBuf buffer) {
-		buffer.writeInt(message.slotID);
-		buffer.writeInt(message.x);
-		buffer.writeInt(message.y);
-		buffer.writeInt(message.z);
-		buffer.writeInt(message.changeType);
-		buffer.writeInt(message.meta);
+	@Override
+	public void write(final FriendlyByteBuf buffer) {
+		buffer.writeInt(slotID);
+		buffer.writeInt(x);
+		buffer.writeInt(y);
+		buffer.writeInt(z);
+		buffer.writeInt(changeType);
+		buffer.writeInt(meta);
 	}
 
-	public static void handler(SellGuiSlotMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
-		NetworkEvent.Context context = contextSupplier.get();
-		context.enqueueWork(() -> {
-			Player entity = context.getSender();
-			int slotID = message.slotID;
-			int changeType = message.changeType;
-			int meta = message.meta;
-			int x = message.x;
-			int y = message.y;
-			int z = message.z;
-			handleSlotAction(entity, slotID, changeType, meta, x, y, z);
-		});
-		context.setPacketHandled(true);
+	@Override
+	public ResourceLocation id() {
+		return ID;
+	}
+
+	public static void handleData(final SellGuiSlotMessage message, final PlayPayloadContext context) {
+		if (context.flow() == PacketFlow.SERVERBOUND) {
+			context.workHandler().submitAsync(() -> {
+				Player entity = context.player().get();
+				int slotID = message.slotID;
+				int changeType = message.changeType;
+				int meta = message.meta;
+				int x = message.x;
+				int y = message.y;
+				int z = message.z;
+				handleSlotAction(entity, slotID, changeType, meta, x, y, z);
+			}).exceptionally(e -> {
+				context.packetHandler().disconnect(Component.literal(e.getMessage()));
+				return null;
+			});
+		}
 	}
 
 	public static void handleSlotAction(Player entity, int slot, int changeType, int meta, int x, int y, int z) {
@@ -78,6 +76,6 @@ public class SellGuiSlotMessage {
 
 	@SubscribeEvent
 	public static void registerMessage(FMLCommonSetupEvent event) {
-		EriniumAhMod.addNetworkMessage(SellGuiSlotMessage.class, SellGuiSlotMessage::buffer, SellGuiSlotMessage::new, SellGuiSlotMessage::handler);
+		EriniumAhMod.addNetworkMessage(SellGuiSlotMessage.ID, SellGuiSlotMessage::new, SellGuiSlotMessage::handleData);
 	}
 }

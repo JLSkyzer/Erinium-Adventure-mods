@@ -1,7 +1,7 @@
 package fr.eriniumgroups.erinium.auctionhouse.procedures;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.fml.ModList;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
@@ -19,32 +19,29 @@ import java.io.BufferedReader;
 
 import fr.eriniumgroups.erinium.auctionhouse.network.EriniumAhModVariables;
 
-import com.google.gson.JsonObject;
-import com.google.gson.Gson;
-
 public class GetMoneyMainPageProcedure {
 	public static String execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return "";
-		return (entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new EriniumAhModVariables.PlayerVariables())).theme_text_color + "" + (new java.text.DecimalFormat("#,###.##").format(new Object() {
+		return entity.getData(EriniumAhModVariables.PLAYER_VARIABLES).theme_text_color + "" + (new java.text.DecimalFormat("#,###.##").format(new Object() {
 			private double getPlayerMoney(Entity entity) {
 				if (ModList.get().isLoaded("ericonomy")) {
 					// Procedure here
-					java.io.File file = new java.io.File("");
-					com.google.gson.JsonObject JsonObject = new com.google.gson.JsonObject();
+					java.io.File eriFile = new java.io.File("");
+					com.google.gson.JsonObject eriJsonObject = new com.google.gson.JsonObject();
 					double returnnbr = 0;
-					file = new File((FMLPaths.GAMEDIR.get().toString() + "/Ericonomy/accounts/"), File.separator + (entity.getUUID().toString() + ".json"));
+					eriFile = new File((FMLPaths.GAMEDIR.get().toString() + "/Ericonomy/accounts/"), File.separator + (entity.getUUID().toString() + ".json"));
 					try {
-						BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+						BufferedReader bufferedReader = new BufferedReader(new FileReader(eriFile));
 						StringBuilder jsonstringbuilder = new StringBuilder();
 						String line;
 						while ((line = bufferedReader.readLine()) != null) {
 							jsonstringbuilder.append(line);
 						}
 						bufferedReader.close();
-						JsonObject = new Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
+						eriJsonObject = new com.google.gson.Gson().fromJson(jsonstringbuilder.toString(), com.google.gson.JsonObject.class);
 						// Retour
-						returnnbr = JsonObject.get("money").getAsDouble();
+						returnnbr = eriJsonObject.get("money").getAsDouble();
 					} catch (IOException e) {
 						e.printStackTrace();
 					}

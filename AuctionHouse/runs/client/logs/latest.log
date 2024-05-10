@@ -1,0 +1,238 @@
+[09May2024 15:18:11.706] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, 20.4.223, --assetIndex, asset-index, --assetsDir, C:\Users\killi\.mcreator\gradle\caches\minecraft\assets\1.20.4, --gameDir, ., --fml.neoForgeVersion, 20.4.223, --fml.fmlVersion, 2.0.17, --fml.mcVersion, 1.20.4, --fml.neoFormVersion, 20231207.154220]
+[09May2024 15:18:11.710] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.10 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[09May2024 15:18:11.788] [main/WARN] [net.neoforged.fml.loading.FMLConfig/CORE]: Configuration file C:\Users\killi\Desktop\Dev\minecraft mod project\Erinium Adventure\AuctionHouse\runs\client\config\fml.toml is not correct. Correcting
+[09May2024 15:18:11.789] [main/INFO] [net.neoforged.fml.loading.FMLConfig/CORE]: Incorrect key [disableConfigWatcher] was corrected from null to false
+[09May2024 15:18:11.812] [main/INFO] [net.neoforged.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[09May2024 15:18:11.894] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[09May2024 15:18:12.092] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[09May2024 15:18:12.162] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/killi/.mcreator/gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.1+mixin.0.8.5/618f4dff860cf2d6b5196073b1a5f5e0a8591acb/sponge-mixin-0.13.1+mixin.0.8.5.jar%23118!/ Service=ModLauncher Env=CLIENT
+[09May2024 15:18:12.221] [main/ERROR] [net.neoforged.fml.loading.moddiscovery.ModInfo/]: Mod 'ericonomy' uses deprecated 'mandatory' field in the dependency declaration for 'minecraft'. Use the 'type' field and 'required'/'optional' instead
+[09May2024 15:18:12.223] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 4060/PCIe/SSE2 GL version 4.6.0 NVIDIA 552.22, NVIDIA Corporation
+[09May2024 15:18:12.226] [main/ERROR] [net.neoforged.fml.loading.moddiscovery.ModInfo/]: Mod 'erinium_logs' uses deprecated 'mandatory' field in the dependency declaration for 'minecraft'. Use the 'type' field and 'required'/'optional' instead
+[09May2024 15:18:12.227] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "ericonomy-1.20.1-Dev.jar" of type MOD with provider {mods folder locator at C:\Users\killi\Desktop\Dev\minecraft mod project\Erinium Adventure\AuctionHouse\runs\client\mods}
+[09May2024 15:18:12.227] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "Erilog.1.20.1-1.0-Dev.jar" of type MOD with provider {mods folder locator at C:\Users\killi\Desktop\Dev\minecraft mod project\Erinium Adventure\AuctionHouse\runs\client\mods}
+[09May2024 15:18:12.316] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "neoforge-20.4.223.jar" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@56f2bbea
+[09May2024 15:18:12.317] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "main" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@56f2bbea
+[09May2024 15:18:12.317] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "" of type MOD with provider net.neoforged.fml.loading.moddiscovery.MinecraftLocator@56f2bbea
+[09May2024 15:18:12.429] [main/INFO] [net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[09May2024 15:18:12.430] [main/INFO] [net.neoforged.fml.loading.moddiscovery.ModDiscoverer/SCAN]: Found mod file "mixinextras-neoforge-0.3.5.jar" of type GAMELIBRARY with provider net.neoforged.fml.loading.moddiscovery.JarInJarDependencyLocator@1d2644e3
+[09May2024 15:18:12.436] [main/ERROR] [net.neoforged.fml.loading.moddiscovery.ModInfo/]: Mod 'ericonomy' uses deprecated 'mandatory' field in the dependency declaration for 'minecraft'. Use the 'type' field and 'required'/'optional' instead
+[09May2024 15:18:12.437] [main/ERROR] [net.neoforged.fml.loading.moddiscovery.ModInfo/]: Mod 'erinium_logs' uses deprecated 'mandatory' field in the dependency declaration for 'minecraft'. Use the 'type' field and 'required'/'optional' instead
+[09May2024 15:18:12.451] [main/ERROR] [net.neoforged.fml.loading.LanguageLoadingProvider/LOADING]: Missing language javafml version [47,) wanted by ericonomy-1.20.1-Dev.jar, found 2.0
+[09May2024 15:18:12.451] [main/ERROR] [net.neoforged.fml.loading.LanguageLoadingProvider/LOADING]: Missing language javafml version [47,) wanted by Erilog.1.20.1-1.0-Dev.jar, found 2.0
+[09May2024 15:18:13.348] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, 20.4.223, --gameDir, ., --assetsDir, C:\Users\killi\.mcreator\gradle\caches\minecraft\assets\1.20.4, --assetIndex, asset-index]
+[09May2024 15:18:16.730] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 198 Datafixer optimizations took 147 milliseconds
+[09May2024 15:18:18.633] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[09May2024 15:18:18.634] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[09May2024 15:18:18.637] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[09May2024 15:18:18.638] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[09May2024 15:18:18.639] [main/WARN] [net.minecraft.commands.Commands/]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[09May2024 15:18:18.728] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/killi/Desktop/Dev/minecraft%20mod%20project/Erinium%20Adventure/AuctionHouse/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.4.223/neoforge-20.4.223.jar%23197!/assets/.mcassetsroot' uses unexpected schema
+[09May2024 15:18:18.728] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/killi/Desktop/Dev/minecraft%20mod%20project/Erinium%20Adventure/AuctionHouse/.gradle/repositories/ng_dummy_ng/net/neoforged/neoforge/20.4.223/neoforge-20.4.223.jar%23197!/data/.mcassetsroot' uses unexpected schema
+[09May2024 15:18:18.749] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[09May2024 15:18:18.757] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[09May2024 15:18:18.914] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.2+13
+[09May2024 15:18:19.112] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 20.4.223, for MC 1.20.4 with MCP 20231207.154220
+[09May2024 15:18:19.650] [Render thread/INFO] [net.neoforged.neoforge.gametest.GameTestHooks/]: Enabled Gametest Namespaces: []
+[09May2024 15:18:19.743] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: mod_resources, mod:erinium_ah, mod:neoforge, vanilla
+[09May2024 15:18:19.765] [modloading-worker-0/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Configuration file C:\Users\killi\Desktop\Dev\minecraft mod project\Erinium Adventure\AuctionHouse\runs\client\config\neoforge-client.toml is not correct. Correcting
+[09May2024 15:18:19.768] [modloading-worker-0/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key client was corrected from null to its default, SimpleCommentedConfig:{}. 
+[09May2024 15:18:19.768] [modloading-worker-0/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key client.experimentalForgeLightPipelineEnabled was corrected from null to its default, false. 
+[09May2024 15:18:19.769] [modloading-worker-0/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key client.showLoadWarnings was corrected from null to its default, true. 
+[09May2024 15:18:19.769] [modloading-worker-0/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key client.useCombinedDepthStencilAttachment was corrected from null to its default, false. 
+[09May2024 15:18:19.769] [modloading-worker-0/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key client.compressLanIPv6Addresses was corrected from null to its default, true. 
+[09May2024 15:18:19.852] [Worker-Main-9/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.04.hex, loading
+[09May2024 15:18:21.319] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[09May2024 15:18:21.320] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[09May2024 15:18:21.320] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.generic.wind_burst
+[09May2024 15:18:21.352] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on BenQ EX240N (NVIDIA High Definition Audio)
+[09May2024 15:18:21.353] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[09May2024 15:18:21.434] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x2 minecraft:textures/atlas/blocks.png-atlas
+[09May2024 15:18:21.440] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/signs.png-atlas
+[09May2024 15:18:21.440] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x2 minecraft:textures/atlas/banner_patterns.png-atlas
+[09May2024 15:18:21.441] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x2 minecraft:textures/atlas/shield_patterns.png-atlas
+[09May2024 15:18:21.441] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x2 minecraft:textures/atlas/armor_trims.png-atlas
+[09May2024 15:18:21.443] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x2 minecraft:textures/atlas/chest.png-atlas
+[09May2024 15:18:21.443] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x2 minecraft:textures/atlas/decorated_pot.png-atlas
+[09May2024 15:18:21.443] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x2 minecraft:textures/atlas/beds.png-atlas
+[09May2024 15:18:21.443] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x2 minecraft:textures/atlas/shulker_boxes.png-atlas
+[09May2024 15:18:21.613] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[09May2024 15:18:21.647] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[09May2024 15:18:21.648] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[09May2024 15:18:21.648] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[09May2024 15:18:21.649] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[09May2024 15:18:25.785] [Render thread/WARN] [net.neoforged.neoforge.common.CommonHooks/WP]: The following mods have version differences that were not resolved:
+ericonomy (version 1.0.0 -> MISSING)
+erinium_ah (version 1.0.0 -> 1.0.1)
+erinium_logs (version 1.0.0 -> MISSING)
+forge (version 47.2.0 -> MISSING)
+Things may not work well.
+[09May2024 15:18:25.806] [Render thread/WARN] [net.minecraft.server.MinecraftServer/]: Missing data pack mod:forge
+[09May2024 15:18:25.807] [Render thread/WARN] [net.minecraft.server.MinecraftServer/]: Missing data pack mod:erinium_ah
+[09May2024 15:18:25.807] [Render thread/WARN] [net.minecraft.server.MinecraftServer/]: Missing data pack mod:ericonomy
+[09May2024 15:18:25.807] [Render thread/WARN] [net.minecraft.server.MinecraftServer/]: Missing data pack mod:erinium_logs
+[09May2024 15:18:26.607] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[09May2024 15:18:26.778] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1271 advancements
+[09May2024 15:18:27.186] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.4
+[09May2024 15:18:27.187] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[09May2024 15:18:27.259] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Configuration file C:\Users\killi\Desktop\Dev\minecraft mod project\Erinium Adventure\AuctionHouse\runs\client\config\neoforge-server.toml is not correct. Correcting
+[09May2024 15:18:27.260] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server was corrected from null to its default, SimpleCommentedConfig:{}. 
+[09May2024 15:18:27.260] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.removeErroringBlockEntities was corrected from null to its default, false. 
+[09May2024 15:18:27.261] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.removeErroringEntities was corrected from null to its default, false. 
+[09May2024 15:18:27.261] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.fullBoundingBoxLadders was corrected from null to its default, false. 
+[09May2024 15:18:27.261] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.permissionHandler was corrected from null to its default, neoforge:default_handler. 
+[09May2024 15:18:27.261] [Server thread/WARN] [net.neoforged.neoforge.common.ModConfigSpec/CORE]: Incorrect key server.advertiseDedicatedServerToLan was corrected from null to its default, true. 
+[09May2024 15:18:27.411] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[09May2024 15:18:28.693] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09May2024 15:18:28.693] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09May2024 15:18:28.693] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[09May2024 15:18:28.913] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 9%
+[09May2024 15:18:28.971] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:28.976] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:28.999] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:28.999] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.007] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.007] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.014] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.014] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.019] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.020] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.024] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.024] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.039] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.040] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.047] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.047] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.069] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.070] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.074] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.074] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.079] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.080] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.129] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.130] [entity-deserializer/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.300] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[09May2024 15:18:29.310] [progressListener/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 1898 ms
+[09May2024 15:18:29.393] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 5, from 10
+[09May2024 15:18:29.393] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[09May2024 15:18:29.789] [Server thread/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:step_height_addition'
+[09May2024 15:18:29.789] [Server thread/WARN] [net.minecraft.world.entity.ai.attributes.AttributeMap/]: Ignoring unknown attribute 'forge:entity_gravity'
+[09May2024 15:18:29.791] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:4961aa13] logged in with entity id 13 at (-12.680872597992895, -57.50609251977052, 21.384533636397663)
+[09May2024 15:18:29.832] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev joined the game
+[09May2024 15:18:30.011] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 18 advancements
+[09May2024 15:18:37.309] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /advancement (grant|revoke)
+[09May2024 15:18:37.313] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /attribute <target> <attribute> (get|base|modifier)
+[09May2024 15:18:37.313] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /execute (run|if|unless|as|at|store|positioned|rotated|facing|align|anchored|in|summon|on)
+[09May2024 15:18:37.313] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /bossbar (add|remove|list|set|get)
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /clear [<targets>]
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /clone (<begin>|from)
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /damage <target> <amount> [<damageType>]
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /data (merge|get|remove|modify)
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /datapack (enable|disable|list)
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /debug (start|stop|function)
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /defaultgamemode <gamemode>
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /difficulty [peaceful|easy|normal|hard]
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /effect (clear|give)
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /me <action>
+[09May2024 15:18:37.314] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /enchant <targets> <enchantment> [<level>]
+[09May2024 15:18:37.315] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /experience (add|set|query)
+[09May2024 15:18:37.315] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /xp -> experience
+[09May2024 15:18:37.315] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /fill <from> <to> <block> [replace|keep|outline|hollow|destroy]
+[09May2024 15:18:37.315] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /fillbiome <from> <to> <biome> [replace]
+[09May2024 15:18:37.315] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /forceload (add|remove|query)
+[09May2024 15:18:37.315] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /function <name> [<arguments>|with]
+[09May2024 15:18:37.315] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /gamemode <gamemode> [<target>]
+[09May2024 15:18:37.315] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /gamerule (announceAdvancements|blockExplosionDropDecay|commandBlockOutput|commandModificationBlockLimit|disableElytraMovementCheck|disableRaids|doDaylightCycle|doEntityDrops|doFireTick|doImmediateRespawn|doInsomnia|doLimitedCrafting|doMobLoot|doMobSpawning|doPatrolSpawning|doTileDrops|doTraderSpawning|doVinesSpread|doWardenSpawning|doWeatherCycle|drowningDamage|enderPearlsVanishOnDeath|fallDamage|fireDamage|forgiveDeadPlayers|freezeDamage|globalSoundEvents|keepInventory|lavaSourceConversion|logAdminCommands|maxCommandChainLength|maxCommandForkCount|maxEntityCramming|mobExplosionDropDecay|mobGriefing|naturalRegeneration|playersNetherPortalCreativeDelay|playersNetherPortalDefaultDelay|playersSleepingPercentage|projectilesCanBreakBlocks|randomTickSpeed|reducedDebugInfo|sendCommandFeedback|showDeathMessages|snowAccumulationHeight|spawnRadius|spectatorsGenerateChunks|tntExplosionDropDecay|universalAnger|waterSourceConversion)
+[09May2024 15:18:37.316] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /give <targets> <item> [<count>]
+[09May2024 15:18:37.316] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /help [<command>]
+[09May2024 15:18:37.316] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /item (replace|modify)
+[09May2024 15:18:37.316] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /kick <targets> [<reason>]
+[09May2024 15:18:37.316] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /kill [<targets>]
+[09May2024 15:18:37.316] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /list [uuids]
+[09May2024 15:18:37.316] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /locate (structure|biome|poi)
+[09May2024 15:18:37.316] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /loot (replace|insert|give|spawn)
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /msg <targets> <message>
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /tell -> msg
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /w -> msg
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /particle <name> [<pos>]
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /place (feature|jigsaw|structure|template)
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /playsound <sound> (master|music|record|weather|block|hostile|neutral|player|ambient|voice)
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /random (value|roll|reset)
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /reload
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /recipe (give|take)
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /return (<value>|fail|run)
+[09May2024 15:18:37.317] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /ride <target> (mount|dismount)
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /say <message>
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /schedule (function|clear)
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /scoreboard (objectives|players)
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /seed
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /setblock <pos> <block> [destroy|keep|replace]
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /spawnpoint [<targets>]
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /setworldspawn [<pos>]
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /spectate [<target>]
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /spreadplayers <center> <spreadDistance> <maxRange> (<respectTeams>|under)
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /stopsound <targets> [*|master|music|record|weather|block|hostile|neutral|player|ambient|voice]
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /summon <entity> [<pos>]
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /tag <targets> (add|remove|list)
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /team (list|add|remove|empty|join|leave|modify)
+[09May2024 15:18:37.318] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /teammsg <message>
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /tm -> teammsg
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /teleport (<location>|<destination>|<targets>)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /tp -> teleport
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /tellraw <targets> <message>
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /tick (query|rate|step|sprint|unfreeze|freeze)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /time (set|add|query)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /title <targets> (clear|reset|title|subtitle|actionbar|times)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /trigger <objective> [add|set]
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /weather (clear|rain|thunder)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /worldborder (add|set|center|damage|get|warning)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /jfr (start|stop)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /test (runthis|resetthis|runthese|runfailed|run|runall|export|exportthis|exportthese|import|pos|create|clearall)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /resetchunks [<range>]
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /raid (start|stop|check|sound|spawnleader|setomen|glow)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /debugpath <to>
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /debugmobspawning (monster|creature|ambient|axolotls|underground_water_creature|water_creature|water_ambient|misc)
+[09May2024 15:18:37.319] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /warden_spawn_tracker (clear|set)
+[09May2024 15:18:37.320] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /spawn_armor_trims
+[09May2024 15:18:37.320] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /serverpack (push|pop)
+[09May2024 15:18:37.320] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /publish [<allowCommands>]
+[09May2024 15:18:37.320] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /ah [sell|theme]
+[09May2024 15:18:37.320] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /eriniumAH
+[09May2024 15:18:37.320] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /neoforge (tps|track|entity|generate|dimensions|mods|tags)
+[09May2024 15:18:37.320] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /config showfile <mod> <type>
+[09May2024 15:18:41.310] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] ---------- Erinium Auction House ----------
+[09May2024 15:18:41.310] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /eriniumAH To get command list
+[09May2024 15:18:41.310] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /ah to open the Auction House
+[09May2024 15:18:41.310] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /ah sell - To sell an item in the Auction House
+[09May2024 15:18:41.310] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] /ah theme - To change the theme of the Auction House
+[09May2024 15:18:44.301] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[09May2024 15:18:44.312] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test]'/minecraft:overworld
+[09May2024 15:18:44.320] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test]'/minecraft:the_end
+[09May2024 15:18:44.325] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test]'/minecraft:the_nether
+[09May2024 15:19:00.006] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set the time to 1000]
+[09May2024 15:19:00.006] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set the time to 1000
+[09May2024 15:19:06.507] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 32 advancements
+[09May2024 15:19:23.837] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: [Dev: Set own game mode to Survival Mode]
+[09May2024 15:19:23.837] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Set own game mode to Survival Mode
+[09May2024 15:19:25.805] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev has made the advancement [Stone Age]
+[09May2024 15:19:25.811] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Dev has made the advancement [Stone Age]
+[09May2024 15:19:25.855] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 50 advancements
+[09May2024 15:19:35.772] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Not enough money
+[09May2024 15:19:35.772] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Succefully set your item in auction house
+[09May2024 15:19:54.552] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Not enough money
+[09May2024 15:19:54.552] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Succefully set your item in auction house
+[09May2024 15:20:19.366] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] [Debug]: Advanced tooltips: shown
+[09May2024 15:20:35.505] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[09May2024 15:20:35.703] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: Disconnected
+[09May2024 15:20:35.703] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev left the game
+[09May2024 15:20:35.716] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[09May2024 15:20:35.750] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[09May2024 15:20:35.750] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[09May2024 15:20:35.750] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[09May2024 15:20:36.031] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test]'/minecraft:overworld
+[09May2024 15:20:36.491] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test]'/minecraft:the_end
+[09May2024 15:20:36.495] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[Test]'/minecraft:the_nether
+[09May2024 15:20:36.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (Test (1)): All chunks are saved
+[09May2024 15:20:36.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[09May2024 15:20:36.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09May2024 15:20:36.523] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

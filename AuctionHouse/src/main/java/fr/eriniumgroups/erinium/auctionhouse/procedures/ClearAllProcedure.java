@@ -23,11 +23,9 @@ public class ClearAllProcedure {
 			count = count + 1;
 		}
 		{
-			boolean _setval = false;
-			entity.getCapability(EriniumAhModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.ah_initialised = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+			EriniumAhModVariables.PlayerVariables _vars = entity.getData(EriniumAhModVariables.PLAYER_VARIABLES);
+			_vars.ah_initialised = false;
+			_vars.syncPlayerVariables(entity);
 		}
 	}
 }
