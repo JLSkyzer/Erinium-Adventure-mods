@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "fr.eriniumgroup.eriniumroleplay.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "EriPlayerMixin",
+    "EriArmorRenderMixin",
+    "EriItemHandRendererMixin"
+  ],
+  "client": [],
+  "minVersion": "0.8"
+}

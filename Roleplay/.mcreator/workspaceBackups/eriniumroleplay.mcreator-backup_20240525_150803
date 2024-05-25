@@ -1,0 +1,477 @@
+{
+  "mod_elements": [
+    {
+      "name": "Test",
+      "type": "command",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/command/TestCommand.java"
+        ]
+      }
+    },
+    {
+      "name": "TestCommand",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_command",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OnPlayerJoin",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_player_join",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/OnPlayerJoinProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "OnPlayerLeav",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "on_player_leav",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/OnPlayerLeavProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "PlayerTick",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "PlayerDeathEvent",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_death_event",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerDeathEventProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Death system"
+    },
+    {
+      "name": "EriPlayer",
+      "type": "mixin",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "eri_player",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/mixins/EriPlayerMixin.java"
+        ]
+      },
+      "path": "~/Mixins"
+    },
+    {
+      "name": "PlayerRightClickBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_right_click_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerRightClickBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "PlayerRightClickEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_right_click_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerRightClickEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "PlayerRightClickItem",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_right_click_item",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerRightClickItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "PlayerAttackEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_attack_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerAttackEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "PlayerPlaceBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_place_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerPlaceBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "PlayerMultiplePlaceBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_multiple_place_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerMultiplePlaceBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "PlayerBrokeBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_broke_block",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/PlayerBrokeBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/PlayerAction"
+    },
+    {
+      "name": "CreatePlayerFile",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "create_player_file",
+      "metadata": {
+        "return_type": "file",
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/CreatePlayerFileProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/File"
+    },
+    {
+      "name": "Vanish",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vanish",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/command/VanishCommand.java"
+        ]
+      },
+      "path": "~/Admin"
+    },
+    {
+      "name": "EnableDisableVanish",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enable_disable_vanish",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Admin"
+    },
+    {
+      "name": "NameTagRender",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "name_tag_render",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/procedures/NameTagRenderProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EriArmorRender",
+      "type": "mixin",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "eri_armor_render",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/mixins/EriArmorRenderMixin.java"
+        ]
+      }
+    },
+    {
+      "name": "EriItemHandRenderer",
+      "type": "mixin",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "eri_item_hand_renderer",
+      "metadata": {
+        "files": [
+          "src/main/java/fr/eriniumgroup/eriniumroleplay/mixins/EriItemHandRendererMixin.java"
+        ]
+      }
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "isDead",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "TimeToRespawn",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "can_call_emergency",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "DeathX",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DeathY",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DeathZ",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "money",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1500.0"
+    },
+    {
+      "name": "vanish_mode",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {},
+  "language_map": {
+    "en_us": {
+      "death.move": "§cplease do not move"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "Death system",
+        "children": []
+      },
+      {
+        "name": "PlayerAction",
+        "children": []
+      },
+      {
+        "name": "Mixins",
+        "children": []
+      },
+      {
+        "name": "File",
+        "children": [
+          {
+            "name": "Return",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Admin",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "eriniumroleplay",
+    "modName": "EriniumRolePlay",
+    "version": "1.0.0",
+    "author": "killi, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Not specified",
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.20.4",
+    "modElementsPackage": "fr.eriniumgroup.eriniumroleplay"
+  },
+  "mcreatorVersion": 202400118518
+}

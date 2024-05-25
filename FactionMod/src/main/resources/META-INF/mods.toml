@@ -30,3 +30,6 @@ description="A mod for faction system"
 
 
 
+
+[[mixins]]
+    config="mixins.erinium_faction.json"

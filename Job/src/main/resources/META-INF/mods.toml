@@ -29,3 +29,6 @@ authors="killi, MCreator"
 
 
 
+
+[[mixins]]
+    config="mixins.eriniumjobs.json"

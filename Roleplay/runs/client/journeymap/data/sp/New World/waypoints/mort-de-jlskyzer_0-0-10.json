@@ -1,0 +1,22 @@
+{
+  "id": "mort-de-jlskyzer_0-0-10",
+  "name": "mort de jlskyzer",
+  "icon": "journeymap:ui/img/waypoint-icon.png",
+  "colorizedIcon": "fake:color--11342303-waypoint-icon.png",
+  "x": 0,
+  "y": 0,
+  "z": 10,
+  "r": 82,
+  "g": 238,
+  "b": 33,
+  "enable": false,
+  "type": "Normal",
+  "origin": "journeymap",
+  "dimensions": [
+    "minecraft:overworld"
+  ],
+  "persistent": true,
+  "showDeviation": false,
+  "iconColor": -11342303,
+  "customIconColor": false
+}

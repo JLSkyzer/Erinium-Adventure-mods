@@ -1,0 +1,39 @@
+/test
+/kill @e[type=!minecraft:player]
+/test
+/kill @e[type=!minecraft:player]
+/test
+/scoreboard players add Dev custom_score
+/scoreboard players add Dev custom_score 10
+/scoreboard players display name Dev custom_score
+/scoreboard players set Dev custom_score
+/scoreboard players enable Dev
+/kill Dev
+/kill
+/kill fe568905-46be-4ba7-bfb8-ae0b318861e1
+/kill Dev
+/kill
+/time set day
+/test
+/kill @e[type=!minecraft:player]
+/test
+/kill @e[type=!minecraft:player]
+/test
+/kill @e[type=!minecraft:player]
+/test
+/time set 6000
+/gamerule doDaylightCycle false
+/test
+/vanish
+/tp 0 ~ ~
+/tp 0 0 ~
+/tp 0 0 0
+/tp 0 100 0
+/tp 0 ~100 0
+/kill
+/test
+/vanish
+/v
+/vanish
+/v
+/vanish
